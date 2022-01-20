@@ -9,3 +9,4 @@ https://www.origin.com/arg/en-us/store
 https://www.epicgames.com/store/en-US/
 https://store.steampowered.com/
 https://www.adobe.com/
+https://rawg.io/
