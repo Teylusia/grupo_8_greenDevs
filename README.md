@@ -10,3 +10,6 @@ https://www.epicgames.com/store/en-US/
 https://store.steampowered.com/
 https://www.adobe.com/
 https://rawg.io/
+https://cdkeys.com
+https://gog.com
+
