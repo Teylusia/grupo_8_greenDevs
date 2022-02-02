@@ -1,0 +1,23 @@
+{
+  "name": "grupo_8_greendevs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Teylusia/grupo_8_greenDevs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Teylusia/grupo_8_greenDevs/issues"
+  },
+  "homepage": "https://github.com/Teylusia/grupo_8_greenDevs#readme",
+  "dependencies": {
+    "express": "^4.17.2",
+    "nodemon": "^2.0.15"
+  }
+}
