@@ -9,5 +9,5 @@ app.listen(3000, () =>{
   console.log('Arrancando servidor...')
 })
 app.get('/', (req, res)=>{
-  res.sendFile(__dirname + '/views/home.html')
+  res.sendFile(__dirname + '/views/index.html')
 })
