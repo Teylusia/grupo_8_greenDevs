@@ -96,7 +96,9 @@ footer{
 
 /* Hide the images by default */
 .mySlides {
-  display: flex;
+  display: block;
+  width: 100%;
+  
 }
 
 /* Next & previous buttons */
@@ -168,6 +170,15 @@ footer{
   -webkit-animation-duration: 1.5s;
   animation-name: fade;
   animation-duration: 1.5s;
+}
+
+/* Media queries */
+
+
+@media (max-width: 900px) {
+  .dot {
+    display: none;
+  }
 }
 
 @-webkit-keyframes fade {
