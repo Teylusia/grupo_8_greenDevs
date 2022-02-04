@@ -21,3 +21,7 @@ Plataforma de distribucion digital de videojuegos desarrollada por Valve Corpora
  https://gog.com
 Plataforma de venta de videojuegos de la empresa CD Projekt, nos interesa su estetica en general
 
+Tablero de Trabajo:
+
+https://trello.com/b/ncPENo3c/kanban-template.
+
