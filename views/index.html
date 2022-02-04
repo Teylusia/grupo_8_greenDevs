@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Homepage</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/css/index.css" />
+    <link rel="stylesheet" href="/css/styles.css"/>
+    <script src="https://kit.fontawesome.com/dee2885f19.js" crossorigin="anonymous"></script>
   </head>
   <body>
     <header>
@@ -14,7 +15,10 @@
         <img src="/img/logo-mercado-liebre.svg" alt="logo del sitio" />
       </div>
       <div class="buscador">
-        <input type="text" placeholder="Buscar..." />
+        <form action="/result" method="GET">
+          <input type="text" placeholder="Buscar..." />
+          <button type="submit"><i class="fas fa-search"></i></button>
+        </form> 
       </div>
       <nav class="nav-bar">
         <ul class="bar">
@@ -168,12 +172,12 @@
       </section>
     </main>
     <footer>
-      <h6 class="contacts">Instagram</h6>
-      <h6 class="contacts">Facebook</h6>
-      <h6 class="contacts">Whatsapp</h6>
-      <h6 class="contacts">Twitter</h6>
-      <h6 class="contacts">Gmail</h6>
-      <h6 class="contacts">About Us.</h6>
+      <h6 class="contacts"><a href="" target="_blank"><i class="fab fa-instagram-square"></i></a></h6>
+      <h6 class="contacts"><a href="" target="_blank"><i class="fab fa-facebook-square"></i></a></h6>
+      <h6 class="contacts"><a href="" target="_blank"><i class="fab fa-whatsapp-square"></i></a></h6>
+      <h6 class="contacts"><a href="" target="_blank"><i class="fab fa-twitter-square"></i></a></h6>
+      <h6 class="contacts"><a href="" target="_blank"><i class="fas fa-envelope-square"></i></a></h6>
+      <h6 class="contacts"><a href="http://" target="_blank">About Us.</a></h6>
     </footer>
   </body>
 </html>
