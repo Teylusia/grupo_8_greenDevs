@@ -202,6 +202,8 @@ footer{
 
 
 main.product-cart{
+  color: white;
+  width: 100%;
   padding-left: 15px;
   padding-right: 15px;
   font-size: 12px;
@@ -210,17 +212,13 @@ main.product-cart{
 
 
 .tu-carrito{
-  padding: 18px 15px;
+  padding: 18px 0;
 }
 
 .lista-de-productos{
   margin-bottom: 20px;
 }
 
-.product-cart{
-  width: 100%;
-  color: white;
-}
 
 .producto-unidad {
   display: flex;
@@ -251,14 +249,26 @@ main.product-cart{
 .checkout{
   padding: 2% 2%;
   background-color: #3D2C8D;
-  height: 30%;
+  min-height: 150px;
 }
 
-.contenido-checkout p{
-  border-bottom: solid 1px;
-  overflow: hidden;
-}
 
 .titulo-resumen{
+  padding-bottom: 20px;
   font-size: 18px;
+}
+
+.total-resumen{
+  margin-bottom: 20px;
+  padding-top: 15px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: solid 1px;
+}
+
+.boton-resumen{
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  padding-top: 15px;
 }
