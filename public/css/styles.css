@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 body{
- background-color: #1C0C5B;
+
 }
 
 /*HEADER*/
@@ -184,7 +184,7 @@ footer{
   margin: 0 2px;
   background-color: #bbb;
   border-radius: 50%;
-  display: inline-block;
+  display: none;
   transition: background-color 0.6s ease;
 }
 
@@ -200,12 +200,61 @@ footer{
   animation-duration: 1.5s;
 }
 
+/* Titulo categorias */
+.titulo-categorias {
+  display: flex;
+  
+  padding: 5px;
+ 
+ 
+  
+}
+.titulo-categorias h4 {
+  width: 20%;
+}
+.titulo-categorias p {
+  
+}
+
+
+/* Slide small*/
+.ofertas-populares {
+  display: flex;
+  background-color: white;
+}
+
+.ofertas-populares img {
+  width: 100%;
+ 
+}
+
+.ofertas-populares article {
+  margin: 2px;
+  border: solid 1px #717171;
+  padding: 2px;
+ 
+}
+.precio-producto {
+  font-weight: bold;
+  font-size: larger;
+}
+
+.precio-rebaja {
+  text-decoration:line-through ;
+  font-size: small;
+  
+}
+
+.porcentaje-descuento {
+  
+}
+
 /* Media queries */
 
 
-@media (max-width: 900px) {
+@media (min-width: 900px) {
   .dot {
-    display: none;
+    display: inline-block;
   }
 }
 
