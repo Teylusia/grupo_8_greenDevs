@@ -3,9 +3,6 @@
   padding: 0;
   box-sizing: border-box;
 }
-body {
-}
-
 /*HEADER*/
 
 header {
@@ -210,9 +207,6 @@ footer {
 .titulo-categorias h4 {
   width: 20%;
 }
-.titulo-categorias p {
-}
-
 /* Carousell products small*/
 .ofertas-populares {
   display: flex;
