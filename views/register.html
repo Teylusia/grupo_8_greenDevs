@@ -26,7 +26,31 @@
     </nav>
   </header>
   <main>
-    
+    <div class="general-container">
+    <div class="register">
+      <i class="fas fa-user-circle"></i>
+      <h2 class="texto-de-registro">Regístrate y empieza a jugar!</h2>
+        <div class="signup-buttons-container" style="font-size: 30px;">
+          <i class="fab fa-google fa-fw"></i>
+          <i class="fab fa-facebook fa-fw"></i>
+          <i class="fab fa-apple fa-fw"></i>
+        </div>
+      <h4 class="registro-manual">También puedes registrarte con tu correo electrónico:</h4>
+        <div class="register-form">
+          <form action="/registroCompleto" method="post">
+            <label for="username">Ingresa tu nombre de usuario</label><br>
+            <input type="text" id="username" name="username"><br>
+            <label for="email">Ingresa tu email</label><br>
+            <input type="email" id="email" name="email"><br>
+            <label for="password">Ingresa una contraseña</label><br>
+            <input type="password" id="password" name="password"><br>
+            <label for="confirm-password">Confirma tu contraseña</label><br>
+            <input type="password" id="confirm-password" name="confirm-password"><br>
+            <input type="submit" id="submit" value="Registrarme!">
+          </form>
+        </div>
+    </div>
+  </div>
   </main>
   <footer>
     <h6 class="contacts">Instagram</h6>

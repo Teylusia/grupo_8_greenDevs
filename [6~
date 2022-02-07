@@ -1,0 +1,178 @@
+[33mcommit 3fb2459a7f94caa6b6f8391366c42dd47139e775[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Merge: 2228e4f 9bea35a
+Author: leoneld80 <69119992+leoneld80@users.noreply.github.com>
+Date:   Sun Feb 6 14:45:35 2022 -0300
+
+    Merge pull request #4 from Teylusia/leonel
+    
+    Mejora de la tarjeta de productos en el carousel
+
+[33mcommit 9bea35a43307e9473706db80eaeb34a8db7f1b87[m[33m ([m[1;31morigin/leonel[m[33m)[m
+Merge: 1284139 2228e4f
+Author: leoneld80 <69119992+leoneld80@users.noreply.github.com>
+Date:   Sun Feb 6 14:45:25 2022 -0300
+
+    Merge branch 'main' into leonel
+
+[33mcommit 1284139a4308f430357071ebd8edeef427b595fd[m
+Author: leoneld80 <leoneld80@gmail.com>
+Date:   Sun Feb 6 00:17:02 2022 -0300
+
+    Mejora de la tarjeta de productos en el carousel
+
+[33mcommit 2228e4fce262eccee66536c43ed1bc8ffb4ebecd[m
+Author: Teylusia <ataylor@udesa.edu.ar>
+Date:   Sat Feb 5 20:30:06 2022 -0300
+
+    detalle producto v1. estilizado.
+
+[33mcommit f4ab08f03c90ccde8eb84fdcc4322cea13c8e93c[m
+Merge: d8a40e3 e0e7ece
+Author: leoneld80 <69119992+leoneld80@users.noreply.github.com>
+Date:   Sat Feb 5 01:21:27 2022 -0300
+
+    Merge pull request #3 from Teylusia/leonel
+    
+    agregue el slide de ofertas, saque los articulos de prueba
+
+[33mcommit e0e7ecee4f353ddd0dec7c81df09d87f788c64e1[m
+Author: leoneld80 <leoneld80@gmail.com>
+Date:   Sat Feb 5 01:14:46 2022 -0300
+
+    agregue el slide de ofertas, saque los articulos de prueba
+
+[33mcommit d8a40e3d4d62966c889c0b1e152f6bb9d7e60414[m
+Merge: df143b8 52e2fda
+Author: leoneld80 <69119992+leoneld80@users.noreply.github.com>
+Date:   Fri Feb 4 19:49:41 2022 -0300
+
+    Merge pull request #2 from Teylusia/leonel
+    
+    agregue rutas a las paginas html
+
+[33mcommit 52e2fda5fb94da0221d066a01eb494d2482e5d72[m
+Author: leoneld80 <leoneld80@gmail.com>
+Date:   Fri Feb 4 19:38:52 2022 -0300
+
+    agregue rutas a las paginas html
+
+[33mcommit df143b840a2155eb6f6bc0733aa1e3724afb245b[m
+Author: Teylusia <ataylor@udesa.edu.ar>
+Date:   Fri Feb 4 15:46:02 2022 -0300
+
+    Cambios de diseño al header y al footer + renombre de archivos.
+
+[33mcommit ae3a40858ec94761bda1c0c1e0300cad2aef0c45[m
+Merge: f62c0c8 d3db8d8
+Author: leoneld80 <leoneld80@gmail.com>
+Date:   Fri Feb 4 01:44:57 2022 -0300
+
+    Merge branch 'leonel'
+    Agregue el slide principal
+
+[33mcommit d3db8d8a632b6372f4326439ea3b6aa583a27ee0[m
+Author: leoneld80 <leoneld80@gmail.com>
+Date:   Fri Feb 4 01:40:34 2022 -0300
+
+    arreglo responsive, esconde dots menos 900px
+
+[33mcommit f62c0c8117efafd04c76aab799ebe7eeee02c675[m
+Merge: 673f054 628fea8
+Author: leoneld80 <69119992+leoneld80@users.noreply.github.com>
+Date:   Fri Feb 4 01:25:27 2022 -0300
+
+    Merge pull request #1 from Teylusia/leonel
+    
+    slide de imagen principal sin js
+
+[33mcommit 628fea80e9869ae742bd7cfc6fa23e7262e456ee[m
+Author: leoneld80 <leoneld80@gmail.com>
+Date:   Fri Feb 4 01:21:52 2022 -0300
+
+    slide de imagen principal sin js
+
+[33mcommit 673f05427d9425fbf23fc9d8e91f2e5bea12265e[m
+Author: Teylusia <ataylor@udesa.edu.ar>
+Date:   Thu Feb 3 22:51:07 2022 -0300
+
+    agragado el gitignore
+
+[33mcommit 97410f0d335b19d3d1fbe849d61c3b9c1ed6efe0[m
+Author: Agustin Taylor <80978307+Teylusia@users.noreply.github.com>
+Date:   Thu Feb 3 22:43:08 2022 -0300
+
+    Delete node_modules directory
+
+[33mcommit d6a73273190229a3752dd749d552d88ee6dc1a75[m
+Author: Teylusia <ataylor@udesa.edu.ar>
+Date:   Thu Feb 3 22:23:44 2022 -0300
+
+    renombre algunos archivos
+
+[33mcommit 84e4ff15ae2ef119d9ded809401a80f7dfa618d8[m
+Merge: e7b314f f55c7f6
+Author: Teylusia <ataylor@udesa.edu.ar>
+Date:   Thu Feb 3 22:17:07 2022 -0300
+
+    Merge branch 'main' of https://github.com/Teylusia/grupo_8_greenDevs
+
+[33mcommit f55c7f674a74d1852607fd5426e9ff7cc65d4396[m
+Author: Agustin Taylor <80978307+Teylusia@users.noreply.github.com>
+Date:   Thu Feb 3 21:59:47 2022 -0300
+
+    Update README.md
+
+[33mcommit e7b314f94d5152cdc8fadc70d3b4ba043360133f[m
+Author: Teylusia <ataylor@udesa.edu.ar>
+Date:   Thu Feb 3 21:54:31 2022 -0300
+
+    archivos HTML restantes agregados + Header & Footer
+
+[33mcommit 2642e099296b096d07ca0b02a944def0c9747264[m
+Author: Teylusia <ataylor@udesa.edu.ar>
+Date:   Thu Feb 3 14:14:50 2022 -0300
+
+    Header y Footer preminal
+
+[33mcommit 63d16c78fddb12492d2b8c590a81fcee2f7ac1e0[m
+Merge: 8c90198 5bddb5d
+Author: Teylusia <ataylor@udesa.edu.ar>
+Date:   Wed Feb 2 10:12:58 2022 -0300
+
+    Merge branch 'main' of https://github.com/Teylusia/grupo_8_greenDevs
+
+[33mcommit 8c90198f41887b6c6f900f12c0bc89b4dd6a7e1f[m
+Author: Teylusia <ataylor@udesa.edu.ar>
+Date:   Wed Feb 2 10:12:54 2022 -0300
+
+    estructura basica de carpetas, app.js, node modules, express y nodemon.
+
+[33mcommit 5bddb5d5a7a63a9e5e75bbfe2809e5ed02f04925[m
+Author: Agustin Taylor <80978307+Teylusia@users.noreply.github.com>
+Date:   Sun Jan 30 20:23:18 2022 -0300
+
+    Update README.md
+
+[33mcommit ed359eb3ccbf8f0dc1a92d04ec1f40fd0852f621[m
+Author: Agustin Taylor <80978307+Teylusia@users.noreply.github.com>
+Date:   Thu Jan 20 21:10:58 2022 -0300
+
+    Update README.md
+
+[33mcommit 215d10dd60448ed626c3981b77f86d8eab47756d[m
+Author: Agustin Taylor <80978307+Teylusia@users.noreply.github.com>
+Date:   Thu Jan 20 20:49:02 2022 -0300
+
+    Update README.md
+
+[33mcommit f4be6fa0eb239ff1f377888d5ac29b3e37d9548c[m
+Author: Agustin Taylor <80978307+Teylusia@users.noreply.github.com>
+Date:   Thu Jan 20 20:44:29 2022 -0300
+
+    Update README.md
+
+[33mcommit 0b3228f2b64ba19069c6bb515f7a7d16e0bfce72[m
+Author: Agustin Taylor <80978307+Teylusia@users.noreply.github.com>
+Date:   Tue Jan 18 20:44:05 2022 -0300
+
+    Initial commit
