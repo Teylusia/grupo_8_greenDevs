@@ -3,10 +3,13 @@
   padding: 0;
   box-sizing: border-box;
 }
+<<<<<<< HEAD
 body {
   background-color: #0A043C;
 }
 
+=======
+>>>>>>> d22111dd1931616f109f5d1a4d0dfd8a79986447
 /*HEADER*/
 
 header {
@@ -122,10 +125,7 @@ footer {
   display: flex;
 }
 
-/* Hide the images by default */
-.mySlides {
-  display: block;
-}
+
 
 /* Next & previous buttons */
 .prev,
@@ -205,15 +205,11 @@ footer {
 .titulo-categorias {
   display: flex;
   margin: 0 5% 0 5%;
-
   padding: 5px;
 }
 .titulo-categorias h4 {
   width: 20%;
 }
-.titulo-categorias p {
-}
-
 /* Carousell products small*/
 .ofertas-populares {
   display: flex;
@@ -421,261 +417,178 @@ i.fab.fa-apple {
 */
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* Carrito de compras */
+
+
+main.product-cart{
+  color: white;
+  width: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
+  font-size: 12px;
+  min-height: 100vh;
+}
+
+.tu-carrito{
+  padding: 18px 0;
+}
+
+.lista-de-productos{
+  margin-bottom: 20px;
+}
+
+.producto-unidad {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  background-color: #3D2C8D;
+  min-height: 100px;
+  border-bottom: solid 1px;
+  padding: 10px 10px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+}
+
+.bloque-medio{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.descripcion-precio{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: flex-end;
+  align-content: stretch;
+  width: 50px;
+}
+
+.contador{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 30%;
+}
+
+.boton-contador{
+  background-color: #3f51b5;
+  border: none;
+  color: white;
+  padding: 1px 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.contador-numero{
+  background-color: white;
+    font-size: 18px;
+    color: black;
+    padding: 0 5px;
+}
+
+.trash {
+  width: 20px;
+  color: #FFFF;
+
+}
+
+.img-producto{
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+}
+
+.imagen-de-producto{
+  max-width: 120px;
+  max-height: 100px;
+  margin-right: 20px;
+}
+
+.checkout{
+  padding: 10px 10px;;
+  background-color: #3D2C8D;
+  border-bottom: solid 1px;
+  border-radius: 5px;
+}
+
+
+.titulo-resumen{
+  padding-bottom: 20px;
+  font-size: 18px;
+}
+
+.total-resumen{
+  margin-bottom: 20px;
+  padding-top: 15px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: solid 1px;
+}
+
+.subtotal-resumen{
+  margin-bottom: 20px;
+  padding-top: 15px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: solid 1px;
+}
+
+.boton-resumen{
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  padding-top: 15px;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  align-items: stretch;
+}
+
+.boton-compra{
+  background-color: white;
+  margin-bottom: 15px;
+  border: none;
+  cursor: pointer;
+  border-radius: 2px;
+}
+
+.boton-sigue{
+  color:white;
+  margin-bottom: 15px;
+  background-color: #3D2C8D;
+  border: none;
+  cursor: pointer;
+}
+
+@media (min-width: 520px) {
+
+  .bloque{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  .bloque-de-productos{
+    flex-grow: 0.60;
+  }
+
+  .checkout{
+    flex-grow: 0.25;
+  }
+  
+}
+
+@media (min-width:769px){
+
+  .bloque-de-productos{
+    flex-grow: 0.65;
+  }
+
+  .checkout{
+    flex-grow: 0.30;
+  } 
+}
 
 /*productDetail*/
 
@@ -747,6 +660,7 @@ i.fab.fa-apple {
   background-color: #3D2C8D;
   width: 95vw;
 }
+
 .detailed-info h3{
   background-color: #3D2C8D;
 }
