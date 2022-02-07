@@ -118,10 +118,7 @@ footer {
   display: flex;
 }
 
-/* Hide the images by default */
-.mySlides {
-  display: block;
-}
+
 
 /* Next & previous buttons */
 .prev,
@@ -201,7 +198,6 @@ footer {
 .titulo-categorias {
   display: flex;
   margin: 0 5% 0 5%;
-
   padding: 5px;
 }
 .titulo-categorias h4 {
