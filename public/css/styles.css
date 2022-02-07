@@ -3,13 +3,6 @@
   padding: 0;
   box-sizing: border-box;
 }
-<<<<<<< HEAD
-body {
-  background-color: #0A043C;
-}
-
-=======
->>>>>>> d22111dd1931616f109f5d1a4d0dfd8a79986447
 /*HEADER*/
 
 header {
@@ -215,6 +208,7 @@ footer {
   display: flex;
   background-color: white;
   margin: 0 5% 0 5%;
+  flex-wrap: wrap;
 }
 
 .ofertas-populares img {
@@ -362,9 +356,12 @@ i.fab.fa-apple {
 
 /* Media queries */
 
-@media (max-width: 900px) {
+@media (min-width: 900px) {
   .dot {
     display: none;
+  }
+  .ofertas-populares{
+    flex-wrap: nowrap;
   }
   .ofertas-populares article {
     width: 100%;
