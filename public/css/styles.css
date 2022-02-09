@@ -3,8 +3,11 @@
   padding: 0;
   box-sizing: border-box;
 }
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> e305976ac251fc6093a4859b6aa980ec31dcf196
 /*HEADER*/
 
 header {
@@ -221,6 +224,7 @@ Slideshow container */
   display: flex;
   background-color: white;
   margin: 0 5% 0 5%;
+  flex-wrap: wrap;
 }
 
 .ofertas-populares img {
@@ -378,9 +382,12 @@ i.fab.fa-apple {
 
 /* Media queries */
 
-@media (max-width: 900px) {
+@media (min-width: 900px) {
   .dot {
     display: none;
+  }
+  .ofertas-populares{
+    flex-wrap: nowrap;
   }
   .ofertas-populares article {
     width: 100%;

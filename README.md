@@ -25,3 +25,17 @@ Tablero de Trabajo:
 
 https://trello.com/b/ncPENo3c/kanban-template.
 
+Logo:
+
+Paleta:
+
+-#001233
+-#0466C8
+-#979DAC
+-#023E7D
+-#5C677D
+-#0353A4
+-#33415C
+-#7D8597
+-#002855
+
