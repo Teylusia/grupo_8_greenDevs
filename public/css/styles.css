@@ -3,11 +3,8 @@
   padding: 0;
   box-sizing: border-box;
 }
-<<<<<<< HEAD
 
 
-=======
->>>>>>> e305976ac251fc6093a4859b6aa980ec31dcf196
 /*HEADER*/
 
 header {
@@ -74,6 +71,7 @@ header {
   height: 4vh;
   border: none;
   border-radius: 50px;
+  padding: 15px;
 }
 
 .buscador button {
@@ -317,19 +315,23 @@ i.fas.fa-user-circle {
   color: #E5E5E5;
   padding: 5px;
   font-size: 2rem;
+  
 }
 
 i.fab.fa-facebook {
   display: block;
+  transition-duration: 450ms;
 }
 
 i.fab.fa-google {
   display: block;
+  transition-duration: 450ms;
 }
 
 i.fab.fa-apple {
   display: block;
   transform: scaleY(1,1);
+  transition-duration: 450ms;
 }
 
 .signup-buttons-container i:hover{
@@ -373,11 +375,23 @@ i.fab.fa-apple {
   font-size: 16px;
   font-weight: 600;
   border-radius: 6px;
+  transition-duration: 450ms;
 }
 
-#submit input:hover {
-  color: #002466;
+input#submit:hover {
+  background-color: #002466;
   cursor: pointer;
+  font-size: 18px;
+}
+
+/* LOGIN */
+
+div.register p {
+  margin: 20px;
+}
+
+div.register a:hover {
+  color: white;
 }
 
 /* Media queries */
@@ -415,20 +429,11 @@ i.fab.fa-apple {
 /*HEADER*/
 
 @media (min-width: 1024px) {
-  .nav-bar {
-    display: flex;
-  }
-  .logo {
-    display: flex;
-    justify-content: flex-start;
-  }
+  
   .buscador {
     width: 33%;
     justify-content: center;
     padding-right: 70px;
-  }
-  .buscador input {
-    width: 40vw;
   }
 }
 
@@ -609,7 +614,19 @@ main.product-cart{
 
   .checkout{
     flex-grow: 0.30;
-  } 
+  }
+
+  .buscador input {
+    width: 40vw;
+  }
+
+  .nav-bar {
+    display: flex;
+  }
+  .logo {
+    display: flex;
+    justify-content: flex-start;
+  }
 }
 
 /*productDetail*/

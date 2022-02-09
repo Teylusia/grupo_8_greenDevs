@@ -4,9 +4,10 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Inicia Sesión</title>
+  <title>Iniciar Sesión</title>
   <link rel="stylesheet" href="/css/styles.css">
   <script src="https://kit.fontawesome.com/dee2885f19.js" crossorigin="anonymous"></script>
+
 </head>
 <body>
   <header>
@@ -18,22 +19,43 @@
     </div>
     <nav class="nav-bar">
       <ul class="bar">
-        <li class="browsing"><a href="#">Login</a></li>
+        <li class="browsing"><a href="/login">Login</a></li>
         <li class="browsing"><a href="#">Carrito</a></li>
         <li class="browsing"><a href="#">Usuario</a></li>
       </ul>
     </nav>
   </header>
   <main>
-    
+    <div class="general-container">
+    <div class="register">
+      <i class="fas fa-user-circle"></i>
+      <h2 class="texto-de-registro">Inicia sesión y empieza a jugar!</h2>
+        <div class="signup-buttons-container">
+          <i class="fab fa-google fa-fw"></i>
+          <i class="fab fa-facebook fa-fw"></i>
+          <i class="fab fa-apple fa-fw"></i>
+        </div>
+      <h4 class="registro-manual">O puedes iniciar sesión con tus datos:</h4>
+        <div class="register-form">
+          <form action="/registroCompleto" method="POST">
+            <label for="username">Ingresa tu nombre de usuario</label><br>
+            <input type="text" id="username" name="username" required><br>
+            <label for="password">Ingresa tu contraseña</label><br>
+            <input type="password" id="password" name="password" required><br>
+            <input type="submit" id="submit" value="Ingresar!">
+          </form>
+        </div>
+        <p>¿Todavía no te has registrado? <a href="/register">Registrate aquí!</a></p>
+    </div>
+    </div>
   </main>
-  <footer>
-    <h6 class="contacts">Instagram</h6>
-    <h6 class="contacts">Facebook</h6>
-    <h6 class="contacts">Whatsapp</h6>
-    <h6 class="contacts">Twitter</h6>
-    <h6 class="contacts">Gmail</h6>
-    <h6 class="contacts">About Us.</h6>
-  </footer>
-</body>
+    <footer>
+      <h6 class="contacts">Instagram</h6>
+      <h6 class="contacts">Facebook</h6>
+      <h6 class="contacts">Whatsapp</h6>
+      <h6 class="contacts">Twitter</h6>
+      <h6 class="contacts">Gmail</h6>
+      <h6 class="contacts">About Us.</h6>
+    </footer>
+  </body>
 </html>
