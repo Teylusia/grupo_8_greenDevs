@@ -315,7 +315,6 @@ i.fas.fa-user-circle {
   color: #E5E5E5;
   padding: 5px;
   font-size: 2rem;
-  
 }
 
 i.fab.fa-facebook {
@@ -390,8 +389,13 @@ input#submit:hover {
 
 /* LOGIN */
 
-div.register p {
+div.register p, a {
   margin: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+div.register a:active, a:visited {
+  color: #9D4EDD;
 }
 
 div.register a:hover {
