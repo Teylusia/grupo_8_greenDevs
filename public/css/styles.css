@@ -3,6 +3,8 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+
 /*HEADER*/
 
 header {
@@ -12,37 +14,42 @@ header {
   border-bottom: 4px solid #916bbf;
   border-radius: 2px;
   background-color: #3d2c8d;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
+
 .logo {
   width: 25%;
   display: none;
   margin-left: 10px;
   justify-content: center;
 }
+
 .logo img {
   width: 50%;
   background-color: #916bbf;
   padding: 5px;
   border-radius: 5px;
 }
+
 .nav-bar {
   width: 41%;
   display: none;
   justify-content: flex-end;
 }
+
 .bar {
   width: 100%;
   display: flex;
   list-style-type: none;
   justify-content: center;
 }
+
 .bar li {
   width: 100%;
   display: flex;
   justify-content: space-around;
 }
+
 .bar li a {
   text-decoration: none;
   color: white;
@@ -54,15 +61,19 @@ header {
   display: flex;
   justify-content: center;
 }
+
 .buscador form {
   display: flex;
 }
+
 .buscador input {
   width: 90vw;
   height: 4vh;
   border: none;
   border-radius: 50px;
+  padding: 15px;
 }
+
 .buscador button {
   background-color: #916bbf; /* Green */
   border: none;
@@ -74,18 +85,20 @@ header {
   font-size: 16px;
   border-radius: 50px;
 }
+
 .contacts a {
   font-weight: bold;
   text-decoration: none;
   color: #916bbf;
 }
+
 .contacts a i {
   font-size: large;
 }
+
 ::placeholder {
   color: #3d2c8d;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 /*FOOTER*/
@@ -98,17 +111,19 @@ footer {
   border-radius: 2px;
   padding-top: 5px;
 }
+
 .contacts {
   font-weight: 100;
   margin-top: 10px;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-size: 12px;
   color: whitesmoke;
   text-align: center;
 }
 
-/*HOME*/
+/*HOME
+-------------------------------------------------
+Slideshow container */
 
 /* Slideshow container */
 .slideshow-container {
@@ -150,6 +165,7 @@ footer {
   
 }
 
+
 .slide-right , .slide-left {
   display: flex;
   color: white;
@@ -168,6 +184,7 @@ footer {
   flex-direction: column-reverse;
   
 }
+
 
 /* Next & previous buttons */
 .prev,
@@ -240,7 +257,9 @@ footer {
 }
 
 
+
 /* BODY */
+
 
 /* Carousell products small*/
 .ofertas-populares {
@@ -260,6 +279,7 @@ footer {
   width: 100%;
   flex-wrap: wrap;
 }
+
 .precio-producto {
   font-weight: bold;
   font-size: larger;
@@ -276,6 +296,7 @@ footer {
   color: white;
   padding: 2px;
 }
+
 .caja-precio {
   display: flex;
   font-size: small;
@@ -292,6 +313,7 @@ footer {
   font-size: smaller;
   text-align: left;
 }
+
 .caja-rebaja sup {
   font-size: xx-small;
 }
@@ -300,6 +322,7 @@ footer {
 
 .general-container {
   text-align: center;
+  background-color: #001233;
 }
 
 .register {
@@ -307,24 +330,24 @@ footer {
   flex-direction: column;
   width: 80vw;
   margin: 5% 10% 5% 10%;
-  border: solid 1px #1C0C5B;
+  border: solid 1px #E5E5E5;
   border-radius: 15px;
   max-width: 500px;
+  color: #E5E5E5;
 }
 
 i.fas.fa-user-circle {
   font-size: 50px;
-  color: #1C0C5B;
+  color: #E5E5E5;
   text-align: center;
-  padding: 10px;
+  padding: 15px;
 }
 
 .texto-de-registro {
   text-align: center;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-size: 20px;
-  padding: 5px;
+  padding: 10px;
 }
 
 .signup-buttons-container {
@@ -333,31 +356,35 @@ i.fas.fa-user-circle {
   flex-direction: row;
   justify-content: space-between;
   margin: 5px 25% 5px 25%;
-  color: #1C0C5B;
+  color: #E5E5E5;
   padding: 5px;
-}
-
-i.fab.fa-google {
-  display: block;
+  font-size: 2rem;
 }
 
 i.fab.fa-facebook {
   display: block;
+  transition-duration: 450ms;
+}
+
+i.fab.fa-google {
+  display: block;
+  transition-duration: 450ms;
 }
 
 i.fab.fa-apple {
   display: block;
+  transform: scaleY(1,1);
+  transition-duration: 450ms;
 }
 
 .signup-buttons-container i:hover{
-  color: #916BBF;
+  color: #7B2CBF;
   cursor: pointer;
 }
 
 .registro-manual {
   text-align: center;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   padding: 10px;
 }
 
@@ -379,18 +406,44 @@ i.fab.fa-apple {
   margin: 6px 0px 6px 0px;
 }
 
+::placeholder {
+  color: black;
+}
+
 #submit {
   display: flex;
   width: 50%;
   padding: 10px;
   margin: 5% 25%;
   justify-content: center;
-  background-color: #3D2C8D;
+  background-color: #9D4EDD;
   color: white;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-size: 16px;
   font-weight: 600;
   border-radius: 6px;
+  transition-duration: 450ms;
+}
+
+input#submit:hover {
+  background-color: #002466;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+/* LOGIN */
+
+div.register p, a {
+  margin: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+div.register a:active, a:visited {
+  color: #9D4EDD;
+}
+
+div.register a:hover {
+  color: white;
 }
 
 /* Media queries */
@@ -428,20 +481,11 @@ i.fab.fa-apple {
 /*HEADER*/
 
 @media (min-width: 1024px) {
-  .nav-bar {
-    display: flex;
-  }
-  .logo {
-    display: flex;
-    justify-content: flex-start;
-  }
+  
   .buscador {
     width: 33%;
     justify-content: center;
     padding-right: 70px;
-  }
-  .buscador input {
-    width: 40vw;
   }
 }
 
@@ -612,7 +656,6 @@ main.product-cart{
   .checkout{
     flex-grow: 0.25;
   }
-  
 }
 
 @media (min-width:769px){
@@ -623,7 +666,19 @@ main.product-cart{
 
   .checkout{
     flex-grow: 0.30;
-  } 
+  }
+
+  .buscador input {
+    width: 40vw;
+  }
+
+  .nav-bar {
+    display: flex;
+  }
+  .logo {
+    display: flex;
+    justify-content: flex-start;
+  }
 }
 
 /*productDetail*/
