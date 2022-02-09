@@ -363,6 +363,10 @@ i.fab.fa-apple {
   margin: 6px 0px 6px 0px;
 }
 
+::placeholder {
+  color: black;
+}
+
 #submit {
   display: flex;
   width: 50%;
