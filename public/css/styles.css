@@ -558,6 +558,8 @@ main.product-cart{
   background-color: #001233;
   border: solid 1px #E5E5E5;
   border-radius: 5px;
+  margin: 50px 0;
+
 }
 
 
@@ -641,6 +643,7 @@ main.product-cart{
 
   .checkout{
     flex-grow: 0.25;
+    margin: 0;
   }
 }
 
