@@ -29,7 +29,7 @@ Logo:
 
 Paleta:
 
--#001233
+-#001233 Fondo principal
 -#0466C8
 -#979DAC
 -#023E7D
