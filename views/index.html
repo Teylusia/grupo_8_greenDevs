@@ -1,138 +1,372 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Homepage</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/css/styles.css" />
-    <script
-      src="https://kit.fontawesome.com/dee2885f19.js"
-      crossorigin="anonymous"
-    ></script>
-  </head>
-  <body>
-    <header>
-      <div class="logo">
-        <a href="/"><img src="/img/logo-mercado-liebre.svg" alt="logo del sitio"></a>
-      </div>
-      <div class="buscador">
-        <form action="/result" method="GET">
-          <input type="text" placeholder="Buscar..." />
-          <button type="submit"><i class="fas fa-search"></i></button>
-        </form>
-      </div>
-      <nav class="nav-bar">
-        <ul class="bar">
-          <li class="browsing"><a href="/login">Login</a></li>
-          <li class="browsing"><a href="/productcart">Carrito</a></li>
-          <li class="browsing"><a href="#">Usuario</a></li>
-        </ul>
-      </nav>
-    </header>
-    <main>
-      <!-- Slideshow container -->
-      <div class="slideshow-container">
-        <!-- Full-width images with number and caption text -->
 
-        <div class="mySlides fade">
-          <div class="numbertext">2 / 3</div>
-          <img src="/img/img1.jpeg" style="width: 100%" />
-          <div class="text">Caption Two</div>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Homepage</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/css/styles.css" />
+  <script src="https://kit.fontawesome.com/dee2885f19.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <header>
+    <div class="logo">
+      <img src="/img/logo-mercado-liebre.svg" alt="logo del sitio" />
+    </div>
+    <div class="buscador">
+      <form action="/result" method="GET">
+        <input type="text" placeholder="Buscar..." />
+        <button type="submit"><i class="fas fa-search"></i></button>
+      </form>
+    </div>
+    <nav class="nav-bar">
+      <ul class="bar">
+        <li class="browsing"><a href="#">Login</a></li>
+        <li class="browsing"><a href="#">Carrito</a></li>
+        <li class="browsing"><a href="#">Usuario</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <!-- Slideshow container -->
+    <div class="slideshow-container">
+      <!-- Full-width images -->
+      <div class="slide-img">
+        <img src="/img/img2.jpg" />
+      </div>
+      <!-- Slide Items -->
+      <div class="slides">
+
+      </div>
+      <div class="slide-items">
+        <div class="slide-left">
+          <!-- <i class="fab fa-windows"></i> -->
+          <div>ELDEN RING </div>
         </div>
+        <div class="slide-right">
 
-        <!-- Next and previous buttons -->
-        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-        <a class="next" onclick="plusSlides(1)">&#10095;</a>
-      </div>
-      <br />
-
-      <!-- The dots/circles -->
-      <div style="text-align: center">
-        <span class="dot" onclick="currentSlide(1)"></span>
-        <span class="dot" onclick="currentSlide(2)"></span>
-        <span class="dot" onclick="currentSlide(3)"></span>
+          <span>$ 500</span>
+          <button><i class="fas fa-cart-plus"></i> Comprar</button>
+          <span class="porcentaje-descuento">-20%</span>
+        </div>
       </div>
 
-      <div class="titulo-categorias">
-        <h3>Ofertas populares</h3>
-      </div>
-      <section class="ofertas-populares">
-        <article>
-          <img src="/img/img1.jpeg" alt="warhammer" />
-          <p class="titulo-producto">Warhammer III</p>
-          <div class="caja-precio">
-            <p class="precio-producto">$800</p>
-            <sup class="moneda">ARS</sup>
-          </div>
-          <div class="caja-rebaja">
-            <p class="precio-rebaja">$1000</p>
-            <sup class="moneda">ARS</sup>
-            <span class="porcentaje-descuento">-20%</span>
-          </div>
-        </article>
+      <!-- Next and previous buttons -->
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
 
-        <article>
-          <img src="/img/img1.jpeg" alt="warhammer" />
-          <p class="titulo-producto">Warhammer III</p>
-          <div class="caja-precio">
-            <p class="precio-producto">$800</p>
-            <sup class="moneda">ARS</sup>
-          </div>
-          <div class="caja-rebaja">
-            <p class="precio-rebaja">$1000</p>
-            <sup class="moneda">ARS</sup>
-            <span class="porcentaje-descuento">-20%</span>
-          </div>
-        </article>
+    </div>
+    <br />
 
-        <article>
-          <img src="/img/img1.jpeg" alt="warhammer" />
-          <p class="titulo-producto">Warhammer III</p>
-          <div class="caja-precio">
-            <p class="precio-producto">$800</p>
-            <sup class="moneda">ARS</sup>
-          </div>
-          <div class="caja-rebaja">
-            <p class="precio-rebaja">$1000</p>
-            <sup class="moneda">ARS</sup>
-            <span class="porcentaje-descuento">-20%</span>
-          </div>
-        </article>
+    <!-- The dots/circles -->
+    <div style="text-align: center">
+      <span class="dot" onclick="currentSlide(1)"></span>
+      <span class="dot" onclick="currentSlide(2)"></span>
+      <span class="dot" onclick="currentSlide(3)"></span>
+    </div>
 
-        <article>
-          <img src="/img/img1.jpeg" alt="warhammer" />
-          <p class="titulo-producto">Warhammer III</p>
-          <div class="caja-precio">
-            <p class="precio-producto">$800</p>
-            <sup class="moneda">ARS</sup>
-          </div>
-          <div class="caja-rebaja">
-            <p class="precio-rebaja">$1000</p>
-            <sup class="moneda">ARS</sup>
-            <span class="porcentaje-descuento">-20%</span>
-          </div>
-        </article>
+    <div class="titulo-categorias">
+      <h3>Ofertas populares</h3>
+      <p>ver todos..</p>
+    </div>
+    <section class="ofertas-populares">
+      <article>
+        <img src="/img/jedi-card.jpeg" alt="warhammer" />
+        <p class="titulo-producto">Warhammer III</p>
+        <div class="caja-precio">
+          <p class="precio-producto">$800</p>
+          <sup class="moneda">ARS</sup>
+        </div>
+        <div class="caja-rebaja">
+          <p class="precio-rebaja">$1000</p>
+          <sup class="moneda">ARS</sup>
+          <span class="porcentaje-descuento">-20%</span>
+        </div>
+      </article>
 
-      <section class="los-mas-populares"></section>
-    </main>
-    <footer>
-      <h6 class="contacts">
-        <a href="" target="_blank"><i class="fab fa-instagram-square"></i></a>
-      </h6>
-      <h6 class="contacts">
-        <a href="" target="_blank"><i class="fab fa-facebook-square"></i></a>
-      </h6>
-      <h6 class="contacts">
-        <a href="" target="_blank"><i class="fab fa-whatsapp-square"></i></a>
-      </h6>
-      <h6 class="contacts">
-        <a href="" target="_blank"><i class="fab fa-twitter-square"></i></a>
-      </h6>
-      <h6 class="contacts">
-        <a href="" target="_blank"><i class="fas fa-envelope-square"></i></a>
-      </h6>
-      <h6 class="contacts"><a href="http://" target="_blank">About Us.</a></h6>
-    </footer>
-  </body>
+      <article>
+        <img src="/img/jedi-card.jpeg" alt="warhammer" />
+        <p class="titulo-producto">Warhammer III</p>
+        <div class="caja-precio">
+          <p class="precio-producto">$800</p>
+          <sup class="moneda">ARS</sup>
+        </div>
+        <div class="caja-rebaja">
+          <p class="precio-rebaja">$1000</p>
+          <sup class="moneda">ARS</sup>
+          <span class="porcentaje-descuento">-20%</span>
+        </div>
+      </article>
+
+      <article>
+        <img src="/img/jedi-card.jpeg" alt="warhammer" />
+        <p class="titulo-producto">Warhammer III</p>
+        <div class="caja-precio">
+          <p class="precio-producto">$800</p>
+          <sup class="moneda">ARS</sup>
+        </div>
+        <div class="caja-rebaja">
+          <p class="precio-rebaja">$1000</p>
+          <sup class="moneda">ARS</sup>
+          <span class="porcentaje-descuento">-20%</span>
+        </div>
+      </article>
+
+      <article>
+        <img src="/img/jedi-card.jpeg" alt="warhammer" />
+        <p class="titulo-producto">Warhammer III</p>
+        <div class="caja-precio">
+          <p class="precio-producto">$800</p>
+          <sup class="moneda">ARS</sup>
+        </div>
+        <div class="caja-rebaja">
+          <p class="precio-rebaja">$1000</p>
+          <sup class="moneda">ARS</sup>
+          <span class="porcentaje-descuento">-20%</span>
+        </div>
+      </article>
+      <a class="prev-cat" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next-cat" onclick="plusSlides(1)">&#10095;</a>
+    </section>
+    
+    <section class="los-mas-populares">
+
+    <div class="titulo-categorias">
+      <h3>Ofertas populares</h3>
+    </div>
+    <section class="ofertas-populares">
+      <article>
+        <img src="/img/jedi-card.jpeg" alt="warhammer" />
+        <p class="titulo-producto">Warhammer III</p>
+        <div class="caja-precio">
+          <p class="precio-producto">$800</p>
+          <sup class="moneda">ARS</sup>
+        </div>
+        <div class="caja-rebaja">
+          <p class="precio-rebaja">$1000</p>
+          <sup class="moneda">ARS</sup>
+          <span class="porcentaje-descuento">-20%</span>
+        </div>
+      </article>
+
+      <article>
+        <img src="/img/jedi-card.jpeg" alt="warhammer" />
+        <p class="titulo-producto">Warhammer III</p>
+        <div class="caja-precio">
+          <p class="precio-producto">$800</p>
+          <sup class="moneda">ARS</sup>
+        </div>
+        <div class="caja-rebaja">
+          <p class="precio-rebaja">$1000</p>
+          <sup class="moneda">ARS</sup>
+          <span class="porcentaje-descuento">-20%</span>
+        </div>
+      </article>
+
+      <article>
+        <img src="/img/jedi-card.jpeg" alt="warhammer" />
+        <p class="titulo-producto">Warhammer III</p>
+        <div class="caja-precio">
+          <p class="precio-producto">$800</p>
+          <sup class="moneda">ARS</sup>
+        </div>
+        <div class="caja-rebaja">
+          <p class="precio-rebaja">$1000</p>
+          <sup class="moneda">ARS</sup>
+          <span class="porcentaje-descuento">-20%</span>
+        </div>
+      </article>
+
+
+      <article>
+        <img src="/img/jedi-card.jpeg" alt="warhammer" />
+        <p class="titulo-producto">Warhammer III</p>
+        <div class="caja-precio">
+          <p class="precio-producto">$800</p>
+          <sup class="moneda">ARS</sup>
+        </div>
+        <div class="caja-rebaja">
+          <p class="precio-rebaja">$1000</p>
+          <sup class="moneda">ARS</sup>
+          <span class="porcentaje-descuento">-20%</span>
+        </div>
+      </article>
+      <a class="prev-cat" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next-cat" onclick="plusSlides(1)">&#10095;</a>
+
+
+      </section>
+
+      <section class="featured-product">
+        <h2>Producto Destacado</h2>
+        <div class="featured-box">
+          <div class="featured-img">
+            <img src="/img/god-of-war-prev.jpg" alt="">
+          </div>
+          <div class="featured-text">
+            <h4>GOD OF WAR</h4>
+            <p>Habiendo consumado su venganza contra los dioses el Olimpo años atrás, Kratos ahora vive como un hombre en el reino de los dioses y los monstruos nórdicos. En este hostil e inhóspito mundo, debe pelear por sobrevivir... y enseñarle a su hijo a hacer lo mismo.</p>
+          </div>
+        </div>
+      </section>
+
+        <div class="titulo-categorias">
+          <h3>Ofertas populares</h3>
+        </div>
+        <section class="ofertas-populares">
+          <article>
+            <img src="/img/jedi-card.jpeg" alt="warhammer" />
+            <p class="titulo-producto">Warhammer III</p>
+            <div class="caja-precio">
+              <p class="precio-producto">$800</p>
+              <sup class="moneda">ARS</sup>
+            </div>
+            <div class="caja-rebaja">
+              <p class="precio-rebaja">$1000</p>
+              <sup class="moneda">ARS</sup>
+              <span class="porcentaje-descuento">-20%</span>
+            </div>
+          </article>
+    
+          <article>
+            <img src="/img/jedi-card.jpeg" alt="warhammer" />
+            <p class="titulo-producto">Warhammer III</p>
+            <div class="caja-precio">
+              <p class="precio-producto">$800</p>
+              <sup class="moneda">ARS</sup>
+            </div>
+            <div class="caja-rebaja">
+              <p class="precio-rebaja">$1000</p>
+              <sup class="moneda">ARS</sup>
+              <span class="porcentaje-descuento">-20%</span>
+            </div>
+          </article>
+    
+          <article>
+            <img src="/img/jedi-card.jpeg" alt="warhammer" />
+            <p class="titulo-producto">Warhammer III</p>
+            <div class="caja-precio">
+              <p class="precio-producto">$800</p>
+              <sup class="moneda">ARS</sup>
+            </div>
+            <div class="caja-rebaja">
+              <p class="precio-rebaja">$1000</p>
+              <sup class="moneda">ARS</sup>
+              <span class="porcentaje-descuento">-20%</span>
+            </div>
+          </article>
+    
+    
+          <article>
+            <img src="/img/jedi-card.jpeg" alt="warhammer" />
+            <p class="titulo-producto">Warhammer III</p>
+            <div class="caja-precio">
+              <p class="precio-producto">$800</p>
+              <sup class="moneda">ARS</sup>
+            </div>
+            <div class="caja-rebaja">
+              <p class="precio-rebaja">$1000</p>
+              <sup class="moneda">ARS</sup>
+              <span class="porcentaje-descuento">-20%</span>
+            </div>
+          </article>
+          <a class="prev-cat" onclick="plusSlides(-1)">&#10094;</a>
+          <a class="next-cat" onclick="plusSlides(1)">&#10095;</a>
+    
+    
+          </section>
+
+          <div class="titulo-categorias">
+            <h3>Ofertas populares</h3>
+          </div>
+          <section class="ofertas-populares">
+            <article>
+              <img src="/img/jedi-card.jpeg" alt="warhammer" />
+              <p class="titulo-producto">Warhammer III</p>
+              <div class="caja-precio">
+                <p class="precio-producto">$800</p>
+                <sup class="moneda">ARS</sup>
+              </div>
+              <div class="caja-rebaja">
+                <p class="precio-rebaja">$1000</p>
+                <sup class="moneda">ARS</sup>
+                <span class="porcentaje-descuento">-20%</span>
+              </div>
+            </article>
+      
+            <article>
+              <img src="/img/jedi-card.jpeg" alt="warhammer" />
+              <p class="titulo-producto">Warhammer III</p>
+              <div class="caja-precio">
+                <p class="precio-producto">$800</p>
+                <sup class="moneda">ARS</sup>
+              </div>
+              <div class="caja-rebaja">
+                <p class="precio-rebaja">$1000</p>
+                <sup class="moneda">ARS</sup>
+                <span class="porcentaje-descuento">-20%</span>
+              </div>
+            </article>
+      
+            <article>
+              <img src="/img/jedi-card.jpeg" alt="warhammer" />
+              <p class="titulo-producto">Warhammer III</p>
+              <div class="caja-precio">
+                <p class="precio-producto">$800</p>
+                <sup class="moneda">ARS</sup>
+              </div>
+              <div class="caja-rebaja">
+                <p class="precio-rebaja">$1000</p>
+                <sup class="moneda">ARS</sup>
+                <span class="porcentaje-descuento">-20%</span>
+              </div>
+            </article>
+      
+      
+            <article>
+              <img src="/img/jedi-card.jpeg" alt="warhammer" />
+              <p class="titulo-producto">Warhammer III</p>
+              <div class="caja-precio">
+                <p class="precio-producto">$800</p>
+                <sup class="moneda">ARS</sup>
+              </div>
+              <div class="caja-rebaja">
+                <p class="precio-rebaja">$1000</p>
+                <sup class="moneda">ARS</sup>
+                <span class="porcentaje-descuento">-20%</span>
+              </div>
+            </article>
+            <a class="prev-cat" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next-cat" onclick="plusSlides(1)">&#10095;</a>
+      
+      
+            </section>
+
+      </section>
+
+
+  </main>
+  <footer>
+    <h6 class="contacts">
+      <a href="" target="_blank"><i class="fab fa-instagram-square"></i></a>
+    </h6>
+    <h6 class="contacts">
+      <a href="" target="_blank"><i class="fab fa-facebook-square"></i></a>
+    </h6>
+    <h6 class="contacts">
+      <a href="" target="_blank"><i class="fab fa-whatsapp-square"></i></a>
+    </h6>
+    <h6 class="contacts">
+      <a href="" target="_blank"><i class="fab fa-twitter-square"></i></a>
+    </h6>
+    <h6 class="contacts">
+      <a href="" target="_blank"><i class="fas fa-envelope-square"></i></a>
+    </h6>
+    <h6 class="contacts"><a href="http://" target="_blank">About Us.</a></h6>
+  </footer>
+</body>
+
 </html>
