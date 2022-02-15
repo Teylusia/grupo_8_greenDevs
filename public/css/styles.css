@@ -18,37 +18,31 @@ header {
   background-color: #023E7D;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
-
 .logo {
   width: 25%;
   display: none;
   justify-content: center;
 }
-
 .logo img {
   width: 15vw;
 
 }
-
 .nav-bar {
   width: 30%;
   display: none;
   justify-content: flex-end;
 }
-
 .bar {
   width: 100%;
   display: flex;
   list-style-type: none;
   justify-content: center;
 }
-
 .bar li {
   width: 100%;
   display: flex;
   justify-content: space-around;
 }
-
 .bar li a {
   text-decoration: none;
   color: white;
@@ -63,11 +57,11 @@ header {
 .buscador form {
   display: flex;
 }
-
 .buscador input {
   width: 90vw;
   height: 4vh;
   border: none;
+  border-radius: 50px;
   background-color: #023E7D;
   font-size: 24px;
 }
@@ -90,6 +84,20 @@ header {
   border-left: #303030 solid;
   padding-left: 5px;
 }
+.contacts a {
+  font-weight: bold;
+  text-decoration: none;
+  color: #916bbf;
+}
+.contacts a i {
+  font-size: large;
+}
+::placeholder {
+  color: #3d2c8d;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
 .buscador input:hover{
 cursor: default;
 }
@@ -105,11 +113,11 @@ footer {
   border-radius: 2px;
   padding-top: 5px;
 }
-
 .contacts {
   font-weight: 100;
   margin-top: 10px;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-size: 12px;
   color: whitesmoke;
   text-align: center;
@@ -125,16 +133,82 @@ footer {
   color:#717171;
 }
 
-/*HOME
--------------------------------------------------
-Slideshow container */
+/*HOME*/
 
 /* Slideshow container */
 .slideshow-container {
   max-width: 100%;
   position: relative;
-  margin: 0 5% 0 5%;
+  margin: 0 5% 0% 5%;
   display: flex;
+  /* width: 80vh; */
+  
+}
+.slideshow-container .slides {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: absolute;
+  width: 100%;
+  bottom: 8px;
+  text-align: center;
+  padding: 10px 11px;
+  font-size: x-large;
+  color: white;
+  background-color: black;
+  opacity: 0.3;
+  height: 25%;
+
+}
+.slide-items {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  bottom: 8px;
+  text-align: center;
+  padding: 10px 11px;
+  font-size: x-large;
+  color: white;
+
+  
+  
+}
+
+.slide-right {
+  display: flex;
+  color: white;
+  flex-wrap: nowrap;
+  padding: 3px;
+  align-items: center;
+}
+
+.slide-left {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  flex-wrap: nowrap;
+  padding: 3px;
+  align-items: flex-start;
+}
+
+.slide-left i {
+  font-size: small;
+  padding-bottom: 5px;
+  
+}
+
+.slideshow-container button{
+  background-color: greenyellow;
+  padding: 8px ;
+}
+
+.slide-img {
+  display: flex;
+  width: 100%;
+  flex-direction: column-reverse;
+  
 }
 
 /* Next & previous buttons */
@@ -154,11 +228,13 @@ Slideshow container */
   user-select: none;
 }
 
+
 /* Position the "next button" to the right */
 .next {
   right: 0;
   border-radius: 3px 0 0 3px;
 }
+
 
 /* On hover, add a black background color with a little bit see-through */
 .prev:hover,
@@ -166,69 +242,89 @@ Slideshow container */
   background-color: rgba(0, 0, 0, 0.8);
 }
 
-/* Caption text */
-.text {
-  color: #f2f2f2;
-  font-size: 15px;
-  padding: 8px 12px;
-  position: absolute;
-  bottom: 8px;
-  width: 100%;
-  text-align: center;
-}
 
-/* Number text (1/3 etc) */
-.numbertext {
-  color: #f2f2f2;
-  font-size: 12px;
-  padding: 8px 12px;
-  position: absolute;
-  top: 0;
-}
 
 /* The dots/bullets/indicators */
 .dot {
+  display: none;
   cursor: pointer;
   height: 15px;
   width: 15px;
   margin: 0 2px;
   background-color: #bbb;
   border-radius: 50%;
-  display: inline-block;
   transition: background-color 0.6s ease;
 }
 
-.active,
+
 .dot:hover {
   background-color: #717171;
 }
 
-/* Fading animation */
-.fade {
-  -webkit-animation-name: fade;
-  -webkit-animation-duration: 1.5s;
-  animation-name: fade;
-  animation-duration: 1.5s;
-}
+
 
 /* Titulo categorias */
 .titulo-categorias {
   display: flex;
   margin: 0 5% 0 5%;
   padding: 5px;
+  justify-content: space-between;
+  align-items: flex-end;
 }
 .titulo-categorias h4 {
   width: 20%;
 }
+.titulo-categorias p {
+  cursor: pointer;
+}
+
+
+/* BODY */
 
 /* Carousell products small*/
+
+
 .ofertas-populares {
   display: flex;
   background-color: white;
-  margin: 0 5% 0 5%;
+  margin: 0 5% 10% 5%;
   flex-wrap: wrap;
+  justify-content: center;
+
 }
 
+.next-cat {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev-cat {
+  left: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev-cat,
+.next-cat {
+  /* display: none; */
+  cursor: pointer;
+  position: absolute;
+  /* top: 50%; */
+  width: auto;
+  margin-top: 10%;
+  padding: 16px;
+  color: #3D2C8D;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev-cat:hover,
+.next-cat:hover {
+  background-color: #717171;
+}
 .ofertas-populares img {
   width: 100%;
 }
@@ -236,10 +332,10 @@ Slideshow container */
 .ofertas-populares article {
   margin: 2px;
   padding: 2px;
-  width: 100%;
+  width: 60%;
   flex-wrap: wrap;
+  
 }
-
 .precio-producto {
   font-weight: bold;
   font-size: larger;
@@ -256,7 +352,6 @@ Slideshow container */
   color: white;
   padding: 2px;
 }
-
 .caja-precio {
   display: flex;
   font-size: small;
@@ -273,16 +368,34 @@ Slideshow container */
   font-size: smaller;
   text-align: left;
 }
-
 .caja-rebaja sup {
   font-size: xx-small;
 }
+
+
+/* FEATURED PRODUCT */
+
+.featured-box {
+  display: flex;
+  margin: 5%;
+  margin-bottom: 10%;
+  background-color: #916bbf;
+
+} 
+.featured-text {
+  margin: 10px;
+  padding: 5px;
+  color: white;
+}
+
+/* .featured-img {
+  width: 50%;
+} */
 
 /* Register */
 
 .general-container {
   text-align: center;
-  background-color: #001233;
 }
 
 .register {
@@ -290,24 +403,24 @@ Slideshow container */
   flex-direction: column;
   width: 80vw;
   margin: 5% 10% 5% 10%;
-  border: solid 1px #E5E5E5;
+  border: solid 1px #1C0C5B;
   border-radius: 15px;
   max-width: 500px;
-  color: #E5E5E5;
 }
 
 i.fas.fa-user-circle {
   font-size: 50px;
-  color: #E5E5E5;
+  color: #1C0C5B;
   text-align: center;
-  padding: 15px;
+  padding: 10px;
 }
 
 .texto-de-registro {
   text-align: center;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+  Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-size: 20px;
-  padding: 10px;
+  padding: 5px;
 }
 
 .signup-buttons-container {
@@ -316,35 +429,31 @@ i.fas.fa-user-circle {
   flex-direction: row;
   justify-content: space-between;
   margin: 5px 25% 5px 25%;
-  color: #E5E5E5;
+  color: #1C0C5B;
   padding: 5px;
-  font-size: 2rem;
-}
-
-i.fab.fa-facebook {
-  display: block;
-  transition-duration: 450ms;
 }
 
 i.fab.fa-google {
   display: block;
-  transition-duration: 450ms;
+}
+
+i.fab.fa-facebook {
+  display: block;
 }
 
 i.fab.fa-apple {
   display: block;
-  transform: scaleY(1,1);
-  transition-duration: 450ms;
 }
 
 .signup-buttons-container i:hover{
-  color: #7B2CBF;
+  color: #916BBF;
   cursor: pointer;
 }
 
 .registro-manual {
   text-align: center;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+  Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   padding: 10px;
 }
 
@@ -366,51 +475,25 @@ i.fab.fa-apple {
   margin: 6px 0px 6px 0px;
 }
 
-::placeholder {
-  color: black;
-}
-
 #submit {
   display: flex;
   width: 50%;
   padding: 10px;
   margin: 5% 25%;
   justify-content: center;
-  background-color: #9D4EDD;
+  background-color: #3D2C8D;
   color: white;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-size: 16px;
   font-weight: 600;
   border-radius: 6px;
-  transition-duration: 450ms;
-}
-
-input#submit:hover {
-  background-color: #002466;
-  cursor: pointer;
-  font-size: 18px;
-}
-
-/* LOGIN */
-
-div.register p, a {
-  margin: 20px;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-}
-
-div.register a:active, a:visited {
-  color: #9D4EDD;
-}
-
-div.register a:hover {
-  color: white;
 }
 
 /* Media queries */
 
-@media (min-width: 900px) {
+@media (min-width: 768px) {
   .dot {
-    display: none;
+    display: inline-block;
   }
   .ofertas-populares{
     flex-wrap: nowrap;
@@ -418,6 +501,10 @@ div.register a:hover {
   .ofertas-populares article {
     width: 100%;
   }
+  .prev-cat .next-cat {
+    display: flex ;
+  }
+  
 }
 
 @-webkit-keyframes fade {
@@ -441,7 +528,13 @@ div.register a:hover {
 /*HEADER*/
 
 @media (min-width: 1024px) {
-  
+  .nav-bar {
+    display: flex;
+  }
+  .logo {
+    display: flex;
+    justify-content: flex-start;
+  }
   .buscador {
     width: 100%;
     justify-content: center;
@@ -450,6 +543,9 @@ div.register a:hover {
     display: flex;
     justify-content: space-around;
     padding: 0;
+  }
+  .buscador input {
+    width: 40vw;
   }
 }
 
@@ -615,6 +711,9 @@ main.product-cart{
   height: 25px;
 }
 
+/*TABLETS*/
+
+@media (min-width: 481px) {
 .boton-sigue:hover{
     background-color:#1c0c5b;
     transition-duration: 300ms;
@@ -627,7 +726,7 @@ main.product-cart{
     color:#3d2c8d;
     color:#9D4EDD;
   }
-
+}
 
 @media (min-width: 520px) {
 
@@ -645,8 +744,12 @@ main.product-cart{
     flex-grow: 0.25;
     margin: 0;
   }
+
+
+  
 }
 
+/*DESKTOP*/
 @media (min-width:769px){
 
   .bloque-de-productos{
@@ -655,19 +758,7 @@ main.product-cart{
 
   .checkout{
     flex-grow: 0.30;
-  }
-
-  .buscador input {
-    width: 40vw;
-  }
-
-  .nav-bar {
-    display: flex;
-  }
-  .logo {
-    display: flex;
-    justify-content: flex-start;
-  }
+  } 
 }
 
 /*productDetail*/
@@ -764,6 +855,8 @@ main.product-cart{
 }
 
 .detailed-info h3{
+  background-color: #3D2C8D;
+
   text-align: center;
   color: #FFFF;
 }
