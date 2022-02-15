@@ -352,11 +352,15 @@ footer {
 
 .featured-box {
   display: flex;
+  margin: 5%;
+  margin-bottom: 10%;
+  background-color: #916bbf;
 
 } 
 .featured-text {
   margin: 10px;
   padding: 5px;
+  color: white;
 }
 
 /* .featured-img {
