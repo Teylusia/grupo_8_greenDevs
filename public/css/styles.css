@@ -383,16 +383,31 @@ h2, h3 {
 
 .featured-box {
   display: flex;
+  flex-wrap: wrap;
   margin: 5%;
   margin-bottom: 10%;
   background-color: #916bbf;
+  justify-content: center;
+}
+.featured-box img {
+  width: 100%;
+}
 
-} 
 .featured-text {
+  width: 100%;
   margin: 10px;
   padding: 5px;
   color: white;
 }
+.featured-text button{
+  background-color: greenyellow;
+  padding: 8px ;
+}
+
+.featured-text {
+  font-size: medium;
+}
+
 
 /* .featured-img {
   width: 50%;
@@ -754,8 +769,17 @@ main.product-cart{
   
 }
 
+
+
 /*DESKTOP*/
 @media (min-width:769px){
+
+  .featured-box {
+    flex-wrap: nowrap;
+  }
+  .featured-text {
+    width: 50%;
+  }
 
   .bloque-de-productos{
     flex-grow: 0.65;
