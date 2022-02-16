@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
 }
 body{
   background-color: #001233;
@@ -61,7 +62,7 @@ header {
   width: 90vw;
   height: 4vh;
   border: none;
-  border-radius: 50px;
+
   background-color: #023E7D;
   font-size: 24px;
 }
@@ -76,12 +77,11 @@ header {
 .buscador button {
   background-color: #023E7D;
   border: none;
-  color: #717171;
+  color:  #444;
   text-align: center;
   text-decoration: none;
   margin-left: 5px;
   font-size: 20px;
-  border-left: #303030 solid;
   padding-left: 5px;
 }
 .contacts a {
@@ -556,14 +556,6 @@ i.fab.fa-apple {
   }
 }
 
-/*
-#C996CC
-#1C0C5B
-#3D2C8D
-#916BBF
-*/
-
-
 /* Carrito de compras */
 
 
@@ -710,7 +702,7 @@ main.product-cart{
 
 .boton-sigue{
   color:white;
-  margin-bottom: 15px;
+  margin-bottom : 15px;
   background-color: #001233;
   cursor: pointer;
   border-radius: 10px;
@@ -814,7 +806,7 @@ main.product-cart{
 
 }
 .mas-imagenes img, .related img{
-  width: 23%;
+  width: 20%;
   margin: 10px 3px;
 }
 /*section 2*/
@@ -822,7 +814,7 @@ main.product-cart{
 .precio-compra-agregar{
   display: flex;
   justify-content: space-around;
-
+  width: 100%;
 }
 .precio-compra-agregar h2, button{
   margin: 5px 5px;
@@ -835,7 +827,8 @@ main.product-cart{
   width: 15%;
   border: none;
   border-radius: 50px;
-  background-color: #001233;
+  background-color: #024E7D;
+  border: 1px solid #FFFF;
   color: #f2f2f2;
 }
 .precio-compra-agregar #comprar{
@@ -843,7 +836,7 @@ main.product-cart{
   border: 1px solid #FFFF;
   border-radius: 50px;
   color: #f2f2f2;
-  background-color: #001233;
+  background-color: #024E7D;
 }
 .precio-compra-agregar #carrito:hover,#comprar:hover{
  background-color: #023E7D;
@@ -879,5 +872,31 @@ main.product-cart{
 @media(min-width: 1024px){
   .detailed-info{
     width: 96vw;
+  }
+  .main-info{
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+  .DP-imagen{
+    width: 65%;
+  }
+  .mas-imagenes{
+    order: 1;
+  }
+  .precio-compra-agregar{
+    background-color: #024E7D;
+    order: 0;
+    width: 30%;
+    flex-wrap: wrap;
+    align-content: space-between;
+    margin: 0px 5px;
+  }
+  .precio-compra-agregar h2{
+    width: 100%;
+  }
+  .precio-compra-agregar button#comprar, #carrito{
+    height: 7vh;
+    width: 100%;
+  
   }
 }

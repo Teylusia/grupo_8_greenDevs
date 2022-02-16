@@ -4,24 +4,29 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tu Carro</title>
+  <title>Titulo-Producto</title>
   <link rel="stylesheet" href="/css/styles.css">
-  <script src="https://kit.fontawesome.com/dee2885f19.js" crossorigin="anonymous"></script>
-
+  <script src="https://kit.fontawesome.com/15102d2fd3.js" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 </head>
 <body class="carrito-body">
   <header>
     <div class="logo">
-      <a href="/"><img src="/img/logo-mercado-liebre.svg" alt="logo del sitio"></a>
+      <a href="/"><img src="/img/logo.jpg" alt="logo del sitio"></a>
     </div>
     <div class="buscador">
-      <input type="text" placeholder="Buscar...">
+      <form action="/result" method="GET">
+        <input type="text" placeholder="Buscar..." />
+        <button type="submit"><i class="fas fa-search"></i></button>
+      </form>
     </div>
     <nav class="nav-bar">
       <ul class="bar">
-        <li class="browsing"><a href="/login">Login</a></li>
-        <li class="browsing"><a href="/productcart">Carrito</a></li>
-        <li class="browsing"><a href="#">Usuario</a></li>
+        <li class="browsing"><a href="/login"><i class="fa-solid fa-arrow-right-to-bracket"></i></a></li>
+        <li class="browsing"><a href="/productcart"><i class="fa-solid fa-cart-shopping"></i></a></li>
+        <li class="browsing"><a href="#"><i class="fa-solid fa-user"></i></a></li>
       </ul>
     </nav>
   </header>
