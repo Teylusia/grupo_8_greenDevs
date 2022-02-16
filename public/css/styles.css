@@ -20,7 +20,7 @@ header {
 }
 .logo {
   width: 25%;
-  display: none;
+
   justify-content: center;
 }
 .logo img {
@@ -46,18 +46,25 @@ header {
 .bar li a {
   text-decoration: none;
   color: white;
-  font-size: 12px;
+}
+.bar li a:hover{
+  transition: all 600ms;
+  color: #3D2C8D;
+  transform: rotate(360deg);
 }
 .sub-nav{
   display: none;
   width: 100%;
-  justify-content: flex-start;
+  justify-content: center;
   padding: 10px;
+  border-top: 3px solid #1C0C5B;
+  border-bottom: 3px solid #1C0C5B;
 }
 .sub-nav ul{
  display: flex;
  list-style-type: none;
-
+  width: 100%;
+  justify-content: space-around;
 }
 .sub-nav ul li{
   margin: 15px;
@@ -65,7 +72,11 @@ header {
 .sub-nav ul li a{
   text-decoration: none;
   color: white;
-  font-size: 12px;
+  font-size: 16px;
+}
+.sub-nav ul li a:hover{
+  transition: all 600ms;
+  color: #9D4EDD;
 }
 .buscador {
   width: 100%;
@@ -76,7 +87,7 @@ header {
   display: flex;
 }
 .buscador input {
-  width: 80vw;
+  width: 90%;
   height: 4vh;
   border: none;
   background-color: #026E7D;
@@ -86,18 +97,20 @@ header {
   outline: none;
   color: #f2f2f2;
 }
-::placeholder{
-  opacity: 0.4;
-  color: #717171;
-}
+
 .buscador button {
-  background-color: #026E7D;
+  background-color:rgba(0, 0, 0, 0);
   border: none;
   color:  #444;
   text-align: center;
   text-decoration: none;
   margin-left: -30px;
+  margin-bottom: 20px;
   font-size: 20px;
+}
+.buscador button:hover{
+  transition: all 600ms;
+  color: #3d2c8d;
 }
 .contacts a {
   font-weight: bold;
@@ -114,9 +127,19 @@ header {
 .buscador input:hover{
 cursor: default;
 }
-.browsing a i{
-  color: #717171;
+.burguer ul{
+  list-style: none;
+  display: flex;
+  margin-right: 20px;
 }
+.burguer ul li{
+  margin: 0px 10px;
+}
+.burguer ul li a{
+  text-decoration: none;
+  color: #FFFF;
+}
+
 @media (min-width: 1024px) {
   .nav-bar {
     display: flex;
@@ -148,6 +171,9 @@ cursor: default;
     width: 40vw;
     padding: 15px;
     border-radius: 25px ;
+  }
+  .burguer{
+    display: none;
   }
 }
 
@@ -856,7 +882,6 @@ main.product-cart{
 .DP-imagen img{
   width: 70%;
   margin: 10px 0px;
-
   border-radius: 4px;
 }
 .DP-imagen img:hover, .mas-imagenes img:hover, .related img:hover{
@@ -867,11 +892,11 @@ main.product-cart{
   width: 100%;
   display: flex;
   justify-content: center;
-
 }
 .mas-imagenes img, .related img{
   width: 20%;
   margin: 10px 3px;
+  border-radius: 4px;
 }
 /*section 2*/
 
