@@ -13,11 +13,10 @@ body{
 header {
   display: flex;
   align-items: center;
-  height: 12vh;
-  border-bottom: 4px solid #33415C;
   border-radius: 2px;
   background-color: #023E7D;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  padding: 15px 0px;
 }
 .logo {
   width: 25%;
@@ -49,7 +48,25 @@ header {
   color: white;
   font-size: 12px;
 }
+.sub-nav{
+  display: none;
+  width: 100%;
+  justify-content: flex-start;
+  padding: 10px;
+}
+.sub-nav ul{
+ display: flex;
+ list-style-type: none;
 
+}
+.sub-nav ul li{
+  margin: 15px;
+}
+.sub-nav ul li a{
+  text-decoration: none;
+  color: white;
+  font-size: 12px;
+}
 .buscador {
   width: 100%;
   display: flex;
@@ -59,11 +76,10 @@ header {
   display: flex;
 }
 .buscador input {
-  width: 90vw;
+  width: 80vw;
   height: 4vh;
   border: none;
-
-  background-color: #023E7D;
+  background-color: #026E7D;
   font-size: 24px;
 }
 .buscador input:focus{
@@ -75,14 +91,13 @@ header {
   color: #717171;
 }
 .buscador button {
-  background-color: #023E7D;
+  background-color: #026E7D;
   border: none;
   color:  #444;
   text-align: center;
   text-decoration: none;
-  margin-left: 5px;
+  margin-left: -30px;
   font-size: 20px;
-  padding-left: 5px;
 }
 .contacts a {
   font-weight: bold;
@@ -94,8 +109,6 @@ header {
 }
 ::placeholder {
   color: #3d2c8d;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 .buscador input:hover{
@@ -104,6 +117,40 @@ cursor: default;
 .browsing a i{
   color: #717171;
 }
+@media (min-width: 1024px) {
+  .nav-bar {
+    display: flex;
+    width: 20%;
+  }
+  .logo {
+    display: flex;
+    justify-content: flex-start;
+  }
+  .buscador {
+    width: 55%;
+    justify-content: center;
+  }
+  .sub-nav{
+    display: flex;
+    padding: 0;
+  }
+  footer{
+    display: flex;
+    justify-content: space-around;
+    padding: 0;
+  }
+  header{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+  }
+  .buscador input {
+    width: 40vw;
+    padding: 15px;
+    border-radius: 25px ;
+  }
+}
+
 /*FOOTER*/
 
 footer {
@@ -561,30 +608,6 @@ i.fab.fa-apple {
   }
 }
 
-/*HEADER*/
-
-@media (min-width: 1024px) {
-  .nav-bar {
-    display: flex;
-  }
-  .logo {
-    display: flex;
-    justify-content: flex-start;
-  }
-  .buscador {
-    width: 100%;
-    justify-content: center;
-  }
-  footer{
-    display: flex;
-    justify-content: space-around;
-    padding: 0;
-  }
-  .buscador input {
-    width: 40vw;
-  }
-}
-
 /* Carrito de compras */
 
 
@@ -836,7 +859,7 @@ main.product-cart{
 
   border-radius: 4px;
 }
-.DP-imagen img:hover, .mas-imagenes img:hover{
+.DP-imagen img:hover, .mas-imagenes img:hover, .related img:hover{
   transition: all 450ms;
   border: solid 5px #023E7D;
 }
@@ -856,6 +879,11 @@ main.product-cart{
   display: flex;
   justify-content: space-around;
   width: 100%;
+  margin: 10px 0px;
+}
+.precio-compra-agregar i{
+margin-top: 15px;
+color: #FFFF;
 }
 .precio-compra-agregar h2, button{
   margin: 5px 5px;
@@ -872,9 +900,6 @@ main.product-cart{
   border: 1px solid #FFFF;
   color: #f2f2f2;
 }
-
-
-
 .precio-compra-agregar #comprar{
   width: 25%;
   border: 1px solid #FFFF;
@@ -889,19 +914,18 @@ main.product-cart{
 /*section 3*/
 
 .detailed-info{ 
-  background-color: #023E7D;
   width: 90vw;
   margin: 20px 15px;
 }
 .detailed-info p{
-  text-align: center;
+  text-align: justify;
   color: #FFFF;
 }
 
 .detailed-info h3{
   background-color: #3D2C8D;
-
-  text-align: center;
+  padding: 10px;
+  text-align: left;
   color: #FFFF;
 }
 .ver-mas{
@@ -909,8 +933,20 @@ main.product-cart{
   justify-content: center;
 }
 .ver-mas button{
-  border: none;
-  background-color: #024E7D;
+  border: 1px solid #f2f2f2;
+}
+.related{
+  order: 1;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 20px 0px;
+}
+.related h2{
+  width: 100%;
+  margin: 20px 0px;
+  font-size: 25px;
 }
 
 @media(min-width: 1024px){
@@ -932,19 +968,44 @@ main.product-cart{
     order: 0;
     width: 30%;
     flex-wrap: wrap;
-    align-content: space-between;
-    margin: 0px 5px;
+    
+    margin: 10px 5px;
+    padding: 25px;
+    border-radius: 25px;
   }
   .precio-compra-agregar h2{
     width: 100%;
+    height: 3vh;
   }
-  .precio-compra-agregar button#comprar{
-    height: 7vh;
-    width: 100%;
-  
+  .precio-compra-agregar button#comprar, .precio-compra-agregar button#carrito {
+      width: 100%;
   }
-  .precio-compra-agregar #carrito {
-    height: 7vh;
+  .info{
+    width: 85vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0px 100px;
+  }
+  .detailed-info{
+    width: 85vw;
+
+  }
+  .detailed-info h3{
+    text-align: left;
+    padding: 10px;
+  }
+  .related{
+    order: 2;
     width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    opacity: 0.8;
+  }
+  .related h2{
+    width: 100%;
+    margin: 20px 0px;
+    font-size: 25px;
   }
 }
