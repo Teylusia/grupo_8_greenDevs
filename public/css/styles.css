@@ -160,6 +160,12 @@ footer {
   height: 25%;
 
 }
+h2, h3 {
+  color: white;
+}
+.titulo-categorias p {
+  color: white
+}
 .slide-items {
   display: flex;
   justify-content: space-around;
@@ -264,7 +270,7 @@ footer {
 
 
 /* Titulo categorias */
-.titulo-categorias {
+.titulo-categorias, .featured-product h2 {
   display: flex;
   margin: 0 5% 0 5%;
   padding: 5px;
@@ -286,7 +292,6 @@ footer {
 
 .ofertas-populares {
   display: flex;
-  background-color: white;
   margin: 0 5% 10% 5%;
   flex-wrap: wrap;
   justify-content: center;
@@ -330,10 +335,11 @@ footer {
 }
 
 .ofertas-populares article {
-  margin: 2px;
+  margin: 5px;
   padding: 2px;
   width: 60%;
   flex-wrap: wrap;
+  background-color: white;
   
 }
 .precio-producto {
@@ -831,6 +837,9 @@ main.product-cart{
   border: 1px solid #FFFF;
   color: #f2f2f2;
 }
+
+
+
 .precio-compra-agregar #comprar{
   width: 25%;
   border: 1px solid #FFFF;
@@ -894,9 +903,13 @@ main.product-cart{
   .precio-compra-agregar h2{
     width: 100%;
   }
-  .precio-compra-agregar button#comprar, #carrito{
+  .precio-compra-agregar button#comprar{
     height: 7vh;
     width: 100%;
   
+  }
+  .precio-compra-agregar #carrito {
+    height: 7vh;
+    width: 100%;
   }
 }
