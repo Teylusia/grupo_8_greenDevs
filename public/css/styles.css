@@ -546,7 +546,7 @@ i.fab.fa-apple {
 
 .register-form input#submit:hover {
   cursor: pointer;
-  transform: scale(1.2);
+  background-color: #9D4EDD;
 }
 
 #username, #email, #password, #confirm-password {
@@ -568,8 +568,9 @@ i.fab.fa-apple {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-size: 16px;
   font-weight: 600;
-  border-radius: 6px;
+  border-radius: 10px;
   transition-duration: 450ms;
+  border: none;
 }
 
 /* Media queries */
