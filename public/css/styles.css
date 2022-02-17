@@ -125,7 +125,10 @@ header {
 }
 
 .buscador input:hover{
-cursor: default;
+  cursor: default;
+}
+.burguer{
+  display: flex;
 }
 .burguer ul{
   list-style: none;
