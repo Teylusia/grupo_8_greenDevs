@@ -217,10 +217,12 @@ footer {
   position: relative;
   margin: 0 5% 0% 5%;
   display: flex;
+  justify-content: center;
   /* width: 80vh; */
   
+ 
 }
-.slideshow-container .slides {
+.slideshow-container .mySlides fade {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
@@ -236,6 +238,14 @@ footer {
   height: 25%;
 
 }
+
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
 h2, h3 {
   color: white;
 }
@@ -290,7 +300,9 @@ h2, h3 {
   display: flex;
   width: 100%;
   flex-direction: column-reverse;
-  
+  vertical-align: middle;  
+  justify-content: center;
+  align-items: center;
 }
 
 /* Next & previous buttons */
@@ -372,6 +384,15 @@ h2, h3 {
   flex-wrap: wrap;
   justify-content: center;
 
+}
+
+.box-card {
+  display: flex;
+}
+
+.box-card .card-shop {
+  display: flex;
+  text-align: right;
 }
 
 .next-cat {
