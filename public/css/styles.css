@@ -280,6 +280,7 @@ h2, h3 {
   align-items: center;
 }
 
+
 .slide-left {
   display: flex;
   flex-direction: column;
@@ -307,6 +308,9 @@ h2, h3 {
   vertical-align: middle;  
   justify-content: center;
   align-items: center;
+}
+.slide-img img{
+  width: 100%;
 }
 
 /* Next & previous buttons */
