@@ -17,7 +17,8 @@ header {
   border-radius: 2px;
   background-color: #2a2a2a;
   padding: 15px 0px;
-
+  position: fixed;
+  z-index: 10;
 }
 .logo {
   width: 25%;
@@ -212,7 +213,9 @@ footer {
   font-size: large;
   color:#717171;
 }
-
+main{
+  padding-top: 100px;
+}
 /*HOME*/
 
 /* Slideshow container */
