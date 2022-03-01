@@ -19,6 +19,7 @@ header {
   padding: 15px 0px;
   position: fixed;
   z-index: 10;
+  width: 100%;
 }
 .logo {
   width: 25%;
@@ -86,6 +87,7 @@ header {
 }
 .buscador form {
   display: flex;
+  margin:  0% 5%;
 }
 .buscador input {
   width: 90%;
@@ -451,7 +453,7 @@ h2, h3 {
   flex-wrap: wrap;
   background-color: #2a2a2a;
   cursor: pointer;
-  
+
   
 }
 .ofertas-populares article:hover {
