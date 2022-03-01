@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <%- include('./partials/head') %>
+
+<body>
+
+  <%- include('./partials/header') %>
+
+  <main>
+    <div class="general-container">
+    <div class="register">
+      <i class="fas fa-user-circle"></i>
+      <h2 class="texto-de-registro">Inicia sesión y empieza a jugar!</h2>
+        <div class="signup-buttons-container">
+          <i class="fab fa-google fa-fw"></i>
+          <i class="fab fa-facebook fa-fw"></i>
+          <i class="fab fa-apple fa-fw"></i>
+        </div>
+      <h4 class="registro-manual">O puedes iniciar sesión con tus datos:</h4>
+        <div class="register-form">
+          <form action="/registroCompleto" method="POST">
+            <label for="username">Ingresa tu nombre de usuario</label><br>
+            <input type="text" id="username" name="username" required><br>
+            <label for="password">Ingresa tu contraseña</label><br>
+            <input type="password" id="password" name="password" required><br>
+            <label for="remember-me"><input type="checkbox"> Recuérdame la próxima vez</label>
+            <input type="submit" id="submit" value="Ingresar!">
+          </form>
+        </div>
+        <div class="register-form-footer">
+          <p><a href="#">Olvidé mi contraseña</a></p><br>
+          <p>¿Todavía no te has registrado? <a href="/register">Registrate aquí!</a></p><br>
+        </div>
+    </div>
+    </div>
+  </main>
+
+  <%- include('./partials/footer') %>
+  
+  </body>
+</html>
