@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/Teylusia/grupo_8_greenDevs#readme",
   "dependencies": {
+    "ejs": "^3.1.6",
     "express": "^4.17.2",
     "nodemon": "^2.0.15"
   }

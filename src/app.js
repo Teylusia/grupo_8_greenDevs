@@ -7,6 +7,9 @@ const publicPath = path.resolve(__dirname,'../public')
 app.use(express.static(publicPath))
 app.use(mainRoutes)
 
+app.set('view engine', 'ejs');
+app.set('views', __dirname + '/views');
+
 app.listen(3000, () =>{
   console.log('Arrancando servidor...')
   console.log("http://localhost:3000")

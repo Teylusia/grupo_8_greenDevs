@@ -19,6 +19,7 @@ header {
   padding: 15px 0px;
   position: fixed;
   z-index: 10;
+  width: 100%;
 }
 .logo {
   width: 25%;
