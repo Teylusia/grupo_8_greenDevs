@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <%- include('./partials/head') %>
+
+<body>
+
+  <%- include('./partials/header') %>
+
+  <main>
+    <div class="general-container">
+    <div class="register">
+      <i class="fas fa-user-circle"></i>
+      <h2 class="texto-de-registro">Inicia sesión y empieza a jugar!</h2>
+        <div class="signup-buttons-container">
+          <i class="fab fa-google fa-fw"></i>
+          <i class="fab fa-facebook fa-fw"></i>
+          <i class="fab fa-apple fa-fw"></i>
+        </div>
+      <h4 class="registro-manual">O puedes iniciar sesión con tus datos:</h4>
+        <div class="register-form">
+          <form action="/" method="POST">
+            <label for="nameProduct">Nombre del producto:</label><br>
+            <input type="text" id="username" name="nameProduct" required><br>
+            <label for="priceProduct">Precio:</label><br>
+            <input type="number" id="password" name="priceProduct" required><br>
+            <label for="imageProduct">Imagenes del producto:</label>
+            <input type="file" name="imageProduct" id="imageProduct"><br>
+            <label for="specsProduct">Requisitos:</label>
+            <textarea name="specsProduct" id="specsProduct" cols="30" rows="10"></textarea><br>
+            <label for="descriptionProduct">Descripción:</label>
+            <textarea name="descriptionProduct" id="descriptionProduct" cols="30" rows="10"></textarea><br>
+            <label for="discountProduct">Descuento:</label>
+            <input type="number" name="discountProduct" id="discountProduct"><br>
+            <input type="submit" id="submit" value="Agregar">
+          </form>
+        </div>
+    </div>
+    <div class="crudList">
+    
+    </div>
+    </div>
+  </main>
+
+  <%- include('./partials/footer') %>
+  
+  </body>
+</html>
+
+
+<!-- 
+AÑADIRLE FOTOS
+NOMBRE
+DESCRIPCION
+CATEGORIA
+PRECIO
+SPECS
+ -->

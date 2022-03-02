@@ -19,6 +19,10 @@ let controller = {
 
   cart: (req, res)=>{
     res.render('productCart');
+  },
+
+  productAdd: (req, res)=>{
+    res.render('productAdd');
   }
 };
 

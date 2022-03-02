@@ -50,11 +50,6 @@ header {
   text-decoration: none;
   color: white;
 }
-.bar li a:hover{
-  transition: all 600ms;
-  color: #03C959;
-  transform: rotate(360deg);
-}
 .sub-nav{
   display: none;
   width: 100%;
@@ -206,9 +201,10 @@ footer {
   text-decoration: none;
   color: #717171;
 }
-.contacts a i:hover, .contacts a:hover{
+.contacts a i:hover, .contacts a:hover,.bar li a:hover{
   transition: all 600ms;
   color: #03C959;
+  transform: rotate(360deg);
 }
 
 .contacts a i {
@@ -609,7 +605,7 @@ i.fab.fa-apple {
   background-color: #03C959;
 }
 
-#username, #email, #password, #confirm-password {
+#username, #email, #password, #confirm-password, #descriptionProduct, #specsProduct, #imageProduct, #discountProduct{
   border-radius: 6px;
   padding: 6px;
   width: 80%;
