@@ -438,6 +438,12 @@ h2, h3 {
 .next-cat:hover {
   background-color: #717171;
 }
+
+.productDetailLink{
+  text-decoration: none;
+  color: #F5F5F5;
+}
+
 .ofertas-populares img {
   width: 100%;
 }
