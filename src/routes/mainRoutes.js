@@ -1,14 +1,33 @@
 const express = require('express');
-const router = express.Router();
-
+const router = express.Router(); 
 const controller = require('../controllers/mainController');
+const multer = require('multer')
+const moduleMulter = require('../modules/modules')
+const upload = multer({ storage: moduleMulter })
 
+
+//Home
 router.get('/', controller.home);
+
+//Login
 router.get('/login', controller.login);
-router.get('/productcart', controller.cart);
-router.get('/productdetail', controller.detail);
+
+//Register
 router.get('/register', controller.register);
-router.get('/productAdd', controller.productAdd);
+
+//Cart
+router.get('/productcart', controller.cart);
+
+//Detail
+router.get('/product/:id', controller.detail);
+
+router.get('/products/edit/:id', controller.productEdit);
+router.put('/products/edit/:id', controller.productEdited)
+
+
+//Create Products
+router.get('/products/create', controller.productCreate);
+router.post('/', upload.any(), controller.productAdd);
 
 module.exports = router;
 
