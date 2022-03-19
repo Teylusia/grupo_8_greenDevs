@@ -13,10 +13,6 @@ let controller = {
     res.render('login');
   },
 
-  register: (req, res)=>{
-    res.render('register');
-  },
-
   detail: (req, res)=>{
     res.render('productDetail');
   },
@@ -43,7 +39,8 @@ let controller = {
     productToEdit = req.params.id
     productEdited = req.body
     res.redirect('/')
-  }
+  },
+
 };
 
 module.exports = controller;
