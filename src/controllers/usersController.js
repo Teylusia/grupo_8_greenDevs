@@ -3,7 +3,7 @@ const fs = require('fs')
 const usersFilePath = path.join(__dirname, '../data/users.json');
 const users= JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 
-let uController = {
+let usersController = {
 
     register: (req, res) => {
         res.render('register')
@@ -19,4 +19,4 @@ let uController = {
 
 };
 
-module.exports = uController;
+module.exports = usersController;
