@@ -14,11 +14,12 @@ router.get('/productcart', productsController.cart);
 router.get('/productDetail', productsController.detail); //Esta ruta permite ver el product detail
 
 router.get('/products/edit/:id', productsController.productEdit);
-router.put('/products/edit/:id', productsController.productEdited)
+router.put('/products/edit/:id', productsController.productEdited);
+// router.delete('products/edit/:id', productsController.productDelete);
 
 
 //Create Products
 router.get('/products/create', productsController.productCreate);
-router.post('/', upload.any(), productsController.productAdd);
+router.post('/products/create', upload.any(), productsController.productAdd);
 
 module.exports = router;

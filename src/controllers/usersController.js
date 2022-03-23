@@ -15,8 +15,25 @@ let usersController = {
         fs.writeFileSync(usersFilePath, JSON.stringify(users));
         res.redirect('/');
     
-      }
-
+      },
+      userEdit: (req, res)=>{
+        let productToEdit = req.params.id
+       let productEdited = {
+         id: productToEdit,
+         name: req.body.name,
+         price: req.body.price,
+         image: req.body.image,
+         discount: req.body.discount
+       }
+       for(let i = 0; i < users.length; i++){
+         if( users[i].id == productToEdit){
+           users[i] = productEdited
+         }
+       
+       }
+       fs.writeFileSync(usersFilePath, JSON.stringify(users));
+       res.redirect('/');
+     }
 };
 
 module.exports = usersController;
