@@ -1,0 +1,28 @@
+<section class="ofertas-populares">
+  
+    <% products.slice(-5).forEach( products => { %>
+      
+      <article>
+        
+          <a href="/productDetail/<%= products.id %> " class="productDetailLink">
+          <img src="<%= products.imageProduct%>" alt="imagen-del-producto" />
+          <p class="titulo-producto"><%= products.nameProduct %></p>
+          
+          
+          <div class="caja-precio">
+            <p class="precio-producto">$<%= products.priceProduct %></p>
+            <sup class="moneda">ARS</sup>
+          </div>
+          <div class="box-card">
+            <div class="caja-rebaja">
+              <p class="precio-rebaja">$<%= products.discountProduct %></p>
+              <sup class="moneda">ARS</sup>
+              <span class="porcentaje-descuento">-20%</span>
+            </div>
+            <div class="card-shop"><i class="fa-solid fa-cart-shopping"></i></div>
+          </div>
+        </a>
+      </article>
+        <%})%>
+  
+    </section>
