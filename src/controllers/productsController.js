@@ -21,7 +21,7 @@ let productsController = {
         let newProduct = req.body
         console.log(newProduct)
         products.push(newProduct);
-        fs.writeFileSync(productsFilePath, JSON.stringify(products));
+        fs.appendFileSync(productsFilePath, JSON.stringify(products));
         res.redirect('/');
       },
       productEdit: (req, res)=>{

@@ -20,6 +20,6 @@ router.put('/products/edit/:id', productsController.productEdited);
 
 //Create Products
 router.get('/products/create', productsController.productCreate);
-router.post('/products/create', upload.any(), productsController.productAdd);
+router.post('/products/create', upload.single("imageProduct"), productsController.productAdd);
 
 module.exports = router;
