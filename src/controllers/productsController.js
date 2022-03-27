@@ -18,7 +18,15 @@ let productsController = {
         res.render('productAdd');
       },
       productAdd: (req, res)=>{
-        let newProduct = req.body
+        let newProduct = {
+          id: products.length + 1,
+          name: req.body.nameProduct,
+          price: req.body.priceProduct,
+          image: req.body.imageProduct,
+          specs: req.body.specsProduct,
+          desc: req.body.descriptionProduct,
+          disc: req.body.discountProduct
+        }
         console.log(newProduct)
         products.push(newProduct);
         fs.appendFileSync(productsFilePath, JSON.stringify(products));
