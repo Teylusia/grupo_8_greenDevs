@@ -19,12 +19,12 @@ let productsController = {
   productAdd: (req, res) => {
     let newProduct = {
       id: products.length + 1,
-      name: req.body.nameProduct,
-      price: req.body.priceProduct,
-      image: req.body.imageProduct,
-      specs: req.body.specsProduct,
-      desc: req.body.descriptionProduct,
-      disc: req.body.discountProduct,
+      name: req.body.name,
+      price: req.body.price,
+      image: req.body.image,
+      specs: req.body.specs,
+      desc: req.body.description,
+      disc: req.body.discount,
     };
     console.log(newProduct);
     products.push(newProduct);
