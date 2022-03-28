@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('./partials/head') %>
+
+    <body>
+
+        <%- include('./partials/header') %>
+
+            <main>
+
+                <!-- <aside style="background-color: #2a2a2a; float: left; color: white; ">
+                    <nav>
+
+                        <p><a>Nuevo producto</p><br></a>
+                        <p><a>Listar usuarios</p><br></a>
+                        <p><a>Nueva categoria</p><br></a>
+
+                    </nav> -->
+                
+                    <div>
+                        <button>Nuevo +</button>
+                        <button>Listar Usuarios</button>
+                        <button>Nueva Categoria</button>
+                    </div>
+
+                </aside>
+                <div>
+                    <table>
+                        <tr>
+                            <th>Id</th>
+                            <th>Nombre</th>
+                            <th>Categoria</th>
+                            <th>Precio</th>
+                            <th>Descuento</th>
+                            <th>Editar/eliminar</th>
+
+                        </tr>
+                        
+                        <% products.forEach(product => {%>
+                            <td>
+                                  <p>
+
+                                      <%= product.id %>
+                                  </p>
+                                </td>
+                                <td>
+                                    <%= product.name %>
+                                </td>
+                                <td>
+                                    <%= product.category %>
+                                </td>
+                                <td>
+                                    $ <%= product.price %>
+                                </td>
+                                <td>
+                                   <% if (!product.discount) { %>
+                                        -
+                                   <% } %>
+                                    <%= product.discount %> %
+                                </td>
+                                <td><button>Editar</button>
+                                    <button>Eliminar</button>
+                                </td>
+                            </tr>
+                                <%}) %>
+                    </table>
+                </div>
+
+            </main>
+
+            <%- include('./partials/footer') %>
+
+    </body>
+
+</html>

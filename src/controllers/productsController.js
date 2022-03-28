@@ -2,6 +2,10 @@ const path = require("path");
 const fs = require("fs");
 const productsFilePath = path.join(__dirname, "../data/products.json");
 const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
+const categoryFilePath = path.join(__dirname, "../data/category.json");
+const category = JSON.parse(fs.readFileSync(categoryFilePath, "utf-8"));
+
+
 
 let productsController = {
   detail: (req, res) => {
@@ -14,7 +18,7 @@ let productsController = {
   },
 
   productCreate: (req, res) => {
-    res.render("productAdd");
+    res.render("productAdd",{category});
   },
   productAdd: (req, res) => {
     let newProduct = {
@@ -25,6 +29,7 @@ let productsController = {
       specs: req.body.specs,
       desc: req.body.description,
       disc: req.body.discount,
+      category: req.body.category
     };
     console.log(newProduct);
     products.push(newProduct);
