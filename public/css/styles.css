@@ -606,9 +606,16 @@ i.fab.fa-apple {
   font-weight: 600;
 }
 
-.register-form input#submit:hover {
+.register-form  input#submit:hover {
   cursor: pointer;
   background-color: #03C959;
+}
+
+.button-edit {
+    background-color: #03C959;
+}
+.button-delete {
+  background-color: indianred;
 }
 
 #username, #email, #password, #confirm-password, #descriptionProduct, #specsProduct, #imageProduct, #discountProduct{
