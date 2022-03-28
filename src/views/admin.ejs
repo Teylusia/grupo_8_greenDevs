@@ -11,12 +11,26 @@
 
 
 
-                <div>
-                    <button>Nuevo +</button>
-                    <button>Listar Usuarios</button>
-                    <button>Nueva Categoria</button>
-                </div>
+                <div class="general-container">
+                    <div class="panel">
 
+                        <div class="admin-form">
+                            <h2>Panel de Administrador</h2>
+
+                            <button>Nuevo Producto+</button>
+                            <button>Listar Usuarios</button>
+                            <button>Nueva Categoria</button>
+                            <form action="/admin/search" method="GET">
+                                
+                                <input type="text" name="search" placeholder="Buscar producto">
+                                <input type="button" value="Buscar">
+                            </form>
+                            
+                            
+                        </div>
+                        </div>
+                    </div>
+                    
                 </aside>
                 <div>
                     <table>

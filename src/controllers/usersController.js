@@ -8,7 +8,18 @@ const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
 
 let usersController = {
     admin: (req, res) => {
-      res.render("admin", {products:products})
+      res.render("admin", {products:products,})
+    },
+    search: (req, res) => {
+      let search = req.params.search;
+      let resultado = [];
+
+      for (let i= 0; i < products.length; i++){
+        if(products[i].name.contains(search)){
+          resultado.push(products[i])
+        }
+      }
+
     }
     ,
     register: (req, res) => {

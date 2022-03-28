@@ -541,7 +541,7 @@ h2, h3 {
   color: #FFF;
 }
 
-.register {
+.register , .panel, .productadd {
   display: inline-block;
   flex-direction: column;
   width: 80vw;
@@ -597,7 +597,7 @@ i.fab.fa-apple {
   padding: 10px;
 }
 
-.register-form {
+.register-form , .productadd-form, .admin-form{
   display: flex;
   flex-direction: column;
   width: 80%;
