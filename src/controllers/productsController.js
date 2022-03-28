@@ -58,15 +58,15 @@ let productsController = {
     fs.writeFileSync(productsFilePath, JSON.stringify(products));
     res.redirect("/");
   },
-  // productDelete: (req,res) =>{
-  //   let productToDelete = req.params.id
-  //   products.filter(product =>{
-  //    product.id != productToDelete
-  //   })
+  productDelete: (req,res) =>{
+    let productToDelete = req.params.id
+    products.filter(product =>{
+     product.id != productToDelete
+    })
 
-  //   fs.writeFileSync(productsFilePath, JSON.stringify(products));
-  //   res.redirect('/')
-  // }
+    fs.writeFileSync(productsFilePath, JSON.stringify(products));
+    res.redirect('/')
+  }
 };
 
 module.exports = productsController;

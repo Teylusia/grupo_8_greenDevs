@@ -11,24 +11,29 @@
     <div class="general-container">
     <div class="register">
       <i class="fa-solid fa-pen-circle"></i>
-      <h2 class="texto-de-registro">Estas editando el producto:</h2>
+      <h2 class="texto-de-registro">Estas editando:</h2>
 
       <h4 class="registro-manual"><%= products.name %></h4>
+      <h4 class="registro-manual">Id: <%= products.id %></h4>
         <div class="register-form">
           <form action="/products/edit/:id?_method=PUT" enctype="multipart/form-data" method="POST">
-            <label for="nameProduct">Nombre del producto:</label><br>
-            <input type="text" id="username" name="nameProduct" value="<%= products.name %>"><br>
-            <label for="priceProduct">Precio:</label><br>
-            <input type="number" id="password" name="priceProduct" value="<%= products.price %>"><br>
-            <label for="imageProduct">Imagenes del producto:</label>
-            <input type="file" name="imageProduct" id="imageProduct"><br>
-            <label for="specsProduct">Requisitos:</label>
-            <textarea name="specsProduct" id="specsProduct" cols="30" rows="10"><%= products.specs %></textarea><br>
-            <label for="descriptionProduct">Descripción:</label>
-            <textarea name="descriptionProduct" id="descriptionProduct" cols="30" rows="10"><%= products.description %></textarea><br>
-            <label for="discountProduct">Descuento:</label>
-            <input type="number" name="discountProduct" id="discountProduct" value="<%= products.discount %>"><br>
-            <input type="submit" id="submit" value="Agregar">
+            <label for="name">Nombre:</label><br>
+            <input type="text" id="username" name="name" value="<%= products.name %>"><br>
+            <label for="price">Precio:</label><br>
+            <input type="number" id="price" name="price" value="<%= products.price %>"><br>
+            <label for="image">Imagenes:</label><br>
+            <img src="<%= products.image %>" width="300" height="250" alt="imagen-del-producto"> <br>
+
+            <label for="image">Reemplazar imagen principal</label>
+            <input type="file" name="image" id="image"><br>
+            <label for="specs">Requisitos:</label><br>
+            <textarea name="specs" id="specs" cols="30" rows="10"><%= products.specs %></textarea><br>
+            <label for="description">Descripción:</label><br>
+            <textarea name="description" id="description" cols="30" rows="10"><%= products.description %></textarea><br>
+            <label for="discountProduct">Descuento:</label><br>
+            <input type="number" name="discount" id="discount" value="<%= products.discount %>"><br>
+            <input type="submit" id="submit" value="Guardar Cambios">
+            <p><a href="/admin">Volver al listado</a></p>
           </form>
         </div>
     </div>

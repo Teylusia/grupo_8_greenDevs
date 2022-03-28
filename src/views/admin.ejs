@@ -9,20 +9,13 @@
 
             <main>
 
-                <!-- <aside style="background-color: #2a2a2a; float: left; color: white; ">
-                    <nav>
 
-                        <p><a>Nuevo producto</p><br></a>
-                        <p><a>Listar usuarios</p><br></a>
-                        <p><a>Nueva categoria</p><br></a>
 
-                    </nav> -->
-                
-                    <div>
-                        <button>Nuevo +</button>
-                        <button>Listar Usuarios</button>
-                        <button>Nueva Categoria</button>
-                    </div>
+                <div>
+                    <button>Nuevo +</button>
+                    <button>Listar Usuarios</button>
+                    <button>Nueva Categoria</button>
+                </div>
 
                 </aside>
                 <div>
@@ -36,34 +29,42 @@
                             <th>Editar/eliminar</th>
 
                         </tr>
-                        
-                        <% products.forEach(product => {%>
-                            <td>
-                                  <p>
 
-                                      <%= product.id %>
-                                  </p>
-                                </td>
-                                <td>
-                                    <%= product.name %>
-                                </td>
-                                <td>
-                                    <%= product.category %>
-                                </td>
-                                <td>
-                                    $ <%= product.price %>
-                                </td>
-                                <td>
-                                   <% if (!product.discount) { %>
-                                        -
-                                   <% } %>
-                                    <%= product.discount %> %
-                                </td>
-                                <td><button>Editar</button>
-                                    <button>Eliminar</button>
-                                </td>
+                        <% products.forEach(product=> {%>
+                            <td>
+                                <p>
+
+                                    <%= product.id %>
+                                </p>
+                            </td>
+                            <td>
+                                <%= product.name %>
+                            </td>
+                            <td>
+                                <%= product.category %>
+                            </td>
+                            <td>
+                                $ <%= product.price %>
+                            </td>
+                            <td>
+                                <% if (!product.discount) { %>
+                                    -
+                                    <% } %>
+                                        <%= product.discount %> %
+                            </td>
+                            <td>
+                                <a href="/products/edit/<%= product.id %>"
+                                <button>Editar</button></a>
+                                <form action="/products/delete/<%= product.id %>"
+                                    method="POST">
+
+                                    <button type="submit">Eliminar</button>
+                                </form>
+
+                                
+                            </td>
                             </tr>
-                                <%}) %>
+                            <%}) %>
                     </table>
                 </div>
 

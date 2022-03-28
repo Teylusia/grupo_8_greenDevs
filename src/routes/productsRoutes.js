@@ -15,7 +15,7 @@ router.get('/productDetail/:id', productsController.detail); //Esta ruta permite
 
 router.get('/products/edit/:id', productsController.productEdit);
 // router.put('/products/edit/:id', productsController.productEdited);
-// router.delete('products/edit/:id', productsController.productDelete);
+ router.delete('products/delete/:id', productsController.productDelete);
 
 
 //Create Products
