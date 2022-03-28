@@ -10,13 +10,9 @@
   <main>
     <div class="general-container">
     <div class="register">
-      <i class="fas fa-user-circle"></i>
+      <i class="fa-solid fa-pen-circle"></i>
       <h2 class="texto-de-registro">Estas editando el producto:</h2>
-        <div class="signup-buttons-container">
-          <i class="fab fa-google fa-fw"></i>
-          <i class="fab fa-facebook fa-fw"></i>
-          <i class="fab fa-apple fa-fw"></i>
-        </div>
+
       <h4 class="registro-manual"><%= products.nameProduct %></h4>
         <div class="register-form">
           <form action="/products/edit/:id?_method=PUT" enctype="multipart/form-data" method="POST">
@@ -27,11 +23,11 @@
             <label for="imageProduct">Imagenes del producto:</label>
             <input type="file" name="imageProduct" id="imageProduct"><br>
             <label for="specsProduct">Requisitos:</label>
-            <textarea name="specsProduct" id="specsProduct" cols="30" rows="10"></textarea><br>
+            <textarea name="specsProduct" id="specsProduct" cols="30" rows="10"><%= products.specsProduct %></textarea><br>
             <label for="descriptionProduct">Descripción:</label>
-            <textarea name="descriptionProduct" id="descriptionProduct" cols="30" rows="10"></textarea><br>
+            <textarea name="descriptionProduct" id="descriptionProduct" cols="30" rows="10"><%= products.descriptionProduct %></textarea><br>
             <label for="discountProduct">Descuento:</label>
-            <input type="number" name="discountProduct" id="discountProduct"><br>
+            <input type="number" name="discountProduct" id="discountProduct" value="<%= products.discountProduct %>"><br>
             <input type="submit" id="submit" value="Agregar">
           </form>
         </div>

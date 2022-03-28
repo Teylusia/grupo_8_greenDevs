@@ -11,10 +11,10 @@ router.get('/productcart', productsController.cart);
 
 //Detail
 //router.get('/product/:id', productsController.detail);
-router.get('/productDetail', productsController.detail); //Esta ruta permite ver el product detail
+router.get('/productDetail/:id', productsController.detail); //Esta ruta permite ver el product detail
 
 router.get('/products/edit/:id', productsController.productEdit);
-router.put('/products/edit/:id', productsController.productEdited);
+// router.put('/products/edit/:id', productsController.productEdited);
 // router.delete('products/edit/:id', productsController.productDelete);
 
 

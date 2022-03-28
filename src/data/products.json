@@ -192,11 +192,11 @@
     {
         "id": 20,
         "nameProduct": "Forza Horizon 5",
-        "priceProduct": 1,
+        "priceProduct": 10,
         "imageProduct": "https://media.rawg.io/media/games/082/082365507ff04d456c700157072d35db.jpg",
         "specsProduct": "Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.",
         "descriptionProduct": "Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.",
-        "discountProduct": 11,
+        "discountProduct": 5,
         "rating": 4
     }
 ]
