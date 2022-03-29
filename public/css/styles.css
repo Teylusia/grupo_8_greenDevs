@@ -996,7 +996,8 @@ color: #FFFF;
   background-color: #03C959;
 }
 .precio-compra-agregar #carrito:hover,#comprar:hover{
- background-color: #AFFC41;
+ /* background-color: #AFFC41; */
+ font-size: medium;
  transition: all 450ms;
 }
 /*section 3*/
