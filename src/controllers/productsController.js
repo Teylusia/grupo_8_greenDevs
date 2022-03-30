@@ -10,7 +10,13 @@ const category = JSON.parse(fs.readFileSync(categoryFilePath, "utf-8"));
 let productsController = {
   detail: (req, res) => {
     let productId = req.params.id
-    res.render("productDetail", { products: products.find(el => el.id == productId)});
+    let productObjet = products.find(el => el.id == productId)
+    let screenshots = productObjet.short_screenshots 
+    res.render("productDetail", { 
+      product: productObjet,
+      screenshots: screenshots
+    });
+    
   },
 
   cart: (req, res) => {

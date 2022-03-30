@@ -12,6 +12,38 @@
 },
 {
     "id": 4,
+    "name": "Indie"
+},
+{
+    "id": 5,
+    "name": "Aventura"
+},
+{
+    "id": 6,
+    "name": "Estrategia"
+},
+{
+    "id": 7,
     "name": "Fps"
+},
+{
+    "id": 8,
+    "name": "Casual"
+},
+{
+    "id": 9,
+    "name": "Plataforma"
+},
+{
+    "id": 10,
+    "name": "Simulación"
+},
+{
+    "id": 11,
+    "name": "Arcade"
+},
+{
+    "id": 12,
+    "name": "Pelea"
 }
 ]

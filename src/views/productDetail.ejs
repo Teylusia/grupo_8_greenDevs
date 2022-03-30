@@ -11,13 +11,28 @@
     <section class="main-info">
       <h1></h1>
       <article class="DP-imagen">
-        <img src="<%= products.image %>" alt="imagen del producto">
+        <img src="<%= product.image %>" alt="imagen del producto">
       </article>
       <article class="mas-imagenes">
-        <img src="<%= products.image %>" alt=" Imagen-del-producto">
-        <img src="<%= products.image %>" alt=" Imagen-del-producto">
-        <img src="<%= products.image %>" alt=" Imagen-del-producto">
-        <img src="<%= products.image %>" alt=" Imagen-del-producto">
+        <% if (screenshots.length >= 4  ) { %>
+          
+          <% for( let i = 0; i < 4; i++ ) { %>
+            
+              <a href="<%= screenshots[i].image %>">
+                <img src="<%= screenshots[i].image %>" alt=" Imagen-del-producto">
+              </a>
+                
+              
+          <% } %>
+          <% } else { %> 
+         
+            <% screenshots.forEach(element => { %>
+              <a href="<%= element.image %>">
+                <img src="<%= element.image %>" alt=" Imagen-del-producto">
+              </a>
+            <% }) %>
+              <% } %> 
+       
       </article>
       <article class="related">
         <h2>Titulos Relacionados...</h2>
@@ -26,10 +41,10 @@
         <img src="img/jedi-card.jpeg" alt=" Imagenes de Total War Warhammer">
       </article>
       <article class="precio-compra-agregar">
-        <h2><%= products.name %> </h2>
+        <h2><%= product.name %> </h2>
         <h3 class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></h3>
-        <h4>Descuento : <%= products.discount %> % </h4>
-        <h2>Precio: $ <%= products.price%></h2>
+        <h4>Descuento : <%= product.discount %> % </h4>
+        <h2>Precio: $ <%= product.price%></h2>
         <i class="fa-solid fa-shop"></i>
         <button id="comprar" type="submit"><h3>comprar</h3></button>
         <i class="fas fa-cart-plus"></i>
@@ -40,7 +55,7 @@
     <section class="info">
       <article class="detailed-info">
         <h3>Descripción:</h3>
-        <p><%= products.description %> 
+        <p><%= product.description %> 
         </p>
         <div class="ver-mas">
           <button type="menu">Mostrar Mas.</button>
@@ -48,7 +63,7 @@
       </article>
       <article class="detailed-info">
         <h3>Specs:</h3>
-        <p><%= products.specs%>
+        <p><%= product.specs%>
         </p>
         <div class="ver-mas">
           <button type="menu">Mostrar Mas.</button>
