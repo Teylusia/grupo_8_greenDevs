@@ -34,14 +34,16 @@ let productsController = {
       price: req.body.price,
       image: req.body.image,
       specs: req.body.specs,
-      desc: req.body.description,
-      disc: req.body.discount,
-      category: req.body.category
+      description: req.body.description,
+      discount: req.body.discount,
+      category: req.body.category,
+      rating: 0,
+      short_screenshots: []
     };
     console.log(newProduct);
     products.push(newProduct);
-    fs.appendFileSync(productsFilePath, JSON.stringify(products));
-    res.redirect("/");
+    fs.writeFileSync(productsFilePath, JSON.stringify(products));
+    res.redirect("/admin");
   },
   productEdit: (req, res) => {
     let productId = req.params.id

@@ -7,7 +7,7 @@
         "specs": "Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.\n\nNam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus.",
         "description": "In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.",
         "discount": 2,
-        "category":"",
+        "category": "",
         "rating": 4,
         "short_screenshots": [
             {
@@ -39,7 +39,6 @@
                 "image": "https://media.rawg.io/media/screenshots/592/592e2501d8734b802b2a34fee2df59fa.jpg"
             }
         ]
-        
     },
     {
         "id": 2,
@@ -49,7 +48,7 @@
         "specs": "Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis.\n\nDuis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.\n\nMauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.",
         "description": "Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis.",
         "discount": null,
-        "category":"",
+        "category": "",
         "rating": 1,
         "short_screenshots": [
             {
@@ -90,7 +89,7 @@
         "specs": "Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum.\n\nProin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.",
         "description": "Sed ante. Vivamus tortor. Duis mattis egestas metus.",
         "discount": null,
-        "category":"",
+        "category": "",
         "rating": 2,
         "short_screenshots": [
             {
@@ -131,7 +130,7 @@
         "specs": "Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.\n\nMauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.",
         "description": "Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.",
         "discount": 17,
-        "category":"",
+        "category": "",
         "rating": 3,
         "short_screenshots": [
             {
@@ -172,7 +171,7 @@
         "specs": "Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.\n\nMaecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.\n\nNullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.",
         "description": "Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.",
         "discount": null,
-        "category":"",
+        "category": "",
         "rating": 3,
         "short_screenshots": [
             {
@@ -213,7 +212,7 @@
         "specs": "Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.",
         "description": "Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.",
         "discount": 18,
-        "category":"",
+        "category": "",
         "rating": 4,
         "short_screenshots": [
             {
@@ -254,7 +253,7 @@
         "specs": "Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.",
         "description": "Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus.",
         "discount": 2,
-        "category":"",
+        "category": "",
         "rating": 5,
         "short_screenshots": [
             {
@@ -295,7 +294,7 @@
         "specs": "Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.",
         "description": "Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.",
         "discount": null,
-        "category":"",
+        "category": "",
         "rating": 5,
         "short_screenshots": [
             {
@@ -336,7 +335,7 @@
         "specs": "Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.\n\nFusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.\n\nSed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.",
         "description": "Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.",
         "discount": null,
-        "category":"",
+        "category": "",
         "rating": 4,
         "short_screenshots": [
             {
@@ -377,7 +376,7 @@
         "specs": "Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.\n\nCras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.\n\nQuisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.",
         "description": "Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.",
         "discount": null,
-        "category":"",
+        "category": "",
         "rating": 5,
         "short_screenshots": [
             {
@@ -409,7 +408,6 @@
                 "image": "https://media.rawg.io/media/screenshots/985/985e3e1f1d1af1ab0797d43a95d472cc.jpg"
             }
         ]
-        
     },
     {
         "id": 11,
@@ -419,7 +417,7 @@
         "specs": "Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.",
         "description": "Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.",
         "discount": null,
-        "category":"",
+        "category": "",
         "rating": 1,
         "short_screenshots": [
             {
@@ -460,7 +458,7 @@
         "specs": "Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.\n\nIn hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.\n\nAliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.",
         "description": "Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.",
         "discount": null,
-        "category":"",
+        "category": "",
         "rating": 4,
         "short_screenshots": [
             {
@@ -501,7 +499,7 @@
         "specs": "Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.",
         "description": "Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.",
         "discount": null,
-        "category":"",
+        "category": "",
         "rating": 5
     },
     {
@@ -512,7 +510,7 @@
         "specs": "Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.\n\nDonec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.",
         "description": "Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.",
         "discount": 18,
-        "category":"",
+        "category": "",
         "rating": 2,
         "short_screenshots": [
             {
@@ -553,7 +551,7 @@
         "specs": "Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.",
         "description": "Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.",
         "discount": 18,
-        "category":"",
+        "category": "",
         "rating": 1,
         "short_screenshots": [
             {
@@ -590,7 +588,7 @@
         "specs": "Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.\n\nNam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus.\n\nCurabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam.",
         "description": "Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.",
         "discount": null,
-        "category":"",
+        "category": "",
         "rating": 2,
         "short_screenshots": [
             {
@@ -631,7 +629,7 @@
         "specs": "Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus.",
         "description": "Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.",
         "discount": 1,
-        "category":"",
+        "category": "",
         "rating": 3,
         "short_screenshots": [
             {
@@ -672,7 +670,7 @@
         "specs": "Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.",
         "description": "Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.",
         "discount": null,
-        "category":"",
+        "category": "",
         "rating": 2,
         "short_screenshots": [
             {
@@ -713,7 +711,7 @@
         "specs": "Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.",
         "description": "Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.",
         "discount": 9,
-        "category":"",
+        "category": "",
         "rating": 3,
         "short_screenshots": [
             {
@@ -734,7 +732,7 @@
         "specs": "Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.",
         "description": "Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.",
         "discount": 5,
-        "category":"",
+        "category": "",
         "rating": 4,
         "short_screenshots": [
             {
@@ -766,5 +764,16 @@
                 "image": "https://media.rawg.io/media/screenshots/797/7979f94d39181787ee248a423191563f.jpg"
             }
         ]
+    },
+    {
+        "id": 21,
+        "name": "asdf",
+        "price": "3433",
+        "specs": "asd",
+        "description": "fff",
+        "discount": "4",
+        "category": "Acción",
+        "rating": 0,
+        "short_screenshots": []
     }
 ]
