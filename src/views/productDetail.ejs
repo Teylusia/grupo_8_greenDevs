@@ -14,61 +14,46 @@
         <article class="mas-imagenes">
           <% if (screenshots.length >= 4 ) { %> <% for( let i = 0; i < 4; i++ )
           { %>
-
-          <img src="<%= screenshots[i].image %>" alt=" Imagen-del-producto" />
+          <a href="<%=screenshots[i].image %>">
+            <img src="<%= screenshots[i].image %>" alt=" Imagen-del-producto" />
+            </a>
 
           <% } %> <% } else { %> <% screenshots.forEach(element => { %>
-          <img src="<%= element.image %>" alt=" Imagen-del-producto" />
-          <% }) %> <% } %>
-        </article>
-        <article class="related">
-          <h2>Titulos Relacionados...</h2>
-          <img
-            src="img/god-of-war-med.jpg"
-            alt=" Imagenes de Total War Warhammer"
-          />
-          <img
-            src="img/dying-card.jpeg"
-            alt=" Imagenes de Total War Warhammer"
-          />
-          <img
-            src="img/jedi-card.jpeg"
-            alt=" Imagenes de Total War Warhammer"
-          />
-        </article>
-        <article class="precio-compra-agregar">
-          <h2><%= product.name %></h2>
-          <h3 class="rating">
+          <a href="<%=screenshots.image%>">
+            <img src="<%= element.image %>" alt=" Imagen-del-producto" />
+            <% }) %> <% } %>
+            </a>
+            </article>
+          
+          <article class="precio-compra-agregar">
+            <h2><%= product.name %></h2>
+            <h3 class="rating">
             <i class="fas fa-star"></i><i class="fas fa-star"></i
             ><i class="fas fa-star"></i><i class="fas fa-star"></i
-            ><i class="fas fa-star"></i>
-          </h3>
-          <h4>Descuento : <%= product.discount %> %</h4>
-          <h2>Precio: $ <%= product.price%></h2>
-          <i class="fa-solid fa-shop"></i>
-          <button id="comprar" type="submit"><h3>comprar</h3></button>
-          <i class="fas fa-cart-plus"></i>
-          <button id="carrito" type="submit">
-            <h3>Agregar al carrito</h3>
-          </button>
-        </article>
-      </section>
-
-      <section class="info">
-        <article class="detailed-info">
-          <h3>Descripción:</h3>
-          <p><%= product.description %></p>
-          <div class="ver-mas">
-            <button type="menu">Mostrar Mas.</button>
-          </div>
-        </article>
-        <article class="detailed-info">
-          <h3>Specs:</h3>
+              ><i class="fas fa-star"></i>
+              </h3>
+              <h4>Descuento : <%= product.discount %> %</h4>
+              <h2>Precio: $ <%= product.price%></h2>
+              <i class="fa-solid fa-shop"></i>
+              <button id="comprar" type="submit"><h3>comprar</h3></button>
+              <i class="fas fa-cart-plus"></i>
+              <button id="carrito" type="submit">
+                <h3>Agregar al carrito</h3>
+                </button>
+                </article>
+                </section>
+                
+                <section class="info">
+                  <article class="detailed-info">
+                    <h3>Descripción:</h3>
+                    <p><%= product.description %></p>
+         
+            </article>
+            <article class="detailed-info">
+              <h3>Specs:</h3>
           <p><%= product.specs%></p>
-          <div class="ver-mas">
-            <button type="menu">Mostrar Mas.</button>
-          </div>
-        </article>
+          
+            </article>
         <article class="detailed-info">
           <h3>Reseñas:</h3>
           <p>
@@ -84,14 +69,14 @@
             officiis beatae numquam tempora et! Odit saepe fuga corrupti, animi
             culpa soluta qui blanditiis suscipit architecto tempore eius
             repellendus aliquam iste ab. Accusantium, sint maiores.
-          </p>
-          <div class="ver-mas">
-            <button type="menu">Mostrar Mas.</button>
-          </div>
-        </article>
-      </section>
-    </main>
-
-    <%- include('./partials/footer') %>
-  </body>
-</html>
+            </p>
+            
+              </article>
+              <%- include("./partials/related") %>
+              </section>
+              </main>
+              
+              <%- include('./partials/footer') %>
+              </body>
+              </html>
+              

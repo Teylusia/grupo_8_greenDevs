@@ -23,17 +23,18 @@
             <input type="number" id="password" name="price" required><br>
             <label for="image">Imagenes del producto:</label>
             <input type="file" name="image" id="image"><br>
-            <label for="specs">Requisitos:</label>
+            <label for="specs">Requisitos:</label><br>
             <textarea name="specs" id="specs" cols="30" rows="10"></textarea><br>
-            <label for="description">Descripción:</label>
+            <label for="description">Descripción:</label><br>
             <textarea name="description" id="description" cols="30" rows="10"></textarea><br>
-            <select name="category" id="category">
+            <label for="category">Categoria:</label><br>
+            <select name="category" id="category"><br>
               <% category.forEach(element => { %>
                 <option value="<%= element.name%>"><%= element.name%></option> 
-              <% }) %>
+              <% }) %> 
               
-            </select>
-            <label for="discount">Descuento:</label>
+            </select><br>
+            <label for="discount">Descuento %:</label><br>
             <input type="number" name="discount" id="discount"><br>
             <input type="submit" id="submit" value="Agregar">
           </form>

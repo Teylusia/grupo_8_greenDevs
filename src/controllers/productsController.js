@@ -14,6 +14,7 @@ let productsController = {
     let screenshots = productObjet.short_screenshots 
     res.render("productDetail", { 
       product: productObjet,
+      allProducts: products,
       screenshots: screenshots
     });
     

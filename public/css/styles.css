@@ -953,10 +953,17 @@ aside {
 }
 .mas-imagenes{
   width: 100%;
+  align-content: center;
   display: flex;
   justify-content: center;
 }
-.mas-imagenes img, .related img{
+.mas-imagenes img {
+  width: 70%;
+  margin: 10px 3px;
+  border-radius: 4px;
+}
+
+.related ,.img-product{
   width: 20%;
   margin: 10px 3px;
   border-radius: 4px;
@@ -1027,7 +1034,7 @@ color: #FFFF;
 .related{
   order: 1;
   width: 100%;
-  display: flex;
+  /* display: flex; */
   justify-content: space-around;
   flex-wrap: wrap;
   margin: 20px 0px;
@@ -1087,7 +1094,7 @@ color: #FFFF;
   .related{
     order: 2;
     width: 100%;
-    display: flex;
+    /* display: flex; */
     justify-content: space-around;
     flex-wrap: wrap;
     opacity: 0.8;

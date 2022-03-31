@@ -1,0 +1,12 @@
+<h2>Titulos Relacionados...</h2>
+<article class="related">
+
+    
+
+    <% allProducts.slice(-4).forEach( product => { %>
+       <a href="/productDetail/<%= product.id %>">
+        <img class="img-product" src="<%= product.image %>" alt="imagen-de-producto">
+        <% }) %> 
+    </a>
+
+</article>
