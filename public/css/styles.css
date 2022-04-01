@@ -218,25 +218,19 @@ main{
 
 /* Slideshow container */
 .slideshow-container {
-  max-width: 100%;
   position: relative;
   margin: 0 5% 0% 5%;
-  display: flex;
-  justify-content: center;
-  /* width: 80vh; */
+
   
  
 }
 .slideshow-container .mySlides fade {
   display: flex;
-  justify-content: space-between;
   align-items: flex-end;
-  position: absolute;
   width: 100%;
   bottom: 8px;
   text-align: center;
   padding: 10px 11px;
-  font-size: x-large;
   color: white;
   background-color: black;
   opacity: 0.3;
@@ -258,13 +252,9 @@ h2, h3 {
   color: white
 }
 .slide-items {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
   position: absolute;
   width: 100%;
   bottom: 8px;
-  text-align: center;
   padding: 10px 11px;
   font-size: x-large;
   color: white;
@@ -276,9 +266,9 @@ h2, h3 {
 .slide-right {
   display: flex;
   color: white;
-  flex-wrap: nowrap;
   padding: 3px;
   align-items: center;
+  justify-content: flex-end;
 }
 
 
@@ -286,9 +276,8 @@ h2, h3 {
   display: flex;
   flex-direction: column;
   color: white;
-  flex-wrap: nowrap;
   padding: 3px;
-  align-items: flex-start;
+  align-items: flex-end;
 }
 
 .slide-left i {
@@ -310,9 +299,7 @@ h2, h3 {
   justify-content: center;
   align-items: center;
 }
-.slide-img img{
-  width: 100%;
-}
+
 
 /* Next & previous buttons */
 .prev,
