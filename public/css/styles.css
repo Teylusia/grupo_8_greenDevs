@@ -251,55 +251,6 @@ h2, h3 {
 .titulo-categorias p {
   color: white
 }
-.slide-items {
-  position: absolute;
-  width: 100%;
-  bottom: 8px;
-  padding: 10px 11px;
-  font-size: x-large;
-  color: white;
-
-  
-  
-}
-
-.slide-right {
-  display: flex;
-  color: white;
-  padding: 3px;
-  align-items: center;
-  justify-content: flex-end;
-}
-
-
-.slide-left {
-  display: flex;
-  flex-direction: column;
-  color: white;
-  padding: 3px;
-  align-items: flex-end;
-}
-
-.slide-left i {
-  font-size: small;
-  padding-bottom: 5px;
-  
-}
-
-.slideshow-container button{
-  background-color: greenyellow;
-  padding: 8px ;
-}
-
-.slide-img {
-  display: flex;
-  width: 100%;
-  flex-direction: column-reverse;
-  vertical-align: middle;  
-  justify-content: center;
-  align-items: center;
-}
-
 
 /* Next & previous buttons */
 .prev,
