@@ -1,5 +1,8 @@
 $(document).ready(function(){
 
-    $('.flexslider').flexslider()
+    $('.flexslider').flexslider({
+        prevText: '',
+        nextText: ''
+    });
 
 });
