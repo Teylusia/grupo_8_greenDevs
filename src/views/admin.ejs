@@ -16,8 +16,9 @@
 
                         <div class="admin-form">
                             <h2>Panel de Administrador</h2>
-
-                            <button>Nuevo Producto+</button>
+                            <a href="products/create">
+                                <button>Nuevo Producto+</button>
+                            </a>
                             <button>Listar Usuarios</button>
                             <button>Nueva Categoria</button>
                             <form action="/admin/search" method="GET">
@@ -69,8 +70,8 @@
                             <td>
                                 <a href="/products/edit/<%= product.id %>">
                                 <button class="button-edit">Editar</button></a>
-                                <form action="/products/delete/<%= product.id %>"
-                                    method="POST">
+                                <form method="POST" action="/products/delete/<%= product.id %>?_method=delete">
+                                    
 
                                     <button type="submit" class="button-delete">Eliminar</button>
                                 </form>
