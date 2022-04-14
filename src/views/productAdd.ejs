@@ -21,9 +21,17 @@
             <input type="text" id="username" name="name" required><br>
             <label for="price">Precio:</label><br>
             <input type="number" id="password" name="price" required><br>
-            <label for="image">Imagenes del producto:</label>
-            <input type="file" name="image" id="image"><br>
-            <label for="specs">Requisitos:</label><br>
+            <div style="margin: 10%;">
+              <label for="image">Imagen Principal:</label>
+              <input type="file" name="image" id="upload-image"><br>
+
+            </div>
+            <!-- <div style="margin: 10%">
+              <label for="gallery">Galeria de Imagenes:</label>
+              <input type="file" multiple name="gallery" id="gallery"><br>
+
+            </div> -->
+            <label for="specs">Requisitos de Hardware:</label><br>
             <textarea name="specs" id="specs" cols="30" rows="10"></textarea><br>
             <label for="description">Descripción:</label><br>
             <textarea name="description" id="description" cols="30" rows="10"></textarea><br>
@@ -33,8 +41,8 @@
                 <option value="<%= element.name%>"><%= element.name%></option> 
               <% }) %> 
               
-            </select><br>
-            <label for="discount">Descuento %:</label><br>
+            </select><br><br>
+            <label for="discount">Descuento %:</label>
             <input type="number" name="discount" id="discount"><br>
             <input type="submit" id="submit" value="Agregar">
           </form>
