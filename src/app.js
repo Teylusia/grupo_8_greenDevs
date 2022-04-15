@@ -7,12 +7,14 @@ const productsRoutes = require("./routes/productsRoutes");
 const publicPath = path.resolve(__dirname, "../public");
 const methodOverride = require("method-override");
 const logger = require("morgan");
+const cookieParser = require("cookie-parser");
 
+app.use(cookieParser());
 app.use(express.static(publicPath));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(methodOverride("_method"));
-app.use(logger("dev"))
+app.use(logger("dev"));
 
 app.set("view engine", "ejs");
 app.set("views", __dirname + "/views");
