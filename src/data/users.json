@@ -1,3 +1,50 @@
-[{
-  "id": 1, "username": "Teylusia", "password":"River123"
-}]
+[
+ {
+  "username": "Juan Perez",
+  "email": "juanperez@gmail.com",
+  "password": "juanpix",
+  "confirm-password": "juanpix"
+ },
+ {
+  "id": 1,
+  "username": "mariafog17@gmail.com",
+  "email": "asd@gmail.com",
+  "avatar": "/img/avatar/avatar-1650209709333.jpg",
+  "password": "asdf"
+ },
+ {
+  "id": 2,
+  "username": "pepe",
+  "email": "pepe@gmail.com",
+  "avatar": "/img/avatar/avatar-1650210016325.jpg",
+  "password": "pepitox"
+ },
+ {
+  "id": 3,
+  "username": "sadsad",
+  "email": "pepe@gmail.com",
+  "avatar": "/img/avatar/avatar-1650216729418.jpg",
+  "password": "sdfsdf"
+ },
+ {
+  "id": 4,
+  "username": "asd",
+  "email": "asdd@gmail.com",
+  "avatar": "/img/avatar/avatar-1650216949160.jpg",
+  "password": "fghfghfg"
+ },
+ {
+  "id": 5,
+  "username": "vbcv",
+  "email": "fdgfda@gmail.com",
+  "avatar": "/img/avatar/avatar-1650220957099.jpg",
+  "password": "$2a$10$hOIb0bv0HVsYC9GYAGDadeybWvVPdQf/ZnMuI6UfmelKaRe.aBqyi"
+ },
+ {
+  "id": 6,
+  "username": "jose",
+  "email": "jose@gmail.com",
+  "avatar": "/img/avatar/avatar-1650229957048.jpg",
+  "password": "$2a$10$CSunHlZvOzKTK2hW5CF1sORvMgUcBLFMWjT3U/ImBeG1JiRnEuqUi"
+ }
+]
