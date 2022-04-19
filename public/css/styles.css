@@ -477,8 +477,35 @@ h2, h3 {
 .general-container {
   text-align: center;
   color: #FFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-
+.register-form form{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.register-form form label, .register-form form input{
+  width: 100%;
+  margin: 5px 0px;
+}
+.register-form form input[type=file]{
+  width: 50%;
+  display: flex;
+  justify-content: center;
+}
+.register-form-footer{
+  margin: 10px;
+}
+.register-form-footer a{
+  color: #03C959;
+}
+.register-form-footer a:hover{
+  transition: all 600ms;
+ color: #FFF;
+}
 .register , .panel, .productadd {
   display: inline-block;
   flex-direction: column;
@@ -658,6 +685,8 @@ main.product-cart{
   margin-bottom: 20px;
   border-radius: 5px;
   border: solid 1px #F5F5F5;
+  background-color: #2a2a2a;
+
 }
 
 .bloque-medio{
@@ -674,6 +703,9 @@ main.product-cart{
   align-content: stretch;
   width: 50px;
 }
+.descripcion-precio i{
+  color: #999;
+}
 
 .contador{
   display: flex;
@@ -681,8 +713,8 @@ main.product-cart{
 }
 
 .boton-contador{
-  background-color: #777;
-  color: white;
+  background-color: #03C959;
+  color: #F5F5F5;
   padding: 1px 5px;
   font-size: 16px;
   cursor: pointer;
@@ -694,7 +726,7 @@ main.product-cart{
 .contador-numero{
     background-color: #2a2a2a;
     font-size: 18px;
-    color: white;
+    color: #F5F5F5;
     padding: 0px 5px;
     border: solid 0.5px;
 }
@@ -753,11 +785,10 @@ main.product-cart{
   display: flex;
   flex-direction: column;
   padding-top: 15px;
-
 }
 
 .boton-compra{
-  background-color: #777;
+  background-color: #03C959;
   cursor: pointer;
   border-radius: 10px;
   color: white;
@@ -766,18 +797,22 @@ main.product-cart{
 }
 
 .boton-compra:hover{
-  background-color: #03C959;
-  transition-duration: 300ms;
+  transition: all 600ms;
+  background-color: #05ac4d;
 }
 
 .boton-sigue{
   color:white;
   margin-bottom : 15px;
-  background-color: #777;
+  background-color: #03C959;
   cursor: pointer;
   border-radius: 10px;
   border: solid 1px #E5E5E5;
   height: 25px;
+}
+.boton-sigue:hover{
+  transition: all 600ms;
+  background-color: #05ac4d;  
 }
 
 /*ADMIN*/
@@ -909,9 +944,15 @@ aside {
   align-content: center;
   display: flex;
   justify-content: center;
+  margin: 0px 10px;
+}
+.mas-imagenes a{
+  display: flex;
+ justify-content: center;
 }
 .mas-imagenes img {
   width: 70%;
+  max-width: 350px;
   margin: 10px 3px;
   border-radius: 4px;
 }
