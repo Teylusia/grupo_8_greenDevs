@@ -1,6 +1,7 @@
 //User related routes here
 const express = require('express');
 const router = express.Router();
+const { check } = require('express-validator');
 const usersController = require('../controllers/usersController');
 const path = require("path");
 
@@ -17,6 +18,15 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage });
 
 //Middlewares, por ahora se valida desde el front
+//Validations 
+const validateLogin = [
+  check('email')
+  .notEmpty().withMessage('necesitas completar tu email.').bail().isEmail()
+  .isLength({min: 6}).withMessage('debe tener un minimo de 6 caracteres y cumplir con el formato de email.'),
+  check('password')
+  .notEmpty().withMessage('necesitas completar con una contraseña.').bail()
+  .isLength({min: 5}).withMessage('debe tener un minimo de 5 caracteres')
+];
 //const validateRegister = require('../middlewares/validateRegister.js');
 
 //Register
@@ -25,11 +35,10 @@ router.post('/register', upload.single("avatar"), usersController.userAdd);
 
 //Login
 router.get('/login', usersController.login);
-router.post('/login', usersController.loginProcess)
+router.post('/login', validateLogin, usersController.loginProcess)
 
 router.put('/user/:id', usersController.userEdit);
 // router.delete('/user', usersController.userDelete); falta desarrollar la vista y el panel de usuarios
-router.get("/admin", usersController.admin )
-
+router.get("/admin", usersController.admin );
 
 module.exports = router;

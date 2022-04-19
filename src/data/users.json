@@ -46,5 +46,12 @@
   "email": "jose@gmail.com",
   "avatar": "/img/avatar/avatar-1650229957048.jpg",
   "password": "$2a$10$CSunHlZvOzKTK2hW5CF1sORvMgUcBLFMWjT3U/ImBeG1JiRnEuqUi"
+ },
+ {
+  "id": 7,
+  "username": "Teylusia",
+  "email": "agustin.h.taylor@gmail.com",
+  "avatar": "/img/avatar/avatar-1650317082705.png",
+  "password": "$2a$10$li56Go2y/vlykc4h9w3UieGuWHa.jUC/f5CdJeqjIuGB4hCkFi.3O"
  }
 ]
