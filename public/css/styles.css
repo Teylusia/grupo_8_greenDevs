@@ -840,6 +840,7 @@ aside {
 
 /* SLIDER CATEGORIAS  */
 /* ---- ----- ----- Contenedor Titulo y Controles ----- ----- ----- */
+
 .contenedor-titulo-controles {
 	display: flex;
 	justify-content: space-between;
@@ -869,6 +870,8 @@ aside {
 /* ---- ----- ----- Contenedor Principal y Flechas ----- ----- ----- */
 .products-category {
 	margin-bottom: 70px;
+  margin: 10%;
+
 }
 
 .products-category .contenedor-principal {
