@@ -838,6 +838,103 @@ aside {
   display: inline
 }
 
+/* SLIDER CATEGORIAS  */
+/* ---- ----- ----- Contenedor Titulo y Controles ----- ----- ----- */
+.contenedor-titulo-controles {
+	display: flex;
+	justify-content: space-between;
+	align-items: end;
+}
+
+.contenedor-titulo-controles h3 {
+	color: #fff;
+	font-size: 30px;
+}
+
+.contenedor-titulo-controles .indicadores1 button, .indicadores2 button, .indicadores3 button, .indicadores4 button {
+	background: #fff;
+	height: 3px;
+	width: 10px;
+	cursor: pointer;
+	border: none;
+	margin-right: 2px;
+}
+
+.contenedor-titulo-controles .indicadores1 button:hover, .indicadores2 button:hover, .indicadores3 button:hover, .indicadores4 button:hover
+.contenedor-titulo-controles .indicadores1 button.activo, .indicadores2 button.activo, .indicadores3 button.activo, .indicadores4 button.activo {
+	background: red;
+}
+
+
+/* ---- ----- ----- Contenedor Principal y Flechas ----- ----- ----- */
+.products-category {
+	margin-bottom: 70px;
+}
+
+.products-category .contenedor-principal {
+	display: flex;
+	align-items: center;
+	position: relative;
+}
+
+.products-category .contenedor-principal .flecha-izquierda-1,.flecha-izquierda-2, .flecha-izquierda-3, .flecha-izquierda-4,
+.products-category .contenedor-principal .flecha-derecha-1, .flecha-derecha-2, .flecha-derecha-3, .flecha-derecha-4 {
+	position: absolute;
+	border: none;
+	background: rgba(0,0,0,0.3);
+	font-size: 40px;
+	height: 50%;
+	top: calc(50% - 25%);
+	line-height: 40px;
+	width: 50px;
+	color: #fff;
+	cursor: pointer;
+	z-index: 500;
+	transition: .2s ease all;
+}
+
+.products-category .contenedor-principal .flecha-izquierda-1:hover,.flecha-izquierda-2:hover, .flecha-izquierda-3:hover, .flecha-izquierda-4:hover
+.products-category .contenedor-principal .flecha-derecha-1:hover, .flecha-derecha-2:hover, .flecha-derecha-3:hover , .flecha-derecha-4:hover {
+	background: rgba(0,0,0, .9);
+}
+
+.products-category .contenedor-principal .flecha-izquierda-1, .flecha-izquierda-2, .flecha-izquierda-3, .flecha-izquierda-4 {
+	left: 0;
+}
+
+.products-category .contenedor-principal .flecha-derecha-1, .flecha-derecha-2, .flecha-derecha-3, .flecha-derecha-4 {
+	right: 0;
+}
+
+/* ---- ----- ----- Carousel ----- ----- ----- */
+.products-category .contenedor-carousel, .carousel1, .carousel2, .carousel3, .carousel4 {
+	width: 100%;
+	padding: 20px 0;
+	overflow: hidden;
+	scroll-behavior: smooth;
+}
+
+.products-category .contenedor-carousel .carousel, .carousel1, .carousel2, .carousel3, .carousel4 {
+	display: flex;
+	flex-wrap: nowrap;
+}
+
+.products-category .contenedor-carousel .carousel .productsList, .carousel1, .popularOffersList, .bestSellersList, .newReleasesList, .offersList {
+	min-width: 20%;
+	transition: .3s ease all;
+	box-shadow: 5px 5px 10px rgba(0,0,0, .3);
+}
+
+.products-category .contenedor-carousel .carousel .productsList.hover, .popularOffersList.hover, .bestSellersList.hover, .newReleasesList.hover, .offersList.hover {
+	transform: scale(1.2);
+	transform-origin: center;
+}
+
+.products-category .contenedor-carousel .carousel .productsList  img, .popularOffersList img, .bestSellersList img, .newReleasesList img, .offersList img {
+	width: 100%;
+	vertical-align: top;
+}
+
 /*TABLETS*/
 
 @media (min-width: 481px) {
