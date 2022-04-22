@@ -981,6 +981,23 @@ aside {
   vertical-align: top;
 }
 
+/* PAGE 404*/
+
+.error404{
+  margin: 10%;
+  display: flex;
+  color: red;
+  align-items: center;
+  justify-content: space-around;
+}
+.error404 a {
+  display: flex;
+  align-items: center;
+  align-items: center;
+}
+
+
+
 /*TABLETS*/
 
 @media (min-width: 481px) {
