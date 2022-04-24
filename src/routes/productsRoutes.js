@@ -3,6 +3,7 @@ const router = express.Router();
 const productsController = require('../controllers/productsController');
 const { route } = require('./productsRoutes');
 const path = require("path");
+const sequelize = require("sequelize");
 
 //Multer
 const multer = require('multer');

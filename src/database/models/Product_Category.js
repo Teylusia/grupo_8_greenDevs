@@ -1,8 +1,10 @@
-module.exports = (sequelize, dataTypes) => {
+module.exports = (sequelize, DataTypes) => {
 
 let cols = {
     id: {
-        type: dataTypes.INTEGER
+        type: DataTypes.INTEGER,
+        primaryKey: true,
+        autoIncrement: true
     },
 };
 

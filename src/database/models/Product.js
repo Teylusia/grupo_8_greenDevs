@@ -1,26 +1,30 @@
-module.exports = (sequelize, dataTypes) => {
+const { Sequelize } = require('sequelize');
+
+module.exports = (sequelize, DataTypes) => {
 
 cols = {
     id: {
-        type: dataTypes.INTEGER
+        type: DataTypes.INTEGER,
+        primaryKey: true,
+        autoIncrement: true
     },
     name: {
-        type: dataTypes.STRING(100)
+        type: DataTypes.STRING(100)
     },
     price: {
-        type: dataTypes.INTEGER
+        type: DataTypes.INTEGER
     },
     specs: {
-        type: dataTypes.STRING //dataTypes: STRING corresponde a un VARCHAR(255)
+        type: DataTypes.STRING //dataTypes: STRING corresponde a un VARCHAR(255)
     },
     description: {
-        type: dataTypes.STRING
+        type: DataTypes.STRING
     },
     rating: {
-        type: dataTypes.INTEGER
+        type: DataTypes.INTEGER
     },
     discount: {
-        type: dataTypes.INTEGER
+        type: DataTypes.INTEGER
     },
 };
 

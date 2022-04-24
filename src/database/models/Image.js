@@ -1,11 +1,13 @@
-module.exports = (sequelize, dataTypes) => {
+module.exports = (sequelize, DataTypes) => {
 
 let cols = {
     id: {
-        type: dataTypes.INTEGER
+        type: DataTypes.INTEGER,
+        primaryKey: true,
+        autoIncrement: true
     },
     url: {
-        type: dataTypes.STRING
+        type: DataTypes.STRING
     },
 };
 
@@ -19,7 +21,7 @@ let config = {
 const Image = sequelize.define("Image", cols, config);
 
 Image.associate = function(models){
-    Sale.hasMany(models.Product, {
+    Image.hasMany(models.Product, {
         as: "Product",
         foreignKey: "Product_id"
     });
