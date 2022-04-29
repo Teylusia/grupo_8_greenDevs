@@ -5,8 +5,10 @@ const productsFilePath = path.join(__dirname, "../data/products.json");
 const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
 const categoryFilePath = path.join(__dirname, "../data/category.json");
 const category = JSON.parse(fs.readFileSync(categoryFilePath, "utf-8"));
+const { validationResult } = require("express-validator");
 const db = require("../database/models");
 const sequelize = require("sequelize");
+
 
 let productsController = {
   detail: (req, res) => {
@@ -25,9 +27,6 @@ let productsController = {
   },
 
   productCreate: (req, res) => {
-    res.render("productAdd", { category });
-  },
-  productAdd: (req, res) => {
     db.Product.create({
       name: req.body.name,
       price: req.body.price,
@@ -65,6 +64,7 @@ let productsController = {
     // console.log(req.file);
     products.push(newProduct);
     fs.writeFileSync(productsFilePath, JSON.stringify(products));*/
+
   },
   productEdit: (req, res) => {
     let productId = req.params.id;
@@ -77,12 +77,22 @@ let productsController = {
     });
   },
   productEdited: (req, res) => {
-    let newProducts = [];
     let productId = req.params.id;
+    let productObjet = products.find((el) => el.id == productId);
+    let screenshots = productObjet.short_screenshots;
+    let newProducts = [];
     let productsFilter = (newProducts = products.filter(
       (el) => el.id != productId
     ));
     let productToEdit = products.find((el) => el.id == productId);
+    let resultValidation = validationResult(req);
+    if (resultValidation.errors.length > 0) {
+      res.render("productEdit", { errors: resultValidation.mapped(), 
+        category,
+        products: products.find((el) => el.id == productId),
+      screenshots: screenshots,
+      });
+    }else{
 
     // console.log(newProducts)
 
@@ -103,7 +113,7 @@ let productsController = {
 
     fs.writeFileSync(productsFilePath, JSON.stringify(newProducts));
     res.redirect("/admin");
-  },
+  }},
   productDelete: (req, res) => {
     let productId = req.params.id;
     let otherProducts = products.filter((product) => product.id != productId);

@@ -23,6 +23,9 @@ app.use(mainRoutes);
 app.use(usersRoutes);
 app.use(productsRoutes);
 
+app.use((req, res, next) => {
+  res.status(404).render("page404")})
+
 app.listen(3000, () => {
   console.log("Arrancando servidor...");
   console.log("http://localhost:3000");

@@ -591,10 +591,8 @@ i.fab.fa-apple {
   background-color: indianred;
 }
 
-#username,
-#email,
-#password,
-#confirm-password,
+
+
 #descriptionProduct,
 #specsProduct,
 #imageProduct,
@@ -606,6 +604,15 @@ i.fab.fa-apple {
   margin: 6px 0px 6px 0px;
 }
 
+.form-input {
+  
+    border-radius: 6px;
+    padding: 6px;
+    width: 80%;
+    border: solid 1px #03c959;
+    margin: 6px 0px 6px 0px;
+  
+}
 #submit {
   display: flex;
   width: 50%;
@@ -620,6 +627,14 @@ i.fab.fa-apple {
   transition-duration: 450ms;
   border: none;
 }
+
+/* INPUT FORMS IS-INVALID */
+
+.is-invalid {
+  
+  border:solid 2px red;
+}
+
 
 /* Media queries */
 
@@ -981,6 +996,23 @@ aside {
   vertical-align: top;
 }
 
+/* PAGE 404*/
+
+.error404{
+  margin: 10%;
+  display: flex;
+  color: red;
+  align-items: center;
+  justify-content: space-around;
+}
+.error404 a {
+  display: flex;
+  align-items: center;
+  align-items: center;
+}
+
+
+
 /*TABLETS*/
 
 @media (min-width: 481px) {
@@ -1178,6 +1210,13 @@ button {
   width: 100%;
   margin: 20px 0px;
   font-size: 25px;
+}
+
+
+/* VALIDATIONS ERRORS */
+
+.errors {
+  color: red;
 }
 
 @media (min-width: 1024px) {
