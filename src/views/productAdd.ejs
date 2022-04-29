@@ -1,76 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
-
   <%- include('./partials/head') %>
 
-<body>
+  <body>
+    <%- include('./partials/header') %>
 
-  <%- include('./partials/header') %>
+    <main>
+      <div class="general-container">
+        <div class="productadd">
+          <h2 class="texto-de-registro">Agregar nuevo Producto</h2>
 
-  <main>
-    <div class="general-container">
-    <div class="productadd">
-      
-      <h2 class="texto-de-registro">Agregar nuevo Producto</h2>
-     
-      
-        <div class="productadd-form">
-         
-          <form action="/products/create" enctype="multipart/form-data" method="POST">
-            <label for="name">Nombre del producto:</label><br>
-            <input type="text" id="username" name="name" required><br>
-            <label for="price">Precio:</label><br>
-            <input type="number" id="password" name="price" required><br>
-            <div style="margin: 10%;">
-              <label for="image">Imagen Principal:</label>
-              <input type="file" name="image" id="upload-image"><br>
-
-            </div>
-            <!-- <div style="margin: 10%">
+          <div class="productadd-form">
+            <form
+              action="/products/create"
+              method="POST"
+              enctype="multipart/form-data"
+            >
+              <label for="name">Nombre del producto:</label><br />
+              <input 
+              type="text" 
+              name="name" 
+              class="form-input <%= locals.errors && errors.name ? "is-invalid" : null %>" 
+              value="<%=locals.oldData && oldData.name ? oldData.name : '' %>"><br/>
+              <% if (locals.errors && errors.name) { %>
+                <div class="errors"> 
+                  <%= errors.name.msg %> 
+                </div>
+              <% } %>
+              <label for="price">Precio:</label><br />
+              <input 
+              type="number" 
+              name="price" 
+              class="form-input <%= locals.errors && errors.price ? "is-invalid" : null %>"
+              value="<%=locals.oldData && oldData.price ? oldData.price : '' %>"><br />
+              <% if (locals.errors && errors.price) { %>
+                <div class="errors"> 
+                  <%= errors.price.msg %> 
+                </div>
+              <% } %>
+              <div style="margin: 10%">
+                <label for="image">Imagen Principal:</label>
+                <input type="file" name="image" id="upload-image" 
+                class="form-input <%= locals.errors && errors.image ? "is-invalid" : null %>"><br />
+                <% if (locals.errors && errors.image) { %>
+                  <div class="errors"> 
+                    <%= errors.image.msg %> 
+                  </div>
+                <% } %>
+              </div>
+              <!-- <div style="margin: 10%">
               <label for="gallery">Galeria de Imagenes:</label>
               <input type="file" multiple name="gallery" id="gallery"><br>
 
             </div> -->
-            <label for="specs">Requisitos de Hardware:</label><br>
-            <textarea name="specs" id="specs" cols="30" rows="10"></textarea><br>
-            <label for="description">Descripción:</label><br>
-            <textarea name="description" id="description" cols="30" rows="10"></textarea><br>
-            <label for="category">Categoria:</label><br>
-            <select name="category" id="category"><br>
-              <% category.forEach(element => { %>
-                <option value="<%= element.name%>"><%= element.name%></option> 
-              <% }) %> 
-              
-            </select><br><br>
-            <label for="discount">Descuento %:</label>
-            <input type="number" name="discount" id="discount"><br>
-            <input type="submit" id="submit" value="Agregar">
-          </form>
-          <div class="back-button">
-            <a href="/admin">
-              
-              <p>Volver al listado</p>
-            </a>
+              <label for="specs">Requisitos de Hardware:</label><br />
+              <textarea 
+              name="specs" 
+              id="specs" 
+              cols="30" 
+              rows="10"
+              class="form-input <%= locals.errors && errors.specs ? "is-invalid" : null %>" 
+              ><%=locals.oldData && oldData.specs ? oldData.specs : '' %></textarea><br />
+              <% if (locals.errors && errors.specs) { %>
+                <div class="errors"> 
+                  <%= errors.specs.msg %> 
+                </div>
+              <% } %>
+              <label for="description">Descripción:</label><br />
+              <textarea
+                name="description"
+                id="description"
+                cols="30"
+                rows="10"
+                class="form-input <%= locals.errors && errors.description ? "is-invalid" : null %>"><%=locals.oldData && oldData.description ? oldData.description : '' %></textarea><br />
+              <% if (locals.errors && errors.description) { %>
+                <div class="errors"> 
+                  <%= errors.description.msg %> 
+                </div>
+              <% } %>
+              <label for="category">Categoria:</label><br />
+              <select name="category" id="category">
+                <br />
+                <% category.forEach(element => { %>
+                <option value="<%= element.name%>"><%= element.name%></option>
+                <% }) %></select><br /><br />
+              <label for="discount">Descuento %:</label>
+              <input type="number" name="discount" id="discount" /><br />
+              <input type="submit" id="submit" value="Agregar" />
+            </form>
+            <div class="back-button">
+              <a href="/admin">
+                <p>Volver al listado</p>
+              </a>
+            </div>
           </div>
         </div>
-    </div>
-    <div class="crudList">
-    
-    </div>
-    </div>
-  </main>
+        <div class="crudList"></div>
+      </div>
+    </main>
 
-  <%- include('./partials/footer') %>
-  
+    <%- include('./partials/footer') %>
   </body>
 </html>
-
-
-<!-- 
-AÑADIRLE FOTOS
-NOMBRE
-DESCRIPCION
-CATEGORIA
-PRECIO
-SPECS
- -->

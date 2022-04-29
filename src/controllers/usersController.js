@@ -31,7 +31,6 @@ let usersController = {
 
   userAdd: (req, res) => {
     let resultValidation = validationResult(req);
-    console.log(req.body)
     if (resultValidation.errors.length > 0) {
       res.render("register", { errors: resultValidation.mapped(), oldData: req.body });
     } else {
@@ -50,9 +49,11 @@ let usersController = {
       };
       users.push(newUser);
       fs.writeFileSync(usersFilePath, JSON.stringify(users, null, " "));
-      res.redirect("/login");
+      res.redirect("/registerSuccess");
     }
   },
+
+  success : (req, res) => { res.render("registerSuccess")},
 
   //LOGIN
   login: (req, res) => {
@@ -60,6 +61,12 @@ let usersController = {
   },
 
   loginProcess: (req, res) => {
+
+    let resultValidation = validationResult(req);
+    if (resultValidation.errors.length > 0) {
+      res.render("login", { errors: resultValidation.mapped(), oldData: req.body });
+    } else {
+
     let userToLogin = User.findByField("email", req.body.email);
 
     if (userToLogin) {
@@ -72,7 +79,7 @@ let usersController = {
         res.redirect("/");
       }
     }
-  },
+  }},
 
   userEdit: (req, res) => {
     let productToEdit = req.params.id;

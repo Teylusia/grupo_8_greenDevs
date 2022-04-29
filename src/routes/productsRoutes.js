@@ -1,8 +1,9 @@
 const express = require('express');
 const router = express.Router(); 
 const productsController = require('../controllers/productsController');
-const { route } = require('./productsRoutes');
+// const { route } = require('./productsRoutes');
 const path = require("path");
+const productValidate = require ("../middlewares/productValidatorMiddleware")
 
 //Multer
 const multer = require('multer');
@@ -26,11 +27,11 @@ router.get("/productDetail/:id", productsController.detail); //Esta ruta permite
 
 //Edit-Delete
 router.get("/products/edit/:id", productsController.productEdit);
-router.put("/products/edit/:id",upload.single("image"), productsController.productEdited);
+router.put("/products/edit/:id",upload.single("image"),productValidate, productsController.productEdited);
 router.delete("/products/delete/:id", productsController.productDelete);
 
 //Create Products
 router.get('/products/create', productsController.productCreate);
-router.post('/products/create', upload.single("image"), productsController.productAdd);
+router.post('/products/create', upload.single("image"), productValidate, productsController.productAdd);
 
 module.exports = router;

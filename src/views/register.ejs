@@ -32,7 +32,7 @@
                 id="username"
                 name="username"
                 placeholder="Ej: juangarcia"
-                value="<%=locals.old && old.username ? old.username : '' %>"
+                value="<%=locals.oldData && oldData.username ? oldData.username : '' %>"
               />
               <% if (locals.errors && errors.username) { %>
                 <div class="errors"> 
@@ -46,7 +46,7 @@
                 id="email"
                 name="email"
                 placeholder="Ej: juanperez@gmail.com"
-                value="<%=locals.old && old.email ? old.email : '' %>"
+                value="<%=locals.oldData && oldData.email ? oldData.email : '' %>"
               />
               <% if (locals.errors && errors.email) { %>
                 <div class="errors"> 
@@ -54,7 +54,13 @@
                 </div>
               <% } %>
               <label for="avatar">Avatar:</label>
-              <input type="file" name="avatar" id="upload-image" >
+              <input type="file" name="avatar" id="upload-image" 
+              value="<%=locals.oldData && oldData.avatar ? oldData.avatar : '' %>">
+              <% if (locals.errors && errors.avatar) { %>
+                <div class="errors">
+                  <%= errors.avatar.msg %>
+                </div>
+              <% } %>
               <label for="password">Ingresa una contraseña</label>
               <input type="password"  class="form-input <%= locals.errors && errors.password ? "is-invalid" : null %>" id="password" name="password" />
               <% if (locals.errors && errors.password) { %>
