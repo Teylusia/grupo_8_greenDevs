@@ -4,6 +4,7 @@ const productsController = require('../controllers/productsController');
 // const { route } = require('./productsRoutes');
 const path = require("path");
 const productValidate = require ("../middlewares/productValidatorMiddleware")
+const sequelize = require("sequelize");
 
 //Multer
 const multer = require('multer');

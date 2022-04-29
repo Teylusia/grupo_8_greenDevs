@@ -6,6 +6,9 @@ const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
 const categoryFilePath = path.join(__dirname, "../data/category.json");
 const category = JSON.parse(fs.readFileSync(categoryFilePath, "utf-8"));
 const { validationResult } = require("express-validator");
+const db = require("../database/models");
+const sequelize = require("sequelize");
+
 
 let productsController = {
   detail: (req, res) => {
@@ -24,42 +27,44 @@ let productsController = {
   },
 
   productCreate: (req, res) => {
-    res.render("productAdd", { category });
-  },
-  productAdd: (req, res) => {
-    let resultValidation = validationResult(req);
-    console.log(req.body)
-    console.log(resultValidation)
-    if (resultValidation.errors.length > 0) {
-      res.render("productAdd", { errors: resultValidation.mapped(), 
-        oldData: req.body,
-        category
-      });
-    }else{
+    db.Product.create({
+      name: req.body.name,
+      price: req.body.price,
+      image: req.body.image,
+      specs: req.body.specs,
+      description: req.body.description,
+      category: req.body.category,
+      rating: req.body.rating,
+      discount: req.body.discount
+    });
+    res.redirect("/admin");
+    /*
+    
+    Antigüo metodo para agregar productos
 
-      let maxId = 0;
-      let findMaxId = products.forEach((product) => {
-        if (product.id > maxId) {
-          maxId = product.id;
-        }
-      });
-      let newProduct = {
-        id: maxId + 1,
-        name: req.body.name,
-        price: req.body.price,
-        image: "/img/uploads/" + req.file.filename,
-        specs: req.body.specs,
-        description: req.body.description,
-        discount: req.body.discount,
-        category: req.body.category,
-        rating: 0,
-        short_screenshots: [],
-      };
-      products.push(newProduct);
-      fs.writeFileSync(productsFilePath, JSON.stringify(products));
-      res.redirect("/admin");
+    let maxId = 0;
+    let findMaxId = products.forEach((product) => {
+      if (product.id > maxId) {
+        maxId = product.id;
+      }
+    });
+    console.log(maxId);
+    let newProduct = {
+      id: maxId + 1,
+      name: req.body.name,
+      price: req.body.price,
+      image: "/img/uploads/" + req.file.filename,
+      specs: req.body.specs,
+      description: req.body.description,
+      discount: req.body.discount,
+      category: req.body.category,
+      rating: 0,
+      short_screenshots: [],
+    };
+    // console.log(req.file);
+    products.push(newProduct);
+    fs.writeFileSync(productsFilePath, JSON.stringify(products));*/
 
-    }
   },
   productEdit: (req, res) => {
     let productId = req.params.id;
