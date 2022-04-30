@@ -15,22 +15,12 @@
       <h4 class="registro-manual"><%= products.name %></h4>
         <div class="register-form">
           <form method="POST" action="/products/edit/<%= products.id %>?_method=PUT" enctype="multipart/form-data">
-            <h3>ID : <%= products.id %> </h3>
-            <br>
+            <label for="idProduct">Id</label>
+            <input type="number" value="<%= products.id %>" disabled><br>
             <label for="name">Nombre:</label><br>
-            <input type="text" id="username" name="name" value="<%= products.name %>" class="form-input"><br>
-            <% if (locals.errors && errors.name) { %>
-              <div class="errors"> 
-                <%= errors.name.msg %> 
-              </div>
-            <% } %>
+            <input type="text" id="username" name="name" value="<%= products.name %>"><br>
             <label for="price">Precio:</label><br>
-            <input type="number" id="price" name="price" value="<%= products.price %>" class="form-input"><br>
-            <% if (locals.errors && errors.price) { %>
-              <div class="errors"> 
-                <%= errors.price.msg %> 
-              </div>
-            <% } %>
+            <input type="number" id="price" name="price" value="<%= products.price %>"><br>
             <div style="margin: 10%;">
               <label for="image">Imagen Principal:</label><br>
               <img src="<%= products.image %>" width="300" height="250" alt="imagen-del-producto"> <br>
@@ -38,7 +28,7 @@
               <input type="file" name="image" id="image"><br>
               
             </div>
-            <label for="image"></label><br>
+            <label for="image">Galeria de Imágenes:</label><br>
             <% screenshots.forEach(element => { %>
               
               <img src="<%= element.image%>" width="300" height="250" alt="imagenes-del-producto">
@@ -53,21 +43,11 @@
             
             
             <label for="specs">Requisitos:</label><br>
-            <textarea name="specs" id="specs" cols="30" rows="10" class="form-input"><%= products.specs %> </textarea><br>
-            <% if (locals.errors && errors.specs) { %>
-              <div class="errors"> 
-                <%= errors.specs.msg %> 
-              </div>
-            <% } %>
+            <textarea name="specs" id="specs" cols="30" rows="10"><%= products.specs %></textarea><br>
             <label for="description">Descripción:</label><br>
-            <textarea name="description" id="description" cols="30" rows="10" class="form-input"><%= products.description %></textarea><br>
-            <% if (locals.errors && errors.description) { %>
-              <div class="errors"> 
-                <%= errors.description.msg %> 
-              </div>
-            <% } %>
+            <textarea name="description" id="description" cols="30" rows="10"><%= products.description %></textarea><br>
             <label for="discountProduct">Descuento: %</label>
-            <input type="number" name="discount" id="discount" value="<%= products.discount %>" class="form-input"><br>
+            <input type="number" name="discount" id="discount" value="<%= products.discount %>"><br>
             <input type="submit" id="submit" value="Guardar Cambios">
             <div class="back-button">
               
