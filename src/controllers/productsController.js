@@ -5,6 +5,8 @@ const productsFilePath = path.join(__dirname, "../data/products.json");
 const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
 const categoryFilePath = path.join(__dirname, "../data/category.json");
 const category = JSON.parse(fs.readFileSync(categoryFilePath, "utf-8"));
+const db = require("../database/models");
+const sequelize = require("sequelize");
 
 let productsController = {
   detail: (req, res) => {
@@ -26,6 +28,21 @@ let productsController = {
     res.render("productAdd", { category });
   },
   productAdd: (req, res) => {
+    db.Product.create({
+      name: req.body.name,
+      price: req.body.price,
+      image: req.body.image,
+      specs: req.body.specs,
+      description: req.body.description,
+      category: req.body.category,
+      rating: req.body.rating,
+      discount: req.body.discount
+    });
+    res.redirect("/admin");
+    /*
+    
+    Antigüo metodo para agregar productos
+
     let maxId = 0;
     let findMaxId = products.forEach((product) => {
       if (product.id > maxId) {
@@ -47,8 +64,7 @@ let productsController = {
     };
     // console.log(req.file);
     products.push(newProduct);
-    fs.writeFileSync(productsFilePath, JSON.stringify(products));
-    res.redirect("/admin");
+    fs.writeFileSync(productsFilePath, JSON.stringify(products));*/
   },
   productEdit: (req, res) => {
     let productId = req.params.id;

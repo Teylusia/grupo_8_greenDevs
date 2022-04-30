@@ -1,28 +1,42 @@
-<section class="ofertas-populares">
-  
-  <% products.slice(-5).forEach( products => { %>
-    
-    <article>
-      
-        <a href="/productDetail/<%= products.id %> " class="productDetailLink">
-        <img src="<%= products.image%>" alt="imagen-del-producto" />
-        <p class="titulo-producto"><%= products.name %></p>
-        
-        
-        <div class="caja-precio">
-          <p class="precio-producto">$<%= (products.price - products.discount) %></p>
-          <sup class="moneda">US$</sup>
-        </div>
-        <div class="box-card">
-          <div class="caja-rebaja">
-            <p class="precio-rebaja">$<%= products.price %></p>
-            <sup class="moneda">US$</sup>
-            <span class="porcentaje-descuento">-20%</span>
-          </div>
-          <div class="card-shop"><i class="fa-solid fa-cart-shopping"></i></div>
-        </div>
-      </a>
-    </article>
-      <%})%>
+<div class="products-category contenedor">
+  <div class="contenedor-titulo-controles">
+    <h3>Ultimos Lanzamientos</h3>
+    <div class="indicadores3"></div>
+  </div>
 
-  </section>
+  <div class="contenedor-principal">
+    <button role="button" id="flecha-izquierda-3" class="flecha-izquierda-3"><i class="fas fa-angle-left"></i></button>
+
+    <div class="contenedor-carousel">
+      <div class="carousel3">
+        <% products.slice(-20).forEach( products => { %>
+  
+          <div class="newReleasesList">
+            
+              <a href="/productDetail/<%= products.id %> " class="productDetailLink">
+              <img src="<%= products.image%>" alt="imagen-del-producto" />
+              <p class="titulo-producto"><%= products.name %></p>
+              
+              
+              <div class="caja-precio">
+                <p class="precio-producto">$<%= (products.price - products.discount) %></p>
+                <sup class="moneda">US$</sup>
+              </div>
+              <div class="box-card">
+                <div class="caja-rebaja">
+                  <p class="precio-rebaja">$<%= products.price %></p>
+                  <sup class="moneda">US$</sup>
+                  <span class="porcentaje-descuento">-20%</span>
+                </div>
+                <div class="card-shop"><i class="fa-solid fa-cart-shopping"></i></div>
+              </div>
+            </a>
+          </div>
+            <%})%>
+      </div>
+    </div>
+
+    <button role="button" id="flecha-derecha-3" class="flecha-derecha-3"><i class="fas fa-angle-right"></i></button>
+  </div>
+</div>
+<script src = "/js/smallSlider3.js"> </script>
