@@ -21,5 +21,48 @@ Continuar haciendo:
 
 
 -Hacer menos:
--reducir el tiempo de reunión. 
+-reducir el tiempo de reunión.
+
+
+
+Retrospectiva SPRINT 5:
+
+Comenzar a hacer:
+
+repaso de codigo viejo y revisión.
+trabajar en ramas separadas.
+
+Hacer más:
+
+reuniones de menor plazo.
+
+Continuar haciendo:
+
+compartir codigo.
+comunicarse/dialogar.
+compartir informacion de codigo.
+
+-Dejar de hacer:
+
+cortar la comunicación entre el equipo.
+
+-Hacer menos:
+
+nada para agregar. 
+
+Weekly 05/01:
+
+Se hizo: 
+
+Diagrama DER.
+el script de datos y el script de estructura.
+
+Impedimentos:
+
+no se encontró ningún impedimento. 
+
+Se esta haciendo/ por hacer:
+
+el CRUD.
+el backlog de sprints pasados. 
 
