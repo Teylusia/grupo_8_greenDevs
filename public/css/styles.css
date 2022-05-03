@@ -78,7 +78,6 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 10px;
 }
 .buscador form {
   display: flex;
@@ -89,11 +88,12 @@ header {
   height: 4vh;
   border: none;
   background-color: #444;
-  font-size: 24px;
+  font-size: 17px;
 }
 .buscador input:focus {
   outline: none;
   color: #f5f5f5;
+  border: 1px solid #03c959;
 }
 
 .buscador button {
@@ -103,12 +103,13 @@ header {
   text-align: center;
   text-decoration: none;
   margin-left: -30px;
-  margin-top: 2px;
-  font-size: 20px;
+  margin-top: 4px;
+  font-size: 18px;
 }
 .buscador button:hover {
   transition: all 600ms;
   color: #03c959;
+  cursor: pointer;
 }
 .contacts a {
   font-weight: bold;
@@ -118,12 +119,13 @@ header {
 .contacts a i {
   font-size: large;
 }
-::placeholder {
-  color: #777;
+.buscador input::placeholder {
+  color: rgb(150, 150, 150);
+  font-weight: 500;
 }
 
 .buscador input:hover {
-  cursor: default;
+  cursor: text;
 }
 .burguer {
   display: flex;
@@ -147,13 +149,13 @@ header {
 @media (min-width: 1024px) {
   .nav-bar {
     display: flex;
-    width: 20%;
+    width: 25%;
   }
   .logo {
     display: flex;
   }
   .buscador {
-    width: 55%;
+    width: 50%;
     justify-content: center;
   }
   .sub-nav {
@@ -168,7 +170,8 @@ header {
   header {
     display: flex;
     flex-wrap: wrap;
-    padding: 0;
+    padding-top: 10px;
+    padding-bottom: 0px;
   }
   .buscador input {
     width: 40vw;
@@ -301,9 +304,6 @@ h3 {
 .featured-product h2 {
   display: flex;
   margin: 0 5% 0 5%;
-  padding: 5px;
-  justify-content: space-between;
-  align-items: flex-end;
 }
 .titulo-categorias h4 {
   width: 20%;
@@ -448,8 +448,13 @@ h3 {
   color: white;
 }
 .featured-text button {
-  background-color: greenyellow;
+  background-color: #03c959;
   padding: 8px;
+  color: white;
+}
+
+.featured-text button:hover {
+  cursor: pointer;
 }
 
 .featured-text {
@@ -475,18 +480,49 @@ h3 {
   justify-content: center;
   flex-wrap: wrap;
 }
+.register-form form input::placeholder{
+  color: rgb(0, 0, 0);
+}
+
+.register-form form input:focus{
+  outline: solid 2px #03c959;
+}
+
 .register-form form label,
 .register-form form input {
   width: 100%;
   margin: 5px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .register-form form input[type="file"] {
-  width: 50%;
+  width: 65%;
   display: flex;
   justify-content: center;
 }
+
+::-webkit-file-upload-button {
+  justify-content: center;
+  background-color: #777;
+  color: white;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 7px;
+  border-radius: 10px;
+  transition-duration: 450ms;
+  border: none;
+  font-family: "Montserrat", sans-serif;
+}
+
+::-webkit-file-upload-button:hover {
+  cursor: pointer;
+  background-color: #03c959;
+}
+
 .register-form-footer {
-  margin: 10px;
+  margin: 15px;
+  font-size: 15px;
 }
 .register-form-footer a {
   color: #03c959;
@@ -543,6 +579,7 @@ i.fas.fa-user-circle {
   margin: 5px 25% 5px 25%;
   color: #03c959;
   padding: 5px;
+  font-size: 25px;
 }
 
 i.fab.fa-google {
@@ -574,7 +611,7 @@ i.fab.fa-apple {
   display: flex;
   flex-direction: column;
   width: 80%;
-  margin: 5% 10% 5% 10%;
+  margin: 3% 10% 0% 10%;
   font-size: 15px;
   font-weight: 600;
 }
@@ -602,23 +639,28 @@ i.fab.fa-apple {
   border-radius: 6px;
   padding: 6px;
   width: 80%;
-  border: solid 1px #03c959;
+  border: none;
   margin: 6px 0px 6px 0px;
 }
 
 #submit {
   display: flex;
-  width: 50%;
-  padding: 10px;
-  margin: 5% 25%;
+  width: 40%;
+  padding: 8px;
+  margin: 3% 25%;
   justify-content: center;
   background-color: #777;
   color: white;
-  font-size: 16px;
+  font-size: 17px;
   font-weight: 600;
   border-radius: 10px;
   transition-duration: 450ms;
   border: none;
+}
+
+#rememberUser {
+  width: 5%;
+  outline: none;
 }
 
 /* Media queries */
@@ -907,10 +949,8 @@ aside {
 .products-category .contenedor-principal .flecha-izquierda-1:hover,
 .flecha-izquierda-2:hover,
 .flecha-izquierda-3:hover,
-.flecha-izquierda-4:hover
-  .products-category
-  .contenedor-principal
-  .flecha-derecha-1:hover,
+.flecha-izquierda-4:hover,
+.products-category .contenedor-principal .flecha-derecha-1:hover,
 .flecha-derecha-2:hover,
 .flecha-derecha-3:hover,
 .flecha-derecha-4:hover {
@@ -953,7 +993,6 @@ aside {
 }
 
 .products-category .contenedor-carousel .carousel .productsList,
-.carousel1,
 .popularOffersList,
 .bestSellersList,
 .newReleasesList,
@@ -963,13 +1002,14 @@ aside {
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
 }
 
-.products-category .contenedor-carousel .carousel .productsList.hover,
-.popularOffersList.hover,
-.bestSellersList.hover,
-.newReleasesList.hover,
-.offersList.hover {
+.products-category .contenedor-carousel .carousel .productsList:hover,
+.popularOffersList:hover,
+.bestSellersList:hover,
+.newReleasesList:hover,
+.offersList:hover {
   transform: scale(1.2);
   transform-origin: center;
+  background-color: #444;
 }
 
 .products-category .contenedor-carousel .carousel .productsList img,
