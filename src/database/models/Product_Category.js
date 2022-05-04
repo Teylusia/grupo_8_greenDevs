@@ -6,6 +6,16 @@ let cols = {
         primaryKey: true,
         autoIncrement: true
     },
+     product_id: {
+        type: DataTypes.INTEGER,
+        foreignKey: true
+    },
+    
+    category_id: {
+        type: DataTypes.INTEGER,
+        foreignKey: true
+    },
+
 };
 
 let config = {
@@ -18,16 +28,16 @@ let config = {
 const Product_Category = sequelize.define("Product_Category", cols, config);
 
 Product_Category.associate = function(models){
-    Product_Category.hasMany(models.Product, {
+    Product_Category.belongsTo(models.Product, {
         as: "Product",
-        foreignKey: "Product_id"
+        foreignKey: "product_id"
     });
 };
 
 Product_Category.associate = function(models){
-    Product_Category.belongsTo(models.Category, {
+    Product_Category.hasMany(models.Category, {
         as: "Category",
-        foreignKey: "Category_id"
+        foreignKey: "category_id"
     });
 };
 

@@ -39,6 +39,6 @@ router.post('/login', validateLogin, usersController.loginProcess)
 
 router.put('/user/:id', usersController.userEdit);
 // router.delete('/user', usersController.userDelete); falta desarrollar la vista y el panel de usuarios
-router.get("/admin", usersController.admin );
+//router.get("/admin", usersController.admin );
 
 module.exports = router;

@@ -45,32 +45,34 @@
 
                         </tr>
 
-                        <% products.forEach(product=> {%>
+                        <% productos.forEach(productos=> {%>
                             <td>
                                 <p>
 
-                                    <%= product.id %>
+                                    <%= productos.id %>
                                 </p>
                             </td>
                             <td>
-                                <%= product.name %>
+                                <%= productos.name %>
                             </td>
                             <td>
-                                <%= product.category %>
+                                <!--Este atributo está dentro de la tabla Product_Category-->
+                                <%= productos.category %>
+                               
                             </td>
                             <td>
-                                $ <%= product.price %>
+                                $ <%= productos.price %>
                             </td>
                             <td>
-                                <% if (!product.discount) { %>
+                                <% if (!productos.discount) { %>
                                     -
                                     <% } %>
-                                        <%= product.discount %> %
+                                        <%= productos.discount %> %
                             </td>
                             <td>
-                                <a href="/products/edit/<%= product.id %>">
+                                <a href="/products/edit/<%= productos.id %>">
                                 <button class="button-edit">Editar</button></a>
-                                <form method="POST" action="/products/delete/<%= product.id %>?_method=delete">
+                                <form method="POST" action="/products/delete/<%= productos.id %>?_method=delete">
                                     
 
                                     <button type="submit" class="button-delete">Eliminar</button>
