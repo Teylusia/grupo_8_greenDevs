@@ -9,6 +9,9 @@ cols = {
     name: {
         type: DataTypes.STRING(100)
     },
+    email: {
+        type: DataTypes.STRING(100)
+    },
     avatar: {
         type: DataTypes.STRING(100)
     },
@@ -24,6 +27,7 @@ cols = {
 };
 
 let config = {
+    tableName:'users',
     timestamps: true,
     createdAt: 'created_at',
     updatedAt: 'updated_at',
@@ -33,9 +37,9 @@ let config = {
 const User = sequelize.define("User", cols, config);
 
 User.associate = function(models){
-    User.belongsTo(models.Sale, {
+    User.hasMany(models.Sale, {
         as: "Sale",
-        foreignKey: "User_id"
+        foreignKey: "users_id"
     });
 }
 

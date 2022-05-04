@@ -22,12 +22,15 @@ const upload = multer({ storage: storage });
 router.get("/productcart", productsController.cart);
 
 //Detail
-//router.get('/product/:id', productsController.detail);
+router.get('/product/:id', productsController.detail);
 router.get("/productDetail/:id", productsController.detail); //Esta ruta permite ver el product detail
 
-//Edit-Delete
+//Edit
 router.get("/products/edit/:id", productsController.productEdit);
 router.put("/products/edit/:id",upload.single("image"), productsController.productEdited);
+
+//Delete
+router.get("/admin", productsController.admin);
 router.delete("/products/delete/:id", productsController.productDelete);
 
 //Create Products
