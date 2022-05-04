@@ -73,28 +73,30 @@ let usersController = {
 
       userEdit: (req, res)=>{
         let productToEdit = req.params.id
-       let productEdited = {
-         id: productToEdit,
+       User.update({
          name: req.body.name,
-         price: req.body.price,
-         image: req.body.image,
-         discount: req.body.discount
-       }
-       for(let i = 0; i < users.length; i++){
-         if( users[i].id == productToEdit){
-           users[i] = productEdited
-         }
-       
-       }
-       fs.writeFileSync(usersFilePath, JSON.stringify(users));
-       res.redirect('/');
+         email: req.body.email,
+         avatar: req.body.avatar,
+         password: req.body.password,    
+       },
+       {where:{id: productToEdit}})
+       .then(()=>{
+         res.render('/admin')
+       })
+       .catch(error => res.send(error))
      },
 
      userDelete: (req,res) => {
       let userId = req.params.id;
-     let finalUsers = users.filter((user) => user.id != userId);
-     fs.writeFileSync(productsFilePath, JSON.stringify(finalUsers));
-}
+      User.destroy({where: {id: userId}, force: true})
+          .then(()=>{
+            return res.redirect('/admin')
+          })
+          .catch(error => res.send(error))
+    },
+    profile:(req, res) =>{
+      res.render('profile')
+    }
 };
 
 module.exports = usersController;
