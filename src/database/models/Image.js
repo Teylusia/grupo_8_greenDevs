@@ -9,6 +9,10 @@ let cols = {
     url: {
         type: DataTypes.STRING
     },
+    product_id: {
+        type: DataTypes.INTEGER,
+        foreignKey: true
+    }
 };
 
 let config = {
@@ -21,9 +25,9 @@ let config = {
 const Image = sequelize.define("Image", cols, config);
 
 Image.associate = function(models){
-    Image.hasMany(models.Product, {
+    Image.belongsTo(models.Product, {
         as: "Product",
-        foreignKey: "Product_id"
+        foreignKey: "product_id"
     });
 };
 

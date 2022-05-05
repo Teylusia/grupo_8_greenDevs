@@ -40,21 +40,21 @@ const Product = sequelize.define("Product", cols, config);
 Product.associate = function(models){
     Product.belongsTo(models.Sale, {
         as: "Sale",
-        foreignKey: "Product_id"
+        foreignKey: "product_id"
     });
 };
 
 Product.associate = function(models){
-    Product.belongsTo(models.Image, {
+    Product.hasMany(models.Image, {
         as: "Image",
-        foreignKey: "Product_id"
+        foreignKey: "product_id"
     });
 };
 
 Product.associate = function(models){
-    Product.belongsTo(models.Product_Category, {
+    Product.hasMany(models.Product_Category, {
         as: "Product_Category",
-        foreignKey: "Product_id"
+        foreignKey: "product_id"
     });
 };
 
