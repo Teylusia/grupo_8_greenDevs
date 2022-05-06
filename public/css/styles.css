@@ -1240,3 +1240,29 @@ button {
     font-size: 25px;
   }
 }
+.infoProfile{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.nameProfile{
+  width: 75%;
+}
+.emailProfile{
+  width: 75%;
+}
+.pictureProfile{
+  width: 25%;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+.pictureProfile img{
+  max-height: 20vh;
+  padding: 25px ;
+  background-color: #444;
+}
+
+.productLibrary{
+  margin-top: 25px;
+}

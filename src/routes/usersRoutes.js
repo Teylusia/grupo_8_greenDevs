@@ -42,6 +42,6 @@ router.put('/user/:id', usersController.userEdit);
 //router.get("/admin", usersController.admin );
 
 //Profile
-router.get('/profile', usersController.profile);
+router.get('/profile/:id', usersController.profile);
 
 module.exports = router;

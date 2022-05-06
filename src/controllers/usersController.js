@@ -6,7 +6,7 @@ const productsFilePath = path.join(__dirname, "../data/products.json");
 const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
 const bcryptjs = require('bcryptjs');
 const db = require('../database/models');
-
+const User = db.User
 
 let usersController = {
 
@@ -95,7 +95,11 @@ let usersController = {
           .catch(error => res.send(error))
     },
     profile:(req, res) =>{
-      res.render('profile')
+      let userId = req.params.id
+      User.findByPk(userId)
+        .then(()=>{
+          res.render('profile',{ products: products})
+        })  
     }
 };
 
