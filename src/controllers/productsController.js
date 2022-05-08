@@ -54,9 +54,12 @@ let productsController = {
 
     Promise.all([productAsked, imageAsked])
     .then(function([product, image]){
-      res.render("productEdit", {product: product, image: image})
+      if(product == undefined || image == undefined){
+        res.render('page404');
+      }else{
+        res.render("productEdit", {product: product, image: image})}
     }).catch(function(e){
-      res.render('page404');
+      console.log('algo anda mal')
     });
     
   },
@@ -81,7 +84,7 @@ let productsController = {
       where:{id: req.params.id}
     });
 
-    res.redirect('/products/edit/' + req.params.id)
+    res.redirect('/admin')
   },
 
   admin: (req, res) => {
