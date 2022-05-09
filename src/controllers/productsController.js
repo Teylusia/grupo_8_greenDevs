@@ -40,7 +40,7 @@ let productsController = {
       discount: req.body.discount
     }).then((product) => {
       db.Image.create({
-        imagen: 'public/img/uploads/' + req.file.filename,
+        address: 'public/img/uploads/' + req.file.filename,
         product_id: product.id
       })
     });
@@ -75,7 +75,6 @@ let productsController = {
       db.Product.update({
       name: req.body.name,
       price: req.body.price,
-      image: req.body.image,
       specs: req.body.specs,
       description: req.body.description,
       category: req.body.category,
@@ -85,9 +84,9 @@ let productsController = {
     });
 
     db.Image.update({
-      image: req.body.image
+      address: 'public/img/uploads/' + req.file.filename
     }, {
-      where:{id: req.params.id}
+      where:{product_id: req.params.id}
     });
 
     res.redirect('/admin')

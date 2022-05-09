@@ -6,7 +6,7 @@ let cols = {
         primaryKey: true,
         autoIncrement: true
     },
-    imagen: {
+    address: {
         type: DataTypes.STRING
     },
     product_id: {
