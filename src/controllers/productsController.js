@@ -28,18 +28,24 @@ let productsController = {
     res.render("productAdd", { category });
   },
 
+  
   productAdd: (req, res) => {
     db.Product.create({
       name: req.body.name,
       price: req.body.price,
-      image: req.body.image,
       specs: req.body.specs,
       description: req.body.description,
-      category: req.body.category,
+      //category: req.body.category,
       rating: req.body.rating,
       discount: req.body.discount
+    }).then((product) => {
+      db.Image.create({
+        imagen: 'public/img/uploads/' + req.file.filename,
+        product_id: product.id
+      })
     });
     res.redirect("/admin");
+    console.log(req.file)
   },
   
   productEdit: (req, res) => {
@@ -49,7 +55,7 @@ let productsController = {
        {association:"Image"},
        {association:"Product_Category"}]})
 
-    let imageAsked = db.Image.findOne({where:{id: req.params.id}},
+    let imageAsked = db.Image.findOne({where:{product_id: req.params.id}},
         {include: [{association:"Product"}]})
 
     Promise.all([productAsked, imageAsked])

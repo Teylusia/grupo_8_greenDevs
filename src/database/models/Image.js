@@ -6,7 +6,7 @@ let cols = {
         primaryKey: true,
         autoIncrement: true
     },
-    url: {
+    imagen: {
         type: DataTypes.STRING
     },
     product_id: {
