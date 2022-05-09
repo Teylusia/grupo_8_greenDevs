@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('./partials/head') %>
+  <body>
+    <%- include('./partials/header') %>
+    <main>
+      <h1>Estas seguro que deseas eliminar el usuario <%= usuario.name %></h1>
+      <form method="POST" action="/users/delete/<%= usuario.id%>?_method=DELETE" enctype="multipart/form-data">
+        <button type="submit">Si, deseo eliminar el usuario</button>
+        <a href="/admin/users">No, deseo volver atras</a>
+      </form>
+      <%- include('./partials/footer') %>
+    </main>
+  </body>

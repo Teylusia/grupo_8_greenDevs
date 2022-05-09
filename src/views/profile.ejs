@@ -1,8 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- include('./partial/head') %>
+  <%- include('./partials/head') %>
   <body>
-    <%- include('./partial/header') %>
-    
+    <%- include('./partials/header') %>
+    <main>
+      <section class="infoProfile">
+        <h1 class ="nameProfile">Nombre de Usuario</h1>
+        <h2 class ="emailProfile">email de usuario</h2>
+        <article class ="pictureProfile">
+          <img src="/img/dying-card.jpeg" alt="Foto de perfil del usuario">
+        </article>
+      </section>
+      
+
+      <section class="productLibrary">
+        <%- include('./partials/popularOffers') %>
+      </section>
+
+      <section>
+        <h3 class="comments">Comentarios</h3>
+        <article>
+          <h4 class="nameComments">Nombre de Usuario</h4>
+          <p class="commentProfile">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quaerat placeat optio accusantium necessitatibus ipsa vitae vero architecto magnam excepturi exercitationem.</p>
+        </article>
+      </section>
+      <%- include('./partials/footer') %>
+    </main>
   </body>
 </html>

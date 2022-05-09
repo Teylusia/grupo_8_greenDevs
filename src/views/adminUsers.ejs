@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('./partials/head') %>
+
+    <body>
+
+        <%- include('./partials/header') %>
+
+            <main>
+
+
+
+                <div class="general-container">
+                    <div class="panel">
+
+                        <div class="admin-form">
+                            <h2>Panel de Administrador</h2>
+                            <a href="/register">
+                                <button>Nuevo Usuario +</button>
+                            </a>
+                            <button>Listar Usuarios</button>
+                            <button>Nueva Categoria</button>
+                            <form action="/admin/search" method="GET">
+                                
+                                <input type="text" name="search" placeholder="Buscar producto">
+                                <input type="button" value="Buscar">
+                            </form>
+                            
+                            
+                        </div>
+                        </div>
+                    </div>
+                    
+                </aside>
+                <div>
+                    <table>
+                        <tr>
+                            <th>Id</th>
+                            <th>Nombre</th>
+                            <th>email</th>
+                            <th>avatar</th>
+                            <th>status</th>
+                            <th>Editar/eliminar</th>
+
+                        </tr>
+
+                        <% usuarios.forEach(usuario=> {%>
+                            <td>
+                                <p>
+
+                                    <%= usuario.id %>
+                                </p>
+                            </td>
+                            <td>
+                                <%= usuario.name %>
+                            </td>
+                            <td>
+                                <%= usuario.email %>
+                               
+                            </td>
+                            <td>
+                                <%= usuario.avatar %>
+                            </td>
+                            <td>
+                                <% if(usuario.status == 0){ %>
+                                    <%= 'Inactivo' %>
+                                <% }else{ %>
+                                    <%= 'Activo' %>
+                                <% } %>
+                            </td>
+                            <td>
+                                <a href="/users/edit/<%=usuario.id %>">
+                                <button class="button-edit">Editar</button></a>
+                                <a href="/user/delete/<%=usuario.id %>">Delete</a>
+
+                                
+                            </td>
+                            </tr>
+                            <%}) %>
+                    </table>
+                </div>
+
+            </main>
+
+            <%- include('./partials/footer') %>
+
+    </body>
+
+</html>

@@ -7,6 +7,7 @@ const path = require("path");
 
 //Multer
 const multer = require('multer');
+const { route } = require('express/lib/application');
 const storage = multer.diskStorage({
   destination: function (req, file, cb){
     cb(null, 'public/img/avatar')
@@ -37,8 +38,19 @@ router.post('/register', upload.single("avatar"), usersController.userAdd);
 router.get('/login', usersController.login);
 router.post('/login', validateLogin, usersController.loginProcess)
 
-router.put('/user/:id', usersController.userEdit);
-// router.delete('/user', usersController.userDelete); falta desarrollar la vista y el panel de usuarios
-//router.get("/admin", usersController.admin );
+//Profile
+router.get('/profile/:id', usersController.profile);
+
+//admin Users
+router.get('/admin/users', usersController.panel)
+
+  //Delete
+router.get('/user/delete/:id', usersController.deleteUser)
+router.delete('/users/delete/:id', usersController.userDelete)
+
+  //Edit
+router.get('/users/edit/:id', usersController.editShow)
+router.put('/users/edit/:id',upload.single("avatar"), usersController.userEdit)
+
 
 module.exports = router;
