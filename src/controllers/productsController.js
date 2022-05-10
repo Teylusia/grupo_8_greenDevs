@@ -35,12 +35,11 @@ let productsController = {
       price: req.body.price,
       specs: req.body.specs,
       description: req.body.description,
-      //category: req.body.category,
       rating: req.body.rating,
       discount: req.body.discount
     }).then((product) => {
       db.Image.create({
-        address: 'public/img/uploads/' + req.file.filename,
+        address: '/img/uploads/' + req.file.filename,
         product_id: product.id
       })
     });
@@ -64,7 +63,7 @@ let productsController = {
         res.render('page404');
       }else{
         res.render("productEdit", {product: product, image: image})}
-    }).catch(function(e){
+    }).catch(function(){
       console.log('algo anda mal')
     });
     
@@ -77,14 +76,13 @@ let productsController = {
       price: req.body.price,
       specs: req.body.specs,
       description: req.body.description,
-      category: req.body.category,
       discount: req.body.discount
     }, {
       where: {id: req.params.id}
     });
 
     db.Image.update({
-      address: 'public/img/uploads/' + req.file.filename
+      address: '/img/uploads/' + req.file.filename
     }, {
       where:{product_id: req.params.id}
     });
