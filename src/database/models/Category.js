@@ -21,7 +21,7 @@ let config = {
 const Category = sequelize.define("Category", cols, config);
 
 Category.associate = function(models){
-    Category.belongsTo(models.Product_Category, {
+    Category.hasMany(models.Product_Category, {
         as: "Product_Category",
         foreignKey: "category_id"
     });

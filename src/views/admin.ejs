@@ -19,7 +19,10 @@
                             <a href="products/create">
                                 <button>Nuevo Producto+</button>
                             </a>
-                            <button>Listar Usuarios</button>
+                            <a href="admin/users">
+
+                                <button>Listar Usuarios</button>
+                            </a>
                             <button>Nueva Categoria</button>
                             <form action="/admin/search" method="GET">
                                 
@@ -38,7 +41,6 @@
                         <tr>
                             <th>Id</th>
                             <th>Nombre</th>
-                            <th>Categoria</th>
                             <th>Precio</th>
                             <th>Descuento</th>
                             <th>Editar/eliminar</th>
@@ -55,12 +57,7 @@
                             <td>
                                 <%= productos.name %>
                             </td>
-                            <td>
-                                <!--Este atributo está dentro de la tabla Product_Category-->
-                                <%= productos.category %>
-                               
-                            </td>
-                            <td>
+                                             <td>
                                 $ <%= productos.price %>
                             </td>
                             <td>

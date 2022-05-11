@@ -20,7 +20,7 @@ cols = {
 };
 
 let config = {
-    tableName:'sales',
+    tableName:'Sales',
     timestamps: true,
     createdAt: 'created_at',
     updatedAt: 'updated_at',

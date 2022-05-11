@@ -1,31 +1,51 @@
 const path = require("path");
-const fs = require("fs");
+// const fs = require("fs");
 const { setTimeout } = require("timers/promises");
-const productsFilePath = path.join(__dirname, "../data/products.json");
-const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
-const categoryFilePath = path.join(__dirname, "../data/category.json");
-const category = JSON.parse(fs.readFileSync(categoryFilePath, "utf-8"));
+// const productsFilePath = path.join(__dirname, "../data/products.json");
+// const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
+// const categoryFilePath = path.join(__dirname, "../data/category.json");
+// const category = JSON.parse(fs.readFileSync(categoryFilePath, "utf-8"));
 const db = require("../database/models");
 
 let productsController = {
 
    detail: (req, res) => {
-    let productId = req.params.id;
-    let productObjet = products.find((el) => el.id == productId);
-    let screenshots = productObjet.short_screenshots;
-    res.render("productDetail", {
-      product: productObjet,
-      allProducts: products,
-      screenshots: screenshots,
-    });
-  }, 
 
-  cart: (req, res) => {
+    let productDetail = db.Product.findOne({where: {id: req.params.id}},
+      {include: [{association:"Sale"},
+       {association:"Image"},
+       {association:"Product_Category"}]})
+
+    let imageDetail = db.Image.findAll({where:{product_id: req.params.id}},
+        {include: [{association:"Product"}]})
+
+    // let productId = req.params.id;
+    // let productObjet = products.find((el) => el.id == productId);
+    // let screenshots = productObjet.short_screenshots;
+      Promise.all([productDetail, imageDetail])
+      .then(function([product, image]){
+
+        console.log(imageDetail)
+        res.render("productDetail", {
+        product,
+        image,
+      })
+      
+          // screenshots: screenshots,
+        });
+      }, 
+      
+      cart: (req, res) => {
     res.render("productCart", { products: products });
   }, 
 
   productCreate: (req, res) => {
-    res.render("productAdd", { category });
+    category = db.Category.findAll()
+    .then(function(category){
+
+      res.render("productAdd", { category });
+    }
+    )
   },
 
   
