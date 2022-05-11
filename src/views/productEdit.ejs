@@ -14,7 +14,7 @@
       <h2 class="texto-de-registro">Estas editando:</h2>
       <h4 class="registro-manual"><%= product.name %></h4>
         <div class="register-form">
-          <form method="POST" action="/products/edit/<%= product.id %>?_method=PUT" enctype="multipart/form-data">
+          <form method="POST" action="/product/edit/<%= product.id %>?_method=PUT" enctype="multipart/form-data">
             <label for="idProduct">Id</label>
             <input type="number" value="<%= product.id %>" disabled><br>
             <label for="name">Nombre:</label><br>

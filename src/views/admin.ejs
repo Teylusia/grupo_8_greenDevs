@@ -16,10 +16,10 @@
 
                         <div class="admin-form">
                             <h2>Panel de Administrador</h2>
-                            <a href="products/create">
+                            <a href="/product/create">
                                 <button>Nuevo Producto+</button>
                             </a>
-                            <a href="admin/users">
+                            <a href="/user/admin/users">
 
                                 <button>Listar Usuarios</button>
                             </a>
@@ -67,9 +67,9 @@
                                         <%= productos.discount %> %
                             </td>
                             <td>
-                                <a href="/products/edit/<%= productos.id %>">
+                                <a href="/product/edit/<%= productos.id %>">
                                 <button class="button-edit">Editar</button></a>
-                                <form method="POST" action="/products/delete/<%= productos.id %>?_method=delete">
+                                <form method="POST" action="/product/delete/<%= productos.id %>?_method=delete">
                                     
 
                                     <button type="submit" class="button-delete">Eliminar</button>
