@@ -9,29 +9,21 @@
 
   <main>
     <div class="general-container">
-    <div class="productadd">
-      
-      <h2 class="texto-de-registro">Agregar nuevo Producto</h2>
+    <div class="register">
+      <i class="fa-solid fa-file-circle-plus"></i>
+      <h2 class="texto-de-registro">Agregar nuevo producto</h2>
      
       
         <div class="productadd-form">
          
           <form action="/products/create" enctype="multipart/form-data" method="POST">
-            <label for="name">Nombre del producto:</label><br>
+            <label for="name">Nombre del producto</label><br>
             <input type="text" id="username" name="name" required><br>
-            <label for="price">Precio:</label><br>
+            <label for="price">Precio</label><br>
             <input type="number" id="password" name="price" required><br>
-            <div style="margin: 10%;">
-              <label for="image">Imagen Principal:</label>
-              <input type="file" name="image" id="upload-image"><br>
-
-            </div>
-            <!-- <div style="margin: 10%">
-              <label for="gallery">Galeria de Imagenes:</label>
-              <input type="file" multiple name="gallery" id="gallery"><br>
-
-            </div> -->
-            <label for="specs">Requisitos de Hardware:</label><br>
+            <label for="image">Imagen principal</label><br>
+            <input type="file" name="image" id="upload-image"><br>
+            <label for="specs">Requisitos de hardware:</label><br>
             <textarea name="specs" id="specs" cols="30" rows="10"></textarea><br>
             <label for="description">Descripción:</label><br>
             <textarea name="description" id="description" cols="30" rows="10"></textarea><br>
