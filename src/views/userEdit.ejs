@@ -25,12 +25,17 @@
             <label for="email">Ingresa tu email</label>
             <input type="email" id="email" name="email" value="<%= usuario.email %>">
             <label for="avatar">Avatar</label>
+            <img src="<%= usuario.avatar%>" alt="">
             <input type="file" name="avatar" id="upload-image">
             <label for="password">Ingresa una contraseña</label>
             <input type="password" id="password" name="password">
            <!-- <label for="confirm-password">Confirma tu contraseña</label>
             <input type="password" id="confirm-password" name="confirm-password" required> -->
             <input type="submit" id="submit" value="Guardar cambios">
+            <div class="back-button">
+              
+              <p><a href="/admin">Volver al listado</a></p>
+            </div>
           </form>
         </div>
     </div>

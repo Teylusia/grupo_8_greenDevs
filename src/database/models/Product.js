@@ -26,6 +26,9 @@ cols = {
     discount: {
         type: DataTypes.INTEGER
     },
+    image: {
+        type: DataTypes.STRING
+    },
 };
 
 let config = {
