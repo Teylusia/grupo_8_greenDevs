@@ -488,23 +488,31 @@ h3 {
   justify-content: center;
 }
 
-.register-form form {
+.register-form form, 
+.productadd-form form,
+.back-button  {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
 }
 
-.register-form form input::placeholder{
+.register-form form input::placeholder, 
+.productadd-form form input::placeholder{
   color: rgb(0, 0, 0);
 }
 
-.register-form form input:focus{
+.register-form form input:focus, 
+.productadd-form form input:focus,
+#specs:focus,
+#description:focus {
   outline: solid 2px #03c959;
 }
 
 .register-form form label,
-.register-form form input {
+.register-form form input,
+.productadd-form form label, 
+.productadd-form form input {
   width: 100%;
   margin: 5px 0px;
   display: flex;
@@ -512,13 +520,14 @@ h3 {
   justify-content: center;
 }
 
-.register-form form input[type="file"] {
+.register-form form input[type="file"], 
+.productadd-form form input[type="file"] {
   width: 65%;
   display: flex;
   justify-content: center;
 }
 
-::-webkit-file-upload-button {
+::-webkit-file-upload-button, #category {
   justify-content: center;
   background-color: #777;
   color: white;
@@ -531,7 +540,7 @@ h3 {
   font-family: "Montserrat", sans-serif;
 }
 
-::-webkit-file-upload-button:hover {
+::-webkit-file-upload-button:hover, #category:hover {
   cursor: pointer;
   background-color: #03c959;
 }
@@ -564,20 +573,29 @@ h3 {
 
 .back-button {
   display: flex;
-  width: 50%;
-  padding: 10px;
-  margin: 5% 25%;
+  padding: 8px;
+  margin: 3% 25%;
   justify-content: center;
-  background-color: indianred;
+  background-color: #777;
   color: white;
-  font-size: 16px;
+  font-size: 17px;
   font-weight: 600;
   border-radius: 10px;
   transition-duration: 450ms;
   border: none;
 }
 
-i.fas.fa-user-circle {
+.back-button:hover {
+  cursor: pointer;
+  background-color: darkviolet;
+}
+
+.back-button a {
+  color: #fff;
+  text-decoration: none;
+}
+
+i.fas.fa-user-circle, i.fa-solid.fa-file-circle-plus {
   font-size: 50px;
   color: #03c959;
   text-align: center;
@@ -635,7 +653,8 @@ i.fab.fa-apple {
   font-weight: 600;
 }
 
-.register-form input#submit:hover {
+.register-form input#submit:hover, 
+.productadd-form input#submit:hover {
   cursor: pointer;
   background-color: #03c959;
 }
@@ -655,7 +674,11 @@ i.fab.fa-apple {
 #descriptionProduct,
 #specsProduct,
 #imageProduct,
-#discountProduct {
+#discountProduct,
+#specs,
+#description,
+#rating,
+#discount {
   border-radius: 6px;
   padding: 6px;
   width: 80%;
