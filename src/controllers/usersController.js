@@ -16,6 +16,15 @@ let usersController = {
       })
     },
 
+    admin: (req, res) => {
+
+      db.Product.findAll().then(function(productos) {
+        res.render('admin', {productos})
+      })
+  
+    },
+   
+
     search: (req, res) => {
       let search = req.params.search;
       let resultado = [];
@@ -41,7 +50,7 @@ let usersController = {
           avatar: "/img/avatar/" + req.file.filename,
           password: bcryptjs.hashSync(req.body.password, 10)
         });
-        res.redirect("/login");
+        res.redirect("/user/login");
       },
 
       //LOGIN
@@ -103,7 +112,7 @@ let usersController = {
       let userId = req.params.id
       User.findByPk(userId)
         .then(()=>{
-          res.render('profile',{ products: products})
+          res.render('/user/profile',{ products: products})
         })  
     }
 };

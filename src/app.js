@@ -26,8 +26,8 @@ app.set("view engine", "ejs");
 app.set("views", __dirname + "/views");
 
 app.use(mainRoutes);
-app.use(usersRoutes);
-app.use(productsRoutes);
+app.use("/user",usersRoutes);
+app.use("/product",productsRoutes);
 
 app.listen(3000, () => {
   console.log("Arrancando servidor...");
