@@ -27,7 +27,7 @@ cols = {
 };
 
 let config = {
-    tableName:'users',
+    tableName:'Users',
     timestamps: true,
     createdAt: 'created_at',
     updatedAt: 'updated_at',
