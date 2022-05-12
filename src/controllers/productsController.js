@@ -110,20 +110,13 @@ let productsController = {
     res.redirect('/admin')
   },
 
-  admin: (req, res) => {
-
-    db.Product.findAll().then(function(productos) {
-      res.render('admin', {productos})
-    })
-
-  },
  
   productDelete: (req, res) => {
 
     db.Product.destroy({where: {id: req.params.id}},
       {include: [{association: 'Image'}]});
 
-    res.redirect('/admin')
+    res.redirect('/user/admin')
   }
 
 }

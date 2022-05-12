@@ -42,15 +42,16 @@ router.post('/login', validateLogin, usersController.loginProcess)
 router.get('/profile/:id', usersController.profile);
 
 //admin Users
+router.get("/admin", usersController.admin);
 router.get('/admin/users', usersController.panel)
 
   //Delete
-router.get('/user/delete/:id', usersController.deleteUser)
-router.delete('/users/delete/:id', usersController.userDelete)
+router.get('/delete/:id', usersController.deleteUser)
+router.delete('/delete/:id', usersController.userDelete)
 
   //Edit
-router.get('/users/edit/:id', usersController.editShow)
-router.put('/users/edit/:id',upload.single("avatar"), usersController.userEdit)
+router.get('/edit/:id', usersController.editShow)
+router.put('/edit/:id',upload.single("avatar"), usersController.userEdit)
 
 
 module.exports = router;

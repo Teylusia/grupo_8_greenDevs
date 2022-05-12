@@ -16,25 +16,23 @@ const storage = multer.diskStorage({
   }
 })
 const upload = multer({ storage: storage });
-
+ 
 
 //Cart
-router.get("/productcart", productsController.cart);
+router.get("/cart", productsController.cart);
 
 //Detail
-router.get('/product/:id', productsController.detail);
-router.get("/productDetail/:id", productsController.detail); //Esta ruta permite ver el product detail
+router.get('/detail/:id', productsController.detail);
 
 //Edit
-router.get("/products/edit/:id", productsController.productEdit);
-router.put("/products/edit/:id",upload.single("image"), productsController.productEdited);
+router.get("/edit/:id", productsController.productEdit);
+router.put("/edit/:id",upload.single("image"), productsController.productEdited);
 
 //Delete
-router.get("/admin", productsController.admin);
-router.delete("/products/delete/:id", productsController.productDelete);
+router.delete("/delete/:id", productsController.productDelete);
 
 //Create Products
-router.get('/products/create', productsController.productCreate);
-router.post('/products/create', upload.single("image"), productsController.productAdd);
+router.get('/create', productsController.productCreate);
+router.post('/create', upload.single("image"), productsController.productAdd);
 
 module.exports = router;
