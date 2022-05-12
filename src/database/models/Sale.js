@@ -32,16 +32,17 @@ const Sale = sequelize.define("Sale", cols, config);
 Sale.associate = function(models){
     Sale.hasMany(models.Product, {
         as: "Product",
-        foreignKey: "product_id"
+        foreignKey: "product_id",
+        onDelete: 'CASCADE'
     });
 };
 
 Sale.associate = function(models){
     Sale.belongsTo(models.User, {
         as: "User",
-        foreignKey: "users_id"
+        foreignKey: "users_id",
+        onDelete: 'CASCADE'
     });
 };
-
 return Sale;
 };

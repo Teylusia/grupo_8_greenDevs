@@ -27,8 +27,10 @@ const Image = sequelize.define("Image", cols, config);
 Image.associate = function(models){
     Image.belongsTo(models.Product, {
         as: "Product",
-        foreignKey: "product_id"
+        foreignKey: "product_id",
+        onDelete: 'CASCADE'
     });
+
 };
 
 return Image;
