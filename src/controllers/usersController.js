@@ -38,7 +38,7 @@ let usersController = {
   },
 
   userAdd: (req, res) => {
-    console.log(req.body)
+    console.log(req.body);
     let userInDb = db.User.findAll({
       where: {
         name: req.body.username,
@@ -58,12 +58,26 @@ let usersController = {
       .then(function ([user, email]) {
         console.log(email);
         console.log(user);
-        if (user == "" && email == "") {
+        console.log(req.file)
+        if (user == "" && email == "" && req.file != undefined) {
           console.log("crear usuario");
           db.User.create({
             name: req.body.username,
             email: req.body.email,
             avatar: "/img/avatar/" + req.file.filename,
+            password: bcryptjs.hashSync(req.body.password, 10),
+          });
+          res.redirect("/user/login");
+        } else if (
+          user == "" &&
+          email == "" &&
+          req.file == undefined
+        ) {
+          console.log("crear usuario con avatar por defecto");
+          db.User.create({
+            name: req.body.username,
+            email: req.body.email,
+            avatar: "/img/avatar/default.jpg",
             password: bcryptjs.hashSync(req.body.password, 10),
           });
           res.redirect("/user/login");
@@ -134,8 +148,8 @@ let usersController = {
         let findFile = fs.existsSync(
           path.join(__dirname, "../../public/" + user.avatar)
         );
-         //busca el archivo, si lo encuentra borra el mismo y el usuario de la db 
-        if (findFile) {
+        //busca el archivo, si lo encuentra borra el mismo y el usuario de la db
+        if (findFile && user.avatar != "/img/avatar/default.jpg") {
           fs.unlinkSync(path.join(__dirname, "../../public/" + user.avatar));
           User.destroy({ where: { id: userId }, force: true }).then(() => {
             return res.redirect("/user/admin/users");
