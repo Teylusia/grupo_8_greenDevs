@@ -38,26 +38,27 @@ let usersController = {
   },
 
   userAdd: (req, res) => {
+    console.log(req.body)
     let userInDb = db.User.findAll({
       where: {
         name: req.body.username,
       },
     }).then((user) => {
-      user;
+      return user;
     });
     let emailInDb = db.User.findAll({
       where: {
         email: req.body.email,
       },
     }).then((email) => {
-      email;
+      return email;
     });
 
     Promise.all([userInDb, emailInDb])
       .then(function ([user, email]) {
         console.log(email);
         console.log(user);
-        if (user == undefined && email == undefined) {
+        if (user == "" && email == "") {
           console.log("crear usuario");
           db.User.create({
             name: req.body.username,
