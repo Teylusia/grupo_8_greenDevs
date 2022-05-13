@@ -706,6 +706,15 @@ i.fab.fa-apple {
   outline: none;
 }
 
+.avatar-listado {
+  display: flex;
+  height: 80px;
+  width: auto;
+  align-content: center;
+  justify-content: center;
+  
+}
+
 /* Carrito de compras */
 
 main.product-cart {

@@ -43,6 +43,7 @@
                             <th>email</th>
                             <th>avatar</th>
                             <th>status</th>
+                            <th>Nivel</th>
                             <th>Editar/eliminar</th>
 
                         </tr>
@@ -62,7 +63,10 @@
                                
                             </td>
                             <td>
-                                <%= usuario.avatar %>
+                                <div class="avatar-listado">
+
+                                    <img src="<%= usuario.avatar %>" alt="avatar-usuario">
+                                </div>
                             </td>
                             <td>
                                 <% if(usuario.status == 0){ %>
@@ -70,6 +74,9 @@
                                 <% }else{ %>
                                     <%= 'Activo' %>
                                 <% } %>
+                            </td>
+                            <td>
+                                <%= usuario.privilege%>
                             </td>
                             <td>
                                 <a href="/users/edit/<%=usuario.id %>">
