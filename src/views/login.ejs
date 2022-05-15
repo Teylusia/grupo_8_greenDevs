@@ -21,7 +21,7 @@
         <div class="register-form">
           <form action="/user/login" method="POST">
             <label for="email">Ingresa tu email</label>
-            <input type="text" id="email" name="email" class="form-input <%= locals.errors && errors.password ? "is-invalid" : null %>" value = "<%=locals.oldData && oldData.email ? oldData.email : '' %>">
+            <input type="text" id="email" name="email" class="form-input <%= locals.errors && errors.email ? "is-invalid" : null %>" value = "<%=locals.oldData && oldData.email ? oldData.email : '' %>">
             <% if (locals.errors && errors.email) { %>
               <div class="errors"> 
                 <%= errors.email.msg %> 
