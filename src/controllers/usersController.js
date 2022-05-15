@@ -8,6 +8,7 @@ const bcryptjs = require("bcryptjs");
 const db = require("../database/models");
 const {validationResult} = require("express-validator");
 const User = db.User;
+const products = db.Product.findAll()
 
 let usersController = {
   
@@ -102,25 +103,39 @@ let usersController = {
     } else {
       User.findOne(
         { where: { email: req.body.email } },
-      {
-        include: [{ association: "Sale" }],
-      }
     )
-      .then((resultado) => {
-        let userToLogin = resultado.password;
-        if (userToLogin) {
-          let okPassword = bcryptjs.compareSync(req.body.password, userToLogin);
+      .then((userToLogin) => {
+        let checkPassword = userToLogin;
+        if (checkPassword) {
+          let okPassword = bcryptjs.compareSync(req.body.password, checkPassword.password);
           if (okPassword) {
-            //return res.send('Login exitoso!!!')
-            res.redirect("/");
+            delete userToLogin.password;
+            req.session.userLogged = userToLogin;
+            res.redirect("/user/profile/"+userToLogin.id);
+          }else {
+            return res.render("login", {
+              errors: {
+                password: {
+                  msg: "Credenciales inválidas"
+                }
+              }
+          })
           }
-        }
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-    }
-    },
+        }else {
+          return res.render("login", {
+            errors: {
+              password: {
+                msg: "Credenciales inválidas"
+              }
+            }
+        })
+      }
+    })
+    .catch(function (error) {
+      console.log(error);
+
+  })
+    }},
     
     userEdit: (req, res) => {
     let productToEdit = req.params.id;
@@ -175,9 +190,10 @@ let usersController = {
     });
   },
   profile: (req, res) => {
+    console.log(req.session.userLogged)
     let userId = req.params.id;
-    User.findByPk(userId).then(() => {
-      res.render("/user/profile", { products: products });
+    User.findByPk(userId).then((user) => {
+      res.render("profile", { user: user });
     });
   },
 };

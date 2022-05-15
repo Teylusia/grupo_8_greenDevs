@@ -674,7 +674,7 @@ i.fab.fa-apple {
   background-color: indianred;
 }
 
-#username,
+/* #username,
 #email,
 #password,
 #confirm-password,
@@ -691,7 +691,7 @@ i.fab.fa-apple {
   width: 80%;
   border: none;
   margin: 6px 0px 6px 0px;
-}
+} */
 
 #submit {
   display: flex;
