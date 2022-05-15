@@ -19,11 +19,21 @@
         </div>
       <h4 class="registro-manual">O puedes iniciar sesión con tus datos:</h4>
         <div class="register-form">
-          <form action="/login" method="POST">
+          <form action="/user/login" method="POST">
             <label for="email">Ingresa tu email</label>
-            <input type="text" id="email" name="email">
+            <input type="text" id="email" name="email" class="form-input <%= locals.errors && errors.password ? "is-invalid" : null %>" value = "<%=locals.oldData && oldData.email ? oldData.email : '' %>">
+            <% if (locals.errors && errors.email) { %>
+              <div class="errors"> 
+                <%= errors.email.msg %> 
+              </div>
+            <% } %>
             <label for="password">Ingresa tu contraseña</label>
-            <input type="password" id="password" name="password" >
+            <input type="password" id="password" name="password" class="form-input <%= locals.errors && errors.password ? "is-invalid" : null %>" >
+            <% if (locals.errors && errors.password) { %>
+              <div class="errors"> 
+                <%= errors.password.msg %> 
+              </div>
+            <% } %>
             <label for="remember-me"><input type="checkbox" name='rememberUser' id="rememberUser" value="yRememberUser"> Recuérdame la próxima vez</label>
             <input type="submit" id="submit" value="Ingresar!">
           </form>

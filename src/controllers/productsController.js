@@ -107,7 +107,7 @@ let productsController = {
       where:{product_id: req.params.id}
     });
 
-    res.redirect('/user/admin')
+    res.redirect('/admin')
   },
 
  
@@ -116,7 +116,7 @@ let productsController = {
     db.Product.destroy({where: {id: req.params.id}},
       {include: [{association: 'Image'}]});
 
-    res.redirect('/user/admin')
+    res.redirect('/admin')
   }
 
 }

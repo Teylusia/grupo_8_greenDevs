@@ -1,37 +1,28 @@
 const path = require("path");
 const fs = require("fs");
-const usersFilePath = path.join(__dirname, "../data/users.json");
-const users = JSON.parse(fs.readFileSync(usersFilePath, "utf-8"));
-const productsFilePath = path.join(__dirname, "../data/products.json");
-const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
+// const usersFilePath = path.join(__dirname, "../data/users.json");
+// const users = JSON.parse(fs.readFileSync(usersFilePath, "utf-8"));
+// const productsFilePath = path.join(__dirname, "../data/products.json");
+// const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
 const bcryptjs = require("bcryptjs");
 const db = require("../database/models");
+const {validationResult} = require("express-validator");
 const User = db.User;
 
 let usersController = {
-  panel: (req, res) => {
-    User.findAll().then((users) => {
-      res.render("adminUsers", { usuarios: users });
-    });
-  },
-
-  admin: (req, res) => {
-    db.Product.findAll().then(function (productos) {
-      res.render("admin", { productos });
-    });
-  },
-
+  
+  
   search: (req, res) => {
     let search = req.params.search;
     let resultado = [];
-
+    
     for (let i = 0; i < products.length; i++) {
       if (products[i].name.contains(search)) {
         resultado.push(products[i]);
       }
     }
   },
-
+  
   //REGISTRO
   register: (req, res) => {
     res.render("register");
@@ -39,8 +30,16 @@ let usersController = {
 
   userAdd: (req, res) => {
     console.log(req.body);
-    let userInDb = db.User.findAll({
-      where: {
+    let resultValidation = validationResult(req);
+    console.log(resultValidation)
+    
+    if(resultValidation.errors.length > 0){
+      
+      res.render("register", { errors: resultValidation.mapped(), oldData: req.body });
+    }else {
+
+      let userInDb = User.findAll({
+        where: {
         name: req.body.username,
       },
     }).then((user) => {
@@ -53,9 +52,9 @@ let usersController = {
     }).then((email) => {
       return email;
     });
-
+    
     Promise.all([userInDb, emailInDb])
-      .then(function ([user, email]) {
+    .then(function ([user, email]) {
         console.log(email);
         console.log(user);
         console.log(req.file)
@@ -74,7 +73,7 @@ let usersController = {
           req.file == undefined
         ) {
           console.log("crear usuario con avatar por defecto");
-          db.User.create({
+          User.create({
             name: req.body.username,
             email: req.body.email,
             avatar: "/img/avatar/default.jpg",
@@ -88,16 +87,21 @@ let usersController = {
       .catch(function () {
         console.log("error en registro de usuario");
       });
+    }
   },
-
+  
   //LOGIN
   login: (req, res) => {
     res.render("login");
   },
 
   loginProcess: (req, res) => {
-    db.User.findOne(
-      { where: { email: req.body.email } },
+    let resultValidation = validationResult(req);
+    if (resultValidation.errors.length > 0) {
+      res.render("login", { errors: resultValidation.mapped(), oldData: req.body });
+    } else {
+      User.findOne(
+        { where: { email: req.body.email } },
       {
         include: [{ association: "Sale" }],
       }
@@ -115,9 +119,10 @@ let usersController = {
       .catch(function (error) {
         console.log(error);
       });
-  },
-
-  userEdit: (req, res) => {
+    }
+    },
+    
+    userEdit: (req, res) => {
     let productToEdit = req.params.id;
     console.log(req.body);
     User.update(
@@ -145,19 +150,20 @@ let usersController = {
     let userId = req.params.id;
     let avatarDelete = db.User.findByPk(userId)
       .then((user) => {
+        console.log(user)
         let findFile = fs.existsSync(
           path.join(__dirname, "../../public/" + user.avatar)
         );
-        //busca el archivo, si lo encuentra borra el mismo y el usuario de la db
+        //busca el archivo, si lo encuentra borra el mismo y el usuario de la db pero la ruta es el avatar por defecto no lo borra.
         if (findFile && user.avatar != "/img/avatar/default.jpg") {
           fs.unlinkSync(path.join(__dirname, "../../public/" + user.avatar));
           User.destroy({ where: { id: userId }, force: true }).then(() => {
-            return res.redirect("/user/admin/users");
+            return res.redirect("/admin/users");
           });
         } else {
           //si no encuentra el archivo avatar borra solamente el usuario de la db
           User.destroy({ where: { id: userId }, force: true }).then(() => {
-            return res.redirect("/user/admin/users");
+            return res.redirect("/admin/users");
           });
         }
       })
