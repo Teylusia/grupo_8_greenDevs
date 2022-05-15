@@ -12,19 +12,20 @@ let validateRegister = [
     .isEmail().withMessage("Tienes que escribir un email válido"),
 
     body("password").notEmpty().withMessage("Tienes que escribir una contraseña")
-    .isLength({ min: 8 }).withMessage("Tienes que escribir una contraseña con más de 8 caracteres"),
+    .isLength({ min: 6 }).withMessage("Tienes que escribir una contraseña de al menos 6 caracteres"),
 
     body('avatar').custom((value, { req }) => {
 		let file = req.file;
 		let acceptedExtensions = ['.jpg', '.png', '.gif'];
 		
-		if (!file) {
-			throw new Error('Tienes que subir una imagen');
-		} else {
+		if (file) {
+			
 			let fileExtension = path.extname(file.originalname);
 			if (!acceptedExtensions.includes(fileExtension)) {
 				throw new Error(`Las extensiones de archivo permitidas son ${acceptedExtensions.join(', ')}`);
 			}
+		} else {
+			
 		}
 
 		return true;

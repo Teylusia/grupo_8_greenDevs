@@ -50,6 +50,17 @@ let controller = {
       res.render("login", { errors: errors.mapped(), old: req.body });
     }
   },
+  panel: (req, res) => {
+    db.User.findAll().then((users) => {
+      res.render("adminUsers", { usuarios: users });
+    });
+  },
+
+  admin: (req, res) => {
+    db.Product.findAll().then(function (productos) {
+      res.render("admin", { productos });
+    });
+  },
 };
 
 module.exports = controller;

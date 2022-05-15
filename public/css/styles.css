@@ -608,6 +608,13 @@ i.fas.fa-user-circle, i.fa-solid.fa-file-circle-plus {
   padding: 5px;
 }
 
+.form-input {
+  border-radius: 6px;
+  padding: 6px;
+  width: 80%;
+  border: solid 1px #03c959;
+  margin: 6px 0px 6px 0px;
+}
 .signup-buttons-container {
   display: flex;
   width: 50%;
@@ -713,6 +720,13 @@ i.fab.fa-apple {
   align-content: center;
   justify-content: center;
   
+}
+
+/* INPUT FORMS IS-INVALID */
+
+.is-invalid {
+  
+  border:solid 2px red;
 }
 
 /* Carrito de compras */
@@ -1204,6 +1218,12 @@ button {
   width: 100%;
   margin: 20px 0px;
   font-size: 25px;
+}
+
+/* VALIDATIONS ERRORS */
+
+.errors {
+  color: red;
 }
 
 /*KEYFRAMES*/
