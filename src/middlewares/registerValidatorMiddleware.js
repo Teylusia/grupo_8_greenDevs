@@ -12,11 +12,11 @@ let validateRegister = [
     .isEmail().withMessage("Tienes que escribir un email válido"),
 
     body("password").notEmpty().withMessage("Tienes que escribir una contraseña")
-    .isLength({ min: 6 }).withMessage("Tienes que escribir una contraseña de al menos 6 caracteres"),
+    .isLength({ min: 8 }).withMessage("Tienes que escribir una contraseña de al menos 6 caracteres"),
 
     body('avatar').custom((value, { req }) => {
 		let file = req.file;
-		let acceptedExtensions = ['.jpg', '.png', '.gif'];
+		let acceptedExtensions = ['.jpg', '.jpeg', '.png', '.gif'];
 		
 		if (file) {
 			
