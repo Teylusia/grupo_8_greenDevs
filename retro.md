@@ -66,3 +66,11 @@ Se esta haciendo/ por hacer:
 el CRUD.
 el backlog de sprints pasados. 
 
+
+-----------------------------------------------------------------------
+
+Retrospectiva SPRINT 6:
+
+El sprint fue mucho mejor a los anteriores, nos vimos mas constantes, hubo una comunicación efectiva en la repartición de tareas, y un dialogo fluido donde todos sabían que estaba haciendo el otro. Por otro lado, si hubieron errores innecesarios como olvidarse de subir el DER al Github. En conclusión y a comparación del Sprint 5 este Sprint si fue mas organizado, dialogado y, de mayor importancia, mas CONSTANTE que los anteriores. ¡A no aflojar que se puede equipo 8!
+
+Weekly 19/05 22:00hs.

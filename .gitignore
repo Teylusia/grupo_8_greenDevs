@@ -13,3 +13,6 @@ yarn-error.log*
 
 # Editor directories and files
 .vscode
+
+# config
+/database/config/config.js
