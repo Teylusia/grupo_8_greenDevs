@@ -1,33 +1,42 @@
 //User related routes here
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const usersController = require('../controllers/usersController');
-const validateRegister = require("../middlewares/registerValidatorMiddleware")
-const validateLogin = require("../middlewares/loginValidatorMiddleware")
+const usersController = require("../controllers/usersController");
+const validateRegister = require("../middlewares/registerValidatorMiddleware");
+const validateLogin = require("../middlewares/loginValidatorMiddleware");
 const multerAvatar = require("../middlewares/multerAvatarMiddleware");
-
-
+const guestMiddleware = require("../middlewares/guestMiddleware");
+const authMiddleware = require("../middlewares/authMiddleware");
 
 //Register
-router.get('/register', usersController.register);
-router.post('/register', multerAvatar.single("avatar"),validateRegister, usersController.userAdd);
+router.get("/register", guestMiddleware, usersController.register);
+router.post(
+  "/register",
+  multerAvatar.single("avatar"),
+  validateRegister,
+  usersController.userAdd
+);
 
 //Login
-router.get('/login', usersController.login);
-router.post('/login', validateLogin, usersController.loginProcess)
+router.get("/login", guestMiddleware, usersController.login);
+router.post("/login", validateLogin, usersController.loginProcess);
 
 //Profile
-router.get('/profile/:id', usersController.profile);
+router.get("/profile", authMiddleware, usersController.profile);
 
+//Delete
+router.get("/delete/:id", usersController.deleteUser);
+router.delete("/delete/:id", usersController.userDelete);
 
+//Edit
+router.get("/edit/:id", usersController.editShow);
+router.put(
+  "/edit/:id",
+  multerAvatar.single("avatar"),
+  usersController.userEdit
+);
 
-  //Delete
-router.get('/delete/:id', usersController.deleteUser)
-router.delete('/delete/:id', usersController.userDelete)
-
-  //Edit
-router.get('/edit/:id', usersController.editShow)
-router.put('/edit/:id',multerAvatar.single("avatar"), usersController.userEdit)
-
+//Logout
+router.get("/logout/", usersController.logout)
 
 module.exports = router;

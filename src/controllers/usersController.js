@@ -6,24 +6,22 @@ const fs = require("fs");
 // const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
 const bcryptjs = require("bcryptjs");
 const db = require("../database/models");
-const {validationResult} = require("express-validator");
+const { validationResult } = require("express-validator");
 const User = db.User;
-const products = db.Product.findAll()
+const products = db.Product.findAll();
 
 let usersController = {
-  
-  
   search: (req, res) => {
     let search = req.params.search;
     let resultado = [];
-    
+
     for (let i = 0; i < products.length; i++) {
       if (products[i].name.contains(search)) {
         resultado.push(products[i]);
       }
     }
   },
-  
+
   //REGISTRO
   register: (req, res) => {
     res.render("register");
@@ -32,65 +30,62 @@ let usersController = {
   userAdd: (req, res) => {
     console.log(req.body);
     let resultValidation = validationResult(req);
-    console.log(resultValidation)
-    
-    if(resultValidation.errors.length > 0){
-      
-      res.render("register", { errors: resultValidation.mapped(), oldData: req.body });
-    }else {
+    console.log(resultValidation);
 
+    if (resultValidation.errors.length > 0) {
+      res.render("register", {
+        errors: resultValidation.mapped(),
+        oldData: req.body,
+      });
+    } else {
       let userInDb = User.findAll({
         where: {
-        name: req.body.username,
-      },
-    }).then((user) => {
-      return user;
-    });
-    let emailInDb = db.User.findAll({
-      where: {
-        email: req.body.email,
-      },
-    }).then((email) => {
-      return email;
-    });
-    
-    Promise.all([userInDb, emailInDb])
-    .then(function ([user, email]) {
-        console.log(email);
-        console.log(user);
-        console.log(req.file)
-        if (user == "" && email == "" && req.file != undefined) {
-          console.log("crear usuario");
-          db.User.create({
-            name: req.body.username,
-            email: req.body.email,
-            avatar: "/img/avatar/" + req.file.filename,
-            password: bcryptjs.hashSync(req.body.password, 10),
-          });
-          res.redirect("/user/login");
-        } else if (
-          user == "" &&
-          email == "" &&
-          req.file == undefined
-        ) {
-          console.log("crear usuario con avatar por defecto");
-          User.create({
-            name: req.body.username,
-            email: req.body.email,
-            avatar: "/img/avatar/default.jpg",
-            password: bcryptjs.hashSync(req.body.password, 10),
-          });
-          res.redirect("/user/login");
-        } else {
-          res.send("error usuario duplicado");
-        }
-      })
-      .catch(function () {
-        console.log("error en registro de usuario");
+          name: req.body.username,
+        },
+      }).then((user) => {
+        return user;
       });
+      let emailInDb = db.User.findAll({
+        where: {
+          email: req.body.email,
+        },
+      }).then((email) => {
+        return email;
+      });
+
+      Promise.all([userInDb, emailInDb])
+        .then(function ([user, email]) {
+          console.log(email);
+          console.log(user);
+          console.log(req.file);
+          if (user == "" && email == "" && req.file != undefined) {
+            console.log("crear usuario");
+            db.User.create({
+              name: req.body.username,
+              email: req.body.email,
+              avatar: "/img/avatar/" + req.file.filename,
+              password: bcryptjs.hashSync(req.body.password, 10),
+            });
+            res.redirect("/user/login");
+          } else if (user == "" && email == "" && req.file == undefined) {
+            console.log("crear usuario con avatar por defecto");
+            User.create({
+              name: req.body.username,
+              email: req.body.email,
+              avatar: "/img/avatar/default.jpg",
+              password: bcryptjs.hashSync(req.body.password, 10),
+            });
+            res.redirect("/user/login");
+          } else {
+            res.send("error usuario duplicado");
+          }
+        })
+        .catch(function () {
+          console.log("error en registro de usuario");
+        });
     }
   },
-  
+
   //LOGIN
   login: (req, res) => {
     res.render("login");
@@ -99,45 +94,54 @@ let usersController = {
   loginProcess: (req, res) => {
     let resultValidation = validationResult(req);
     if (resultValidation.errors.length > 0) {
-      res.render("login", { errors: resultValidation.mapped(), oldData: req.body });
+      res.render("login", {
+        errors: resultValidation.mapped(),
+        oldData: req.body,
+      });
     } else {
-      User.findOne(
-        { where: { email: req.body.email } },
-    )
-      .then((userToLogin) => {
-        let checkPassword = userToLogin;
-        if (checkPassword) {
-          let okPassword = bcryptjs.compareSync(req.body.password, checkPassword.password);
-          if (okPassword) {
-            delete userToLogin.password;
-            req.session.userLogged = userToLogin;
-            res.redirect("/user/profile/"+userToLogin.id);
-          }else {
+      User.findOne({ where: { email: req.body.email } })
+        .then((userToLogin) => {
+          // let checkPassword = userToLogin;
+          if (userToLogin) {
+            let okPassword = bcryptjs.compareSync(
+              req.body.password,
+              userToLogin.password
+            );
+            if (okPassword) {
+              delete userToLogin.password; //🚩ver por qué no está borrando el password
+              req.session.userLogged = userToLogin;
+              // res.redirect("/user/profile/"+userToLogin.id);
+              if(req.body.rememberUser)
+                res.cookie("userEmail", req.body.email, {maxAge: 1000 * 60} * 2)
+
+              res.redirect("/user/profile");
+              // res.send("login ok")
+            } else {
+              return res.render("login", {
+                errors: {
+                  password: {
+                    msg: "Credenciales inválidas",
+                  },
+                },
+              });
+            }
+          } else {
             return res.render("login", {
               errors: {
                 password: {
-                  msg: "Credenciales inválidas"
-                }
-              }
-          })
+                  msg: "Credenciales inválidas",
+                },
+              },
+            });
           }
-        }else {
-          return res.render("login", {
-            errors: {
-              password: {
-                msg: "Credenciales inválidas"
-              }
-            }
         })
-      }
-    })
-    .catch(function (error) {
-      console.log(error);
+        .catch(function (error) {
+          console.log(error);
+        });
+    }
+  },
 
-  })
-    }},
-    
-    userEdit: (req, res) => {
+  userEdit: (req, res) => {
     let productToEdit = req.params.id;
     console.log(req.body);
     User.update(
@@ -165,7 +169,7 @@ let usersController = {
     let userId = req.params.id;
     let avatarDelete = db.User.findByPk(userId)
       .then((user) => {
-        console.log(user)
+        console.log(user);
         let findFile = fs.existsSync(
           path.join(__dirname, "../../public/" + user.avatar)
         );
@@ -190,11 +194,23 @@ let usersController = {
     });
   },
   profile: (req, res) => {
-    console.log(req.session.userLogged)
-    let userId = req.params.id;
-    User.findByPk(userId).then((user) => {
-      res.render("profile", { user: user });
+    // let userId = req.params.id;
+    console.log(req.cookies.userEmail)
+    
+    console.log(req.session.userLogged);
+    // User.findByPk(userId).then((user) => {
+    //   res.render("profile", {
+    //     userToLogin: user });
+    // });
+    res.render("profile", {
+      
+      user: req.session.userLogged,
     });
+  },
+
+  logout: (req, res) => {
+    req.session.destroy();
+    return res.redirect("/");
   },
 };
 

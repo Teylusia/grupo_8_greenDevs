@@ -9,11 +9,21 @@
       </form>
     </div>
     <nav class="nav-bar">
-      <ul class="bar">
-        <li class="browsing"><a href="/user/register"><i class="fa-solid fa-arrow-right-to-bracket" title="Registro"></i></a></li>
-        <li class="browsing"><a href="/product/cart"><i class="fa-solid fa-cart-shopping" title="Carrito"></i></a></li>
-        <li class="browsing"><a href="/user/login"><i class="fa-solid fa-user" title="Iniciar sesión"></i></a></li>
-      </ul>
+      <% if (locals.isLogged) { %>
+        <ul class="bar">
+          <li class="browsing"><a href="/product/cart"><i class="fa-solid fa-cart-shopping" title="Carrito"></i></a></li>
+          <li class="browsing"><a href="/user/profile"><i class="fa-solid fa-user" title="Panel usuario"></i></a></li>
+          <li class="browsing"><a href="/user/logout">
+            <i class="fa-solid fa-arrow-right-from-bracket" title="Cerrar Sesión"></i>
+          </a></li>
+        </ul>
+      <% } else{ %>
+
+        <ul class="bar">
+          <li class="browsing"><a href="/product/cart"><i class="fa-solid fa-cart-shopping" title="Carrito"></i></a></li>
+          <li class="browsing"><a href="/user/login"><i class="fa-solid fa-user" title="Iniciar sesión"></i></a></li>
+        </ul>
+       <% } %> 
     </nav>
     <nav class="sub-nav">
       <ul>

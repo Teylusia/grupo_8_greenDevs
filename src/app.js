@@ -10,6 +10,7 @@ const logger = require("morgan");
 const cookieParser = require("cookie-parser");
 const { sequelize } = require("./database/models");
 const session = require("express-session");
+const userLoggedMiddleware = require("./middlewares/userLoggedMiddleware");
 
 
 
@@ -24,7 +25,7 @@ app.use(session({
   resave: false,
   saveUninitialized: false
 }))
-
+app.use(userLoggedMiddleware)
 
 app.set("view engine", "ejs");
 app.set("views", __dirname + "/views");
