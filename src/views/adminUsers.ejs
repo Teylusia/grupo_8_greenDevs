@@ -19,11 +19,14 @@
                             <a href="/user/register">
                                 <button>Nuevo Usuario +</button>
                             </a>
-                            <a href="/user/admin/users">
+                            <a href="/admin/users">
                                 <button>Listar Usuarios</button>
                             </a>
-                            <button>Nueva Categoria</button>
-                            <form action="/user/admin/search" method="GET">
+                            <a href="/admin/">
+                                <button>Listar Productos</button>
+                            </a>
+                            <button>Listar Productos</button>
+                            <form action="/admin/search" method="GET">
                                 
                                 <input type="text" name="search" placeholder="Buscar producto">
                                 <input type="button" value="Buscar">
@@ -43,6 +46,7 @@
                             <th>email</th>
                             <th>avatar</th>
                             <th>status</th>
+                            <th>Nivel</th>
                             <th>Editar/eliminar</th>
 
                         </tr>
@@ -62,7 +66,10 @@
                                
                             </td>
                             <td>
-                                <%= usuario.avatar %>
+                                <div class="avatar-listado">
+
+                                    <img src="<%= usuario.avatar %>" alt="avatar-usuario">
+                                </div>
                             </td>
                             <td>
                                 <% if(usuario.status == 0){ %>
@@ -72,7 +79,10 @@
                                 <% } %>
                             </td>
                             <td>
-                                <a href="/users/edit/<%=usuario.id %>">
+                                <%= usuario.privilege%>
+                            </td>
+                            <td>
+                                <a href="/user/edit/<%=usuario.id %>">
                                 <button class="button-edit">Editar</button></a>
                                 <a href="/user/delete/<%=usuario.id %>">Delete</a>
 

@@ -6,23 +6,26 @@
     <main>
       <section class="infoProfile">
         <h1 class ="nameProfile">Nombre de Usuario</h1>
+        <div>
+          <h3>
+            <%= user.name %> 
+  
+          </h3>
+
+        </div>
         <h2 class ="emailProfile">email de usuario</h2>
+        <h3>
+          <%= user.email  %> 
+        </h3>
         <article class ="pictureProfile">
-          <img src="/img/dying-card.jpeg" alt="Foto de perfil del usuario">
+          <img src="<%= user.avatar  %> " alt="Foto de perfil del usuario">
         </article>
       </section>
       
 
-      <section class="productLibrary">
-        <%- include('./partials/popularOffers') %>
-      </section>
+ 
 
-      <section>
-        <h3 class="comments">Comentarios</h3>
-        <article>
-          <h4 class="nameComments">Nombre de Usuario</h4>
-          <p class="commentProfile">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quaerat placeat optio accusantium necessitatibus ipsa vitae vero architecto magnam excepturi exercitationem.</p>
-        </article>
+
       </section>
       <%- include('./partials/footer') %>
     </main>

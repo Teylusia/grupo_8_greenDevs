@@ -30,14 +30,16 @@ const Product_Category = sequelize.define("Product_Category", cols, config);
 Product_Category.associate = function(models){
     Product_Category.belongsTo(models.Product, {
         as: "Product",
-        foreignKey: "product_id"
+        foreignKey: "product_id",
+        onDelete: "CASCADE"
     });
 };
 
 Product_Category.associate = function(models){
     Product_Category.belongsTo(models.Category, {
         as: "Category",
-        foreignKey: "category_id"
+        foreignKey: "category_id",
+        onDelete: "Cascade"
     });
 };
 

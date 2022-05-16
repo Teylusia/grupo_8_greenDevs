@@ -112,11 +112,11 @@ let productsController = {
 
  
   productDelete: (req, res) => {
-
+    
     db.Product.destroy({where: {id: req.params.id}},
       {include: [{association: 'Image'}]});
 
-    res.redirect('/user/admin')
+    res.redirect('/admin')
   }
 
 }

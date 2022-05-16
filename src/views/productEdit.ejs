@@ -15,12 +15,14 @@
       <h4 class="registro-manual"><%= product.name %></h4>
         <div class="register-form">
           <form method="POST" action="/product/edit/<%= product.id %>?_method=PUT" enctype="multipart/form-data">
-            <label for="idProduct">Id</label>
-            <input type="number" value="<%= product.id %>" disabled><br>
+            
+            <h3>
+             Id: <%= product.id %><br>
+            </h3> 
             <label for="name">Nombre:</label><br>
-            <input type="text" id="username" name="name" value="<%= product.name %>"><br>
+            <input type="text" id="username" name="name" value="<%= product.name %>" class="form-input" ><br>
             <label for="price">Precio:</label><br>
-            <input type="number" id="price" name="price" value="<%= product.price %>"><br>
+            <input type="number" id="price" name="price" value="<%= product.price %>" class="form-input"><br>
             <div style="margin: 10%;">
               <label for="image">Imagen Principal:</label><br>
               <img src="<%= image.address %>" width="300" height="250" alt="imagen-del-producto"> <br>
@@ -31,11 +33,11 @@
             <label for="image">Galeria de Imágenes:</label><br>
             
             <label for="specs">Requisitos:</label><br>
-            <textarea name="specs" id="specs" cols="30" rows="10"><%= product.specs %></textarea><br>
+            <textarea name="specs" id="specs" cols="30" rows="10" class="form-input"><%= product.specs %></textarea><br>
             <label for="description">Descripción:</label><br>
-            <textarea name="description" id="description" cols="30" rows="10"><%= product.description %></textarea><br>
+            <textarea name="description" id="description" cols="30" rows="10" class="form-input"><%= product.description %></textarea><br>
             <label for="discountProduct">Descuento: %</label>
-            <input type="number" name="discount" id="discount" value="<%= product.discount %>"><br>
+            <input type="number" name="discount" id="discount" value="<%= product.discount %>" class="form-input"><br>
             <input type="submit" id="submit" value="Guardar Cambios">
             <div class="back-button">
               

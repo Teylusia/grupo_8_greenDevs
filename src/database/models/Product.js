@@ -50,7 +50,7 @@ Product.associate = function(models){
 Product.associate = function(models){
     Product.hasMany(models.Image, {
         as: "Image",
-        foreignKey: "product_id"
+        foreignKey: "product_id",
     });
 };
 

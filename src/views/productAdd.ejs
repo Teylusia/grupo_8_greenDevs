@@ -19,30 +19,30 @@
 
           <form action="/product/create" enctype="multipart/form-data" method="POST">
             <label for="name">Nombre del producto:</label><br>
-            <input type="text" id="username" name="name" required><br>
+            <input type="text" id="username" name="name" class="form-input" required><br>
             <label for="price">Precio</label><br>
-            <input type="number" id="password" name="price" required><br>
+            <input type="number" id="password" name="price" class="form-input" required><br>
             <label for="image">Imagen principal</label><br>
             <input type="file" name="image" id="upload-image"><br>
-            <label for="specs">Requisitos de hardware:</label><br>
-            <textarea name="specs" id="specs" cols="30" rows="10"></textarea><br>
-            <label for="description">Descripción:</label><br>
-            <textarea name="description" id="description" cols="30" rows="10"></textarea><br>
-            <label for="category">Categoria:</label><br>
+            <label for="specs">Requisitos de hardware</label><br>
+            <textarea name="specs" id="specs" cols="30" rows="10" class="form-input"></textarea ><br>
+            <label for="description">Descripción</label><br>
+            <textarea name="description" id="description" cols="30" rows="10" class="form-input"></textarea><br>
+            <label for="category">Categoría</label><br>
             <select name="category" id="category"><br>
               <% category.forEach(element => { %>
                 <option value="<%= element.name%>"><%= element.name%></option> 
               <% }) %> 
               
             </select><br><br>
-            <label for="rating">Rating:</label>
-            <input type="number" name="rating" id="rating" min="1" max="10"><br>
-            <label for="discount">Descuento %:</label>
-            <input type="number" name="discount" id="discount"><br>
+            <label for="rating">Rating</label>
+            <input type="number" name="rating" id="rating" min="1" max="10"class="form-input"><br>
+            <label for="discount">Descuento %</label>
+            <input type="number" name="discount" id="discount" class="form-input"><br>
             <input type="submit" id="submit" value="Agregar">
           </form>
           <div class="back-button">
-            <a href="/user/admin">
+            <a href="/admin">
               
               <p>Volver al listado</p>
             </a>
