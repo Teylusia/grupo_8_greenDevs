@@ -28,9 +28,9 @@ let usersController = {
   },
 
   userAdd: (req, res) => {
-    console.log(req.body);
+    // console.log(req.body);
     let resultValidation = validationResult(req);
-    console.log(resultValidation);
+    // console.log(resultValidation);
 
     if (resultValidation.errors.length > 0) {
       res.render("register", {
@@ -55,11 +55,11 @@ let usersController = {
 
       Promise.all([userInDb, emailInDb])
         .then(function ([user, email]) {
-          console.log(email);
-          console.log(user);
-          console.log(req.file);
+          // console.log(email);
+          // console.log(user);
+          // console.log(req.file);
           if (user == "" && email == "" && req.file != undefined) {
-            console.log("crear usuario");
+            // console.log("crear usuario");
             db.User.create({
               name: req.body.username,
               email: req.body.email,
@@ -68,7 +68,7 @@ let usersController = {
             });
             res.redirect("/user/login");
           } else if (user == "" && email == "" && req.file == undefined) {
-            console.log("crear usuario con avatar por defecto");
+            // console.log("crear usuario con avatar por defecto");
             User.create({
               name: req.body.username,
               email: req.body.email,
@@ -111,8 +111,12 @@ let usersController = {
               delete userToLogin.password; //🚩ver por qué no está borrando el password
               req.session.userLogged = userToLogin;
               // res.redirect("/user/profile/"+userToLogin.id);
-              if(req.body.rememberUser)
-                res.cookie("userEmail", req.body.email, {maxAge: 1000 * 60} * 2)
+              if (req.body.rememberUser)
+                res.cookie(
+                  "userEmail",
+                  req.body.email,
+                  { maxAge: (1000 * 60) *10 } 
+                );
 
               res.redirect("/user/profile");
               // res.send("login ok")
@@ -143,7 +147,7 @@ let usersController = {
 
   userEdit: (req, res) => {
     let productToEdit = req.params.id;
-    console.log(req.body);
+    // console.log(req.body);
     User.update(
       {
         name: req.body.username,
@@ -169,7 +173,7 @@ let usersController = {
     let userId = req.params.id;
     let avatarDelete = db.User.findByPk(userId)
       .then((user) => {
-        console.log(user);
+        // console.log(user);
         let findFile = fs.existsSync(
           path.join(__dirname, "../../public/" + user.avatar)
         );
@@ -195,21 +199,21 @@ let usersController = {
   },
   profile: (req, res) => {
     // let userId = req.params.id;
-    console.log(req.cookies.userEmail)
-    
-    console.log(req.session.userLogged);
+    // console.log(req.cookies.userEmail)
+
+    // console.log(req.session.userLogged);
     // User.findByPk(userId).then((user) => {
     //   res.render("profile", {
     //     userToLogin: user });
     // });
     res.render("profile", {
-      
       user: req.session.userLogged,
     });
   },
 
   logout: (req, res) => {
     req.session.destroy();
+    res.clearCookie("userEmail");
     return res.redirect("/");
   },
 };
