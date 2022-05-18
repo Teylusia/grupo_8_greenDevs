@@ -22,9 +22,8 @@
           <form action="/user/register" method="POST" enctype="multipart/form-data">
             <label for="username">Ingresa tu nombre de usuario</label>
             <input
-                type="text"
+                type="text" id="username"
                 class="form-input <%= locals.errors && errors.username ? "is-invalid" : null %>"
-                id="username"
                 name="username"
                 placeholder="Ej: juangarcia"
                 value="<%=locals.oldData && oldData.username ? oldData.username : '' %>"
@@ -36,9 +35,8 @@
               <% } %>
             <label for="email">Ingresa tu email</label>
             <input
-                type="email"
+                type="email" id="email"
                 class="form-input <%= locals.errors && errors.email ? "is-invalid" : null %>"
-                id="email"
                 name="email"
                 placeholder="Ej: juanperez@gmail.com"
                 value="<%=locals.oldData && oldData.email ? oldData.email : '' %>"
@@ -49,7 +47,8 @@
                 </div>
               <% } %>
             <label for="avatar">Avatar</label>
-            <img src="/img/avatar/default.jpg" alt="avatar-por-defecto" height="80px" width="80px">
+            <!-- <img src="/img/avatar/default.jpg" alt="avatar-por-defecto" height="80px" width="80px"> -->
+            <div id="imagePreview"></div>
             <input type="file" name="avatar" id="upload-image" >
               <% if (locals.errors && errors.avatar) { %>
                 <div class="errors">
@@ -57,7 +56,7 @@
                 </div>
               <% } %>
               <label for="password">Ingresa una contraseña</label>
-              <input type="password"  class="form-input <%= locals.errors && errors.password ? "is-invalid" : null %>" id="password" name="password" />
+              <input type="password" id="password" class="form-input <%= locals.errors && errors.password ? "is-invalid" : null %>" name="password" />
               <% if (locals.errors && errors.password) { %>
                 <div class="errors"> 
                   <%= errors.password.msg %> 
@@ -74,6 +73,6 @@
   </main>
 
   <%- include('./partials/footer') %>
-  
+  <script src="/js/register.js"></script>
   </body>
 </html>
