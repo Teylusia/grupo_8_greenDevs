@@ -12,7 +12,7 @@ window.addEventListener('load', function(){
         } else if(nameField.value.length < 2){
             alert('El nombre debe contener al menos 2 caracteres')
         }
-    })
+    });
 
     emailField.addEventListener('blur', function(){
         
@@ -42,7 +42,7 @@ window.addEventListener('load', function(){
                 reader.readAsDataURL(avatarField.files[0]);
             }
         }
-    })
+    });
 
     passwordField.addEventListener('blur', function(){
         if(passwordField.value == ""){
