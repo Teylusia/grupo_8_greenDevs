@@ -46,7 +46,7 @@
                             <th>email</th>
                             <th>avatar</th>
                             <th>status</th>
-                            <th>Nivel</th>
+                            <th>Admin</th>
                             <th>Editar/eliminar</th>
 
                         </tr>
@@ -79,7 +79,9 @@
                                 <% } %>
                             </td>
                             <td>
-                                <%= usuario.privilege%>
+                             <% if ( usuario.privilege == 1) { %>
+                              <h4>SI</h4>
+                             <% } %>   
                             </td>
                             <td>
                                 <a href="/user/edit/<%=usuario.id %>">

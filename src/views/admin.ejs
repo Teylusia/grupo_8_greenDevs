@@ -67,13 +67,24 @@
                                         <%= productos.discount %> %
                             </td>
                             <td>
-                                <a href="/product/edit/<%= productos.id %>">
-                                <button class="button-edit">Editar</button></a>
-                                <form method="POST" action="/product/delete/<%= productos.id %>?_method=delete">
-                                    
+                                <div >
 
-                                    <button type="submit" class="button-delete">Eliminar</button>
-                                </form>
+                                    <div >
+                                        <a href="/product/edit/<%= productos.id %>">
+                                            <button type="button" class="btn inf">Editar</button>
+                                            
+                                        <!-- <button class="btn info">Editar</button></a> -->
+                                </div>
+                            </div>
+                                <div >
+
+                                    <form method="POST" action="/product/delete/<%= productos.id %>?_method=delete">
+                                        <!-- <p class="btn danger">Eliminar</p> -->
+                                        <button type="submit" class="btn danger">Eliminar</button>
+                                    </form>
+                                    
+                                   
+                                </div>
 
                                 
                             </td>
