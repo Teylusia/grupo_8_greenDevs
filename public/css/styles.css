@@ -893,7 +893,7 @@ table {
 td,
 th {
   border: 1px solid #dddddd;
-  text-align: left;
+  text-align: center;
   padding: 8px;
 }
 
@@ -1222,6 +1222,29 @@ button {
 .errors {
   color: red;
 }
+
+/* ALERTS BUTTONS */
+.btn {
+  border: none; 
+  color: white; 
+  padding: 14px 28px;
+  cursor: pointer; 
+}
+
+.success {background-color: #04AA6D;} 
+.success:hover {background-color: #46a049;}
+
+.inf {background-color: #2196F3;} 
+.inf:hover {background: #0b7dda;}
+
+.warning {background-color: #ff9800;}
+.warning:hover {background: #e68a00;}
+
+.danger {background-color: #f44336;} 
+.danger:hover {background: #da190b;}
+
+.default {background-color: #e7e7e7; color: black;} 
+.default:hover {background: #ddd;}
 
 /*KEYFRAMES*/
 
