@@ -10,12 +10,16 @@ window.addEventListener('load', function(){
     nameField.addEventListener('blur', function(){
         if(nameField.value == ""){
             alert('Este campo es obligatorio')
-        } else if(nameField.value.length < 5){
+        }
+    });
+
+    nameField.addEventListener('change', function(){
+        if(nameField.value.length < 5){
             alert('El nombre del producto debe contener al menos 5 caracteres')
         }
     });
 
-    priceField.addEventListener('blur', function(){
+    priceField.addEventListener('change', function(){
         if(priceField.value <= 0){
             alert('Este precio no es valido :(')
         }
@@ -38,25 +42,25 @@ window.addEventListener('load', function(){
         }
     });
 
-    specsField.addEventListener('blur', function(){
+    specsField.addEventListener('change', function(){
         if(specsField.value.length < 20){
             alert('Un poco más de detalle estaría excelente ;)')
         }
     });
 
-    descriptionField.addEventListener('blur', function(){
+    descriptionField.addEventListener('change', function(){
         if(descriptionField.value.length < 20){
             alert('A los usuarios les gustaría saber un poco más')
         }
     });
 
-    ratingField.addEventListener('blur', function(){
+    ratingField.addEventListener('change', function(){
         if(ratingField.value < 0 || ratingField.value > 10){
             alert('La escala de rating va entre 0 y 10')
         }
     });
 
-    discountField.addEventListener('blur', function(){
+    discountField.addEventListener('change', function(){
         if(discountField.value < 0 || discountField.value > 100){
             alert('Ingresa un porcentaje de descuento valido')
         }
