@@ -36,6 +36,8 @@ window.addEventListener('load', function(){
                 let reader = new FileReader();
                 reader.onload = function(element){
                     document.querySelector('#imagePreview').innerHTML += '<img src="'+element.target.result+'" height="90px" width="90px"/>';
+                    document.querySelector('img').style.borderRadius = '50px';
+                    document.querySelector('img').style.border = 'solid #03c959 2px';
                 };
                 reader.readAsDataURL(imageField.files[0]);
             }

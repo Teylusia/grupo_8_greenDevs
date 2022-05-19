@@ -46,15 +46,16 @@
                   <%= errors.email.msg %> 
                 </div>
               <% } %>
-            <label for="avatar">Avatar</label>
+            <label for="avatar">Avatar</label><br>
             <!-- <img src="/img/avatar/default.jpg" alt="avatar-por-defecto" height="80px" width="80px"> -->
-            <div id="imagePreview"></div>
+            <div class="form-input" id="imagePreview">
             <input type="file" name="avatar" id="upload-image" >
               <% if (locals.errors && errors.avatar) { %>
                 <div class="errors">
                   <%= errors.avatar.msg %>
                 </div>
               <% } %>
+            </div>
               <label for="password">Ingresa una contraseña</label>
               <input type="password" id="password" class="form-input <%= locals.errors && errors.password ? "is-invalid" : null %>" name="password" />
               <% if (locals.errors && errors.password) { %>
