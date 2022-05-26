@@ -46,17 +46,17 @@ let productsController = {
 
   productAdd: (req, res) => {
     let resultValidation = validationResult(req);
-    let category = db.Category.findAll()
-    .then((category) => {return category});
+    let category = db.Category.findAll().then((category) => {
+      return category;
+    });
     if (resultValidation.errors.length > 0) {
-      console.log(resultValidation)
+      console.log(resultValidation);
       category = db.Category.findAll().then(function (category) {
-        res.render("productAdd", { 
-        errors: resultValidation.mapped(),
-        oldData: req.body,
-        category
-        })
-            
+        res.render("productAdd", {
+          errors: resultValidation.mapped(),
+          oldData: req.body,
+          category,
+        });
       });
     } else {
       console.log("crear producto");
@@ -67,10 +67,10 @@ let productsController = {
         description: req.body.description,
         rating: req.body.rating,
         discount: req.body.discount,
-        image: req.file.filename
+        image: req.file.filename,
       }).then(function () {
         res.redirect("/admin");
-      //   console.log(req.file);
+        //   console.log(req.file);
       });
 
       // .then((product) => {
@@ -82,7 +82,7 @@ let productsController = {
     }
   },
 
-  productEdit: (req, res) => {
+  productToEdit: (req, res) => {
     let productAsked = db.Product.findOne(
       { where: { id: req.params.id } },
       {
@@ -99,13 +99,20 @@ let productsController = {
       { include: [{ association: "Product" }] }
     );
 
-    Promise.all([productAsked, imageAsked])
-      .then(function ([product, image]) {
+    let images = db.Image.findAll(
+      { where: { product_id: req.params.id } },
+      { include: [{ association: "Product" }] }
+    );
+
+    Promise.all([productAsked, imageAsked, images])
+      .then(function ([product, image, images]) {
         if (product == undefined || image == undefined) {
           res.render("page404");
         } else {
-          res.render("productEdit", { product: product, image: image });
+          res.render("productEdit", { product: product, image: image, images: images});
         }
+
+        
       })
       .catch(function () {
         console.log("algo anda mal");
@@ -113,29 +120,53 @@ let productsController = {
   },
 
   productEdited: (req, res) => {
-    db.Product.update(
+    // let image = req.file.filename;
+    let productDetail = db.Product.findOne(
+      { where: { id: req.params.id } },
       {
+        include: [
+          { association: "Image" },
+          { association: "Product_Category" },
+        ],
+      }
+    );
+
+    let imageDetail = db.Image.findAll(
+      { where: { product_id: req.params.id } },
+      { include: [{ association: "Product" }] }
+    );
+    console.log(productDetail)
+    console.log(imageDetail);
+
+    Promise.all([productDetail, imageDetail]).then(function ([product, image]) {
+      console.log(imageDetail);
+      res.render("productDetail", {
+        product,
+        image,
+      });
+    })
+    if (req.file == undefined) {
+      
+      db.Product.update({
         name: req.body.name,
         price: req.body.price,
         specs: req.body.specs,
         description: req.body.description,
         discount: req.body.discount,
-      },
-      {
-        where: { id: req.params.id },
-      }
-    );
-
-    db.Image.update(
-      {
-        address: "/img/uploads/" + req.file.filename,
-      },
-      {
-        where: { product_id: req.params.id },
-      }
-    );
-
-    res.redirect("/admin");
+        image: productDetail.address,
+      });
+      res.redirect("/product/edit/"+ req.body.id );
+    } else {
+      db.Product.update({
+        name: req.body.name,
+        price: req.body.price,
+        specs: req.body.specs,
+        description: req.body.description,
+        discount: req.body.discount,
+        image: "/img/uploads/" + req.file.filename,
+      }),
+        res.redirect("/admin");
+    }
   },
 
   productDelete: (req, res) => {
