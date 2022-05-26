@@ -941,7 +941,7 @@ aside {
 .indicadores2 button.activo,
 .indicadores3 button.activo,
 .indicadores4 button.activo {
-  background: red;
+  background: #03c959;
 }
 
 /* ---- ----- ----- Contenedor Principal y Flechas ----- ----- ----- */
