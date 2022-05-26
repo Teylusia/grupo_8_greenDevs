@@ -35,7 +35,7 @@ let productsController = {
   },
 
   cart: (req, res) => {
-    res.render("productCart", { products: products });
+    res.render("productCart", /* { products: products } */);
   },
 
   productCreate: (req, res) => {

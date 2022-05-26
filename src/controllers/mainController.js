@@ -16,7 +16,8 @@ let controller = {
       .then(function (products) {
         // console.log(products);
         // console.table(images);
-        res.render("index", { products });
+        res.render("index", { products,
+          user: req.session.userLogged });
       })
     
       .catch(function (error) {
