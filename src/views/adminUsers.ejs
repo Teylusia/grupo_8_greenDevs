@@ -28,7 +28,7 @@
                             <button>Listar Productos</button>
                             <form action="/admin/search" method="GET">
                                 
-                                <input type="text" name="search" placeholder="Buscar producto">
+                                <input type="text" name="search" placeholder="Buscar usuario">
                                 <input type="button" value="Buscar">
                             </form>
                             
@@ -85,8 +85,15 @@
                             </td>
                             <td>
                                 <a href="/user/edit/<%=usuario.id %>">
-                                <button class="button-edit">Editar</button></a>
-                                <a href="/user/delete/<%=usuario.id %>">Delete</a>
+                                <button class="btn inf">Editar</button></a>
+                                
+
+                                <form method="POST" action="/user/delete/<%=usuario.id %>?_method=delete">
+                                    <!-- <p class="btn danger">Eliminar</p> -->
+                                    <button type="submit" class="btn danger">Desactivar</button>
+                                </form>
+                                
+                                <!-- <a class="btn danger"href="/user/delete/<%=usuario.id %>">Eliminar</a> -->
 
                                 
                             </td>

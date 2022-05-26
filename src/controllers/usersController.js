@@ -198,6 +198,8 @@ let usersController = {
     });
   },
   profile: (req, res) => {
+    console.log(req.session.userLogged.name)
+    console.log(req.user);
     // let userId = req.params.id;
     // console.log(req.cookies.userEmail)
 
