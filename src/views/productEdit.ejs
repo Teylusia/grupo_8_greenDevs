@@ -14,33 +14,46 @@
       <h2 class="texto-de-registro">Estas editando:</h2>
       <h4 class="registro-manual"><%= product.name %></h4>
         <div class="register-form">
-          <form method="POST" action="/product/edit/<%= product.id %>?_method=PUT" enctype="multipart/form-data">
-            
-            <h3>
-             Id: <%= product.id %><br>
-            </h3> 
-            <label for="name">Nombre:</label><br>
-            <input type="text" id="username" name="name" value="<%= product.name %>" class="form-input" ><br>
-            <label for="price">Precio:</label><br>
-            <input type="number" id="price" name="price" value="<%= product.price %>" class="form-input"><br>
-            <div style="margin: 10%;">
-              <label for="image">Imagen Principal:</label><br>
-              <img src="<%= image.address %>" width="300" height="250" alt="imagen-del-producto"> <br>
-              <label for="image">Reemplazar imagen principal</label>
-              <input type="file" name="image" id="image"><br>
-              
+          <form id="product-edit-form" method="POST" action="/product/edit/<%= product.id %>?_method=PUT" enctype="multipart/form-data">
+            <div>
+              <h3>
+                Id: <%= product.id %>
+              </h3>
             </div>
-            <label for="image">Galeria de Imágenes:</label><br>
+
+              <label for="name">Nombre:</label>
+              <input type="text" id="username" name="name" value="<%= product.name %>" class="form-input" > 
+              <p id="username-errors" class="errors"></p>
+
             
-            <label for="specs">Requisitos:</label><br>
-            <textarea name="specs" id="specs" cols="30" rows="10" class="form-input"><%= product.specs %></textarea><br>
-            <label for="description">Descripción:</label><br>
-            <textarea name="description" id="description" cols="30" rows="10" class="form-input"><%= product.description %></textarea><br>
+              <label for="price">Precio:</label>
+              <input type="number" id="price" name="price" value="<%= product.price %>" class="form-input">
+              <p id="price-errors" class="errors"></p>
+            <div style="margin: 10%;">
+              <label for="image">Imagen Principal:</label>
+              <img src="<%= image.address %>" width="300" height="250" alt="imagen-del-producto"> 
+              <div>
+                <label for="image">Reemplazar imagen principal</label>
+                <input type="file" name="image" id="image">
+                <p id="image-errors" class="errors"></p>
+              </div>
+            </div>
+            <label for="image">Galeria de Imágenes:</label>
+            
+            <label for="specs">Requisitos:</label>
+            <textarea name="specs" id="specs" cols="30" rows="10" class="form-input"><%= product.specs %></textarea>
+            <p id="specs-errors" class="errors"></p>
+
+            <label for="description">Descripción:</label>
+            <textarea name="description" id="description" cols="30" rows="10" class="form-input"><%= product.description %></textarea>
+            <p id='description-errors' class="errors"></p>
+
             <label for="discountProduct">Descuento: %</label>
-            <input type="number" name="discount" id="discount" value="<%= product.discount %>" class="form-input"><br>
+            <input type="number" name="discount" id="discount" value="<%= product.discount %>" class="form-input">
+            <p id="discount-errors" class="errors"></p>
+            
             <input type="submit" id="submit" value="Guardar Cambios">
             <div class="back-button">
-              
               <p><a href="/admin">Volver al listado</a></p>
             </div>
           </form>
@@ -55,4 +68,5 @@
   <%- include('./partials/footer') %>
   
   </body>
+  <script src="/js/productEdit.js"></script>
 </html>

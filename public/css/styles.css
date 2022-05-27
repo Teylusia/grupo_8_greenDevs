@@ -1231,16 +1231,15 @@ button {
   cursor: pointer; 
 }
 
-.success {background-color: #04AA6D;} 
-.success:hover {background-color: #46a049;}
+.success {outline: solid 2px #05ac4d; } 
 
 .inf {background-color: #2196F3;} 
 .inf:hover {background: #0b7dda;}
 
-.warning {background-color: #ff9800;}
-.warning:hover {background: #e68a00;}
+.warning {outline: solid 2px #ff9800;}
 
-.danger {background-color: #f44336;} 
+
+.danger {background-color: #f44336; border: #da190b 20px;} 
 .danger:hover {background: #da190b;}
 
 .default {background-color: #e7e7e7; color: black;} 

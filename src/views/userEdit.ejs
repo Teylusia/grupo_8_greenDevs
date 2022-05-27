@@ -21,7 +21,7 @@
         <div class="register-form">
           <form action="/user/edit/<%= usuario.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
             <label for="username">Ingresa tu nombre de usuario</label>
-            <input type="text" id="username" name="username" value="<%= usuario.name %>">
+            <input type="text" id="username" name="username" value="<%= usuario.name %>" autocomplete='none'>
             <label for="email">Ingresa tu email</label>
             <input type="email" id="email" name="email" value="<%= usuario.email %>">
             <label for="avatar">Avatar</label>
@@ -45,4 +45,5 @@
   <%- include('./partials/footer') %>
   
   </body>
+  <script src="/js/userEdit.js"></script>
 </html>
