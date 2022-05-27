@@ -28,7 +28,7 @@ let usersController = {
   },
 
   userAdd: (req, res) => {
-    // console.log(req.body);
+
     let resultValidation = validationResult(req);
     // console.log(resultValidation);
 
@@ -199,7 +199,7 @@ let usersController = {
   },
   profile: (req, res) => {
     console.log(req.session.userLogged.name)
-    console.log(req.user);
+    console.log(req.session.userLogged.id);
     // let userId = req.params.id;
     // console.log(req.cookies.userEmail)
 
@@ -210,6 +210,16 @@ let usersController = {
     // });
     res.render("profile", {
       user: req.session.userLogged,
+      id: req.session.userLogged.id
+    });
+  },
+
+  //Edit password
+
+  changePassword:(req, res) => {
+    res.render("changePassword", {
+      user: req.session.userLogged,
+      id: req.session.userLogged.id
     });
   },
 

@@ -1636,11 +1636,10 @@ button {
 }
 
 .seccion-perfil-usuario .perfil-usuario-body p.texto {
-    color: #848484;
+    color: black;
     font-size: 0.95em;
 }
 
-.seccion-perfil-usuario .perfil-usuario-footer,
 .seccion-perfil-usuario .perfil-usuario-bio {
     display: flex;
     flex-wrap: wrap;
@@ -1649,6 +1648,8 @@ button {
     background-color: whitesmoke;
     border-radius: 15px;
     width: 100%;
+    margin-bottom: 1.25rem;
+    text-align: center;
 }
 
 .seccion-perfil-usuario .perfil-usuario-bio {

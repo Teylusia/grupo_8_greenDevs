@@ -30,11 +30,11 @@ router.delete("/delete/:id", usersController.userDelete);
 
 //Edit
 router.get("/edit/:id", usersController.editShow);
-router.put(
-  "/edit/:id",
-  multerAvatar.single("avatar"),
-  usersController.userEdit
-);
+router.put("/edit/:id", multerAvatar.single("avatar"), usersController.userEdit);
+
+//Edit - Password
+router.get("/edit/password/:id", usersController.changePassword);
+//router.put("/edit/password/:id", usersController.newPassword);
 
 //Logout
 router.get("/logout/", usersController.logout)
