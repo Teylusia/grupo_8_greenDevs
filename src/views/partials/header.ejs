@@ -12,10 +12,14 @@
       <% if (locals.isLogged) { %>
         <ul class="bar">
           <li class="browsing"><a href="/product/cart"><i class="fa-solid fa-cart-shopping" title="Carrito"></i></a></li>
-          <li class="browsing"><a href="/user/profile"><i class="fa-solid fa-user" title="Panel usuario"></i></a></li>
+          <!-- <li class="browsing"><a href="/user/profile"><i class="fa-solid fa-user" title="Panel usuario"></i></a></li> -->
           <li class="browsing"><a href="/user/logout">
             <i class="fa-solid fa-arrow-right-from-bracket" title="Cerrar Sesión"></i>
           </a></li>
+          <li>
+            <a href="/user/profile"></a>
+            <img src="<%= user.avatar %>" class="avatar" alt="">
+          </li>
           <li>Hola <%= user.name  %> </li>
         </ul>
       <% } else{ %>

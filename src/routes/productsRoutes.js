@@ -14,7 +14,7 @@ router.get("/cart", productsController.cart);
 router.get('/detail/:id', productsController.detail);
 
 //Edit
-router.get("/edit/:id", productsController.productEdit);
+router.get("/edit/:id", productsController.productToEdit);
 router.put("/edit/:id",multerProduct.single("image"), productsController.productEdited);
 
 //Delete

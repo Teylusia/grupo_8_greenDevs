@@ -1,11 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-
   <%- include('./partials/head') %>
 
-<body>
+  <body>
+    <%- include('./partials/header') %>
 
-  <%- include('./partials/header') %>
+    <main>
+      <div class="general-container">
+        <div class="register">
+          <i class="fa-solid fa-pen-circle"></i>
+          <h2 class="texto-de-registro">Estas editando:</h2>
+          <h4 class="registro-manual"><%= product.name %></h4>
+          <div class="register-form">
+            <form
+              method="POST"
+              action="/product/edit/<%= product.id %>?_method=PUT"
+              enctype="multipart/form-data"
+            >
+              <h3>Id: <%= product.id %><br /></h3>
+              <label for="name">Nombre:</label><br />
+              <input
+                type="text"
+                id="username"
+                name="name"
+                value="<%= product.name %>"
+                class="form-input"
+              /><br />
+              <label for="price">Precio:</label><br />
+              <input
+                type="number"
+                id="price"
+                name="price"
+                value="<%= product.price %>"
+                class="form-input"
+              /><br />
+              <div style="margin: 10%">
+                <label for="image">Imagen Principal:</label><br />
+                <img
+                  src="<%= image.address %>"
+                  width="300"
+                  height="250"
+                  id="myImg"
+                  alt="imagen-principal"
+                />
+                <!-- The Modal -->
+                <div id="imageModal" class="modal">
+                  <!-- The Close Button -->
+                  <span class="close">&times;</span>
+
+                  <!-- Modal Content (The Image) -->
+                  <img class="modal-content" id="img01" />
 
   <main>
     <div class="general-container">
@@ -58,15 +102,13 @@
             </div>
           </form>
         </div>
-    </div>
-    <div class="crudList">
-    
-    </div>
-    </div>
-  </main>
+        <div class="crudList"></div>
+      </div>
+    </main>
 
-  <%- include('./partials/footer') %>
-  
+    <%- include('./partials/footer') %>
+    <script src="/js/productEdit.js"></script>
+    <script src="/js/image-modal.js"></script>
   </body>
   <script src="/js/productEdit.js"></script>
 </html>

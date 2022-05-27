@@ -1,33 +1,34 @@
+
 <!DOCTYPE html>
 <html lang="en">
-  <%- include('./partials/head') %>
-  <body>
-    <%- include('./partials/header') %>
-    <main>
-      <section class="infoProfile">
-        <h1 class ="nameProfile">Nombre de Usuario</h1>
-        <div>
-          <h3>
-            <%= user.name %> 
-  
-          </h3>
+<%- include('./partials/head') %>
 
+<body>
+
+  <%- include('./partials/header') %>
+<main class="profilemain">
+    <section class="seccion-perfil-usuario">
+        <div class="perfil-usuario-header">
+            <div class="perfil-usuario-portada"> <!--Acá puede ir un src="" para el fondo de portada-->
+                <div class="perfil-usuario-avatar">
+                    <img src="<%= user.avatar  %>" alt="Foto de perfil del usuario">
+                </div>
+            </div>
         </div>
-        <h2 class ="emailProfile">email de usuario</h2>
-        <h3>
-          <%= user.email  %> 
-        </h3>
-        <article class ="pictureProfile">
-          <img src="<%= user.avatar  %> " alt="Foto de perfil del usuario">
-        </article>
-      </section>
-      
-
- 
-
-
-      </section>
-      <%- include('./partials/footer') %>
+        <div class="perfil-usuario-body">
+            <div class="perfil-usuario-bio">
+                <h3 class="username"><%= user.name %></h3>
+                <p class="texto">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+            <div class="perfil-usuario-footer">
+              <p class="texto">Estás registrado con la dirección de mail <strong><%= user.email  %> </strong></p>
+            </div>
+        </div>
+    </section>
     </main>
-  </body>
+</body>
+
+<%- include('./partials/footer') %>
+
 </html>

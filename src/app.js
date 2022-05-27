@@ -26,6 +26,10 @@ app.use(session({
   saveUninitialized: false
 }))
 app.use(userLoggedMiddleware)
+app.use((req, res, next) => {
+  res.locals.user = req.session.userLogged;
+  next();});
+  
 
 app.set("view engine", "ejs");
 app.set("views", __dirname + "/views");
