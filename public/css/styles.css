@@ -691,9 +691,9 @@ i.fab.fa-apple {
 
 #submit {
   display: flex;
-  width: 40%;
+  width: 60%;
   padding: 8px;
-  margin: 3% 25%;
+
   justify-content: center;
   background-color: #777;
   color: white;
@@ -702,6 +702,12 @@ i.fab.fa-apple {
   border-radius: 10px;
   transition-duration: 450ms;
   border: none;
+}
+
+.submit-button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #rememberUser {
@@ -1238,16 +1244,15 @@ button {
   cursor: pointer; 
 }
 
-.success {background-color: #04AA6D;} 
-.success:hover {background-color: #46a049;}
+.success {outline: solid 2px #05ac4d; } 
 
 .inf {background-color: #2196F3;} 
 .inf:hover {background: #0b7dda;}
 
-.warning {background-color: #ff9800;}
-.warning:hover {background: #e68a00;}
+.warning {outline: solid 2px #ff9800;}
 
-.danger {background-color: #f44336;} 
+
+.danger {background-color: #f44336; border: #da190b 20px;} 
 .danger:hover {background: #da190b;}
 
 .default {background-color: #e7e7e7; color: black;} 
