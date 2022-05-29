@@ -55,11 +55,12 @@ let usersController = {
 
       Promise.all([userInDb, emailInDb])
         .then(function ([user, email]) {
-          // console.log(email);
-          // console.log(user);
-          // console.log(req.file);
-          if (user == "" && email == "" && req.file != undefined) {
-            // console.log("crear usuario");
+
+          let password1 = req.body.password;
+          let confirmPassword = req.body.confirmPassword
+
+          if (user == "" && email == "" && req.file != undefined && (password1 == confirmPassword)) {
+
             db.User.create({
               name: req.body.username,
               email: req.body.email,
@@ -67,7 +68,7 @@ let usersController = {
               password: bcryptjs.hashSync(req.body.password, 10),
             });
             res.redirect("/user/login");
-          } else if (user == "" && email == "" && req.file == undefined) {
+          } else if (user == "" && email == "" && req.file == undefined && (password1 == confirmPassword)) {
             // console.log("crear usuario con avatar por defecto");
             User.create({
               name: req.body.username,

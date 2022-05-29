@@ -12,6 +12,9 @@ window.addEventListener('load', function(){
     let passwordField = document.querySelector('#password');
     const passwordErrors = document.querySelector('#password-errors');
 
+    let confirmField = document.querySelector('#confirmpassword');
+    const confirmErrors = document.querySelector('#confirm-errors')
+
     const submit = document.querySelector('#register-form')
 
     nameField.addEventListener('blur', function(){
@@ -86,6 +89,10 @@ window.addEventListener('load', function(){
             passwordField.classList.add('warning');
             passwordField.classList.remove('success');
             passwordErrors.innerText = 'Por favor, completa este campo';
+        } else{
+            passwordField.classList.add('success');
+            passwordField.classList.remove('warning');
+            passwordErrors.innerText = '';
         }
     });
 
@@ -100,9 +107,82 @@ window.addEventListener('load', function(){
             passwordErrors.innerText = '';
         }
     });
+        
+        passwordField.addEventListener('blur', function(){
+            if(passwordField.value != confirmField.value){
 
-    submit.addEventListener('submit', event =>{
-        let errorFields = [ passwordErrors, avatarErrors, nameErrors, emailErrors]
+                passwordField.classList.add('warning');
+                passwordField.classList.remove('success');
+    
+                confirmField.classList.add('warning');
+                confirmField.classList.remove('success');
+                confirmErrors.innerText = 'Las contraseñas no coinciden';
+    
+            } if(passwordField.value == confirmField.value){
+    
+                passwordField.classList.add('success');
+                passwordField.classList.remove('warning');
+    
+                confirmField.classList.add('success');
+                confirmField.classList.remove('warning');
+    
+                confirmErrors.innerText = '';
+            }
+        });
+
+
+    confirmField.addEventListener('blur', function(){
+        if(confirmField.value == ""){
+            confirmField.classList.add('warning');
+            confirmField.classList.remove('success');
+            confirmErrors.innerText = 'Por favor, completa este campo';
+        } else{
+            passwordField.classList.remove('warning');
+            passwordField.classList.add('success');
+            confirmErrors.innerText = '';
+        }
+    });
+
+    confirmField.addEventListener('change', function(){
+        if(confirmField.value.length < 8){
+
+            confirmField.classList.add('warning');
+            confirmField.classList.remove('success');
+            confirmErrors.innerText = 'La contraseña debe contener al menos 8 caracteres';
+
+    } else{
+        confirmField.classList.add('success');
+        confirmField.classList.remove('warning');
+
+        confirmErrors.innerText = '';
+    }
+});
+
+    confirmField.addEventListener('blur', function(){
+        if(passwordField.value != confirmField.value){
+
+            passwordField.classList.add('warning');
+            passwordField.classList.remove('success');
+
+            confirmField.classList.add('warning');
+            confirmField.classList.remove('success');
+
+            confirmErrors.innerText = 'Las contraseñas no coinciden';
+
+        } if(passwordField.value == confirmField.value){
+
+            passwordField.classList.add('success');
+            passwordField.classList.remove('warning');
+
+            confirmField.classList.add('success');
+            confirmField.classList.remove('warning');
+
+            confirmErrors.innerText = '';
+        }
+    });
+
+    submit.addEventListener('submit', (event) => {
+        let errorFields = [ passwordErrors, confirmErrors, avatarErrors, nameErrors, emailErrors]
         let errors = 0
         errorFields.forEach( error =>{
           if(error.innerText.length > 0){
@@ -111,7 +191,7 @@ window.addEventListener('load', function(){
         })
         if(errors != 0){
           event.preventDefault()
-          alert('tienes errores en tu formulario, porfavor corrígelos y luego envía la información.')
+          alert('Tienes errores en tu formulario, por favor corrígelos y luego envía la información.')
         }
       });
 });

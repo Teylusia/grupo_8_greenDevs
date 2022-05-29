@@ -10,11 +10,7 @@ const authMiddleware = require("../middlewares/authMiddleware");
 
 //Register
 router.get("/register", guestMiddleware, usersController.register);
-router.post(
-  "/register",
-  multerAvatar.single("avatar"),
-  validateRegister,
-  usersController.userAdd
+router.post("/register", multerAvatar.single("avatar"), validateRegister, usersController.userAdd
 );
 
 //Login
