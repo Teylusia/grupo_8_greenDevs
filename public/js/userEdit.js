@@ -17,7 +17,7 @@ nameField.addEventListener('blur', function(event){
     nameField.classList.add('warning');
     nameField.classList.remove('success');
     if(nameErrors.innerHTML.length == 0){
-      nameErrors.innerText += 'Debes ingresar un nombre de usuario con mas de 5 caracteres.'
+      nameErrors.innerText += 'Debes ingresar un nombre de usuario con mas de 2 caracteres.'
     };
 }else{
   nameField.classList.remove('warning');
@@ -81,6 +81,6 @@ submit.addEventListener('submit', event =>{
   })
   if(errors != 0){
     event.preventDefault()
-    alert('tienes errores en tu formulario, porfavor corrijelos y luego envía la información.')
+    alert('tienes errores en tu formulario, porfavor corrígelos y luego envía la información.')
   }
-})
+});

@@ -17,12 +17,9 @@
         <div class="productadd-form">
          
 
-          <form action="/product/create" enctype="multipart/form-data" method="POST">
+          <form action="/product/create" id="product-add-form" enctype="multipart/form-data" method="POST">
             <label for="name">Nombre del producto:</label><br>
-            <input 
-              type="text" 
-              name="name"
-              id="name" 
+            <input type="text" name="name"id="name" 
               class="form-input <%= locals.errors && errors.name ? "is-invalid" : null %>" 
               value="<%=locals.oldData && oldData.name ? oldData.name : '' %>"><br/>
               <% if (locals.errors && errors.name) { %>
@@ -30,13 +27,13 @@
                   <%= errors.name.msg %> 
                 </div>
               <% } %>
+               <!--Validación FRONT-->
+               <p id="name-errors" class="errors"></p>
+               <!--Validación FRONT-->             
               <br>
-            <label for="price">Precio</label><br>
-            
-              <input 
-              type="number" 
-              name="price" 
-              id="price"
+
+            <label for="price">Precio</label><br>            
+              <input type="number" name="price" id="price"
               class="form-input <%= locals.errors && errors.price ? "is-invalid" : null %>"
               value="<%=locals.oldData && oldData.price ? oldData.price : '' %>"><br />
               <% if (locals.errors && errors.price) { %>
@@ -44,7 +41,11 @@
                   <%= errors.price.msg %> 
                 </div>
               <% } %>
+               <!--Validación FRONT-->
+               <p id="price-errors" class="errors"></p>
+               <!--Validación FRONT-->  
               <br>
+
             <label for="image">Imagen principal</label><br>
             <div id="imagePreview" class="form-input">
             <input type="file" name="image" id="upload-image" 
@@ -55,13 +56,13 @@
                   </div>
                 <% } %>
                 </div>
+               <!--Validación FRONT-->
+               <p id="image-errors" class="errors"></p>
+               <!--Validación FRONT-->  
                 <br>
+
             <label for="specs">Requisitos de hardware</label><br>
-            <textarea 
-              name="specs" 
-              id="specs" 
-              cols="30" 
-              rows="10"
+            <textarea name="specs" id="specs" cols="30" rows="10"
               class="form-input <%= locals.errors && errors.specs ? "is-invalid" : null %>" 
               ><%=locals.oldData && oldData.specs ? oldData.specs : '' %></textarea><br />
               <% if (locals.errors && errors.specs) { %>
@@ -69,32 +70,47 @@
                   <%= errors.specs.msg %> 
                 </div>
               <% } %>
+               <!--Validación FRONT-->
+               <p id="specs-errors" class="errors"></p>
+               <!--Validación FRONT-->                
               <br>
+
             <label for="description">Descripción</label><br>
-            <textarea
-                name="description"
-                id="description"
-                cols="30"
-                rows="10"
+            <textarea name="description" id="description" cols="30" rows="10"
                 class="form-input <%= locals.errors && errors.description ? "is-invalid" : null %>"><%=locals.oldData && oldData.description ? oldData.description : '' %></textarea><br />
               <% if (locals.errors && errors.description) { %>
                 <div class="errors"> 
                   <%= errors.description.msg %> 
                 </div>
               <% } %>
+               <!--Validación FRONT-->
+               <p id="description-errors" class="errors"></p>
+               <!--Validación FRONT-->                
               <br>
+
             <label for="category">Categoría</label><br>
             <select name="category" id="category"><br>
               <% category.forEach(element => { %>
                 <option value="<%= element.name%>"><%= element.name%></option> 
-              <% }) %> 
-              
-            </select><br><br>
+              <% }) %>               
+            </select>
+            <br>
+            <br>
+
             <label for="rating">Rating</label>
             <input type="number" name="rating" id="rating" min="1" max="10"class="form-input"><br>
             <label for="discount">Descuento %</label>
+               <!--Validación FRONT-->
+               <p id="rating-errors" class="errors"></p>
+               <!--Validación FRONT-->
+               <br>  
+
             <input type="number" name="discount" id="discount" class="form-input"><br>
             <input type="submit" id="submit" value="Agregar">
+               <!--Validación FRONT-->
+               <p id="discount-errors" class="errors"></p>
+               <!--Validación FRONT-->  
+
           </form>
           <div class="back-button">
             <a href="/admin">
@@ -111,7 +127,7 @@
   </main>
 
   <%- include('./partials/footer') %>
-  <!-- <script src="/js/productAdd.js"></script> -->
+  <script src="/js/productAdd.js"></script>
   </body>
 </html>
 
