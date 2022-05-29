@@ -50,66 +50,40 @@
 
                   <!-- Modal Content (The Image) -->
                   <img class="modal-content" id="img01" />
-
-                  <!-- Modal Caption (Image Text) -->
-                  <div id="caption"></div>
+                  <div>
+                    <label for="image">Reemplazar imagen principal</label>
+                    <input type="file" name="image" id="image">
+                    <p id="image-errors" class="errors"></p>
+                  </div>
                 </div>
-                <br />
-                <label for="image">Reemplazar imagen principal</label>
-                <input type="file" name="image" id="image" /><br />
-              </div>
-              <label for="image">Galeria de Imágenes:</label><br />
-              <% images.forEach(element => { %>
-              <!-- <a href="<%= element.address %>"> -->
-                <img
-                  src="<%= element.address%>"
-                  class="product-images"
-                  alt="imagen-producto"
-                />
+                <label for="image">Galeria de Imágenes:</label>
                 
-              <!-- </a> -->
-              <% }) %>
-              <label for="specs">Requisitos:</label><br />
-              <textarea
-                name="specs"
-                id="specs"
-                cols="30"
-                rows="10"
-                class="form-input"
-              >
-<%= product.specs %></textarea
-              ><br />
-              <label for="description">Descripción:</label><br />
-              <textarea
-                name="description"
-                id="description"
-                cols="30"
-                rows="10"
-                class="form-input"
-              >
-<%= product.description %></textarea
-              ><br />
-              <label for="discountProduct">Descuento: %</label>
-              <input
-                type="number"
-                name="discount"
-                id="discount"
-                value="<%= product.discount %>"
-                class="form-input"
-              /><br />
-              <input type="submit" id="submit" value="Guardar Cambios" />
-              <div class="back-button">
-                <p><a href="/admin">Volver al listado</a></p>
+                <label for="specs">Requisitos:</label>
+                <textarea name="specs" id="specs" cols="30" rows="10" class="form-input"><%= product.specs %></textarea>
+                <p id="specs-errors" class="errors"></p>
+    
+                <label for="description">Descripción:</label>
+                <textarea name="description" id="description" cols="30" rows="10" class="form-input"><%= product.description %></textarea>
+                <p id='description-errors' class="errors"></p>
+    
+                <label for="discountProduct">Descuento: %</label>
+                <input type="number" name="discount" id="discount" value="<%= product.discount %>" class="form-input">
+                <p id="discount-errors" class="errors"></p>
+                <div class="submit-button">
+                  <input type="submit" id="submit" value="Guardar Cambios">
+                </div>
+                <div class="back-button">
+                  <p><a href="/admin">Volver al listado</a></p>
+                </div>
               </div>
             </form>
           </div>
         </div>
-        <div class="crudList"></div>
       </div>
+      <%- include('./partials/footer') %>
     </main>
-
-    <%- include('./partials/footer') %>
-    <script src="/js/productEdit.js"></script>
-    <script src="/js/image-modal.js"></script>
   </body>
+  <script src="/js/productEdit.js"></script>
+  <script src="/js/productEdit.js"></script>
+  <script src="/js/image-modal.js"></script>
 </html>
