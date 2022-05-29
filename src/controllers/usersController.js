@@ -162,6 +162,7 @@ let usersController = {
       })
       .catch((error) => res.send(error));
   },
+
   deleteUser: (req, res) => {
     User.findByPk(req.params.id)
       .then((user) => {
@@ -198,23 +199,16 @@ let usersController = {
     });
   },
   profile: (req, res) => {
-    console.log(req.session.userLogged.name)
-    console.log(req.session.userLogged.id);
-    // let userId = req.params.id;
-    // console.log(req.cookies.userEmail)
+    //console.log(req.session.userLogged.name)
+    //console.log(req.session.userLogged.id);
 
-    // console.log(req.session.userLogged);
-    // User.findByPk(userId).then((user) => {
-    //   res.render("profile", {
-    //     userToLogin: user });
-    // });
     res.render("profile", {
       user: req.session.userLogged,
       id: req.session.userLogged.id
     });
   },
 
-  //Edit password
+  //EDIT PASSWORD
 
   changePassword:(req, res) => {
     res.render("changePassword", {
@@ -222,6 +216,37 @@ let usersController = {
       id: req.session.userLogged.id
     });
   },
+
+  newPassword:(req, res) => {
+
+    let password1 = req.body.newpassword;
+    let password2 = req.body.confirmpassword;
+    let toCompare = req.body.oldpassword;
+
+    User.findOne({where: {id: req.session.userLogged.id}})
+    .then((userFound)=>{
+      let oldPassword = userFound.password;
+      console.log(oldPassword)
+      
+      let oldPasswordValidation = bcryptjs.compareSync(toCompare, oldPassword);
+  
+      if(oldPasswordValidation && (password1 == password2)){
+        User.update(
+          {
+          password: bcryptjs.hashSync(password2, 10)
+        },
+        {where:{id: req.session.userLogged.id}}
+        )
+        res.redirect('/profile')
+      }else{
+        res.render('page404')
+      }
+    });
+
+  },
+
+
+  //LOGOUT
 
   logout: (req, res) => {
     req.session.destroy();
