@@ -34,7 +34,7 @@ router.put("/edit/:id", multerAvatar.single("avatar"), usersController.userEdit)
 
 //Edit - Password
 router.get("/edit/password/:id", usersController.changePassword);
-//router.put("/edit/password/:id", usersController.newPassword);
+router.patch("/edit/password/:id", usersController.newPassword);
 
 //Logout
 router.get("/logout/", usersController.logout)
