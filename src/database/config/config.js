@@ -1,7 +1,7 @@
 module.exports = {
   "development": {
     "username": "root",
-    "password": null,
+    "password":null,
     "database": "greendevs_db",
     "host": "localhost",
     "dialect": "mysql"

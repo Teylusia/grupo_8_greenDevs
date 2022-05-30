@@ -15,16 +15,25 @@
                 </div>
             </div>
         </div>
-        <div class="perfil-usuario-body">
-            <div class="perfil-usuario-bio">
-                <h3 class="username"><%= user.name %></h3>
-                <p class="texto">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua.</p>
-            </div>
-            <div class="perfil-usuario-footer">
-              <p class="texto">Estás registrado con la dirección de mail <strong><%= user.email  %> </strong></p>
-            </div>
-        </div>
+            <div class="perfil-usuario-body">
+                 <div class="perfil-usuario-bio">
+                     <h3 class="username"><%= user.name %></h3>
+                          <p class="texto">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                             tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+                    <div class="perfil-usuario-bio">
+                     <p class="texto">Estás registrado con la dirección de mail <strong><%= user.email  %> </strong></p>
+                    </div>
+                         <div >
+                            <a href="/user/edit/password/<%= id %>">
+                                <button type="button" class="btn inf">Editar contraseña</button>
+                        </div>
+                        <div >
+                            <a href="/user/edit/<%= id %>">
+                                <button type="button" class="btn inf">Editar usuario</button>
+                        </div>
+
+             </div>
     </section>
     </main>
 </body>

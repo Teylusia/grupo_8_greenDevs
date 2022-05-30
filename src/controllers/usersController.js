@@ -28,7 +28,7 @@ let usersController = {
   },
 
   userAdd: (req, res) => {
-    // console.log(req.body);
+
     let resultValidation = validationResult(req);
     // console.log(resultValidation);
 
@@ -55,11 +55,12 @@ let usersController = {
 
       Promise.all([userInDb, emailInDb])
         .then(function ([user, email]) {
-          // console.log(email);
-          // console.log(user);
-          // console.log(req.file);
-          if (user == "" && email == "" && req.file != undefined) {
-            // console.log("crear usuario");
+
+          let password1 = req.body.password;
+          let confirmPassword = req.body.confirmPassword
+
+          if (user == "" && email == "" && req.file != undefined && (password1 == confirmPassword)) {
+
             db.User.create({
               name: req.body.username,
               email: req.body.email,
@@ -67,7 +68,7 @@ let usersController = {
               password: bcryptjs.hashSync(req.body.password, 10),
             });
             res.redirect("/user/login");
-          } else if (user == "" && email == "" && req.file == undefined) {
+          } else if (user == "" && email == "" && req.file == undefined && (password1 == confirmPassword)) {
             // console.log("crear usuario con avatar por defecto");
             User.create({
               name: req.body.username,
@@ -162,6 +163,7 @@ let usersController = {
       })
       .catch((error) => res.send(error));
   },
+
   deleteUser: (req, res) => {
     User.findByPk(req.params.id)
       .then((user) => {
@@ -198,20 +200,54 @@ let usersController = {
     });
   },
   profile: (req, res) => {
-    console.log(req.session.userLogged.name)
-    console.log(req.user);
-    // let userId = req.params.id;
-    // console.log(req.cookies.userEmail)
+    //console.log(req.session.userLogged.name)
+    //console.log(req.session.userLogged.id);
 
-    // console.log(req.session.userLogged);
-    // User.findByPk(userId).then((user) => {
-    //   res.render("profile", {
-    //     userToLogin: user });
-    // });
     res.render("profile", {
       user: req.session.userLogged,
+      id: req.session.userLogged.id
     });
   },
+
+  //EDIT PASSWORD
+
+  changePassword:(req, res) => {
+    res.render("changePassword", {
+      user: req.session.userLogged,
+      id: req.session.userLogged.id
+    });
+  },
+
+  newPassword:(req, res) => {
+
+    let password1 = req.body.newpassword;
+    let password2 = req.body.confirmpassword;
+    let toCompare = req.body.oldpassword;
+
+    User.findOne({where: {id: req.session.userLogged.id}})
+    .then((userFound)=>{
+      let oldPassword = userFound.password;
+      console.log(oldPassword)
+      
+      let oldPasswordValidation = bcryptjs.compareSync(toCompare, oldPassword);
+  
+      if(oldPasswordValidation && (password1 == password2)){
+        User.update(
+          {
+          password: bcryptjs.hashSync(password2, 10)
+        },
+        {where:{id: req.session.userLogged.id}}
+        )
+        res.redirect('/profile')
+      }else{
+        res.render('page404')
+      }
+    });
+
+  },
+
+
+  //LOGOUT
 
   logout: (req, res) => {
     req.session.destroy();

@@ -12,40 +12,41 @@
     <div class="register">
       <i class="fas fa-user-circle"></i>
       <h2 class="texto-de-registro">Regístrate y empieza a jugar!</h2>
-        <div class="signup-buttons-container">
-          <i class="fab fa-google fa-fw"></i>
-          <i class="fab fa-facebook fa-fw"></i>
-          <i class="fab fa-apple fa-fw"></i>
-        </div>
-      <h4 class="registro-manual">También puedes registrarte con tu correo electrónico:</h4>
+
         <div class="register-form">
-          <form action="/user/register" method="POST" enctype="multipart/form-data">
+          <form action="/user/register" id="register-form" method="POST" enctype="multipart/form-data">
             <label for="username">Ingresa tu nombre de usuario</label>
             <input
                 type="text" id="username"
                 class="form-input <%= locals.errors && errors.username ? "is-invalid" : null %>"
                 name="username"
                 placeholder="Ej: juangarcia"
-                value="<%=locals.oldData && oldData.username ? oldData.username : '' %>"
-              />
+                value="<%=locals.oldData && oldData.username ? oldData.username : '' %>"/>
               <% if (locals.errors && errors.username) { %>
                 <div class="errors"> 
                   <%= errors.username.msg %> 
                 </div>
               <% } %>
+              <!--Validación FRONT-->
+                  <p id="username-errors" class="errors"></p>
+              <!--Validación FRONT-->
+
             <label for="email">Ingresa tu email</label>
             <input
                 type="email" id="email"
                 class="form-input <%= locals.errors && errors.email ? "is-invalid" : null %>"
                 name="email"
                 placeholder="Ej: juanperez@gmail.com"
-                value="<%=locals.oldData && oldData.email ? oldData.email : '' %>"
-              />
+                value="<%=locals.oldData && oldData.email ? oldData.email : '' %>"/>
               <% if (locals.errors && errors.email) { %>
                 <div class="errors"> 
                   <%= errors.email.msg %> 
                 </div>
               <% } %>
+              <!--Validación FRONT-->
+              <p id="email-errors" class="errors"></p>
+              <!--Validación FRONT-->
+
             <label for="avatar">Avatar</label><br>
             <!-- <img src="/img/avatar/default.jpg" alt="avatar-por-defecto" height="80px" width="80px"> -->
             <div class="form-input" id="imagePreview">
@@ -56,6 +57,10 @@
                 </div>
               <% } %>
             </div>
+              <!--Validación FRONT-->
+              <p id="avatar-errors" class="errors"></p>
+              <!--Validación FRONT-->
+
               <label for="password">Ingresa una contraseña</label>
               <input type="password" id="password" class="form-input <%= locals.errors && errors.password ? "is-invalid" : null %>" name="password" />
               <% if (locals.errors && errors.password) { %>
@@ -63,9 +68,16 @@
                   <%= errors.password.msg %> 
                 </div>
               <% } %>
-            
-           <!-- <label for="confirm-password">Confirma tu contraseña</label>
-            <input type="password" id="confirm-password" name="confirm-password" required> -->
+            <!--Validación FRONT-->
+            <p id="password-errors" class="errors"></p>
+            <!--Validación FRONT-->
+
+            <label for="confirm-password">Confirma tu contraseña</label>
+            <input type="password" class="form-input" id="confirmpassword" name="confirmpassword" required>
+            <!--Validación FRONT-->
+            <p id="confirm-errors" class="errors"></p>
+            <!--Validación FRONT-->            
+
             <input type="submit" id="submit" value="Registrarme!">
           </form>
         </div>

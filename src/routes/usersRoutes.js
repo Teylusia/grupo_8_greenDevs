@@ -10,11 +10,7 @@ const authMiddleware = require("../middlewares/authMiddleware");
 
 //Register
 router.get("/register", guestMiddleware, usersController.register);
-router.post(
-  "/register",
-  multerAvatar.single("avatar"),
-  validateRegister,
-  usersController.userAdd
+router.post("/register", multerAvatar.single("avatar"), validateRegister, usersController.userAdd
 );
 
 //Login
@@ -30,11 +26,11 @@ router.delete("/delete/:id", usersController.userDelete);
 
 //Edit
 router.get("/edit/:id", usersController.editShow);
-router.put(
-  "/edit/:id",
-  multerAvatar.single("avatar"),
-  usersController.userEdit
-);
+router.patch("/edit/:id", multerAvatar.single("avatar"), usersController.userEdit);
+
+//Edit - Password
+router.get("/edit/password/:id", usersController.changePassword);
+router.patch("/edit/password/:id", usersController.newPassword);
 
 //Logout
 router.get("/logout/", usersController.logout)

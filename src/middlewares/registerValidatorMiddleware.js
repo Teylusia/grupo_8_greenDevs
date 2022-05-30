@@ -14,6 +14,9 @@ let validateRegister = [
     body("password").notEmpty().withMessage("Tienes que escribir una contraseña")
     .isLength({ min: 8 }).withMessage("Tienes que escribir una contraseña de al menos 6 caracteres"),
 
+	body("confirmpassword").notEmpty().withMessage("Tienes que escribir una contraseña")
+    .isLength({ min: 8 }).withMessage("Tienes que escribir una contraseña de al menos 6 caracteres"),
+
     body('avatar').custom((value, { req }) => {
 		let file = req.file;
 		let acceptedExtensions = ['.jpg', '.jpeg', '.png', '.gif'];
