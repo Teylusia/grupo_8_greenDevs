@@ -39,7 +39,6 @@
                 <img
                   src="<%= image.address %>"
                   width="300"
-                  height="250"
                   id="myImg"
                   alt="imagen-principal"
                 />
@@ -56,7 +55,23 @@
                     <p id="image-errors" class="errors"></p>
                   </div>
                 </div>
-                <label for="image">Galeria de Imágenes:</label>
+
+                <br />
+              </div>
+              <label for="image">Galeria de Imágenes:</label><br />
+              <% images.forEach(element => { %>
+                <a href="/product/image/<%= element.id %>">
+                  <img
+                  src="<%= element.address%>"
+                  class="product-images"
+                  alt="imagen-producto"
+                  />
+                  
+                </a>
+                <% }) %>
+                <label for="image">Subir nuevas Imagenes</label>
+                <input type="file" name="image" id="image" multiple /><br />
+
                 
                 <label for="specs">Requisitos:</label>
                 <textarea name="specs" id="specs" cols="30" rows="10" class="form-input"><%= product.specs %></textarea>
@@ -75,6 +90,7 @@
                 <div class="back-button">
                   <p><a href="/admin">Volver al listado</a></p>
                 </div>
+
               </div>
             </form>
           </div>
