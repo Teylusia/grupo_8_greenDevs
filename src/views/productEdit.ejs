@@ -39,7 +39,6 @@
                 <img
                   src="<%= image.address %>"
                   width="300"
-                  height="250"
                   id="myImg"
                   alt="imagen-principal"
                 />
@@ -55,20 +54,20 @@
                   <div id="caption"></div>
                 </div>
                 <br />
-                <label for="image">Reemplazar imagen principal</label>
-                <input type="file" name="image" id="image" /><br />
               </div>
               <label for="image">Galeria de Imágenes:</label><br />
               <% images.forEach(element => { %>
-              <!-- <a href="<%= element.address %>"> -->
-                <img
+                <a href="/product/image/<%= element.id %>">
+                  <img
                   src="<%= element.address%>"
                   class="product-images"
                   alt="imagen-producto"
-                />
-                
-              <!-- </a> -->
-              <% }) %>
+                  />
+                  
+                </a>
+                <% }) %>
+                <label for="image">Subir nuevas Imagenes</label>
+                <input type="file" name="image" id="image" multiple /><br />
               <label for="specs">Requisitos:</label><br />
               <textarea
                 name="specs"

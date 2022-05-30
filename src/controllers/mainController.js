@@ -5,29 +5,32 @@ const path = require("path");
 const { validationResult } = require("express-validator");
 const db = require("../database/models");
 
-
 let controller = {
   home: (req, res) => {
+    let products = db.Product
+      .findAll
+      (
+      //  {include: [{ association: "Image", {where: { main: 1 }} }, { association: "Product_Category" }]}
+      
+       )
 
-    let products = db.Product.findAll(
-      // {where: {id:1}},
-      // {include: [{ association: "Image" }, { association: "Product_Category" }]}
-      )
+    // let image = db.Image.findAll(
+    //   { where: { main: 1 } },
+    //   { include: [{ association: "Product" }] }
+    // )
+    // Promise.all([products, image])
+    
       .then(function (products) {
         // console.log(products);
         // console.table(images);
-        res.render("index", { products,
-          user: req.session.userLogged });
+        res.render("index", { products, user: req.session.userLogged });
       })
-    
       .catch(function (error) {
         console.log(error);
       });
-    
-    
 
     // let images = db.Image.findOne({where: {id:1}})
-    
+
     // db.Image.findOne(
     //   {where:{product_id: 1}},
     //   { include: [{ association: "Product" }] });

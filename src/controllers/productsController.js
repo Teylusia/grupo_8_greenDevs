@@ -20,9 +20,6 @@ let productsController = {
       { include: [{ association: "Product" }] }
     );
 
-    // let productId = req.params.id;
-    // let productObjet = products.find((el) => el.id == productId);
-    // let screenshots = productObjet.short_screenshots;
     Promise.all([productDetail, imageDetail]).then(function ([product, image]) {
       console.log(imageDetail);
       res.render("productDetail", {
@@ -30,7 +27,6 @@ let productsController = {
         image,
       });
 
-      // screenshots: screenshots,
     });
   },
 
@@ -50,7 +46,7 @@ let productsController = {
       return category;
     });
     if (resultValidation.errors.length > 0) {
-      console.log(resultValidation);
+    
       category = db.Category.findAll().then(function (category) {
         res.render("productAdd", {
           errors: resultValidation.mapped(),
@@ -59,7 +55,13 @@ let productsController = {
         });
       });
     } else {
+      let idLastProduct = db.Product.findAll({    attributes: [[sequelize.fn('MAX', sequelize.col('id')), 'maxId']] }).then((maxId) => {
+        return maxId;
+      });
       console.log("crear producto");
+     // async function idLastProduct() {await db.product.max("id")
+    //}
+     console.log(idLastProduct);
       db.Product.create({
         name: req.body.name,
         price: req.body.price,
@@ -84,7 +86,8 @@ let productsController = {
 
   productToEdit: (req, res) => {
     let productAsked = db.Product.findOne(
-      { where: { id: req.params.id } },
+      { where: { 
+        id: req.params.id } },
       {
         include: [
           { association: "Sale" },
@@ -95,7 +98,8 @@ let productsController = {
     );
 
     let imageAsked = db.Image.findOne(
-      { where: { product_id: req.params.id } },
+      { where: { product_id: req.params.id,
+      main : 1 } },
       { include: [{ association: "Product" }] }
     );
 
@@ -109,6 +113,11 @@ let productsController = {
         if (product == undefined || image == undefined) {
           res.render("page404");
         } else {
+          res.cookie(
+            "product_id",
+            product.id,
+            { maxAge: 0 } 
+          );
           res.render("productEdit", { product: product, image: image, images: images});
         }
 
@@ -137,6 +146,7 @@ let productsController = {
     );
     console.log(productDetail)
     console.log(imageDetail);
+    console.log(req.file);
 
     Promise.all([productDetail, imageDetail]).then(function ([product, image]) {
       console.log(imageDetail);
@@ -157,13 +167,14 @@ let productsController = {
       });
       res.redirect("/product/edit/"+ req.body.id );
     } else {
+      console.log(req.file)
       db.Product.update({
         name: req.body.name,
         price: req.body.price,
         specs: req.body.specs,
         description: req.body.description,
         discount: req.body.discount,
-        image: "/img/uploads/" + req.file.filename,
+        // image: "/img/uploads/" + req.file.filename,
       }),
         res.redirect("/admin");
     }
@@ -177,6 +188,36 @@ let productsController = {
 
     res.redirect("/admin");
   },
+
+  image: (req, res) => {
+     
+    
+    db.Image.findOne(
+      { where: { id: req.params.id} }
+      )
+      
+      .then((image) =>
+      {
+        console.log(image)
+        res.cookie(
+          "product_id",
+          image.product_id,
+          { maxAge: (1000 * 60) *10 } 
+        );
+        res.render("ProductImage", {image})
+      }
+    )
+  },
+
+  imageDelete: (req, res) => {
+    let productId = req.cookies.product_id
+    let deleteImage = db.Image.destroy(
+      {where: { id: req.params.id}}
+    )
+    .then(function(image){
+      res.redirect("/product/edit/"+ productId );
+    })
+  }
 };
 
 module.exports = productsController;
