@@ -97,20 +97,20 @@ let productsController = {
       }
     );
 
-    let imageAsked = db.Image.findOne(
-      { where: { product_id: req.params.id,
-      main : 1 } },
-      { include: [{ association: "Product" }] }
-    );
+    // let imageAsked = db.Image.findOne(
+    //   { where: { product_id: req.params.id,
+    //   main : 1 } },
+    //   { include: [{ association: "Product" }] }
+    // );
 
     let images = db.Image.findAll(
       { where: { product_id: req.params.id } },
       { include: [{ association: "Product" }] }
     );
 
-    Promise.all([productAsked, imageAsked, images])
-      .then(function ([product, image, images]) {
-        if (product == undefined || image == undefined) {
+    Promise.all([productAsked, images])
+      .then(function ([product, images]) {
+        if (product == undefined || images == undefined) {
           res.render("page404");
         } else {
           res.cookie(
@@ -118,7 +118,7 @@ let productsController = {
             product.id,
             { maxAge: 0 } 
           );
-          res.render("productEdit", { product: product, image: image, images: images});
+          res.render("productEdit", { product: product, images: images});
         }
 
         
@@ -129,7 +129,7 @@ let productsController = {
   },
 
   productEdited: (req, res) => {
-    // let image = req.file.filename;
+    let image = req.file
     let productDetail = db.Product.findOne(
       { where: { id: req.params.id } },
       {
@@ -144,40 +144,36 @@ let productsController = {
       { where: { product_id: req.params.id } },
       { include: [{ association: "Product" }] }
     );
-    console.log(productDetail)
-    console.log(imageDetail);
-    console.log(req.file);
-
+    
     Promise.all([productDetail, imageDetail]).then(function ([product, image]) {
-      console.log(imageDetail);
-      res.render("productDetail", {
-        product,
-        image,
-      });
-    })
-    if (req.file == undefined) {
       
-      db.Product.update({
-        name: req.body.name,
-        price: req.body.price,
-        specs: req.body.specs,
-        description: req.body.description,
-        discount: req.body.discount,
-        image: productDetail.address,
-      });
-      res.redirect("/product/edit/"+ req.body.id );
-    } else {
-      console.log(req.file)
-      db.Product.update({
-        name: req.body.name,
-        price: req.body.price,
-        specs: req.body.specs,
-        description: req.body.description,
-        discount: req.body.discount,
-        // image: "/img/uploads/" + req.file.filename,
-      }),
-        res.redirect("/admin");
-    }
+      if (req.file == undefined) {
+        
+        db.Product.update({
+          name: req.body.name,
+          price: req.body.price,
+          specs: req.body.specs,
+          description: req.body.description,
+          discount: req.body.discount,
+          image: product.address,
+        });
+        res.redirect("/product/edit/"+ product.id );
+      } else {
+        console.log(req.file)
+        db.Product.update({
+          name: req.body.name,
+          price: req.body.price,
+          specs: req.body.specs,
+          description: req.body.description,
+          discount: req.body.discount,
+          // image: "/img/uploads/" + req.file.filename,
+        }),
+        res.render("productDetail", {
+          product,
+          image,
+        });
+      }
+    })
   },
 
   productDelete: (req, res) => {
