@@ -732,6 +732,11 @@ i.fab.fa-apple {
   border-radius: 50%;
 }
 
+.avatar:hover {
+  
+  border: 2px solid #03c959;
+}
+
 /* INPUT FORMS IS-INVALID */
 
 .is-invalid {
@@ -1236,6 +1241,9 @@ button {
   color: red;
 }
 
+.success {outline: solid 2px #05ac4d; } 
+.warning {outline: solid 2px red;}
+
 /* ALERTS BUTTONS */
 .btn {
   border: none; 
@@ -1244,13 +1252,14 @@ button {
   cursor: pointer; 
 }
 
-.success {outline: solid 2px #05ac4d; } 
+.succ {background-color: #04AA6D;} 
+.succ:hover {background-color: #46a049;}
+
+.warn {background-color: #ff9800;}
+.warn:hover {background: #e68a00;}
 
 .inf {background-color: #2196F3;} 
 .inf:hover {background: #0b7dda;}
-
-.warning {outline: solid 2px red;}
-
 
 .danger {background-color: #f44336; border: #da190b 20px;} 
 .danger:hover {background: #da190b;}
@@ -1262,7 +1271,10 @@ button {
 .product-images {
   width: 100px;
   margin: 10px;
+  border-radius: 5px;
+  transition: 0.3s;
 }
+.product-images:hover {opacity: 0.7;}
 
 /* IMAGES MODAL */
 #myImg {

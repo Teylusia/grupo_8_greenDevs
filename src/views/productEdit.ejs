@@ -37,7 +37,7 @@
               <div style="margin: 10%">
                 <label for="image">Imagen Principal:</label><br />
                 <img
-                  src="<%= image.address %>"
+                  src="<%= product.image %>"
                   width="300"
                   id="myImg"
                   alt="imagen-principal"
@@ -70,7 +70,7 @@
                 </a>
                 <% }) %>
                 <label for="image">Subir nuevas Imagenes</label>
-                <input type="file" name="image" id="image" multiple /><br />
+                <input type="file" name="images" id="images" multiple /><br />
 
                 
                 <label for="specs">Requisitos:</label>
@@ -99,7 +99,6 @@
       <%- include('./partials/footer') %>
     </main>
   </body>
-  <script src="/js/productEdit.js"></script>
-  <script src="/js/productEdit.js"></script>
+  <!-- <script src="/js/productEdit.js"></script> -->
   <script src="/js/image-modal.js"></script>
 </html>

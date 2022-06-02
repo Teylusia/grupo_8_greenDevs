@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('./partials/head') %>
+
+  <body>
+    <%- include('./partials/header') %>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="general-container">
+    
+    <img src="<%= image.address  %>"  alt="" height="350px"><br>
+    
+</div>
+<div style="text-align:center;">
+    <a href="/product/edit/<%= image.product_id  %> ">
+        
+        <button class="btn success">Atras</button>
+    </a>
+    <form method="POST" action="/product/image/<%= image.id  %>?_method=delete">
+        <button class="btn danger" type="submit">Borrar Imagen</button>
+    </form>
+</div>
+    <%- include('./partials/footer') %>
+  </body>
+</html>
