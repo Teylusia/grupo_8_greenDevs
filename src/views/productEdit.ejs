@@ -86,11 +86,14 @@
                   
                 </a>
                 <% }) %>
+                <br>
                 <label for="image">Subir nuevas Imagenes</label>
+                <br>
                 <input type="file" name="gallery" id="images" multiple /><br />
 
                 
                 <label for="specs">Requisitos:</label>
+                <br>
                 <textarea name="specs" id="specs" cols="30" rows="10" class="form-input <%= locals.errors && errors.specs ? "is-invalid" : null %>"><%= product.specs %></textarea>
                 <% if (locals.errors && errors.specs) { %>
                   <div class="errors"> 
@@ -132,6 +135,6 @@
       <%- include('./partials/footer') %>
     </main>
   </body>
-  <!-- <script src="/js/productEdit.js"></script> -->
+  <script src="/js/productEdit.js"></script>
   <script src="/js/image-modal.js"></script>
 </html>
