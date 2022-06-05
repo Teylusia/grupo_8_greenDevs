@@ -3,6 +3,7 @@ const usernameErrors = document.querySelector('#username-errors');
 
 const image = document.querySelector('#image');
 const imageErrors = document.querySelector('#image-errors');
+const myImg = document.querySelector('#myImg')
 
 const price = document.querySelector('#price');
 const priceErrors = document.querySelector('#price-errors');
@@ -24,7 +25,7 @@ username.addEventListener('blur', event =>{
       username.classList.add('warning')
       username.classList.remove('success')
       if(usernameErrors.innerHTML.length == 0){
-        usernameErrors.innerText += 'Debes ingresar un nombre de usuario con mas de 5 caracteres.'
+        usernameErrors.innerText = 'Debes ingresar un nombre de usuario con mas de 5 caracteres.'
       }
   }else{
     username.classList.remove('warning')
@@ -40,7 +41,7 @@ price.addEventListener('blur', event =>{
       price.classList.add('warning')
       price.classList.remove('success')
       if(priceErrors.innerHTML.length == 0){
-        priceErrors.innerText += 'Debes ingresar un precio valido.'
+        priceErrors.innerText = 'Debes ingresar un precio valido.'
       }
   }else{
     price.classList.remove('warning')
@@ -53,14 +54,14 @@ image.addEventListener('change', event =>{
   let allowedExt = ['jpg', 'jpeg', 'png', 'gif']
   let ext = image.value.slice(-3)
   let goodFile = allowedExt.find(allExt => allExt == ext)
-
+  console.log(image.value)
   if(goodFile == ext){
-    image.classList.add('success');
-    image.classList.remove('warning');
+    myImg.classList.add('success');
+    myImg.classList.remove('warning');
     imageErrors.innerText = ''
   }else if(goodFile != ext){
-    image.classList.remove('success');
-    image.classList.add('warning');
+    myImg.classList.remove('success');
+    myImg.classList.add('warning');
     if(imageErrors.innerText.length == 0){
         imageErrors.innerText = 'Tu imagen debe tener un formato valido.'
     }

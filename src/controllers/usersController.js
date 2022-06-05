@@ -55,11 +55,7 @@ let usersController = {
 
       Promise.all([userInDb, emailInDb])
         .then(function ([user, email]) {
-
-          let password1 = req.body.password;
-          let confirmPassword = req.body.confirmPassword
-
-          if (user == "" && email == "" && req.file != undefined && (password1 == confirmPassword)) {
+          if (user == "" && email == "" && req.file != undefined) {
 
             db.User.create({
               name: req.body.username,
@@ -68,7 +64,7 @@ let usersController = {
               password: bcryptjs.hashSync(req.body.password, 10),
             });
             res.redirect("/user/login");
-          } else if (user == "" && email == "" && req.file == undefined && (password1 == confirmPassword)) {
+          } else if (user == "" && email == "" && req.file == undefined) {
             // console.log("crear usuario con avatar por defecto");
             User.create({
               name: req.body.username,
