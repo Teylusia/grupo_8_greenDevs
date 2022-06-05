@@ -15,7 +15,7 @@ router.get('/detail/:id', productsController.detail);
 
 //Edit
 router.get("/edit/:id", productsController.productToEdit);
-router.put("/edit/:id",multerProduct.single("image"), productsController.productEdited);
+router.put("/edit/:id",multerProduct.fields([{ name: 'image', maxCount: 1 }, { name: 'gallery', maxCount: 8 }]), validateProduct, productsController.productEdited);
 
 //Delete
 router.delete("/delete/:id", productsController.productDelete);
@@ -24,4 +24,7 @@ router.delete("/delete/:id", productsController.productDelete);
 router.get('/create', productsController.productCreate);
 router.post('/create', multerProduct.single("image"), validateProduct, productsController.productAdd);
 
+//Image
+router.get('/image/:id', productsController.image)
+router.delete('/image/:id', productsController.imageDelete)
 module.exports = router;

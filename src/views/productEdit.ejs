@@ -24,27 +24,48 @@
                 id="username"
                 name="name"
                 value="<%= product.name %>"
-                class="form-input"
+                class="form-input <%= locals.errors && errors.name ? "is-invalid" : null %>" 
+                
               /><br />
               <p id="username-errors" class="errors"></p>
+              <% if (locals.errors && errors.name) { %>
+                <div class="errors"> 
+                  <%= errors.name.msg %> 
+                </div>
+              <% } %>
               <label for="price">Precio:</label><br />
               <input
                 type="number"
                 id="price"
                 name="price"
                 value="<%= product.price %>"
-                class="form-input"
+                class="form-input <%= locals.errors && errors.price ? "is-invalid" : null %>"
               /><br />
               <p id="price-errors" class="errors"></p>
+              <% if (locals.errors && errors.price) { %>
+                <div class="errors"> 
+                  <%= errors.price.msg %> 
+                </div>
+              <% } %>
               <div style="margin: 10%">
                 <label for="image">Imagen Principal:</label><br />
                 <img
-                  src="<%= image.address %>"
+                  src="<%= product.image %>"
                   width="300"
-                  height="250"
                   id="myImg"
                   alt="imagen-principal"
                 />
+                <div>
+                  <label for="image">Reemplazar imagen principal</label>
+                  <input type="file" name="image" id="image"  class="<%= locals.errors && errors.image ? "is-invalid" : null %>"><br />
+                  <% if (locals.errors && errors.image) { %>
+                    <div class="errors"> 
+                      <%= errors.image.msg %> 
+                    </div>
+                  <% } %>
+                  </div>
+                  <p id="image-errors" class="errors"></p>
+                </div>
                 <!-- The Modal -->
                 <div id="imageModal" class="modal">
                   <!-- The Close Button -->
@@ -52,31 +73,62 @@
 
                   <!-- Modal Content (The Image) -->
                   <img class="modal-content" id="img01" />
-                  <div>
-                    <label for="image">Reemplazar imagen principal</label>
-                    <input type="file" name="image" id="image">
-                    <p id="image-errors" class="errors"></p>
-                  </div>
                 </div>
-                <label for="image">Galeria de Imágenes:</label>
+
+                <br />
+              </div>
+              <label for="image">Galeria de Imágenes:</label><br />
+              <% images.forEach(element => { %>
+                <a href="/product/image/<%= element.id %>">
+                  <img
+                  src="<%= element.address%>"
+                  class="product-images"
+                  alt="imagen-producto"
+                  />
+                  
+                </a>
+                <% }) %>
+                <br>
+                <label for="image">Subir nuevas Imagenes</label>
+                <br>
+                <input type="file" name="gallery" id="images" multiple /><br />
+
                 
                 <label for="specs">Requisitos:</label>
-                <textarea name="specs" id="specs" cols="30" rows="10" class="form-input"><%= product.specs %></textarea>
+                <br>
+                <textarea name="specs" id="specs" cols="30" rows="10" class="form-input <%= locals.errors && errors.specs ? "is-invalid" : null %>"><%= product.specs %></textarea>
+                <% if (locals.errors && errors.specs) { %>
+                  <div class="errors"> 
+                    <%= errors.specs.msg %> 
+                  </div>
+                <% } %>
                 <p id="specs-errors" class="errors"></p>
     
                 <label for="description">Descripción:</label>
-                <textarea name="description" id="description" cols="30" rows="10" class="form-input"><%= product.description %></textarea>
+                <textarea name="description" id="description" cols="30" rows="10" class="form-input <%= locals.errors && errors.description ? "is-invalid" : null %>"><%= product.description %></textarea>
                 <p id='description-errors' class="errors"></p>
+                <% if (locals.errors && errors.description) { %>
+                  <div class="errors"> 
+                    <%= errors.description.msg %> 
+                  </div>
+                <% } %>
     
                 <label for="discountProduct">Descuento: %</label>
-                <input type="number" name="discount" id="discount" value="<%= product.discount %>" class="form-input">
+                <input type="number" name="discount" id="discount" value="<%= product.discount %>" class="form-input <%= locals.errors && errors.discount ? "is-invalid" : null %>">
                 <p id="discount-errors" class="errors"></p>
+                <% if (locals.errors && errors.discount) { %>
+                  <div class="errors"> 
+                    <%= errors.discount.msg %> 
+                  </div>
+                <% } %>
+
                 <div class="submit-button">
                   <input type="submit" id="submit" value="Guardar Cambios">
                 </div>
                 <div class="back-button">
                   <p><a href="/admin">Volver al listado</a></p>
                 </div>
+
               </div>
             </form>
           </div>
@@ -85,7 +137,6 @@
       <%- include('./partials/footer') %>
     </main>
   </body>
-  <script src="/js/productEdit.js"></script>
   <script src="/js/productEdit.js"></script>
   <script src="/js/image-modal.js"></script>
 </html>

@@ -17,19 +17,23 @@
                         <div class="admin-form">
                             <h2>Panel de Administrador</h2>
                             <a href="/product/create">
-                                <button>Nuevo Producto+</button>
+                                <button class="btn inf">Nuevo Producto+</button>
                             </a>
                             <a href="/admin/users">
 
-                                <button>Listar Usuarios</button>
+                                <button class="btn inf">Listar Usuarios</button>
                             </a>
-                            <button>Nueva Categoria</button>
+                            <a>
+
+                                <button class="btn inf" >Nueva Categoria</button>
+                            </a>
+                            <br>
                             <form action="/admin/search" method="GET">
                                 
                                 <input type="text" name="search" placeholder="Buscar producto">
                                 <input type="button" value="Buscar">
                             </form>
-                            
+                            <br>
                             
                         </div>
                         </div>
@@ -74,9 +78,9 @@
                                             <button type="button" class="btn inf">Editar</button>
                                             
                                         <!-- <button class="btn info">Editar</button></a> -->
-                                </div>
-                            </div>
-                                <div >
+                                                                </div>
+                                             </div>
+                                          <div >
 
                                     <form method="POST" action="/product/delete/<%= productos.id %>?_method=delete">
                                         <!-- <p class="btn danger">Eliminar</p> -->

@@ -25,7 +25,9 @@ let validateProduct = [
     }
 
     return true;
-})
+}),
+body("discount")
+.isLength({ max: 3}).withMessage("Debe tener ser menor a 100")
 ]
 module.exports = validateProduct
 
