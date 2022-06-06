@@ -27,6 +27,7 @@
                 class="form-input <%= locals.errors && errors.name ? "is-invalid" : null %>" 
                 
               /><br />
+              <p id="username-errors" class="errors"></p>
               <% if (locals.errors && errors.name) { %>
                 <div class="errors"> 
                   <%= errors.name.msg %> 
@@ -40,6 +41,7 @@
                 value="<%= product.price %>"
                 class="form-input <%= locals.errors && errors.price ? "is-invalid" : null %>"
               /><br />
+              <p id="price-errors" class="errors"></p>
               <% if (locals.errors && errors.price) { %>
                 <div class="errors"> 
                   <%= errors.price.msg %> 
