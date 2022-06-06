@@ -30,7 +30,31 @@ let productsController = {
   },
 
   cart: (req, res) => {
-    res.render("productCart" /* { products: products } */);
+    let productDetail = db.Product.findOne(
+      { where: { id: 20 } },
+      {
+        include: [
+          { association: "Sale" },
+          { association: "Image" },
+          { association: "Product_Category" },
+        ],
+      }
+    );
+
+    let imageDetail = db.Image.findAll(
+      { where: { product_id: 20 } },
+      { include: [{ association: "Product" }] }
+    );
+
+    Promise.all([productDetail, imageDetail]).then(function ([product, image]) {
+      console.log(imageDetail);
+      res.render("productCart", {
+        product,
+        image,
+      });
+      res.render("productCart" , { product, image } );
+    });
+
   },
 
   productCreate: (req, res) => {
@@ -75,12 +99,6 @@ let productsController = {
         //   console.log(req.file);
       });
 
-      // .then((product) => {
-      //   db.Image.create({
-      //     address: '/img/uploads/' + req.file.filename,
-      //     product_id: product.id
-      //   })
-      // });
     }
   },
 
@@ -99,12 +117,6 @@ let productsController = {
         ],
       }
     );
-
-    // let imageAsked = db.Image.findOne(
-    //   { where: { product_id: req.params.id,
-    //   main : 1 } },
-    //   { include: [{ association: "Product" }] }
-    // );
 
     let images = db.Image.findAll(
       { where: { product_id: req.params.id } },
@@ -166,8 +178,6 @@ let productsController = {
             res.render("page404");
           } else {
             if (imageUpload !== undefined) {
-              // res.cookie("product_id", product.id, { maxAge: 0 });
-              // res.render("productEdit", { product: product, images: images });
             }
             if (galleryUpload !== undefined) {
               for (let i = 0; i < galleryUpload.length; i++) {
@@ -197,36 +207,6 @@ let productsController = {
         .catch(function () {
           console.log("algo anda mal");
         });
-        // .then(product2 => product2)
-        // console.log("-----------");
-      // console.log(product3);
-
-      // // let imageDetail = db.Image.findAll(
-      // //   { where: { product_id: req.params.id } },
-      // //   { include: [{ association: "Product" }] }
-      // // );
-
-      // // Promise.all([productDetail, imageDetail])
-      // //   .then(function ([product2, image2]) {
-
-      //     }
-
-      // db.Product.update({
-      //   name: req.body.name,
-      //   price: req.body.price,
-      //   specs: req.body.specs,
-      //   description: req.body.description,
-      //   discount: req.body.discount,
-      // }),
-      // res.render("productDetail", {
-      //   product2,
-      //   image2,
-      // });
-      // })
-      // .catch(function (error) {
-      //   console.log(error);
-      // });
-    
   },
 
   productDelete: (req, res) => {

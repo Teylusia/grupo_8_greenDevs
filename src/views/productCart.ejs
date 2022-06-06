@@ -15,9 +15,9 @@
       <div class='lista-de-productos'>
         <article class='producto-unidad'>
           <div class='img-producto'>
-            <img src='img/img1.jpeg' alt='imagen de producto' class='imagen-de-producto'>
+            <img src='<%= product.image  %>' alt='imagen de producto' class='imagen-de-producto'>
             <div class="bloque-medio">
-              <span>Nombre de producto</span>
+              <span><%= product.name  %> </span>
               <div class="contador">
                 <button class="boton-contador">-</button>
                 <div class="contador-numero">
@@ -29,10 +29,10 @@
           </div>
             <div class='descripcion-precio'>
               <i class="fa-solid fa-trash"></i>
-              <p>Precio $0.333333</p>
+              <p>Precio $<%= product.price  %> </p>
             </div>
         </article>
-        <article class='producto-unidad'>
+        <!-- <article class='producto-unidad'>
           <div class='img-producto'>
             <img src='img/img2.jpg' alt='imagen de producto' class='imagen-de-producto'>
             <div class="bloque-medio">
@@ -69,7 +69,7 @@
               <i class="fa-solid fa-trash"></i>
               <p>Precio $0.333333</p>
             </div>
-        </article>
+        </article> -->
       </div>
     </section>
     <article class="checkout">
@@ -94,8 +94,8 @@
     </article>
     
   </main>
-
   <%- include('./partials/footer') %>
   
 </body> 
+<script src="/js/productCart.js"></script>
 </html>

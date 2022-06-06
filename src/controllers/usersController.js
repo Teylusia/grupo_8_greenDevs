@@ -1,9 +1,5 @@
 const path = require("path");
 const fs = require("fs");
-// const usersFilePath = path.join(__dirname, "../data/users.json");
-// const users = JSON.parse(fs.readFileSync(usersFilePath, "utf-8"));
-// const productsFilePath = path.join(__dirname, "../data/products.json");
-// const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
 const bcryptjs = require("bcryptjs");
 const db = require("../database/models");
 const { validationResult } = require("express-validator");
@@ -28,7 +24,6 @@ let usersController = {
   },
 
   userAdd: (req, res) => {
-
     let resultValidation = validationResult(req);
     // console.log(resultValidation);
 
@@ -38,48 +33,25 @@ let usersController = {
         oldData: req.body,
       });
     } else {
-      let userInDb = User.findAll({
-        where: {
+      if (req.file != undefined) {
+        db.User.create({
           name: req.body.username,
-        },
-      }).then((user) => {
-        return user;
-      });
-      let emailInDb = db.User.findAll({
-        where: {
           email: req.body.email,
-        },
-      }).then((email) => {
-        return email;
-      });
-
-      Promise.all([userInDb, emailInDb])
-        .then(function ([user, email]) {
-          if (user == "" && email == "" && req.file != undefined) {
-
-            db.User.create({
-              name: req.body.username,
-              email: req.body.email,
-              avatar: "/img/avatar/" + req.file.filename,
-              password: bcryptjs.hashSync(req.body.password, 10),
-            });
-            res.redirect("/user/login");
-          } else if (user == "" && email == "" && req.file == undefined) {
-            // console.log("crear usuario con avatar por defecto");
-            User.create({
-              name: req.body.username,
-              email: req.body.email,
-              avatar: "/img/avatar/default.jpg",
-              password: bcryptjs.hashSync(req.body.password, 10),
-            });
-            res.redirect("/user/login");
-          } else {
-            res.send("error usuario duplicado");
-          }
-        })
-        .catch(function () {
-          console.log("error en registro de usuario");
+          avatar: "/img/avatar/" + req.file.filename,
+          password: bcryptjs.hashSync(req.body.password, 10),
         });
+        res.redirect("/user/login");
+      } else if (req.file == undefined) {
+        User.create({
+          name: req.body.username,
+          email: req.body.email,
+          avatar: "/img/avatar/default.jpg",
+          password: bcryptjs.hashSync(req.body.password, 10),
+        });
+        res.redirect("/user/login");
+      } else {
+        res.redirect("/user/login");
+      }
     }
   },
 
@@ -109,11 +81,9 @@ let usersController = {
               req.session.userLogged = userToLogin;
               // res.redirect("/user/profile/"+userToLogin.id);
               if (req.body.rememberUser)
-                res.cookie(
-                  "userEmail",
-                  req.body.email,
-                  { maxAge: (1000 * 60) *10 } 
-                );
+                res.cookie("userEmail", req.body.email, {
+                  maxAge: 1000 * 60 * 10,
+                });
 
               res.redirect("/user/profile");
               // res.send("login ok")
@@ -201,47 +171,48 @@ let usersController = {
 
     res.render("profile", {
       user: req.session.userLogged,
-      id: req.session.userLogged.id
+      id: req.session.userLogged.id,
     });
   },
 
   //EDIT PASSWORD
 
-  changePassword:(req, res) => {
+  changePassword: (req, res) => {
     res.render("changePassword", {
       user: req.session.userLogged,
-      id: req.session.userLogged.id
+      id: req.session.userLogged.id,
     });
   },
 
-  newPassword:(req, res) => {
-
+  newPassword: (req, res) => {
     let password1 = req.body.newpassword;
     let password2 = req.body.confirmpassword;
     let toCompare = req.body.oldpassword;
 
-    User.findOne({where: {id: req.session.userLogged.id}})
-    .then((userFound)=>{
-      let oldPassword = userFound.password;
-      console.log(oldPassword)
-      
-      let oldPasswordValidation = bcryptjs.compareSync(toCompare, oldPassword);
-  
-      if(oldPasswordValidation && (password1 == password2)){
-        User.update(
-          {
-          password: bcryptjs.hashSync(password2, 10)
-        },
-        {where:{id: req.session.userLogged.id}}
-        )
-        res.redirect('/profile')
-      }else{
-        res.render('page404')
+    User.findOne({ where: { id: req.session.userLogged.id } }).then(
+      (userFound) => {
+        let oldPassword = userFound.password;
+        console.log(oldPassword);
+
+        let oldPasswordValidation = bcryptjs.compareSync(
+          toCompare,
+          oldPassword
+        );
+
+        if (oldPasswordValidation && password1 == password2) {
+          User.update(
+            {
+              password: bcryptjs.hashSync(password2, 10),
+            },
+            { where: { id: req.session.userLogged.id } }
+          );
+          res.redirect("/profile");
+        } else {
+          res.render("page404");
+        }
       }
-    });
-
+    );
   },
-
 
   //LOGOUT
 
