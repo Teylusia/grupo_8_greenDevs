@@ -15,7 +15,7 @@ router.get('/detail/:id', productsController.detail);
 
 //Edit
 router.get("/edit/:id", productsController.productToEdit);
-router.put("/edit/:id",multerProduct.fields([{ name: 'image', maxCount: 1 }, { name: 'gallery', maxCount: 8 }]), productsController.productEdited);
+router.put("/edit/:id",multerProduct.fields([{ name: 'image', maxCount: 1 }, { name: 'gallery', maxCount: 8 }]), validateProduct, productsController.productEdited);
 
 //Delete
 router.delete("/delete/:id", productsController.productDelete);

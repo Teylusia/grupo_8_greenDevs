@@ -1,5 +1,6 @@
 const {body} = require("express-validator");
-const path = require ("path")
+const path = require ("path");
+
 
 let validateProduct = [
 
@@ -11,21 +12,52 @@ let validateProduct = [
  body("description")
  .notEmpty().withMessage("Ingresar detalle")
  .isLength({ min: 20, max: 200}).withMessage("Debe tener más de 20 caracteres") ,
- body('image').custom((value, { req }) => {
-    let file = req.file;
+ body('image')
+ .custom((value, { req }) => {
     let acceptedExtensions = ['.jpg', '.jpeg', '.png', '.gif'];
+    if (req.files["image"] == undefined) {
+        return true;        
+    }else{
+      
+      let file = req.files["image"][0];
+      let fileExtension = path.extname(file.originalname);
+      if (!acceptedExtensions.includes(fileExtension)) {
+          throw new Error(`Las extensiones de archivo permitidas son ${acceptedExtensions.join(', ')}`);
+      }
+    } 
+    // throw new Error('Tienes que subir una imagen');
     
-    if (!file) {
-        throw new Error('Tienes que subir una imagen');
-    } else {
-        let fileExtension = path.extname(file.originalname);
-        if (!acceptedExtensions.includes(fileExtension)) {
-            throw new Error(`Las extensiones de archivo permitidas son ${acceptedExtensions.join(', ')}`);
-        }
-    }
+    // if (true) {
+    // } else {
+    // }
 
     return true;
 }),
+body("gallery")
+.custom((value, { req }) => {
+    if (req.files["gallery"] == undefined) {
+        return true
+    }else{
+        let file = req.files["gallery"];
+        
+        let acceptedExtensions = ['.jpg', '.jpeg', '.png', '.gif'];
+        for (let i = 0; i < file.length; i++) {
+            
+            let fileExtension = path.extname(file[i].originalname);
+            if (!acceptedExtensions.includes(fileExtension)) {
+                throw new Error(`Las extensiones de archivo permitidas son ${acceptedExtensions.join(', ')}`);
+            }
+            // if (file[0] == undefined) {
+            //     throw new Error('Tienes que subir una imagen');
+            // } else {
+            }
+        }
+        return true;
+        
+        
+    } 
+),
+
 body("discount")
 .isLength({ max: 3}).withMessage("Debe tener ser menor a 100")
 ]

@@ -168,6 +168,14 @@ let productsController = {
     Promise.all([product, images])
     .then(function ([product, images]) {  
     if (resultValidation.errors.length > 0) {
+      if (imageUpload != undefined) {
+        deleteFile("/img/uploads/"+imageUpload[0].filename);
+      } 
+      if (galleryUpload != undefined) {
+        for (let i = 0; i < galleryUpload.length; i++) {
+          deleteFile("/img/uploads/"+galleryUpload[i].filename)
+        };
+      }
         res.render("productEdit", {
           product,
           images,
@@ -216,6 +224,22 @@ let productsController = {
   },
 
   productDelete: (req, res) => {
+    //PROBAR UNA VEZ QUE FUNCIONE EL DELETE DE PRODUCTO
+    // let productId = req.params.id
+    // let mainImage = db.Product.findByPk(productId)
+    // let gallery = db.Image.findAll({where: {product_id : productId}})
+    // Promise.all([mainImage, gallery]).then (function([image, images])
+    //   {
+    //     deleteFile("/img/uploads/"+image.image);
+    //     if (images ) {
+    //       for (let i = 0; i < images.length; i++) {
+    //         deleteFile("/img/uploads/"+images[i].address)
+    //       };
+    //     }
+      
+    //   }
+    // )
+
     db.Product.destroy(
       { where: { id: req.params.id } },
       { include: [{ association: "Image" }] }

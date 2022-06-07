@@ -91,8 +91,13 @@
                 <br>
                 <label for="image">Subir nuevas Imagenes</label>
                 <br>
-                <input type="file" name="gallery" id="images" multiple /><br />
-
+                <input type="file" name="gallery" id="images" multiple class="<%= locals.errors && errors.gallery ? "is-invalid" : null %>"><br>
+                <% if (locals.errors && errors.gallery) { %>
+                  <div class="errors"> 
+                    <%= errors.gallery.msg %> 
+                  </div>
+                <% } %>
+                <!-- <p id="gallery-errors" class="errors"></p> -->
                 
                 <label for="specs">Requisitos:</label>
                 <br>
@@ -137,6 +142,6 @@
       <%- include('./partials/footer') %>
     </main>
   </body>
-  <script src="/js/productEdit.js"></script>
+  <!-- <script src="/js/productEdit.js"></script> -->
   <script src="/js/image-modal.js"></script>
 </html>
