@@ -9,5 +9,7 @@ router.get('/', mainController.home);
 router.get("/admin", mainController.admin);
 router.get('/admin/users', mainController.panel)
 
+//search bar
+router.get('/result', mainController.searchFunction)
 module.exports = router;
 
