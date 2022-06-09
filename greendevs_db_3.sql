@@ -55,8 +55,8 @@ product_id int,
 order_number int,
 created_at DATETIME,
 updated_at DATETIME,
-foreign key (users_id) references Users(id),
-foreign key (product_id) references Products(id)
+foreign key (users_id) references Users(id)  ON DELETE CASCADE,
+foreign key (product_id) references Products(id)  ON DELETE CASCADE
 );
 
 
@@ -70,7 +70,7 @@ product_id int,
 created_at DATETIME,
 updated_at DATETIME,
 main int,
-foreign key (product_id) references Products(id)
+foreign key (product_id) references Products(id)  ON DELETE CASCADE
 );
 
 
@@ -82,6 +82,6 @@ product_id int,
 category_id int, 
 created_at DATETIME,
 updated_at DATETIME,
-foreign key (product_id) references Products(id),
-foreign key (category_id) references Categories(id)
+foreign key (product_id) references Products(id)  ON DELETE CASCADE,
+foreign key (category_id) references Categories(id)  ON DELETE CASCADE
 );

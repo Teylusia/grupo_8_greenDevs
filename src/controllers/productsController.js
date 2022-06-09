@@ -2,7 +2,7 @@ const path = require("path");
 const fs = require("fs");
 const db = require("../database/models");
 const { validationResult } = require("express-validator");
-const deleteFile = require("../modules/deleteFile")
+const deleteFile = require("../modules/deleteFile");
 
 let productsController = {
   detail: (req, res) => {
@@ -54,9 +54,8 @@ let productsController = {
         product,
         image,
       });
-      res.render("productCart" , { product, image } );
+      res.render("productCart", { product, image });
     });
-
   },
 
   productCreate: (req, res) => {
@@ -100,7 +99,6 @@ let productsController = {
         res.redirect("/admin");
         //   console.log(req.file);
       });
-
     }
   },
 
@@ -144,6 +142,7 @@ let productsController = {
     let productId = req.params.id;
     let imageUpload = req.files["image"];
     let galleryUpload = req.files["gallery"];
+    console.log(req.body.description.length);
     // console.log(galleryUpload);
     // console.log(imageUpload);
     let product = db.Product.findOne(
@@ -166,31 +165,32 @@ let productsController = {
       { include: [{ association: "Product" }] }
     );
     Promise.all([product, images])
-    .then(function ([product, images]) {  
-    if (resultValidation.errors.length > 0) {
-      if (imageUpload != undefined) {
-        deleteFile("/img/uploads/"+imageUpload[0].filename);
-      } 
-      if (galleryUpload != undefined) {
-        for (let i = 0; i < galleryUpload.length; i++) {
-          deleteFile("/img/uploads/"+galleryUpload[i].filename)
-        };
-      }
-        res.render("productEdit", {
-          product,
-          images,
-          oldData: req.body,
-          errors: resultValidation.mapped(),
-        })
-      } else {
-        
+      .then(function ([product, images]) {
+        if (resultValidation.errors.length > 0) {
+          if (imageUpload != undefined) {
+            deleteFile("/img/uploads/" + imageUpload[0].filename);
+          }
+          if (galleryUpload != undefined) {
+            for (let i = 0; i < galleryUpload.length; i++) {
+              deleteFile("/img/uploads/" + galleryUpload[i].filename);
+            }
+          }
+          res.render("productEdit", {
+            product,
+            images,
+            oldData: req.body,
+            errors: resultValidation.mapped(),
+          });
+        } else {
           if (product == undefined) {
             res.render("page404");
           } else {
             if (imageUpload !== undefined) {
-              deleteFile(product.image)
-              db.Product.update( {image: "/img/uploads/" + imageUpload[0].filename},
-                {where: {id: productId}})
+              deleteFile(product.image);
+              db.Product.update(
+                { image: "/img/uploads/" + imageUpload[0].filename },
+                { where: { id: productId } }
+              );
             }
             if (galleryUpload !== undefined) {
               for (let i = 0; i < galleryUpload.length; i++) {
@@ -213,32 +213,27 @@ let productsController = {
               {
                 where: { id: productId },
               }
-              );
-              res.redirect("/product/edit/" + productId);
-            }
-            
-          }})
-        .catch(function () {
-          console.log("algo anda mal");
-        });
+            );
+            res.redirect("/product/edit/" + productId);
+          }
+        }
+      })
+      .catch(function () {
+        console.log("algo anda mal");
+      });
   },
 
   productDelete: (req, res) => {
     //PROBAR UNA VEZ QUE FUNCIONE EL DELETE DE PRODUCTO
-    // let productId = req.params.id
-    // let mainImage = db.Product.findByPk(productId)
-    // let gallery = db.Image.findAll({where: {product_id : productId}})
-    // Promise.all([mainImage, gallery]).then (function([image, images])
-    //   {
-    //     deleteFile("/img/uploads/"+image.image);
-    //     if (images ) {
-    //       for (let i = 0; i < images.length; i++) {
-    //         deleteFile("/img/uploads/"+images[i].address)
-    //       };
-    //     }
-      
-    //   }
-    // )
+    let productId = req.params.id;
+    let mainImage = db.Product.findByPk(productId);
+    let gallery = db.Image.findAll({ where: { product_id: productId } });
+    Promise.all([mainImage, gallery]).then(function ([product, images]) {
+      deleteFile(product.image);
+      for (let i = 0; i < images.length; i++) {
+        deleteFile(images[i].address);
+      }
+    });
 
     db.Product.destroy(
       { where: { id: req.params.id } },
@@ -258,16 +253,13 @@ let productsController = {
 
   imageDelete: (req, res) => {
     let productId = req.cookies.product_id;
-    let imageFileAddress = db.Image.findByPk( req.params.id).then((file) => {
-      deleteFile(file.address)
-    
-      db.Image.destroy({ where: { id: req.params.id } }).then(
-        function (image) {
-          res.redirect("/product/edit/" + productId);
-        }
-      );
-    })
-    
+    let imageFileAddress = db.Image.findByPk(req.params.id).then((file) => {
+      deleteFile(file.address);
+
+      db.Image.destroy({ where: { id: req.params.id } }).then(function (image) {
+        res.redirect("/product/edit/" + productId);
+      });
+    });
   },
 };
 

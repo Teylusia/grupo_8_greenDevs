@@ -111,13 +111,12 @@
     
                 <label for="description">Descripción:</label>
                 <textarea name="description" id="description" cols="30" rows="10" class="form-input <%= locals.errors && errors.description ? "is-invalid" : null %>"><%= product.description %></textarea>
-                <p id='description-errors' class="errors"></p>
                 <% if (locals.errors && errors.description) { %>
                   <div class="errors"> 
                     <%= errors.description.msg %> 
                   </div>
-                <% } %>
-    
+                  <% } %>
+                  <!-- <p id='description-errors' class="errors"></p> -->
                 <label for="discountProduct">Descuento: %</label>
                 <input type="number" name="discount" id="discount" value="<%= product.discount %>" class="form-input <%= locals.errors && errors.discount ? "is-invalid" : null %>">
                 <p id="discount-errors" class="errors"></p>
