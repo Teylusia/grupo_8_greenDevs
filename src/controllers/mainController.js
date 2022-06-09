@@ -1,6 +1,8 @@
 const path = require("path");
 const { validationResult } = require("express-validator");
 const db = require("../database/models");
+const Sequelize = require('sequelize');
+const op = Sequelize.Op;
 
 let controller = {
   home: (req, res) => {
@@ -41,6 +43,18 @@ let controller = {
       res.render("admin", { productos });
     });
   },
+  showSearch: (req, res) =>{
+    res.render('resultPage')
+  },
+  searchFunction: (req, res) =>{
+    db.Product.findAll({where: {name: {[op.like]: '%' + req.query.searchBar + '%'}}})
+    .then(results =>{
+      res.render('resultPage', { 
+        search: req.query.searchBar,
+        products: results
+      })
+    })
+  }
 };
 
 module.exports = controller;

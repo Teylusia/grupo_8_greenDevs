@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <%- include('./partials/head') %>
+
+<body>
+
+  <%- include('./partials/header') %>
+
+  <main>
+    <h1>Resultados de: <%= search %> </h1>
+    <% if(products == undefined){ %>
+      <h4>No hay resultados de tu busqueda</h4>
+   <% }else{ products.forEach(product =>{ %>
+    <div class="article-result">
+      <h4 class="article-result-article"><a href="/product/detail/<%= product.dataValues.id %>"><%= product.dataValues.name %></a></h4>
+      <p class="article-result-description"><%= product.dataValues.description %></p>
+    </div>
+   <% }) %>
+   <% } %>
+
+  </main>
