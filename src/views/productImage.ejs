@@ -19,10 +19,10 @@
 <div style="text-align:center;">
     <a href="/product/edit/<%= image.product_id  %> ">
         
-        <button class="btn succ">Atras</button>
+        <button class="btn succ"><i class="fa-solid fa-arrow-left"></i> Atras</button>
     </a>
     <form method="POST" action="/product/image/<%= image.id  %>?_method=delete">
-        <button class="btn danger" type="submit">Borrar Imagen</button>
+        <button class="btn danger" type="submit"><i class="fa-solid fa-trash-can"></i> Borrar Imagen</button>
     </form>
 </div>
     <%- include('./partials/footer') %>

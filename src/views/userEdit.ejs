@@ -29,8 +29,12 @@
             <input type="email" id="email" name="email" value="<%= usuario.email %>">
             <p id="email-errors" class="errors"></p>
 
-            <label for="avatar">Avatar</label>
-            <img src="<%= usuario.avatar%>" class="avatar-listado"alt="">
+            <!-- <label for="avatar">Avatar</label> -->
+            <div class="">
+
+              <img src="<%= usuario.avatar%>" class="avatar-listado"alt="avatar">
+            </div>
+            <label for="">Cambiar avatar</label>
             <input type="file" name="avatar" id="upload-image">
             <p id="avatar-errors" class="errors"></p>
 
