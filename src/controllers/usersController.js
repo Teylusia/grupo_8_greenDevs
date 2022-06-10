@@ -3,6 +3,7 @@ const fs = require("fs");
 const bcryptjs = require("bcryptjs");
 const db = require("../database/models");
 const { validationResult } = require("express-validator");
+const deleteFile = require("../modules/deleteFile");
 const User = db.User;
 const products = db.Product.findAll();
 
@@ -114,20 +115,56 @@ let usersController = {
 
   userEdit: (req, res) => {
     let productToEdit = req.params.id;
-    // console.log(req.body);
-    User.update(
-      {
-        name: req.body.username,
-        email: req.body.email,
-        avatar: req.body.avatar,
-        password: req.body.password,
-      },
-      { where: { id: productToEdit } }
-    )
-      .then(() => {
-        res.redirect("/admin/users");
-      })
-      .catch((error) => res.send(error));
+    let resultValidation = validationResult(req);
+    let avatarDefault = "/img/avatar/default.jpg"
+    let userInDb = db.User.findByPk(req.params.id)
+    .then( function(avatar) {
+      if (req.file != undefined && req.file.filename != avatarDefault) {
+        deleteFile( userInDb.avatar)
+      }
+    } )
+
+    if (resultValidation.errors.length > 0) {
+      if (req.file != undefined && req.file.filename != avatarDefault) {
+        deleteFile( userInDb.avatar)}
+      res.render("login", {
+        errors: resultValidation.mapped(),
+        oldData: req.body,
+      });
+    } else {
+      if (req.file != undefined) {
+        User.update(
+          {
+            name: req.body.username,
+            email: req.body.email,
+            avatar:"/img/avatar/" + req.file.filename,
+          },
+          { where: { id: productToEdit } }
+        )
+        .then(() => {
+          res.redirect("/profile");
+        })
+  
+        .catch((error) => res.send(error));  
+      }
+      if (req.file == undefined) {
+
+        User.update(
+          {
+            name: req.body.username,
+            email: req.body.email,
+          },
+          { where: { id: productToEdit } }
+        )
+
+        .then(() => {
+          res.redirect("/profile");
+        })
+  
+        .catch((error) => res.send(error));
+      }
+
+    }
   },
 
   deleteUser: (req, res) => {
