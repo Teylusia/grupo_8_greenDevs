@@ -127,7 +127,7 @@ let usersController = {
     if (resultValidation.errors.length > 0) {
       if (req.file != undefined && req.file.filename != avatarDefault) {
         deleteFile( userInDb.avatar)}
-      res.render("login", {
+      res.render("profile", {
         errors: resultValidation.mapped(),
         oldData: req.body,
       });
@@ -176,26 +176,46 @@ let usersController = {
   },
   userDelete: (req, res) => {
     let userId = req.params.id;
-    let avatarDelete = db.User.findByPk(userId)
+    let userInDb = db.User.findByPk(userId)
       .then((user) => {
-        // console.log(user);
-        let findFile = fs.existsSync(
-          path.join(__dirname, "../../public/" + user.avatar)
-        );
-        //busca el archivo, si lo encuentra borra el mismo y el usuario de la db pero la ruta es el avatar por defecto no lo borra.
-        if (findFile && user.avatar != "/img/avatar/default.jpg") {
-          fs.unlinkSync(path.join(__dirname, "../../public/" + user.avatar));
-          User.destroy({ where: { id: userId }, force: true }).then(() => {
-            return res.redirect("/admin/users");
-          });
-        } else {
-          //si no encuentra el archivo avatar borra solamente el usuario de la db
-          User.destroy({ where: { id: userId }, force: true }).then(() => {
-            return res.redirect("/admin/users");
-          });
+        if (user.status == 1) {
+          User.update(
+            {status: 0}, //deshabilita el usuario
+            {
+              where: {id : userId}
+            }
+          )
+          
+        }else{
+          
+          User.update(
+            {status: 1}, //habilita el usuario
+            {
+              where: {id : userId}
+            }
+          )
         }
-      })
-      .catch((error) => res.send(error));
+        // // console.log(user);
+        // let findFile = fs.existsSync(
+        //   path.join(__dirname, "../../public/" + user.avatar)
+        // );
+        // //busca el archivo, si lo encuentra borra el mismo y el usuario de la db pero la ruta es el avatar por defecto no lo borra.
+        // if (findFile && user.avatar != "/img/avatar/default.jpg") {
+        //   fs.unlinkSync(path.join(__dirname, "../../public/" + user.avatar));
+        //   User.destroy({ where: { id: userId }, force: true }).then(() => {
+        //     return res.redirect("/admin/users");
+        //   });
+        // } else {
+        //   //si no encuentra el archivo avatar borra solamente el usuario de la db
+        //   User.destroy({ where: { id: userId }, force: true }).then(() => {
+          //   });
+          // }
+        })
+       .catch((error) => res.send(error));
+       setTimeout(function(){
+        return res.redirect("/admin/users");
+    }, 1000);
+      
   },
   editShow: (req, res) => {
     User.findByPk(req.params.id).then((user) => {

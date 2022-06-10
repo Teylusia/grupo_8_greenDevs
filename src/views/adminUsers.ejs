@@ -73,9 +73,9 @@
                             </td>
                             <td>
                                 <% if(usuario.status == 0){ %>
-                                    <%= 'Inactivo' %>
+                                     <p style="color: red"> Inactivo</p> 
                                 <% }else{ %>
-                                    <%= 'Activo' %>
+                                     <p style="color: green">Activo</p> 
                                 <% } %>
                             </td>
                             <td>
@@ -85,12 +85,21 @@
                             </td>
                             <td>
                                 <a href="/user/edit/<%=usuario.id %>">
-                                <button class="btn inf"><i class="fa-solid fa-pen"></i></button></a>
+                                <button class="btn inf">
+                                    <i class="fa-solid fa-pen"></i></button></a>
                                 
 
                                 <form method="POST" action="/user/delete/<%=usuario.id %>?_method=delete">
                                     <!-- <p class="btn danger">Eliminar</p> -->
-                                    <button type="submit" class="btn danger"><i class="fa-solid fa-power-off"></i></button>
+                                    <button type="submit" 
+                                    <% if (usuario.status == 1) { %>
+                                        class="btn danger">
+                                        <i class="fa-solid fa-power-off"></i></button>
+                                        
+                                        <% } else { %>
+                                            class="btn succ">
+                                        <i class="fa-solid fa-power-off"></i></button>
+                                        <% } %>
                                 </form>
                                 
                                 <!-- <a class="btn danger"href="/user/delete/<%=usuario.id %>">Eliminar</a> -->
@@ -107,5 +116,5 @@
             <%- include('./partials/footer') %>
 
     </body>
-
+    <script src="/js/adminUsers.js"></script>
 </html>
