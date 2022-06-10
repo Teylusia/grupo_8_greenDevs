@@ -1258,6 +1258,15 @@ button {
   cursor: pointer; 
 }
 
+tr .btn {
+  border: none; 
+  color: white; 
+  padding:5px 5px;
+  width: 40%;
+  cursor: pointer; 
+}
+
+
 .succ {background-color: #04AA6D;
   border-radius: 10px;} 
 .succ:hover {background-color: #46a049;}
