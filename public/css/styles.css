@@ -710,6 +710,11 @@ i.fab.fa-apple {
   align-items: center;
 }
 
+#submit:hover {
+  cursor: pointer;
+  background-color: #03c959;
+}
+
 #rememberUser {
   width: 5%;
   outline: none;
@@ -910,7 +915,7 @@ table {
 
 td,
 th {
-  border: 1px solid #dddddd;
+  /* border: 1px solid #dddddd; */
   text-align: center;
   padding: 8px;
 }
@@ -1253,19 +1258,24 @@ button {
   cursor: pointer; 
 }
 
-.succ {background-color: #04AA6D;} 
+.succ {background-color: #04AA6D;
+  border-radius: 10px;} 
 .succ:hover {background-color: #46a049;}
 
-.warn {background-color: #ff9800;}
+.warn {background-color: #ff9800;
+  border-radius: 10px;}
 .warn:hover {background: #e68a00;}
 
-.inf {background-color: #2196F3;} 
+.inf {background-color: #2196F3;
+  border-radius: 10px;} 
 .inf:hover {background: #0b7dda;}
 
-.danger {background-color: #f44336; border: #da190b 20px;} 
+.danger {background-color: #f44336; border: #da190b 20px;
+  border-radius: 10px;} 
 .danger:hover {background: #da190b;}
 
-.default {background-color: #e7e7e7; color: black;} 
+.default {background-color: #e7e7e7; color: black;
+  border-radius: 10px;} 
 .default:hover {background: #ddd;}
 
 /* PRODUCT EDIT */
