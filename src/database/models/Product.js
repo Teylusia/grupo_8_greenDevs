@@ -1,4 +1,5 @@
 const { Sequelize } = require('sequelize');
+const productsController = require('../../controllers/productsController');
 
 module.exports = (sequelize, DataTypes) => {
 
@@ -35,31 +36,28 @@ let config = {
     timestamps: true,
     createdAt: 'created_at',
     updatedAt: 'updated_at',
-    deletedAt: false
+    deletedAt: false,
 };
 
 const Product = sequelize.define("Product", cols, config);
 
 Product.associate = function(models){
-    Product.belongsTo(models.Sale, {
+    Product.hasMany(models.Sale, {
         as: "Sale",
         foreignKey: "product_id"
     });
-};
-
-Product.associate = function(models){
+    
     Product.hasMany(models.Image, {
-        as: "Image",
-        foreignKey: "product_id",
-    });
-};
+            as: "Image",
+            foreignKey: "product_id",
+        });
 
-Product.associate = function(models){
+        
     Product.hasMany(models.Product_Category, {
-        as: "Product_Category",
-        foreignKey: "product_id"
-    });
-};
+                as: "Product_Category",
+                foreignKey: "product_id"
+            });
+    };
 
 return Product;
 };

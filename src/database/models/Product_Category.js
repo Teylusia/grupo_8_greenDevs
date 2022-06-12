@@ -22,7 +22,9 @@ let config = {
     timestamps: true,
     createdAt: 'created_at',
     updatedAt: 'updated_at',
-    deletedAt: false
+    deletedAt: false,
+    tableName:  "products_Categories"
+    
 };
 
 const Product_Category = sequelize.define("Product_Category", cols, config);
@@ -35,13 +37,6 @@ Product_Category.associate = function(models){
     });
 };
 
-Product_Category.associate = function(models){
-    Product_Category.belongsTo(models.Category, {
-        as: "Category",
-        foreignKey: "category_id",
-        onDelete: "Cascade"
-    });
-};
 
 return Product_Category;
 };

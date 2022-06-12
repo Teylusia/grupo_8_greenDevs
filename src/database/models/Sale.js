@@ -20,11 +20,12 @@ cols = {
 };
 
 let config = {
-    tableName:'Sales',
+    tableName:'sales',
     timestamps: true,
     createdAt: 'created_at',
     updatedAt: 'updated_at',
-    deletedAt: false
+    deletedAt: false,
+    
 };
 
 const Sale = sequelize.define("Sale", cols, config);
