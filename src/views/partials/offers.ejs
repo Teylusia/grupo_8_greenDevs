@@ -9,7 +9,7 @@
 
     <div class="contenedor-carousel">
       <div class="carousel4">
-        <% products.slice(-20).forEach( products => { %>
+        <% products.sort(function() { return Math.random()- 0.5 }).forEach( products => { %>
   
           <div class="offersList">
             
