@@ -39,3 +39,6 @@ Paleta:
 -#7D8597
 -#002855
 
+Usuario admin : admin@greengames.com
+contraseña :  123123123
+

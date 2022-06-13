@@ -39,10 +39,10 @@ let validateRegister = [
 	}),
 
     body("password").notEmpty().withMessage("Tienes que escribir una contraseña")
-    .isLength({ min: 8 }).withMessage("Tienes que escribir una contraseña de al menos 6 caracteres"),
+    .isLength({ min: 8 }).withMessage("Tienes que escribir una contraseña de al menos 8 caracteres"),
 
 	body("confirmpassword").notEmpty().withMessage("Tienes que escribir una contraseña")
-    .isLength({ min: 8 }).withMessage("Tienes que escribir una contraseña de al menos 6 caracteres"),
+    .isLength({ min: 8 }).withMessage("Tienes que escribir una contraseña de al menos 8 caracteres"),
 
 	
 
