@@ -8,10 +8,13 @@ const multerAvatar = require("../middlewares/multerAvatarMiddleware");
 const guestMiddleware = require("../middlewares/guestMiddleware");
 const authMiddleware = require("../middlewares/authMiddleware");
 const validateEdit = require('../middlewares/userEditValidatorMiddleware')
+
+
 //Register
 router.get("/register", guestMiddleware, usersController.register);
 router.post("/register", multerAvatar.single("avatar"), validateRegister, usersController.userAdd
 );
+
 
 //Login
 router.get("/login", guestMiddleware, usersController.login);

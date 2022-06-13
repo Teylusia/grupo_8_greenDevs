@@ -17,11 +17,11 @@ INSERT INTO
 VALUES
     (
         1,
-        'shandrik0',
-        'crowden0@devhub.com',
+        'admin',
+        'admin@greengames.com',
         'https://robohash.org/verositaperiam.png',
-        'qAXRA23NeJl8',
-        0,
+        '$2a$10$aEDathXONEhRGmod.80ayu/qNvy8AXulWzOM2A0xYXbj0HGsfwTpK',
+        1,
         1,
         '2021-06-16 10:22:13',
         '2021-07-27 20:16:40'
@@ -9960,6 +9960,6 @@ VALUES
 (18,12),
 (19,3),
 (19,1),
-(20,10);
+(20,10),
 (20,2);
 UNLOCK TABLES;

@@ -40,6 +40,8 @@ let usersController = {
           email: req.body.email,
           avatar: "/img/avatar/" + req.file.filename,
           password: bcryptjs.hashSync(req.body.password, 10),
+          privilege: 0,
+          status: 1
         });
         res.redirect("/user/login");
       } else if (req.file == undefined) {
@@ -48,6 +50,8 @@ let usersController = {
           email: req.body.email,
           avatar: "/img/avatar/default.jpg",
           password: bcryptjs.hashSync(req.body.password, 10),
+          privilege: 0,
+          status: 1
         });
         res.redirect("/user/login");
       } else {
@@ -223,7 +227,7 @@ let usersController = {
     });
   },
   profile: (req, res) => {
-    //console.log(req.session.userLogged.name)
+    console.log(req.session.userLogged)
     //console.log(req.session.userLogged.id);
 
     res.render("profile", {

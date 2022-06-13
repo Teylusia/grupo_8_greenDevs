@@ -8,13 +8,13 @@ let productsController = {
   detail: (req, res) => {
     let productDetail = db.Product.findOne(
       { where: { id: req.params.id } },
-      {
-        include: [
-          { association: "Sale" },
-          { association: "Image" },
-          { association: "Product_Category" },
-        ],
-      }
+      // {
+      //   include: [
+      //     { association: "Sale" },
+      //     { association: "Image" },
+      //     { association: "Product_Category" },
+      //   ],
+      // }
     );
 
     let imageDetail = db.Image.findAll(
@@ -34,13 +34,13 @@ let productsController = {
   cart: (req, res) => {
     let productDetail = db.Product.findOne(
       { where: { id: 20 } },
-      {
-        include: [
-          { association: "Sale" },
-          { association: "Image" },
-          { association: "Product_Category" },
-        ],
-      }
+      // {
+      //   include: [
+      //     // { association: "Sale" },
+      //     // { association: "Image" },
+      //     // { association: "Product_Category" },
+      //   ],
+      // }
     );
 
     let imageDetail = db.Image.findAll(
@@ -111,7 +111,7 @@ let productsController = {
       },
       {
         include: [
-          { association: "Sale" },
+          // { association: "Sale" },
           { association: "Image" },
           { association: "Product_Category" },
         ],
@@ -120,11 +120,12 @@ let productsController = {
 
     let images = db.Image.findAll(
       { where: { product_id: req.params.id } },
-      { include: [{ association: "Product" }] }
+      // { include: [{ association: "Product" }] }
     );
 
     Promise.all([productAsked, images])
       .then(function ([product, images]) {
+        console.log(product);
         if (product == undefined) {
           res.render("page404");
         } else {
