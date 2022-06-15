@@ -229,11 +229,20 @@ let usersController = {
   profile: (req, res) => {
     console.log(req.session.userLogged)
     //console.log(req.session.userLogged.id);
+    db.Product.findAll({
+      include: [
+        { association: "Sale" },
+        { association: "Image" },
+        { association: "Product_Category" },
+      ],
+    })
+    .then((product) =>{
+      res.render("profile", {
+        user: req.session.userLogged,
+        id: req.session.userLogged.id, products
+      });
 
-    res.render("profile", {
-      user: req.session.userLogged,
-      id: req.session.userLogged.id,
-    });
+    })
   },
 
   //EDIT PASSWORD
