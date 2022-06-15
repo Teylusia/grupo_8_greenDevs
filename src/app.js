@@ -45,11 +45,11 @@ app.listen(3000, () => {
   console.log("http://localhost:3000");
 
   //Conexion a la base MYSQL
-  sequelize.sync().then(()=> {
+  sequelize.authenticate().then(()=> {
     console.log("Conexion a la base de datos OK")
 
   }).catch(error => {
-    console.error("Error al conectar lwa base de datos", error)
+    console.error("Error al conectar la base de datos", error)
   })
 });
 

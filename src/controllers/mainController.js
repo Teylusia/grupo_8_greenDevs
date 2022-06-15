@@ -1,17 +1,13 @@
 const path = require("path");
 const { validationResult } = require("express-validator");
 const db = require("../database/models");
-const Sequelize = require('sequelize');
+const Sequelize = require("sequelize");
 const op = Sequelize.Op;
 
 let controller = {
   home: (req, res) => {
-    let products = db.Product
-      .findAll
-      (
-      
-       )
-    
+    let products = db.Product.findAll()
+
       .then(function (products) {
         res.render("index", { products, user: req.session.userLogged });
       })
@@ -43,18 +39,19 @@ let controller = {
       res.render("admin", { productos });
     });
   },
-  showSearch: (req, res) =>{
-    res.render('resultPage')
+  showSearch: (req, res) => {
+    res.render("resultPage");
   },
-  searchFunction: (req, res) =>{
-    db.Product.findAll({where: {name: {[op.like]: '%' + req.query.searchBar + '%'}}})
-    .then(results =>{
-      res.render('resultPage', { 
+  searchFunction: (req, res) => {
+    db.Product.findAll({
+      where: { name: { [op.like]: "%" + req.query.searchBar + "%" } },
+    }).then((results) => {
+      res.render("resultPage", {
         search: req.query.searchBar,
-        products: results
-      })
-    })
-  }
+        products: results,
+      });
+    });
+  },
 };
 
 module.exports = controller;

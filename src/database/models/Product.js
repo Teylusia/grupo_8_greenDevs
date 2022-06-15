@@ -1,5 +1,5 @@
 const { Sequelize } = require('sequelize');
-const productsController = require('../../controllers/productsController');
+// const productsController = require('../../controllers/productsController');
 
 module.exports = (sequelize, DataTypes) => {
 

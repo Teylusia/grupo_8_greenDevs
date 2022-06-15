@@ -735,10 +735,10 @@ i.fab.fa-apple {
   width: 50px;
   height: 50px;
   border-radius: 50%;
+ 
 }
 
 .avatar:hover {
-  
   border: 2px solid #03c959;
 }
 

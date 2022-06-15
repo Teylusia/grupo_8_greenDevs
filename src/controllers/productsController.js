@@ -4,8 +4,13 @@ const db = require("../database/models");
 const { validationResult } = require("express-validator");
 const deleteFile = require("../modules/deleteFile");
 
+
+
 let productsController = {
   detail: (req, res) => {
+    // console.log(req.params.id);
+    // db.Product.findAll()
+    // .then(product => console.log(product))
     let productDetail = db.Product.findOne(
       { where: { id: req.params.id } },
       // {
@@ -23,7 +28,7 @@ let productsController = {
     );
 
     Promise.all([productDetail, imageDetail]).then(function ([product, image]) {
-      // console.log(imageDetail);
+      console.log(product);
       res.render("productDetail", {
         product,
         image,
@@ -225,7 +230,6 @@ let productsController = {
   },
 
   productDelete: (req, res) => {
-    //PROBAR UNA VEZ QUE FUNCIONE EL DELETE DE PRODUCTO
     let productId = req.params.id;
     let mainImage = db.Product.findByPk(productId);
     let gallery = db.Image.findAll({ where: { product_id: productId } });
@@ -234,15 +238,23 @@ let productsController = {
       for (let i = 0; i < images.length; i++) {
         deleteFile(images[i].address);
       }
-    });
+    }).then(() => {
 
-    db.Product.destroy(
-      { where: { id: req.params.id } },
-      { include: [{ association: "Image" }] }
-    );
-
-    res.redirect("/admin");
-  },
+      db.Product.destroy(
+        { where: { id: req.params.id } },
+        { include: [{ association: "Image" }] }
+        )
+      })
+      .then(() => {
+        
+        res.redirect("/admin");
+      } )
+      
+      .catch(function () {
+        console.log("algo anda mal");
+      });
+    
+    },
 
   image: (req, res) => {
     db.Image.findOne({ where: { id: req.params.id } }).then((image) => {
