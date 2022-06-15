@@ -17,11 +17,33 @@ const productsControllerApi = {
         )
     })
 
-    // let Accion = db.Product_Category.count({
-    //   where: { category_id: 1 },
-    // });
+  },
+  products: async (req, res) => {
+    try{
+    let countByCategory = await db.Product.findAll({
+      attributes: [
+        "categorias.id","categorias.name",
+        [db.Sequelize.fn("COUNT", db.Sequelize.col("categorias.id")), "count"],
+      ],
+      include: [{association:"categorias"}],
+      group: ['categorias.id']
+    })
 
-    // let Deportes = db.Product_Category.count({
+    let response = {
+      countByCategory
+    }
+
+    res.status(200).json({response})            
+  } catch (error) {
+      console.log(error)
+      res.status(500).json({msg:"error"})
+  }
+  
+    // let Accion = db.Product_Category.count({
+      //   where: { category_id: 1 },
+      // });
+
+      // let Deportes = db.Product_Category.count({
     //   where: { category_id: 2 },
     // });
 
@@ -54,8 +76,8 @@ const productsControllerApi = {
     db.Product.findByPk(req.params.id, {
       include:
       [
-      // { association: "Sale" },
-      // { association: "Image" },
+      { association: "Sale" },
+      { association: "Image" },
       { association: "Product_Category" }
     ]
     }).then((product) => {
