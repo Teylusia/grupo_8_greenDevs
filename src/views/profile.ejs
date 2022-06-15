@@ -25,8 +25,12 @@
                      <p class="texto">Estás registrado con la dirección de mail <strong><%= user.email  %> </strong></p>
                     </div>
                     <div >
-                        <a href="/admin/users">
-                            <button type="button" class="btn warn">Panel de Administrador</button>
+                        <% if ( user.privilege == 1) { %>
+                         
+                            <a href="/admin/">
+                                <button type="button" class="btn warn">Panel de Administrador</button>
+
+                        <% } %>
                     </div>
                          <div >
                             <a href="/user/edit/password/<%= id %>">
@@ -36,8 +40,8 @@
                             <a href="/user/edit/<%= id %>">
                                 <button type="button" class="btn inf">Editar usuario</button>
                         </div>
-
-             </div>
+                    </div>
+                    
     </section>
     </main>
 </body>
