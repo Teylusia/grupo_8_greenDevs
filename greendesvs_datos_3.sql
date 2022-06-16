@@ -9852,10 +9852,6 @@ VALUES
         (
                 "https://media.rawg.io/media/games/a4b/a4bb55f42fe837ae7bf1307e7b41cc85.jpg",
                 18
-        ,1),
-        (
-                "https://media.rawg.io/media/games/a4b/a4bb55f42fe837ae7bf1307e7b41cc85.jpg",
-                18
         ,0),
         (
                 "https://media.rawg.io/media/screenshots/a63/a6318b075a5d8471a510cdeac2ab6a8e.jpg",

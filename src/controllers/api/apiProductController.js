@@ -1,76 +1,95 @@
 const db = require("../../database/models");
-const { validationResult } = require("express-validator");
-// const Product_Category = require("../../database/models/Product_Category");
-const products = db.Product.findAll();
 
 const productsControllerApi = {
   list: (req, res) => {
     let products = db.Product.findAll(
        {include: { association: "Product_Category" }}
-    )
-    .then( products => {
-      return res.status(200).json({
+    );
 
-        count : products.length,
-        // countByCategory :
+    let accion = db.Product_Category.count({
+        where: { category_id: 1 },
+      });
+    
+      let deportes = db.Product_Category.count({
+        where: { category_id: 2 },
+      });
+
+      let rpg = db.Product_Category.count({
+        where: { category_id: 3 },
+      });
+
+      let indie = db.Product_Category.count({
+        where: { category_id: 4 },
+      });
+
+      let aventura = db.Product_Category.count({
+        where: { category_id: 5 },
+      });
+
+      let estrategia = db.Product_Category.count({
+        where: { category_id: 6 },
+      });
+
+      let fps = db.Product_Category.count({
+        where: { category_id: 7 },
+      });
+
+      let casual = db.Product_Category.count({
+        where: { category_id: 8 },
+      });
+
+      let plataforma = db.Product_Category.count({
+        where: { category_id: 9 },
+      });
+
+      let simulacion = db.Product_Category.count({
+        where: { category_id: 10 },
+      });
+
+      let arcade = db.Product_Category.count({
+        where: { category_id: 11 },
+      });
+
+      let pelea = db.Product_Category.count({
+        where: { category_id: 12 },
+      });
+
+Promise.all([products, accion, deportes, rpg, indie, aventura, estrategia, fps, casual, plataforma, simulacion, arcade, pelea])
+.then(([products, accion, deportes, rpg, indie, aventura, estrategia, fps, casual, plataforma, simulacion, arcade, pelea]) =>
+      {
+        return res.status(200).json({
+          count : products.length,
+          countByCategory: [
+            {Accion : accion},
+            {Deportes : deportes},
+            {Rpg : rpg},
+            {Indie : indie},
+            {Aventura : aventura},
+            {Estrategia : estrategia},
+            {Fps : fps},
+            {Casual : casual},
+            {Plataforma : plataforma},
+            {Simulacion : simulacion},
+            {Arcade : arcade},
+            {Pelea : pelea}
+          ],
+          products: products.map(product => {
+            return {
+              id: product.id,
+              name: product.name,
+              description: product.description,
+              categories : product.Product_Category.map(category =>{ return{category : category.category_id}}),
+              detail: "/product/detail/"+`${product.id}`
+            }
+          })
+        })
       }
-        )
-    })
+
+)
+
 
   },
-  products: async (req, res) => {
-    try{
-    let countByCategory = await db.Product.findAll({
-      attributes: [
-        "categorias.id","categorias.name",
-        [db.Sequelize.fn("COUNT", db.Sequelize.col("categorias.id")), "count"],
-      ],
-      include: [{association:"categorias"}],
-      group: ['categorias.id']
-    })
-
-    let response = {
-      countByCategory
-    }
-
-    res.status(200).json({response})            
-  } catch (error) {
-      console.log(error)
-      res.status(500).json({msg:"error"})
-  }
-  
-    // let Accion = db.Product_Category.count({
-      //   where: { category_id: 1 },
-      // });
-
-      // let Deportes = db.Product_Category.count({
-    //   where: { category_id: 2 },
-    // });
-
-    // let RPG = db.Product_Category.count({
-    //   where: { category_id: 3 },
-    // });
-
-    // let response = {
-    //   meta: {
-    //     status: 200,
-    //     url: "api/products",
-    //   },
-    //   count: products.length,
-    //   countByCategory: [
-    //     {Accion: Accion},
-    //   ],
-    //   products: products,
-    // };
-    // res.json(response);
-
-  },
-  // products: async (req.res) => {
-  //   try {
-  //     let products = await db.Product.  
-      
-  //   }
-  // },
+ 
 
   detail: (req, res) => {
     db.Product.findByPk(req.params.id, {
