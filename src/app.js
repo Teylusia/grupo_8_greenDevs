@@ -5,6 +5,7 @@ const mainRoutes = require("./routes/mainRoutes");
 const usersRoutes = require("./routes/usersRoutes");
 const productsRoutes = require("./routes/productsRoutes");
 const apiProductController = require("./routes/apiProductsRoutes")
+const apiUsersController = require("./routes/apiUsersRoutes")
 const publicPath = path.resolve(__dirname, "../public");
 const methodOverride = require("method-override");
 const logger = require("morgan");
@@ -39,6 +40,7 @@ app.use(mainRoutes);
 app.use("/user",usersRoutes);
 app.use("/product",productsRoutes);
 app.use("/api/product", apiProductController)
+app.use("/api/users", apiUsersController)
 
 app.listen(3000, () => {
   console.log("Arrancando servidor...");
