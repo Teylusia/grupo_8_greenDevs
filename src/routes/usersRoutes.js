@@ -7,7 +7,8 @@ const validateLogin = require("../middlewares/loginValidatorMiddleware");
 const multerAvatar = require("../middlewares/multerAvatarMiddleware");
 const guestMiddleware = require("../middlewares/guestMiddleware");
 const authMiddleware = require("../middlewares/authMiddleware");
-const validateEdit = require('../middlewares/userEditValidatorMiddleware')
+const validateEdit = require('../middlewares/userEditValidatorMiddleware');
+
 
 
 //Register
@@ -30,6 +31,7 @@ router.delete("/delete/:id", usersController.userDelete);
 //Edit
 router.get("/edit/:id", usersController.editShow);
 router.patch("/edit/:id", multerAvatar.single("avatar"), validateEdit, usersController.userEdit);
+router.patch("/edit/privilege/:id", usersController.adminSwitch)
 
 //Edit - Password
 router.get("/edit/password/:id", usersController.changePassword);

@@ -171,6 +171,7 @@ let usersController = {
     }
   },
 
+  //GET 
   deleteUser: (req, res) => {
     User.findByPk(req.params.id)
       .then((user) => {
@@ -178,6 +179,8 @@ let usersController = {
       })
       .catch((error) => res.send(error));
   },
+
+  //DELETE OR DISABLED
   userDelete: (req, res) => {
     let userId = req.params.id;
     let userInDb = db.User.findByPk(userId)
@@ -221,6 +224,42 @@ let usersController = {
     }, 1000);
       
   },
+
+  //cambiar usuario a Admin
+  adminSwitch: (req, res) => {
+    let userId = req.params.id;
+    let userLogin = req.session.userLogged
+    db.User.findByPk(userId)
+    .then((user1) => {
+      if ( userId != userLogin.id) {
+        
+        if (user1.privilege == 1) {
+          User.update(
+            {privilege: 0}, //cambia a usuario basico
+            {
+              where: {id : userId}
+            }
+            )
+            
+          }else{
+            
+            User.update(
+              {privilege: 1}, //cambia a usuario admin
+              {
+                where: {id : userId}
+              }
+              )
+            }
+          }
+        }
+        )
+          .catch((error) => res.send(error));
+          setTimeout(function(){
+            return res.redirect("/admin/users");
+          }, 1000);
+
+  },
+
   editShow: (req, res) => {
     User.findByPk(req.params.id).then((user) => {
       res.render("userEdit", { usuario: user });
