@@ -43,11 +43,11 @@
                         <tr>
                             <th>Id</th>
                             <th>Nombre</th>
-                            <th>email</th>
-                            <th>avatar</th>
-                            <th>status</th>
+                            <th>Email</th>
+                            <th>Avatar</th>
+                            <th>Estado</th>
                             <th>Admin</th>
-                            <th>Editar/eliminar</th>
+                            <th>Editar/Bloquear</th>
 
                         </tr>
 
@@ -79,9 +79,17 @@
                                 <% } %>
                             </td>
                             <td>
-                             <% if ( usuario.privilege == 1) { %>
-                              <h4>SI</h4>
-                             <% } %>   
+                                <form method="POST" action="/user/edit/privilege/<%= usuario.id %>?_method=PATCH">
+                                <button id ="switch" style="background-color: transparent; border: 0cm;" type="submit"
+
+                                    <% if ( usuario.privilege == 1) { %>
+                                     <p><i class="fa-solid fa-toggle-on" style="color: green; font-size: large;"></i></p>
+                                    <% } else { %>
+                                    <p><i class="fa-solid fa-toggle-off" style="color: white; font-size: large;"></i></p>
+                                   <% } %>
+                                  
+                                </button>
+                                </form>
                             </td>
                             <td>
                                 <a href="/user/edit/<%=usuario.id %>">

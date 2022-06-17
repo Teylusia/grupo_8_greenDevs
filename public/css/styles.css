@@ -1366,6 +1366,10 @@ tr .btn {
   cursor: pointer;
 }
 
+#switch:hover{
+  cursor: pointer;
+}
+
 
 /*KEYFRAMES*/
 
