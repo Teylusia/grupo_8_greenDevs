@@ -557,7 +557,8 @@ h3 {
 
 .register,
 .panel,
-.productadd {
+.productadd
+ {
   display: inline-block;
   flex-direction: column;
   width: 80vw;
@@ -1099,14 +1100,14 @@ aside {
   width: 100%;
   display: flex;
   justify-content: flex-start;
-  margin: 10px 0px;
+  margin: 20px 0px;
   color: #717171;
 }
 
-.rating i:hover {
+/* .rating i:hover {
   transition: all 45ms;
   color: goldenrod;
-}
+} */
 
 .DP-imagen {
   display: flex;
@@ -1241,6 +1242,19 @@ button {
   font-size: 25px;
 }
 
+.detail {
+  padding: 10px;
+}
+
+.detail-info {
+  display: inline-block;
+  flex-direction: column;
+  width: 80vw;
+  margin: 1% 10% 10% 10%;
+  border: solid 1px #03c959;
+  border-radius: 15px;
+  max-width: 500px;
+}
 /* VALIDATIONS ERRORS */
 
 .errors {

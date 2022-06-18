@@ -27,9 +27,46 @@
         <article class="precio-compra-agregar">
           <h2><%= product.name %></h2>
           <h3 class="rating">
-            <i class="fas fa-star"></i><i class="fas fa-star"></i
-            ><i class="fas fa-star"></i><i class="fas fa-star"></i
-            ><i class="fas fa-star"></i>
+            <% if (product.rating == 1) { %>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+             
+            <% } %>
+            <% if (product.rating == 2) { %>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+             
+            <% } %>
+            <% if (product.rating == 3) { %>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+             
+            <% } %>
+            <% if (product.rating == 4) { %>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+             
+            <% } %>
+            <% if (product.rating == 5) { %>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+             
+            <% } %>
           </h3>
           
           <h2>Precio: $ 
@@ -44,40 +81,40 @@
               <h4>Descuento : <%= product.discount %> %</h4>
               <% }  %> 
             
+          <div>
 
-          <button id="carrito" class="btn succ" type="submit">
-            <h3><i class="fas fa-cart-plus"></i> Agregar al carrito</h3>
+            <button  class="btn succ" type="submit">
+              <h3><i class="fas fa-cart-plus"></i> Agregar al carrito</h3>
+            </div>
           </button>
         </article>
       </section>
 
       <section class="info">
-        <article class="detailed-info">
-          <h3>Descripción:</h3>
-          <p><%= product.description %></p>
+        <article class="detail-info">
+          <div class="detail">
+
+            <h3>Descripción:</h3>
+            <p><%= product.description %></p>
+          </div>
+          <div class="detail">
+  
+            <h3>Requisitos:</h3>
+            <p><%= product.specs%></p>
+          </div>
+
+          <div class="detail">
+  
+            <h3>Categoria:</h3>
+           categoria
+          </div>
         </article>
-        <article class="detailed-info">
-          <h3>Specs:</h3>
-          <p><%= product.specs%></p>
-        </article>
-        <article class="detailed-info">
-          <h3>Reseñas:</h3>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi
-            adipisci consectetur beatae ratione ipsam dolorem laboriosam est
-            deserunt dolore praesentium odio soluta totam maiores voluptate
-            nulla, delectus quod itaque laudantium natus qui quas voluptates,
-            voluptatum, quam ipsum! Repellat deserunt enim debitis rerum? Omnis
-            dicta accusamus alias sint natus itaque eaque maiores. Consequuntur
-            dignissimos adipisci ipsam pariatur vel iste, libero tempora?
-            Tempora incidunt hic reprehenderit, itaque quis consequatur numquam
-            est? Obcaecati consequatur quaerat assumenda sapiente. Quibusdam
-            officiis beatae numquam tempora et! Odit saepe fuga corrupti, animi
-            culpa soluta qui blanditiis suscipit architecto tempore eius
-            repellendus aliquam iste ab. Accusantium, sint maiores.
-          </p>
-        </article>
-        <%- include("./partials/related")  %> 
+    
+        
+          <div>
+            <%- include("./partials/related")  %> 
+
+          </div>
       </section>
     </main>
 
