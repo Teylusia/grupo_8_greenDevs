@@ -13,6 +13,7 @@ const cookieParser = require("cookie-parser");
 const { sequelize } = require("./database/models");
 const session = require("express-session");
 const userLoggedMiddleware = require("./middlewares/userLoggedMiddleware");
+const cors = require('cors');
 
 
 
@@ -31,6 +32,7 @@ app.use(userLoggedMiddleware)
 app.use((req, res, next) => {
   res.locals.user = req.session.userLogged;
   next();});
+app.use( cors() )
   
 
 app.set("view engine", "ejs");
@@ -42,7 +44,8 @@ app.use("/product",productsRoutes);
 app.use("/api/product", apiProductController)
 app.use("/api/users", apiUsersController)
 
-app.listen(3000, () => {
+
+app.listen(5000, () => {
   console.log("Arrancando servidor...");
   console.log("http://localhost:3000");
 

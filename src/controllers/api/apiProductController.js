@@ -2,6 +2,13 @@ const db = require("../../database/models");
 
 const productsControllerApi = {
   list: (req, res) => {
+
+    let CAT = db.Category.findAll(
+      {include: { association: "Product_Category" }}
+   );
+
+   console.log(CAT)
+
     let products = db.Product.findAll(
        {include: { association: "Product_Category" }}
     );
@@ -54,24 +61,38 @@ const productsControllerApi = {
         where: { category_id: 12 },
       });
 
-Promise.all([products, accion, deportes, rpg, indie, aventura, estrategia, fps, casual, plataforma, simulacion, arcade, pelea])
-.then(([products, accion, deportes, rpg, indie, aventura, estrategia, fps, casual, plataforma, simulacion, arcade, pelea]) =>
+Promise.all([products, accion, deportes, rpg, indie, aventura, estrategia, fps, casual, plataforma, simulacion, arcade, pelea, CAT])
+.then(([products, accion, deportes, rpg, indie, aventura, estrategia, fps, casual, plataforma, simulacion, arcade, pelea, CAT]) =>
       {
         return res.status(200).json({
+          categories: CAT,
+          CAT: CAT.length,
           count : products.length,
           countByCategory: [
-            {Accion : accion},
-            {Deportes : deportes},
-            {Rpg : rpg},
-            {Indie : indie},
-            {Aventura : aventura},
-            {Estrategia : estrategia},
-            {Fps : fps},
-            {Casual : casual},
-            {Plataforma : plataforma},
-            {Simulacion : simulacion},
-            {Arcade : arcade},
-            {Pelea : pelea}
+            {nombre : 'Accion',
+              cantidad: accion},
+            {nombre : 'Deportes',
+              cantidad: deportes},
+            {nombre : 'Rpg',
+              cantidad: rpg},
+            {nombre : 'Indie',
+              cantidad: indie},
+            {nombre : 'Aventura',
+              cantidad: aventura},
+            {nombre : 'Estrategia',
+              cantidad: estrategia},
+            {nombre : 'Fps',
+              cantidad: fps},
+            {nombre : 'Casual',
+              cantidad: casual},
+            {nombre : 'Plataforma',
+              cantidad: plataforma},
+            {nombre : 'Simulacion',
+              cantidad: simulacion},
+            {nombre : 'Arcade',
+              cantidad: arcade},
+            {nombre : 'Pelea',
+              cantidad: pelea}
           ],
           products: products.map(product => {
             return {
