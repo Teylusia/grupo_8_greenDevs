@@ -1862,3 +1862,44 @@ tr .btn {
     }
 
 }
+
+/* RESULT PAGE */
+
+
+.article-result{
+  display: flex;
+  background-color: #2a2a2a;
+  margin: 15px;
+  min-width: 900px;
+  max-width: 900px;
+}
+
+#result-message{
+  padding-left: 20vw;
+  padding-top: 20px;
+  padding-bottom: 15px;
+}
+
+.article-result-image{
+  width: 250px;
+  height: 100%;
+}
+
+#result-image{
+  padding:0;
+}
+
+.result-a{
+  text-decoration: none;
+  color:#fff
+}
+
+.pepe{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.article-result-description{
+  font-size: small;
+}

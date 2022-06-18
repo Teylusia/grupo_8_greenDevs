@@ -8,15 +8,26 @@
   <%- include('./partials/header') %>
 
   <main>
-    <h1>Resultados de: <%= search %> </h1>
+    <h1 id="result-message"><%= products.length %> resultados coinciden con tu busqueda</h1>
     <% if(products == undefined){ %>
       <h4>No hay resultados de tu busqueda</h4>
    <% }else{ products.forEach(product =>{ %>
-    <div class="article-result">
-      <h4 class="article-result-article"><a href="/product/detail/<%= product.dataValues.id %>"><%= product.dataValues.name %></a></h4>
-      <p class="article-result-description"><%= product.dataValues.description %></p>
-    </div>
+    <div class="pepe">
+    <a class='result-a' href="/product/detail/<%= product.dataValues.id %>">
+    <table class="article-result">
+      <tr>
+     <th id="result-image"><img class="article-result-image" src=<%= product.dataValues.image %>></th> 
+
+     <th><h4 class="article-result-article"><%= product.dataValues.name %></h4></th>
+      <th> <p class="article-result-description"><%= product.dataValues.description %></p></th>
+      </tr>
+    </table>
+  </a>
+</div>
    <% }) %>
    <% } %>
-
   </main>
+
+  <%- include('./partials/footer') %>
+
+</body>
