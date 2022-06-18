@@ -12,20 +12,22 @@ let productsController = {
     // db.Product.findAll()
     // .then(product => console.log(product))
     let products = db.Product.findAll(
-      {
-        include: 
-        { association: "Image" },
-      }
+      // {
+      //   include: [
+      //     { association: "Image" },
+      //     { association: "Product_Category" }
+      //   ]
+      // }
       );
       let productDetail = db.Product.findOne(
         { where: { id: req.params.id } },
-        // {
-        //   include: [
-          //     { association: "Sale" },
-          //     { association: "Image" },
-          //     { association: "Product_Category" },
-          //   ],
-          // }
+        {
+          include: [
+              { association: "Sale" },
+              { association: "Image" },
+              { association: "Product_Category" },
+            ],
+          }
           );
           
           let imageDetail = db.Image.findAll(
