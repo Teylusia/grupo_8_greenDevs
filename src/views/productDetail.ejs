@@ -10,50 +10,54 @@
         <h1></h1>
         <article class="DP-imagen">
           <img src="<%= product.image %>" alt="imagen del producto" />
-          </article>
-          <article class="mas-imagenes">
-            <% if (image.length >= 4 ) { %> <% for( let i = 0; i < 4; i++ )
-            { %>
-            <a href="<%=image[i].address %>">
-              <img src="<%= image[i].address %>" alt=" Imagen-del-producto" />
-              </a>
-  
-            <% } %> <% } else { %> <% image.forEach(element => { %>
-            <a href="<%=image.address%>">
-              <img src="<%= element.address %>" alt=" Imagen-del-producto" />
-              <% }) %> <% } %>
-              </a>
-              </article>
-            
-                 <article class="precio-compra-agregar">
-                  <h2><%= product.name %></h2>
-                  <h3 class="rating">
-                    <i class="fas fa-star"></i><i class="fas fa-star"></i
-                      ><i class="fas fa-star"></i><i class="fas fa-star"></i
-                        ><i class="fas fa-star"></i>
-                        </h3>
-                        <h4>Descuento : <%= product.discount %> %</h4>
-                        <h2>Precio: $ <%= product.price%></h2>
-                        <i class="fa-solid fa-shop"></i>
-                        <button id="comprar" type="submit"><h3>comprar</h3></button>
-                        <i class="fas fa-cart-plus"></i>
-                        <button id="carrito" type="submit">
-                          <h3>Agregar al carrito</h3>
-                          </button>
-                          </article>
-                          </section>
-                          
-                          <section class="info">
-                            <article class="detailed-info">
-                    <h3>Descripción:</h3>
-                    <p><%= product.description %></p>
-         
-            </article>
-            <article class="detailed-info">
-              <h3>Specs:</h3>
-          <p><%= product.specs%></p>
+        </article>
+        <article class="mas-imagenes">
+          <% if (image.length >= 4 ) { %> <% for( let i = 0; i < 4; i++ ) { %>
+          <a href="<%=image[i].address %>">
+            <img src="<%= image[i].address %>" alt=" Imagen-del-producto" />
+          </a>
+
+          <% } %> <% } else { %> <% image.forEach(element => { %>
+          <a href="<%=image.address%>">
+            <img src="<%= element.address %>" alt=" Imagen-del-producto" />
+            <% }) %> <% } %>
+          </a>
+        </article>
+
+        <article class="precio-compra-agregar">
+          <h2><%= product.name %></h2>
+          <h3 class="rating">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i
+            ><i class="fas fa-star"></i><i class="fas fa-star"></i
+            ><i class="fas fa-star"></i>
+          </h3>
           
-            </article>
+          <h2>Precio: $ 
+            <% if (product.discount == null) { %>
+              <%= product.price%></h2>
+              
+              <% } else { %>
+                
+                <%=    (product.price - ((product.price * product.discount) /
+                100)) %>
+              <% } %> 
+              <p class="precio-rebaja">$<%= product.price %></p>
+              <h4>Descuento : <%= product.discount %> %</h4>
+          <button id="carrito" class="btn succ" type="submit">
+            <h3><i class="fas fa-cart-plus"></i> Agregar al carrito</h3>
+          </button>
+        </article>
+      </section>
+
+      <section class="info">
+        <article class="detailed-info">
+          <h3>Descripción:</h3>
+          <p><%= product.description %></p>
+        </article>
+        <article class="detailed-info">
+          <h3>Specs:</h3>
+          <p><%= product.specs%></p>
+        </article>
         <article class="detailed-info">
           <h3>Reseñas:</h3>
           <p>
@@ -69,15 +73,13 @@
             officiis beatae numquam tempora et! Odit saepe fuga corrupti, animi
             culpa soluta qui blanditiis suscipit architecto tempore eius
             repellendus aliquam iste ab. Accusantium, sint maiores.
-            </p>
-            
-              </article>
-              
-              </section>
-              </main>
-              
-              <%- include('./partials/footer') %>
-              </body>
-              <script src="/js/productDetail.js"></script>
-              </html>
-              
+          </p>
+        </article>
+        <%- include("./partials/related")  %> 
+      </section>
+    </main>
+
+    <%- include('./partials/footer') %>
+  </body>
+  <script src="/js/productDetail.js"></script>
+</html>

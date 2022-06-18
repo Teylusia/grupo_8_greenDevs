@@ -2,9 +2,9 @@
 
 <article class="related">
 
-  <% allProducts.slice(-4).forEach( product => { %>
+  <% products.slice(-4).forEach( product => { %>
   <a href="/product/detail/<%= product.id %>">
-    <img class="img-product" src="<%= products.image %>" alt="imagen-de-producto">
+    <img class="img-product" src="<%= product.image %>" alt="imagen-de-producto">
   </a>
   <% }) %> 
 </article>
