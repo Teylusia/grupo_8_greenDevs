@@ -11,36 +11,45 @@ let productsController = {
     // console.log(req.params.id);
     // db.Product.findAll()
     // .then(product => console.log(product))
-    let productDetail = db.Product.findOne(
-      { where: { id: req.params.id } },
-      // {
-      //   include: [
-      //     { association: "Sale" },
-      //     { association: "Image" },
-      //     { association: "Product_Category" },
-      //   ],
-      // }
-    );
-
-    let imageDetail = db.Image.findAll(
-      { where: { product_id: req.params.id } },
-      { include: [{ association: "Product" }] }
-    );
-
-    Promise.all([productDetail, imageDetail]).then(function ([product, image]) {
-      console.log(product);
-      res.render("productDetail", {
-        product,
-        image,
-      });
-    });
-  },
-
-  cart: (req, res) => {
-    let productDetail = db.Product.findOne(
-      { where: { id: 20 } },
-      // {
-      //   include: [
+    let products = db.Product.findAll(
+      {
+        include: 
+        { association: "Image" },
+      }
+      );
+      let productDetail = db.Product.findOne(
+        { where: { id: req.params.id } },
+        // {
+        //   include: [
+          //     { association: "Sale" },
+          //     { association: "Image" },
+          //     { association: "Product_Category" },
+          //   ],
+          // }
+          );
+          
+          let imageDetail = db.Image.findAll(
+            { where: { product_id: req.params.id } },
+            { include: [{ association: "Product" }] }
+            );
+            
+            Promise.all([products, productDetail, imageDetail]).then(function ([products,product, image]) {
+              res.render("productDetail", {
+                products,
+                product,
+                image,
+              });
+              res.locals.product = product.dataValues
+              console.log(res.locals.product);
+            });
+          },
+          
+          cart: (req, res) => {
+            let products = db.Product.findAll();
+            let productDetail = db.Product.findOne(
+              { where: { id: 20 } },
+              // {
+                //   include: [
       //     // { association: "Sale" },
       //     // { association: "Image" },
       //     // { association: "Product_Category" },
@@ -53,13 +62,14 @@ let productsController = {
       { include: [{ association: "Product" }] }
     );
 
-    Promise.all([productDetail, imageDetail]).then(function ([product, image]) {
+    Promise.all([products, productDetail, imageDetail]).then(function ([products, product, image]) {
       // console.log(imageDetail);
       res.render("productCart", {
+        products,
         product,
         image,
       });
-      res.render("productCart", { product, image });
+      res.render("productCart", { products, product, image });
     });
   },
 
