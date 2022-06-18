@@ -40,9 +40,11 @@
                 
                 <%=    (product.price - ((product.price * product.discount) /
                 100)) %>
-              <% } %> 
               <p class="precio-rebaja">$<%= product.price %></p>
               <h4>Descuento : <%= product.discount %> %</h4>
+              <% }  %> 
+            
+
           <button id="carrito" class="btn succ" type="submit">
             <h3><i class="fas fa-cart-plus"></i> Agregar al carrito</h3>
           </button>

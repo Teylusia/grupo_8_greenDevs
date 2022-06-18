@@ -20,12 +20,14 @@
       <h2>Producto Destacado</h2>
       <div class="featured-box">
         <div class="featured-img">
-          <img src="/img/god-of-war-prev.jpg" alt="">
+          <img src="<%= products[2].image %> " alt="">
         </div>
         <div class="featured-text">
-          <h4>GOD OF WAR</h4>
-          <p>Habiendo consumado su venganza contra los dioses el Olimpo años atrás, Kratos ahora vive como un hombre en el reino de los dioses y los monstruos nórdicos. En este hostil e inhóspito mundo, debe pelear por sobrevivir... y enseñarle a su hijo a hacer lo mismo.</p>
-          <button>+INFO</button>
+          <h4><%= products[2].name  %> </h4>
+          <p><%= products[2].description %> </p>
+          <a href="/product/detail/<%= products[2].id %>">
+            <button>+INFO</button>
+          </a>
         </div>
       </div>
     </section>
