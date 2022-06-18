@@ -45,7 +45,7 @@ app.use("/api/product", apiProductController)
 app.use("/api/users", apiUsersController)
 
 
-app.listen(5000, () => {
+app.listen(3000, () => {
   console.log("Arrancando servidor...");
   console.log("http://localhost:3000");
 
