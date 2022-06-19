@@ -972,7 +972,7 @@ aside {
 /* ---- ----- ----- Contenedor Principal y Flechas ----- ----- ----- */
 .products-category {
   margin-bottom: 70px;
-  margin: 10%;
+  margin: 5%;
 }
 
 .products-category .contenedor-principal {
@@ -2009,5 +2009,27 @@ tr .btn {
 
   .article-result-image{
   width: 250px;
+  }
+}
+
+.seccion-bienvenida .portada-bienvenida{
+  display: flex;
+  justify-content: center;
+  position: relative;
+  background-image: linear-gradient(45deg,#03c959, #072AC8);
+  border-radius: 20px 20px 0 0;
+}
+
+.mensaje-bienvenida{
+  font-size: medium;
+}
+
+@media (min-width: 750px){
+  .mensaje-bienvenida {
+    font-size: xx-large;
+}
+
+  .main-index{
+    padding-top: 120px;
   }
 }
