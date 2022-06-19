@@ -1115,7 +1115,7 @@ aside {
 }
 
 .DP-imagen img {
-  width: 70%;
+  width: 100%;
   margin: 10px 0px;
   border-radius: 4px;
 }
@@ -1129,9 +1129,7 @@ aside {
 
 .mas-imagenes {
   width: 100%;
-  align-content: center;
   display: flex;
-  justify-content: center;
   margin: 0px 10px;
 }
 
@@ -1157,9 +1155,18 @@ aside {
 
 .precio-compra-agregar {
   display: flex;
+  flex-direction: column;
   justify-content: space-around;
-  width: 100%;
-  margin: 10px 0px;
+  background-color: #2a2a2a;
+  order: 0;
+  width: 300px;
+  margin: 10px 5px;
+  padding: 25px;
+  border-radius: 25px;
+}
+
+.add-cart-btn-container{
+  padding-top: 15px
 }
 
 .precio-compra-agregar i {
@@ -1200,6 +1207,11 @@ button {
   transition: all 450ms;
 }
 /*section 3*/
+
+.info-detail{
+  display: flex;
+  justify-content: center;
+}
 
 .detailed-info {
   width: 90vw;
@@ -1253,8 +1265,68 @@ button {
   margin: 1% 10% 10% 10%;
   border: solid 1px #03c959;
   border-radius: 15px;
-  max-width: 500px;
 }
+
+/*DESKTOP AND BIGGER SCREENS*/
+
+
+
+@media (min-width: 1023px) {
+
+  .detailed-info {
+    width: 96vw;
+  }
+
+  .main-info {
+    flex-wrap: wrap;
+  }
+
+  .DP-imagen {
+    width: 65%;
+  }
+
+  .mas-imagenes {
+    order: 1;
+  }
+
+  .precio-compra-agregar button#comprar,
+  .precio-compra-agregar button#carrito {
+    width: 100%;
+  }
+
+  .info-detail {
+    width: 85vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0px 100px;
+  }
+
+  .detailed-info {
+    width: 85vw;
+  }
+
+  .detailed-info h3 {
+    text-align: left;
+    padding: 10px;
+  }
+
+  .related {
+    order: 2;
+    width: 100%;
+    /* display: flex; */
+    justify-content: space-around;
+    flex-wrap: wrap;
+    opacity: 0.8;
+  }
+  
+  .related h2 {
+    width: 100%;
+    margin: 20px 0px;
+    font-size: 25px;
+  }
+}
+
 /* VALIDATIONS ERRORS */
 
 .errors {
@@ -1521,79 +1593,7 @@ tr .btn {
   }
 }
 
-/*DESKTOP AND BIGGER SCREENS*/
 
-@media (min-width: 1024px) {
-
-  .detailed-info {
-    width: 96vw;
-  }
-
-  .main-info {
-    flex-wrap: wrap;
-    justify-content: flex-start;
-  }
-
-  .DP-imagen {
-    width: 65%;
-  }
-
-  .mas-imagenes {
-    order: 1;
-  }
-
-  .precio-compra-agregar {
-    background-color: #2a2a2a;
-    order: 0;
-    width: 30%;
-    flex-wrap: wrap;
-    margin: 10px 5px;
-    padding: 25px;
-    border-radius: 25px;
-  }
-
-  .precio-compra-agregar h2 {
-    width: 100%;
-    height: 3vh;
-  }
-
-  .precio-compra-agregar button#comprar,
-  .precio-compra-agregar button#carrito {
-    width: 100%;
-  }
-
-  .info {
-    width: 85vw;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: 0px 100px;
-  }
-
-  .detailed-info {
-    width: 85vw;
-  }
-
-  .detailed-info h3 {
-    text-align: left;
-    padding: 10px;
-  }
-
-  .related {
-    order: 2;
-    width: 100%;
-    /* display: flex; */
-    justify-content: space-around;
-    flex-wrap: wrap;
-    opacity: 0.8;
-  }
-  
-  .related h2 {
-    width: 100%;
-    margin: 20px 0px;
-    font-size: 25px;
-  }
-}
 /* .infoProfile{
   display: flex;
   flex-wrap: wrap;

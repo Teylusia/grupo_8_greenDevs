@@ -81,8 +81,7 @@
               <h4>Descuento : <%= product.discount %> %</h4>
               <% }  %> 
             
-          <div>
-
+          <div class="add-cart-btn-container">
             <button  class="btn succ" type="submit">
               <h3><i class="fas fa-cart-plus"></i> Agregar al carrito</h3>
             </div>
@@ -90,7 +89,7 @@
         </article>
       </section>
 
-      <section class="info">
+      <section class="info-detail">
         <article class="detail-info">
           <div class="detail">
 
@@ -110,12 +109,14 @@
           </div>
         </article>
     
-        
-          <div>
-            <%- include("./partials/related")  %> 
-
-          </div>
+      
       </section>
+
+      <div>
+        <%- include("./partials/related")  %> 
+
+      </div>
+
     </main>
 
     <%- include('./partials/footer') %>
