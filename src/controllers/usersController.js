@@ -315,9 +315,7 @@ let usersController = {
             },
             { where: { id: req.session.userLogged.id } }
           );
-          res.redirect("/profile");
-        } else {
-          res.render("page404");
+          res.redirect("/");
         }
       }
     );

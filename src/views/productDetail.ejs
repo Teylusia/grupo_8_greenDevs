@@ -7,9 +7,8 @@
 
     <main>
       <section class="main-info">
-        <h1></h1>
         <article class="DP-imagen">
-          <img src="<%= product.image %>" alt="imagen del producto" />
+          <img id="image-product" src="<%= product.image %>" alt="imagen del producto" />
         </article>
         <article class="mas-imagenes">
           <% if (image.length >= 4 ) { %> <% for( let i = 0; i < 4; i++ ) { %>
@@ -25,7 +24,7 @@
         </article>
 
         <article class="precio-compra-agregar">
-          <h2><%= product.name %></h2>
+          <h2 id="product-name" id-product="<%= product.id %>"><%= product.name %></h2>
           <h3 class="rating">
             <% if (product.rating == 1) { %>
               <i class="fa-solid fa-star"></i>
@@ -69,22 +68,17 @@
             <% } %>
           </h3>
           
-          <h2>Precio: $ 
-            <% if (product.discount == null) { %>
-              <%= product.price%></h2>
-              
-              <% } else { %>
-                
-                <%=    (product.price - ((product.price * product.discount) /
-                100)) %>
+          <h2>Precio: $</h2>
+          <h2 id="price-product"><% if (product.discount == null) { %><%= product.price%></h2><% } else { %><%=(product.price - ((product.price * product.discount) /
+                100)) %></h2>
               <p class="precio-rebaja">$<%= product.price %></p>
               <h4>Descuento : <%= product.discount %> %</h4>
               <% }  %> 
             
           <div>
 
-            <button  class="btn succ" type="submit">
-              <h3><i class="fas fa-cart-plus"></i> Agregar al carrito</h3>
+            <button id="carrito"  class="btn succ" type="submit">
+              <h3 id="texto-carrito"><i class="fas fa-cart-plus"></i> Agregar al carrito</h3>
             </div>
           </button>
         </article>
@@ -95,7 +89,7 @@
           <div class="detail">
 
             <h3>Descripción:</h3>
-            <p><%= product.description %></p>
+            <p id="description-producto"><%= product.description %></p>
           </div>
           <div class="detail">
   
