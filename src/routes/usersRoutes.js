@@ -29,8 +29,8 @@ router.get("/delete/:id", usersController.deleteUser);
 router.delete("/delete/:id", usersController.userDelete);
 
 //Edit
-router.get("/edit/:id", usersController.editShow);
-router.patch("/edit/:id", multerAvatar.single("avatar"), validateEdit, usersController.userEdit);
+router.get("/edit/:id",authMiddleware, usersController.editShow);
+router.put("/edit/:id", multerAvatar.single("avatar"), validateEdit, usersController.userEdit);
 router.patch("/edit/privilege/:id", usersController.adminSwitch)
 
 //Edit - Password
