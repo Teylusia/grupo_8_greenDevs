@@ -2053,8 +2053,11 @@ tr .btn {
 }
 
 }
-#buton-compra-gede{
+#boton-compra-gede{
   text-decoration: none;
+  color: white;
+  font-size: small;
+
 }
 
 .change-password-input{
