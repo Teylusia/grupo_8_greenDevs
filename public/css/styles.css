@@ -2056,3 +2056,9 @@ tr .btn {
 #buton-compra-gede{
   text-decoration: none;
 }
+
+.change-password-input{
+  padding:6px;
+  border-radius: 6px;
+  border:#03c959 solid 1px;
+}
