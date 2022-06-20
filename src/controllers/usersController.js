@@ -186,23 +186,27 @@ let usersController = {
   //DELETE OR DISABLED
   userDelete: (req, res) => {
     let userId = req.params.id;
+    let userLogin = req.session.userLogged
     let userInDb = db.User.findByPk(userId)
       .then((user) => {
-        if (user.status == 1) {
-          User.update(
+        if (userId != userLogin.id) {
+          
+          if (user.status == 1) {
+            User.update(
             { status: 0 }, //deshabilita el usuario
             {
               where: { id: userId },
             }
-          );
-        } else {
-          User.update(
-            { status: 1 }, //habilita el usuario
-            {
-              where: { id: userId },
+            );
+          } else {
+            User.update(
+              { status: 1 }, //habilita el usuario
+              {
+                where: { id: userId },
+              }
+              );
             }
-          );
-        }
+            }
         // // console.log(user);
         // let findFile = fs.existsSync(
         //   path.join(__dirname, "../../public/" + user.avatar)

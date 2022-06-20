@@ -25,6 +25,11 @@ Tablero de Trabajo:
 
 https://trello.com/b/ncPENo3c/kanban-template.
 
+Link al Wireframe, boceto inicial del sitio web:
+
+https://miro.com/app/board/uXjVOTLp8a0=/?share_link_id=424217216109
+
+
 Logo:
 
 Paleta:

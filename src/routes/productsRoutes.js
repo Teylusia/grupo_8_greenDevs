@@ -28,4 +28,9 @@ router.post('/create', multerProduct.single("image"), validateProduct, productsC
 //Image
 router.get('/image/:id', productsController.image)
 router.delete('/image/:id', productsController.imageDelete)
+
+//buy Items
+router.get('/buying', productsController.showBuy)
+
+
 module.exports = router;

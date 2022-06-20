@@ -47,32 +47,11 @@ let productsController = {
           },
           
           cart: (req, res) => {
-            let products = db.Product.findAll();
-            let productDetail = db.Product.findOne(
-              { where: { id: 20 } },
-              // {
-                //   include: [
-      //     // { association: "Sale" },
-      //     // { association: "Image" },
-      //     // { association: "Product_Category" },
-      //   ],
-      // }
-    );
-
-    let imageDetail = db.Image.findAll(
-      { where: { product_id: 20 } },
-      { include: [{ association: "Product" }] }
-    );
-
-    Promise.all([products, productDetail, imageDetail]).then(function ([products, product, image]) {
-      // console.log(imageDetail);
-      res.render("productCart", {
-        products,
-        product,
-        image,
-      });
-      res.render("productCart", { products, product, image });
-    });
+            if(req.session.userLogged){
+              res.render('productCart')
+            }else{
+              res.render('login')
+            }
   },
 
   productCreate: (req, res) => {
@@ -286,6 +265,9 @@ let productsController = {
       });
     });
   },
+  showBuy: (req,res) =>{
+    res.render('buyItem')
+  }
 };
 
 module.exports = productsController;

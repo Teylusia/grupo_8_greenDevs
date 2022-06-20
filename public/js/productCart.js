@@ -28,7 +28,7 @@ const cartList = document.querySelector('#lista-de-productos');
           </div>
             <div class='descripcion-precio'>
               <button><i id-product="${product.id}" id="trash-item" class="fa-solid fa-trash"></i> </button>
-              <p>Precio $ ${product.precio} </p>
+              <p>Precio $${product.precio}</p>
             </div>
         </article>
     `
@@ -53,5 +53,5 @@ const subTotal = document.querySelector('#subtotal-resumen');
 const totalPrice = document.querySelector('#total-price');
 
 
-totalPrice.innerText = `$${finalAmount + (finalAmount * 1.2)}`;
+totalPrice.innerText = `$${finalAmount + (finalAmount * 0.2)}`;
 subTotal.innerText = `$${(finalAmount).toFixed(2)}`;
