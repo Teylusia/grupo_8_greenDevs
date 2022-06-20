@@ -19,7 +19,8 @@ let validateRegister = [
 
 		}
 
-	}),
+	})
+	,
 
     body("email")
     .notEmpty().withMessage("Tienes que escribir un email")
@@ -36,7 +37,8 @@ let validateRegister = [
 
 		}
 
-	}),
+	})
+	,
 
     body("password").notEmpty().withMessage("Tienes que escribir una contraseña")
     .isLength({ min: 8 }).withMessage("Tienes que escribir una contraseña de al menos 8 caracteres"),
