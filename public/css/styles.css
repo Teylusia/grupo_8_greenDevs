@@ -1199,12 +1199,14 @@ aside {
   border-radius: 4px;
 }
 
-.related,
+
 .img-product {
-  width: 20%;
+  height: 150px;
   margin: 10px 3px;
   border-radius: 4px;
 }
+
+
 /*section 2*/
 
 .precio-compra-agregar {
@@ -1292,15 +1294,20 @@ button {
   border: 1px solid #f2f2f2;
 }
 
+/* RELATED */
+
 .related {
-  order: 1;
-  width: 100%;
-  margin: 20px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-bottom: 50px;
 }
 
-.related h2 {
-  width: 100%;
-  margin: 20px 0px;
+
+
+.h2-related {
+  margin: 0 20px 20px;
   font-size: 25px;
 }
 
@@ -1364,18 +1371,12 @@ button {
 
   .related {
     order: 2;
-    width: 100%;
-    /* display: flex; */
-    justify-content: space-around;
-    flex-wrap: wrap;
-    opacity: 0.8;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
   }
   
-  .related h2 {
-    width: 100%;
-    margin: 20px 0px;
-    font-size: 25px;
-  }
+
 }
 
 /* VALIDATIONS ERRORS */
@@ -2017,6 +2018,11 @@ tr .btn {
 
 .mensaje-bienvenida{
   font-size: medium;
+}
+
+.slides, .slides li, .slides li img {
+  width: 100%;
+  border-radius: 0 0 20px 20px;
 }
 
 @media (min-width: 750px){
