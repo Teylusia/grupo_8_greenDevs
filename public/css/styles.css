@@ -1169,7 +1169,7 @@ aside {
 }
 
 .DP-imagen img {
-  width: 100%;
+  max-width: 70%;
   margin: 10px 0px;
   border-radius: 4px;
 }
@@ -1238,7 +1238,6 @@ button {
 }
 
 .precio-compra-agregar #carrito {
-  width: 15%;
   border: none;
   border-radius: 50px;
   background-color: #03c959;
@@ -1329,7 +1328,8 @@ button {
   }
 
   .main-info {
-    flex-wrap: wrap;
+    display: flex;
+    justify-content: flex-start;
   }
 
   .DP-imagen {
@@ -1577,11 +1577,6 @@ tr .btn {
 /*LAPTOP AND SMALL SCREENS*/
 
 @media (min-width: 768px) {
-  header {
-    flex-wrap: wrap;
-    padding-top: 10px;
-    padding-bottom: 0px;
-  }
 
   .logo {
     display: flex;
@@ -1696,7 +1691,7 @@ tr .btn {
     width: 90%;
     height: 17rem;
     background-image: linear-gradient(45deg,#03c959, #072AC8);
-    border-radius: 0 0 20px 20px;
+    border-radius: 20px;
 }
 
 
