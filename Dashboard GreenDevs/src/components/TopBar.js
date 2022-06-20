@@ -10,10 +10,10 @@ function TopBar(){
 						<div className=""></div>
 						{/*<!-- Nav Item - User Information -->*/}
 						<li className="nav-item dropdown no-arrow">
-							<a href="/" id="userDropdown">
-								<span className="text-gray-600 small">Hola Admin</span>
+
+								<span className="text-gray-600 small">¡Bienvenido!</span>
 								
-							</a>
+							
 						</li>
 
 					</ul>

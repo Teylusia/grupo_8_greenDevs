@@ -6,8 +6,6 @@ const productsControllerApi = {
       include: { association: "Product_Category" },
     });
 
-    console.log(CAT);
-
     let products = db.Product.findAll({
       include: { association: "Product_Category" },
     });

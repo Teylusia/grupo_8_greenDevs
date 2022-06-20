@@ -75,9 +75,13 @@ window.addEventListener('load', function(){
                     emailField.classList.add('success')
                     emailField.classList.remove('warning')
 
+                    /* PREVISUALIZACIÓN DE LA IMAGEN CARGADA
+                    
                     document.querySelector('#imagePreview').innerHTML = '<img src="'+element.target.result+'" height="90px" width="90px"/>';
                     document.querySelector('img').style.borderRadius = '50px';
-                    document.querySelector('img').style.border = 'solid #03c959 2px';
+                    document.querySelector('img').style.border = 'solid #03c959 2px'; 
+                    
+                    */
                 };
                 reader.readAsDataURL(avatarField.files[0]);
             }

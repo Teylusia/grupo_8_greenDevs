@@ -5,6 +5,7 @@ const Sequelize = require("sequelize");
 const op = Sequelize.Op;
 
 let controller = {
+
   home: (req, res) => {
     let products = db.Product.findAll()
 
@@ -14,11 +15,11 @@ let controller = {
       .catch(function (error) {
         console.log(error);
       });
-  },
+    },
 
   login: (req, res) => {
     res.render("login");
-  },
+    },
 
   loggedIn: (req, res) => {
     let errors = validationResult(req);
@@ -33,6 +34,7 @@ let controller = {
       res.render("adminUsers", { usuarios: users });
     });
   },
+
   panelSearch: (req, res) =>{
     db.User.findAll({where: { name: {[op.like]: "%" + req.query.searchBar + "%"}}})
       .then((users) =>{
@@ -52,9 +54,11 @@ let controller = {
       res.render("admin", { productos: results});
     });
   },
+
   showSearch: (req, res) => {
     res.render("resultPage");
   },
+  
   searchFunction: (req, res) => {
     db.Product.findAll({
       where: { name: { [op.like]: "%" + req.query.searchBar + "%" } },

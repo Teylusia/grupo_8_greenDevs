@@ -451,7 +451,8 @@ h3 {
 }
 
 .featured-box img {
-  width: 100%;
+  width: 90%;
+  max-height: 650px
 }
 
 .featured-text {
@@ -955,6 +956,17 @@ aside {
   cursor: pointer;
   border: none;
   margin-right: 2px;
+  display: none;
+}
+
+@media (min-width:700px){
+
+.contenedor-titulo-controles .indicadores1 button,
+.indicadores2 button,
+.indicadores3 button,
+.indicadores4 button{
+  display:inline-block
+}
 }
 
 .contenedor-titulo-controles .indicadores1 button:hover,
@@ -1315,6 +1327,15 @@ button {
   padding: 10px;
 }
 
+.specs{
+  padding-bottom: 15px;
+}
+
+.sub-tittle{
+  padding-bottom: 15px;
+  padding-top: 15px;
+}
+
 .detail-info {
   display: inline-block;
   flex-direction: column;
@@ -1322,6 +1343,7 @@ button {
   margin: 5% 10% 10% 10%;
   border: solid 1px #03c959;
   border-radius: 15px;
+  line-height: 1.6;
 }
 
 /*DESKTOP AND BIGGER SCREENS*/
