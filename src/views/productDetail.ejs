@@ -69,7 +69,7 @@
           </h3>
           
   
-          <h2 id="price-product">Precio: $<% if (product.discount == null) { %><%= product.price%></h2><% } else { %><%=(product.price - ((product.price * product.discount) /
+          <h2 >Precio: $</h2><h2 id="price-product"><% if (product.discount == null) { %><%= product.price%></h2><% } else { %><%=(product.price - ((product.price * product.discount) /
                 100)) %></h2>
               <p class="precio-rebaja">$<%= product.price %></p>
               <h4>Descuento : <%= product.discount %> %</h4>
