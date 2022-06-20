@@ -29,9 +29,9 @@ VALUES
     (
         2,
         'jeteen1',
-        'qjarritt1@blogtalkradio.com',
+        'user@greengames.com',
         'https://robohash.org/estautemvoluptates.png',
-        'FFI4i1w8',
+        '$2a$10$aEDathXONEhRGmod.80ayu/qNvy8AXulWzOM2A0xYXbj0HGsfwTpK',
         0,
         1,
         '2022-01-07 15:23:41',
@@ -1147,7 +1147,7 @@ VALUES
         "The Witcher 3: Wild Hunt",
         50,
         "Procesador: Intel Core i7 3770 3,4 GHz / AMD FX-8350 4 GHz. Graficos: Nvidia GeForce GTX 770 / AMD Radeon R9 290. Memoria:6 GB RAM. Espacio en disco: 40 GB HD. ",
-        "The Witcher 3: Wild Hunt es un juego de rol de mundo abierto de próxima generación basado en una historia, ambientado en un universo de fantasía gráficamente impresionante, lleno de elecciones significativas y consecuencias impactantes. En The Witcher, juegas como Geralt de Rivia, uno de una casta moribunda de cazadores de monstruos.",
+        "The Witcher 3: Wild Hunt es un juego de rol de mundo abierto de prï¿½xima generaciï¿½n basado en una historia, ambientado en un universo de fantasï¿½a grï¿½ficamente impresionante, lleno de elecciones significativas y consecuencias impactantes. En The Witcher, juegas como Geralt de Rivia, uno de una casta moribunda de cazadores de monstruos.",
         null,
         1,
         "https://media.rawg.io/media/games/618/618c2031a07bbff6b4f611f10b6bcdbc.jpg"
@@ -1157,7 +1157,7 @@ VALUES
         "Portal 2",
         11,
         "Procesador: Intel Core Duo 2 GHz. Graficos:ATI Radeon 2400 / NVIDIA GeForce 8600M / Intel HD Graphics 3000. Memoria: 2GB RAM. Espacio en disco: 7.6 GB HD.",
-        "Los jugadores explorarán áreas nunca antes vistas de Aperture Science Labs y se reunirán con GLaDOS, el compañero informático ocasionalmente asesino que los guió a través del juego original.",
+        "Los jugadores explorarï¿½n ï¿½reas nunca antes vistas de Aperture Science Labs y se reunirï¿½n con GLaDOS, el compaï¿½ero informï¿½tico ocasionalmente asesino que los guiï¿½ a travï¿½s del juego original.",
         null,
         2,
         "https://media.rawg.io/media/games/328/3283617cb7d75d67257fc58339188742.jpg"
@@ -1167,7 +1167,7 @@ VALUES
         "Tomb Raider (2013)",
         10,
         "Procesador: AMD Athlon64 X2 2.1 Ghz 4050+ / Intel Core2 Duo 1.86 GHZ E6300. Graficos: 512 MB VRAM - ATI Radeon HD 2600 XT / nVidia GeForce 8600. Memoria: 2 GB RAM.  Espacio en disco: 12 GB HD.",
-        "Viaja a la bella isla de Yamatai en este último reinicio de la serie de Tomb Raider. Juega como la joven Lara Croft y observa los acontecimientos que la formaron para ser la legendaria heroína de los videojuegos que conocemos. Descubre el secreto de la isla y sálvate a ti y a tu tripulación de los enloquecidos habitantes.",
+        "Viaja a la bella isla de Yamatai en este ï¿½ltimo reinicio de la serie de Tomb Raider. Juega como la joven Lara Croft y observa los acontecimientos que la formaron para ser la legendaria heroï¿½na de los videojuegos que conocemos. Descubre el secreto de la isla y sï¿½lvate a ti y a tu tripulaciï¿½n de los enloquecidos habitantes.",
         17,
         3,
         "https://media.rawg.io/media/games/ad2/ad2ffdf80ba993654f31da045bc02456.jpg"
@@ -1177,7 +1177,7 @@ VALUES
         "The Elder Scrolls V: Skyrim",
         25,
         "Procesador: Intel i5-2400/AMD FX-8320. Graficos: NVIDIA GTX 780 3GB /AMD R9 290 4GB. Memoria: 8 GB RAM. Espacio en disco: 12 GB.",
-        "Eres parte de una profecía, sobre el regreso de Nordic God of Destruction, el poderoso dragón conocido como Alduin. Antes de tu ejecución, Alduin ataca a Helgen, convirtiéndolo en polvo. Ahora eres libre. Depende de ti, lo que va a pasar a continuación.",
+        "Eres parte de una profecï¿½a, sobre el regreso de Nordic God of Destruction, el poderoso dragï¿½n conocido como Alduin. Antes de tu ejecuciï¿½n, Alduin ataca a Helgen, convirtiï¿½ndolo en polvo. Ahora eres libre. Depende de ti, lo que va a pasar a continuaciï¿½n.",
         null,
         3,
         "https://media.rawg.io/media/games/7cf/7cfc9220b401b7a300e409e539c9afd5.jpg"
@@ -1187,7 +1187,7 @@ VALUES
         "Counter-Strike: Global Offensive",
         17,
         "Procesador: Intel Core 2 Duo E6600 / AMD Phenom X3 8750. Graficos: 256 MB VRAM - GeForce 8600. Memoria: 2 GB RAM. Espacio en disco: 7.6 GB HD.",
-        "Counter-Strike: Global Offensive es uno de lo shooters multijugador más famosos que causó y sigue causando un gran impacto en la forma que conocemos el juego online.",
+        "Counter-Strike: Global Offensive es uno de lo shooters multijugador mï¿½s famosos que causï¿½ y sigue causando un gran impacto en la forma que conocemos el juego online.",
         18,
         4,
         "https://media.rawg.io/media/games/736/73619bd336c894d6941d926bfd563946.jpg"
@@ -1197,7 +1197,7 @@ VALUES
         "Left 4 Dead 2",
         15,
         "Procesador: 2.8GHz Pentium 4 / Sempron 3100. Graficos: GeForce GT 230 / Radeon X800 XT. Memoria: 2 GB RAM. Espacio en disco: 2 GB RAM.",
-        "Ambientado en el apocalipsis zombi, Left 4 Dead 2 (L4D2) es la esperadísima secuela del galardonado Left 4 Dead, el juego cooperativo número 1 de 2008. Este FPS cooperativo de acción y terror los llevará a ti y a tus amigos por las ciudades, pantanos y cementerios del Sur Profundo.",
+        "Ambientado en el apocalipsis zombi, Left 4 Dead 2 (L4D2) es la esperadï¿½sima secuela del galardonado Left 4 Dead, el juego cooperativo nï¿½mero 1 de 2008. Este FPS cooperativo de acciï¿½n y terror los llevarï¿½ a ti y a tus amigos por las ciudades, pantanos y cementerios del Sur Profundo.",
         2,
         5,
         "https://media.rawg.io/media/games/d58/d588947d4286e7b5e0e12e1bea7d9844.jpg"
@@ -1207,7 +1207,7 @@ VALUES
         "BioShock Infinite",
         26,
         "Procesador: 2.4 GHz - Core 2 Quad Q6600 / Athlon II X4 610e. Graficos: GeForce GTX 560 / Radeon HD 6950. Memoria: 4 GB RAM. Espacio en disco: 20 GB HD.",
-        "Bioshock: Infinite es la tercera entrega de la serie Bioshock, desarrollada por Irrational Games. El juego lleva al jugador a la ciudad del cielo de Columbia en una misión para encontrar a una chica misteriosa.",
+        "Bioshock: Infinite es la tercera entrega de la serie Bioshock, desarrollada por Irrational Games. El juego lleva al jugador a la ciudad del cielo de Columbia en una misiï¿½n para encontrar a una chica misteriosa.",
         null,
         5,
         "https://media.rawg.io/media/games/fc1/fc1307a2774506b5bd65d7e8424664a7.jpg"
@@ -1217,7 +1217,7 @@ VALUES
         "Life is Strange",
         36,
         "Procesador: AMD FX-8350, 4.00 GHz / Intel Core i5-3470, 3.20 GHz. Graficos: AMD FX-8350, 4.00 GHz / Intel Core i5-3470, 3.20 GHz. Memoria: 8 GB RAM. Espacio en disco: 30 GB.",
-        "Juega como Max Caulfield y descubre los secretos de Arcadia Bay. Juega como Chloe Price y descubre los detalles de su relación con Rachel Amber. Lo encontrarás todo en Life Is Strange Remastered Collection.",
+        "Juega como Max Caulfield y descubre los secretos de Arcadia Bay. Juega como Chloe Price y descubre los detalles de su relaciï¿½n con Rachel Amber. Lo encontrarï¿½s todo en Life Is Strange Remastered Collection.",
         null,
         4,
         "https://media.rawg.io/media/games/562/562553814dd54e001a541e4ee83a591c.jpg"
@@ -1226,8 +1226,8 @@ VALUES
         10,
         "Red Dead Redemption 2",
         50,
-        "Procesador: Intel® Core™ i7-4770K / AMD Ryzen 5 1500X. Graficos: Nvidia GeForce GTX 1060 6GB / AMD Radeon RX 480 4GB. Memoria: 12 GB RAM. Espacio en disco: 150 GB.",
-        "RDR 2 lo llevará en un viaje inolvidable al Salvaje Oeste. Compromete tu vida con tu pandilla y tu gente en este mundo masivo que es tuyo para explorar.",
+        "Procesador: Intelï¿½ Coreï¿½ i7-4770K / AMD Ryzen 5 1500X. Graficos: Nvidia GeForce GTX 1060 6GB / AMD Radeon RX 480 4GB. Memoria: 12 GB RAM. Espacio en disco: 150 GB.",
+        "RDR 2 lo llevarï¿½ en un viaje inolvidable al Salvaje Oeste. Compromete tu vida con tu pandilla y tu gente en este mundo masivo que es tuyo para explorar.",
         null,
         5,
         "https://media.rawg.io/media/games/511/5118aff5091cb3efec399c808f8c598f.jpg"
@@ -1237,7 +1237,7 @@ VALUES
         "Cyberpunk 2077",
         45,
         "Procesador: Intel Core i7-4790 or AMD Ryzen 3 3200G. Graficos: NVIDIA GeForce GTX 1060 or AMD Radeon R9 Fury. Memoria: 12 GB RAM. Espacio en disco: 70 GB.",
-        "Cyberpunk 2077 es un juego de rol de acción en primera persona para un solo jugador desarrollado por CD Projekt Red, el desarrollador de la serie The Witcher. Basado en un juego de mesa desarrollado por Michael Pondsmith en la década de 1980, CP2077 está impregnado de los temas y la estética del género cyberpunk.",
+        "Cyberpunk 2077 es un juego de rol de acciï¿½n en primera persona para un solo jugador desarrollado por CD Projekt Red, el desarrollador de la serie The Witcher. Basado en un juego de mesa desarrollado por Michael Pondsmith en la dï¿½cada de 1980, CP2077 estï¿½ impregnado de los temas y la estï¿½tica del gï¿½nero cyberpunk.",
         null,
         1,
         "https://media.rawg.io/media/games/26d/26d4437715bee60138dab4a7c8c59c92.jpg"
@@ -1247,7 +1247,7 @@ VALUES
         "Fall Guys: Ultimate Knockout",
         24,
         "Procesador: Intel Core i5 or AMD equivalent. Graficos: NVIDIA GTX 660 or AMD Radeon HD 7950. Memoria: 8 GB RAM. Espacio en disco: 2 GB.",
-        "Un gran juego de fiesta con adorables marionetas con forma de jellybean para hasta 60 jugadores no es más que Fall Guys: Ultimate Knockout. ¡Llama a tus amigos y compruébalo por ti mismo!",
+        "Un gran juego de fiesta con adorables marionetas con forma de jellybean para hasta 60 jugadores no es mï¿½s que Fall Guys: Ultimate Knockout. ï¿½Llama a tus amigos y compruï¿½balo por ti mismo!",
         null,
         4,
         "https://media.rawg.io/media/games/5eb/5eb49eb2fa0738fdb5bacea557b1bc57.jpg"
@@ -1267,7 +1267,7 @@ VALUES
         "Ori and the Will of the Wisps",
         40,
         "Procesador: AMD Ryzen 3 | Intel i5 Skylake. Graficos: Nvidia GTX 970 | AMD RX 570. Memoria: 8 GB. Espacio en disco: 20 GB.",
-        "El juego relata la historia de Ori, el espíritu guardián del bosque Nibel, que se embarca en una aventura épica más allá de sus fronteras para descubrir su destino. ¡La aventura aguarda más allá del bosque!",
+        "El juego relata la historia de Ori, el espï¿½ritu guardiï¿½n del bosque Nibel, que se embarca en una aventura ï¿½pica mï¿½s allï¿½ de sus fronteras para descubrir su destino. ï¿½La aventura aguarda mï¿½s allï¿½ del bosque!",
         18,
         2,
         "https://media.rawg.io/media/games/718/71891d2484a592d871e91dc826707e1c.jpg"
@@ -1277,7 +1277,7 @@ VALUES
         "Ghost of Tsushima",
         35,
         "PS4.",
-        "En el juego, el jugador controla al personaje del samurái Jin Sakai, que lucha contra los invasores mongoles en la isla titular de Tsushima. El modo de juego combina el combate abierto y la mecánica de sigilo. ¡Ghost of Tsushima recibió críticas favorables de los críticos!",
+        "En el juego, el jugador controla al personaje del samurï¿½i Jin Sakai, que lucha contra los invasores mongoles en la isla titular de Tsushima. El modo de juego combina el combate abierto y la mecï¿½nica de sigilo. ï¿½Ghost of Tsushima recibiï¿½ crï¿½ticas favorables de los crï¿½ticos!",
         18,
         3,
         "https://media.rawg.io/media/games/f24/f2493ea338fe7bd3c7d73750a85a0959.jpeg"
@@ -1286,8 +1286,8 @@ VALUES
         16,
         "Final Fantasy VII Remake",
         16,
-        "Procesador: AMD A8-Series 3.1GHz / Intel® Core™ i5 2.8GHz. Graficos: AMD Radeon™ RX 470 / NVIDIA® GeForce® GTX 960. Memoria: 4 GB RAM. Espacio en disco: 5 GB.",
-        "Final Fantasy VIII es un juego de rol de acción con un elaborado sistema de batalla. Únete a nuestros personajes y derrota a la malvada Hechicera usando habilidades únicas y diferentes tácticas. ¡Disfruta de la edición remasterizada con gráficos Full HD, nuevos modelos de personajes y más!",
+        "Procesador: AMD A8-Series 3.1GHz / Intelï¿½ Coreï¿½ i5 2.8GHz. Graficos: AMD Radeonï¿½ RX 470 / NVIDIAï¿½ GeForceï¿½ GTX 960. Memoria: 4 GB RAM. Espacio en disco: 5 GB.",
+        "Final Fantasy VIII es un juego de rol de acciï¿½n con un elaborado sistema de batalla. ï¿½nete a nuestros personajes y derrota a la malvada Hechicera usando habilidades ï¿½nicas y diferentes tï¿½cticas. ï¿½Disfruta de la ediciï¿½n remasterizada con grï¿½ficos Full HD, nuevos modelos de personajes y mï¿½s!",
         null,
         2,
         "https://media.rawg.io/media/games/d89/d89bd0cf4fcdc10820892980cbba0f49.jpg"
@@ -1297,7 +1297,7 @@ VALUES
         "Mafia II: Definitive Edition",
         29,
         "Procesador: Intel i7-3770 or AMD FX 8350. Graficos: 4GB NVIDIA GeForce GTX 780 or 4GB AMD Radeon R9 290X. Memoria: 8 GB RAM. Espacio en disco: 50 GB.",
-        "Vito Scaletta regresa y quiere pagar las deudas contraídas por su padre. Rápidamente asciende en la jerarquía de la mafia y comete crímenes lucrativos, pero cada acción tiene consecuencias...",
+        "Vito Scaletta regresa y quiere pagar las deudas contraï¿½das por su padre. Rï¿½pidamente asciende en la jerarquï¿½a de la mafia y comete crï¿½menes lucrativos, pero cada acciï¿½n tiene consecuencias...",
         1,
         3,
         "https://media.rawg.io/media/games/d73/d7364906c530ccc2d89b0b5d8695e03c.jpg"
@@ -1306,8 +1306,8 @@ VALUES
         18,
         "Resident Evil 3",
         26,
-        "Procesador: Intel® Core™ i5-4460 or AMD FX™-6300. Graficos: NVIDIA® GeForce® GTX 760 or AMD Radeon™ R7 260x con 2GB de Video RAM. Memoria: 8 GB RAM.",
-        "Sigue la historia de Jill Valentine, ex miembro de S.T.A.R.S. que intenta escapar de Raccoon City, infestada de T-Virus, y Carlos Oliveira, el agente de Umbrella enviado a Raccoon para ayudar en la evacuación de civiles. RE 3 presenta una mecánica de juego similar a la nueva versión de RE 2: exploración de la ciudad, lucha contra los muertos vivientes reanimados y Nemesis, el mutante de clase Tyrant.",
+        "Procesador: Intelï¿½ Coreï¿½ i5-4460 or AMD FXï¿½-6300. Graficos: NVIDIAï¿½ GeForceï¿½ GTX 760 or AMD Radeonï¿½ R7 260x con 2GB de Video RAM. Memoria: 8 GB RAM.",
+        "Sigue la historia de Jill Valentine, ex miembro de S.T.A.R.S. que intenta escapar de Raccoon City, infestada de T-Virus, y Carlos Oliveira, el agente de Umbrella enviado a Raccoon para ayudar en la evacuaciï¿½n de civiles. RE 3 presenta una mecï¿½nica de juego similar a la nueva versiï¿½n de RE 2: exploraciï¿½n de la ciudad, lucha contra los muertos vivientes reanimados y Nemesis, el mutante de clase Tyrant.",
         null,
         2,
         "https://media.rawg.io/media/games/a4b/a4bb55f42fe837ae7bf1307e7b41cc85.jpg"
@@ -1317,7 +1317,7 @@ VALUES
         "Dota Underlords",
         38,
         "Procesador: Intel i5, 2.4 Ghz. Graficos:  Integrated HD Graphics 520 c/128 MB. Memoria: 4 GB de RAM. Espacio en disco: 7 GB.",
-        "Contrata un equipo y destruye a tus rivales en este nuevo juego de batallas estratégicas ambientado en el mundo de Dota. Presentamos la primera temporada: Explora Agujablanca y gana recompensas con el pase de batalla.",
+        "Contrata un equipo y destruye a tus rivales en este nuevo juego de batallas estratï¿½gicas ambientado en el mundo de Dota. Presentamos la primera temporada: Explora Agujablanca y gana recompensas con el pase de batalla.",
         9,
         3,
         "https://media.rawg.io/media/games/66e/66e90c9d7b9a17335b310ceb294e9365.jpg"
@@ -1327,7 +1327,7 @@ VALUES
         "Forza Horizon 5",
         10,
         "Procesador: Intel i3-4170 @ 3.7Ghz OR Intel i5 750 @ 2.67Ghz. Graficos: NVidia 650TI OR AMD R7 250x. Memoria: 8 GB RAM. Espacio en disco: 80 GB.",
-        "Forza Horizon 5 trae lo mejor que los desarrolladores de Playground Games tienen para ofrecer. Con más de 400 autos disponibles, un mundo dinámico y abierto dividido en varios biomas y efectos visuales asombrosos, FH5 ofrece todos los aspectos importantes para los fans de la serie.",
+        "Forza Horizon 5 trae lo mejor que los desarrolladores de Playground Games tienen para ofrecer. Con mï¿½s de 400 autos disponibles, un mundo dinï¿½mico y abierto dividido en varios biomas y efectos visuales asombrosos, FH5 ofrece todos los aspectos importantes para los fans de la serie.",
         5,
         4,
         "https://media.rawg.io/media/screenshots/6c6/6c69fe99ec23d08b2b0a62feb9d89c65.jpg"

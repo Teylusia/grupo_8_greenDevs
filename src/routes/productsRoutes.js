@@ -4,6 +4,7 @@ const productsController = require('../controllers/productsController');
 const { route } = require('./productsRoutes');
 const multerProduct = require('../middlewares/multerProductMiddleware');
 const validateProduct = require('../middlewares/productValidatorMiddleware');
+const validateProductAdd = require('../middlewares/productAddValidatorMiddleware');
 const adminMiddleware = require("../middlewares/adminMiddleware")
 
  
@@ -23,7 +24,7 @@ router.delete("/delete/:id", productsController.productDelete);
 
 //Create Products
 router.get('/create',adminMiddleware, productsController.productCreate);
-router.post('/create', multerProduct.single("image"), validateProduct, productsController.productAdd);
+router.post('/create', multerProduct.single("image"), validateProductAdd, productsController.productAdd);
 
 //Image
 router.get('/image/:id', productsController.image)
