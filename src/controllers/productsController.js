@@ -3,7 +3,7 @@ const fs = require("fs");
 const db = require("../database/models");
 const { validationResult } = require("express-validator");
 const deleteFile = require("../modules/deleteFile");
-
+const Sequelize = require("sequelize");
 
 
 let productsController = {
@@ -65,6 +65,7 @@ let productsController = {
     let category = db.Category.findAll().then((category) => {
       return category;
     });
+    console.log(req.file);
     if (resultValidation.errors.length > 0) {
       category = db.Category.findAll().then(function (category) {
         res.render("productAdd", {
@@ -74,11 +75,11 @@ let productsController = {
         });
       });
     } else {
-      let idLastProduct = db.Product.findAll({
-        attributes: [[sequelize.fn("MAX", sequelize.col("id")), "maxId"]],
-      }).then((maxId) => {
-        return maxId;
-      });
+      // let idLastProduct = db.Product.findAll({
+      //   attributes: [[sequelize.fn("MAX", sequelize.col("id")), "maxId"]],
+      // }).then((maxId) => {
+      //   return maxId;
+      // });
       // console.log("crear producto");
       // async function idLastProduct() {await db.product.max("id")
       //}
@@ -90,7 +91,7 @@ let productsController = {
         description: req.body.description,
         rating: req.body.rating,
         discount: req.body.discount,
-        image: req.file.filename,
+        image: "/img/uploads/"+ req.file.filename,
       }).then(function () {
         res.redirect("/admin");
         //   console.log(req.file);
