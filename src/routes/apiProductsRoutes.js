@@ -8,5 +8,6 @@ router.get('/',apiProducts.list)
 
 router.get('/:id',apiProducts.detail)
 
+router.get("/sales", apiProducts.sales)
 
 module.exports=router;

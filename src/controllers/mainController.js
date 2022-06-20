@@ -35,6 +35,9 @@ let controller = {
   },
   panelSearch: (req, res) =>{
     db.User.findAll({where: { name: {[op.like]: "%" + req.query.searchBar + "%"}}})
+      .then((users) =>{
+        res.render('adminUsers', {usuarios: users})
+      })
   },
 
   admin: (req, res) => {

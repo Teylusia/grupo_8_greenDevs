@@ -7,8 +7,8 @@ const emailErrors = document.querySelector('#email-errors');
 let avatarField = document.querySelector('#upload-image');
 const avatarErrors = document.querySelector('#avatar-errors');
 
-let passwordField = document.querySelector('#password');
-const passwordErrors = document.querySelector('#password-errors');
+// let passwordField = document.querySelector('#password');
+// const passwordErrors = document.querySelector('#password-errors');
 
 const submit = document.querySelector('#user-edit-form')
 
@@ -17,7 +17,7 @@ nameField.addEventListener('blur', function(event){
     nameField.classList.add('warning');
     nameField.classList.remove('success');
     if(nameErrors.innerHTML.length == 0){
-      nameErrors.innerText += 'Debes ingresar un nombre de usuario con mas de 2 caracteres.'
+      nameErrors.innerText += 'Debes ingresar un nombre de usuario con mas de 2  caracteres.'
     };
 }else{
   nameField.classList.remove('warning');
@@ -57,22 +57,22 @@ avatarField.addEventListener('change', function(event){
     };
   }
 });
-passwordField.addEventListener('blur', function(event){
-    if(passwordField.value.length < 8){
-      passwordField.classList.remove('success');
-      passwordField.classList.add('warning');
-      if(passwordErrors.innerText.length == 0){
-        passwordErrors.innerText = 'Tu contraseña debe tener un mínimo de 8 caracteres.'
-      }
-    }else{
-      avatarField.classList.add('success');
-      avatarField.classList.remove('warning');
-      passwordErrors.innerText = ''
-    }
-});
+// passwordField.addEventListener('blur', function(event){
+//     if(passwordField.value.length < 8){
+//       passwordField.classList.remove('success');
+//       passwordField.classList.add('warning');
+//       if(passwordErrors.innerText.length == 0){
+//         passwordErrors.innerText = 'Tu contraseña debe tener un mínimo de 8 caracteres.'
+//       }
+//     }else{
+//       avatarField.classList.add('success');
+//       avatarField.classList.remove('warning');
+//       passwordErrors.innerText = ''
+//     }
+// });
 
 submit.addEventListener('submit', event =>{
-  let errorFields = [ passwordErrors, avatarErrors, nameErrors, emailErrors]
+  let errorFields = [ avatarErrors, nameErrors, emailErrors]
   let errors = 0
   errorFields.forEach( error =>{
     if(error.innerText.length > 0){

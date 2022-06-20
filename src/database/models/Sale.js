@@ -1,3 +1,4 @@
+const { Sequelize } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
 
 cols = {
@@ -31,7 +32,7 @@ let config = {
 const Sale = sequelize.define("Sale", cols, config);
 
 Sale.associate = function(models){
-    Sale.hasMany(models.Product, {
+    Sale.belongsTo(models.Product, {
         as: "Product",
         foreignKey: "product_id",
         onDelete: 'CASCADE'
