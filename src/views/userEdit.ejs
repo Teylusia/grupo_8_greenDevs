@@ -1,59 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
-
   <%- include('./partials/head') %>
 
-<body>
+  <body>
+    <%- include('./partials/header') %>
 
-  <%- include('./partials/header') %>
+    <main>
+      <div class="general-container">
+        <div class="register">
+          <i class="fas fa-user-circle"></i>
+          <h2 class="texto-de-registro">Edita tu perfil</h2>
+          <div class="signup-buttons-container">
+            <i class="fab fa-google fa-fw"></i>
+            <i class="fab fa-facebook fa-fw"></i>
+            <i class="fab fa-apple fa-fw"></i>
+          </div>
+          <h4 class="registro-manual"></h4>
+          <div class="register-form">
+            <form
+              method="POST"
+              id="user-edit-form"
+              action="/user/edit/<%= usuario.id %>?_method=PUT"
+              enctype="multipart/form-data"
+            >
+              <label for="username">Ingresa tu nombre de usuario</label>
+              <input
+                type="text"
+                id="username"
+                name="username"
+                value="<%= usuario.name %>"
+                autocomplete="none"
+                class="form-input <%= locals.errors && errors.username ? "is-invalid" : null %>"
+              />
 
-  <main>
-    <div class="general-container">
-    <div class="register">
-      <i class="fas fa-user-circle"></i>
-      <h2 class="texto-de-registro">Edita tu perfil</h2>
-        <div class="signup-buttons-container">
-          <i class="fab fa-google fa-fw"></i>
-          <i class="fab fa-facebook fa-fw"></i>
-          <i class="fab fa-apple fa-fw"></i>
+              <p id="username-errors" class="errors"></p>
+              <% if (locals.errors && errors.username) { %>
+                <div class="errors"> 
+                  <%= errors.username.msg %> 
+                </div>
+              <% } %>
+
+              <label for="email">Ingresa tu email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                value="<%= usuario.email %>"
+                class="form-input <%= locals.errors && errors.email ? "is-invalid" : null %>"
+              />
+              <p id="email-errors" class="errors"></p>
+              <% if (locals.errors && errors.email) { %>
+                <div class="errors"> 
+                  <%= errors.email.msg %> 
+                </div>
+              <% } %>
+
+              <!-- <label for="avatar">Avatar</label> -->
+              <div class="">
+                <img
+                  src="<%= usuario.avatar%>"
+                  class="avatar-listado"
+                  alt="avatar"
+                />
+              </div>
+              <label for="">Cambiar avatar</label>
+              <input type="file" name="avatar" id="upload-image"
+              class="form-input <%= locals.errors && errors.avatar ? "is-invalid" : null %>"
+              />
+              <p id="avatar-errors" class="errors"></p>
+              <% if (locals.errors && errors.avatar) { %>
+                <div class="errors"> 
+                  <%= errors.avatar.msg %> 
+                </div>
+              <% } %>
+              <!-- AHORA SE EDITA EL PASSWORD DESDE EL BOTON DEL PROFILE -->
+
+              <input type="submit" id="submit" value="Guardar cambios" />
+              <div class="back-button">
+                <p><a href="/user/profile">Volver</a></p>
+              </div>
+            </form>
+          </div>
         </div>
-      <h4 class="registro-manual"></h4>
-        <div class="register-form">
-          <form id="user-edit-form"  action="/user/edit/<%= usuario.id %>?_method=PATCH" method="POST" enctype="multipart/form-data">
+      </div>
+    </main>
 
-            <label for="username">Ingresa tu nombre de usuario</label>
-            <input type="text" id="username" name="username" value="<%= usuario.name %>" autocomplete='none'>
-            <p id="username-errors" class="errors"></p>
-
-            <label for="email">Ingresa tu email</label>
-            <input type="email" id="email" name="email" value="<%= usuario.email %>">
-            <p id="email-errors" class="errors"></p>
-
-            <!-- <label for="avatar">Avatar</label> -->
-            <div class="">
-
-              <img src="<%= usuario.avatar%>" class="avatar-listado"alt="avatar">
-            </div>
-            <label for="">Cambiar avatar</label>
-            <input type="file" name="avatar" id="upload-image">
-            <p id="avatar-errors" class="errors"></p>
-
-           <!-- AHORA SE EDITA EL PASSWORD DESDE EL BOTON DEL PROFILE -->
-
-           
-            <input type="submit" id="submit" value="Guardar cambios">
-            <div class="back-button">
-              
-              <p><a href="/user/profile">Volver</a></p>
-            </div>
-          </form>
-        </div>
-    </div>
-    </div>
-  </main>
-
-  <%- include('./partials/footer') %>
-  
+    <%- include('./partials/footer') %>
   </body>
   <script src="/js/userEdit.js"></script>
 </html>

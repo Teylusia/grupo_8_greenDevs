@@ -33,15 +33,17 @@
                         <% } %>
                     </div>
                          <div >
-                            <a href="/user/edit/password/<%= id %>">
+                            <a href="/user/edit/password/<%= user.id %>">
                                 <button type="button" class="btn inf">Editar contraseña</button>
                         </div>
                         <div >
-                            <a href="/user/edit/<%= id %>">
+                            <a href="/user/edit/<%= user.id %>">
                                 <button type="button" class="btn inf">Editar usuario</button>
                         </div>
                     </div>
-                    
+                    <p> <% sales.forEach(element => { %>
+                        <%= element.Product  %> 
+                    <% }) %> </p>
     </section>
     </main>
 </body>
