@@ -305,6 +305,7 @@ let usersController = {
 
       let oldPasswordValidation = bcryptjs.compareSync(toCompare, oldPassword);
 
+
       if (oldPasswordValidation && password1 == password2) {
         User.update(
           {
@@ -313,6 +314,7 @@ let usersController = {
           { where: { id: user.id } }
         );
         res.redirect("/user/logout");
+
       }
     });
   },

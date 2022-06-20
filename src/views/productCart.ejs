@@ -12,64 +12,8 @@
     </h1>
     <div class="bloque">
     <section class="bloque-de-productos">
-      <div class='lista-de-productos'>
-        <article class='producto-unidad'>
-          <div class='img-producto'>
-            <img src='<%= product.image  %>' alt='imagen de producto' class='imagen-de-producto'>
-            <div class="bloque-medio">
-              <span><%= product.name  %> </span>
-              <div class="contador">
-                <button class="boton-contador">-</button>
-                <div class="contador-numero">
-                  0
-                </div>
-                <button class="boton-contador">+</button>
-              </div>
-            </div>
-          </div>
-            <div class='descripcion-precio'>
-              <i class="fa-solid fa-trash"></i>
-              <p>Precio $<%= product.price  %> </p>
-            </div>
-        </article>
-        <!-- <article class='producto-unidad'>
-          <div class='img-producto'>
-            <img src='img/img2.jpg' alt='imagen de producto' class='imagen-de-producto'>
-            <div class="bloque-medio">
-              <span>Nombre de producto</span>
-              <div class="contador">
-                <button class="boton-contador">-</button>
-                <div class="contador-numero">
-                  0
-                </div>
-                <button class="boton-contador">+</button>
-              </div>
-            </div>
-          </div>
-            <div class='descripcion-precio'>
-              <i class="fa-solid fa-trash"></i>
-              <p>Precio $0.333333</p>
-            </div>
-        </article>
-        <article class='producto-unidad'>
-          <div class='img-producto'>
-            <img src='img/img1.jpeg' alt='imagen de producto' class='imagen-de-producto'>
-            <div class="bloque-medio">
-              <span>Nombre de producto</span>
-              <div class="contador">
-                <button class="boton-contador">-</button>
-                <div class="contador-numero">
-                  0
-                </div>
-                <button class="boton-contador">+</button>
-              </div>
-            </div>
-          </div>
-            <div class='descripcion-precio'>
-              <i class="fa-solid fa-trash"></i>
-              <p>Precio $0.333333</p>
-            </div>
-        </article> -->
+      <div id="lista-de-productos" class='lista-de-productos'>
+
       </div>
     </section>
     <article class="checkout">
@@ -79,14 +23,14 @@
         </div>
         <div class="subtotal-resumen">
           <p>Subtotal</p>
-          <p>$0.999999</p>
+          <p id="subtotal-resumen"">$</p>
         </div>
         <div class="total-resumen">
           <p>Total</p>
-          <p>$0.888889</p>
+          <p id="total-price">$</p>
         </div>
         <div class="boton-resumen">
-        <button class="boton-compra">COMPRAR</button>
+        <button id="buy" class="boton-compra">COMPRAR</button>
         <button class="boton-sigue">SEGUIR COMPRANDO</button>
         </div>
       </div>

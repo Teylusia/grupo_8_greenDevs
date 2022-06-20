@@ -33,10 +33,23 @@ let controller = {
       res.render("adminUsers", { usuarios: users });
     });
   },
+  panelSearch: (req, res) =>{
+    db.User.findAll({where: { name: {[op.like]: "%" + req.query.searchBar + "%"}}})
+      .then((users) =>{
+        res.render('adminUsers', {usuarios: users})
+      })
+  },
 
   admin: (req, res) => {
     db.Product.findAll().then(function (productos) {
       res.render("admin", { productos });
+    });
+  },
+  adminSearch: (req,res) =>{
+    db.Product.findAll({
+      where: { name: { [op.like]: "%" + req.query.searchBar + "%" } },
+    }).then((results) => {
+      res.render("admin", { productos: results});
     });
   },
   showSearch: (req, res) => {
