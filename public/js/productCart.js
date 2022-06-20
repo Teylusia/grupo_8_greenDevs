@@ -1,4 +1,6 @@
-const buyButton = document.querySelector('#buy')
+
+
+
 const cartList = document.querySelector('#lista-de-productos')
 
 
@@ -36,9 +38,20 @@ const cartList = document.querySelector('#lista-de-productos')
             </div>
           </div>
             <div class='descripcion-precio'>
-              <i class="fa-solid fa-trash"></i>
+              <button><i id-product="${product.id}" id="trash-item" class="fa-solid fa-trash"></i> </button>
               <p>Precio $ ${product.precio} </p>
             </div>
         </article>
     `
+})
+
+const cartDelete = document.querySelectorAll('#trash-item')
+
+
+cartDelete.forEach(trash =>{
+  let productDeleteId = trash.getAttribute('id-product')
+  trash.addEventListener('click', event =>{
+    localStorage.removeItem(`producto ${productDeleteId}`)
+    location.reload()
+  })
 })
