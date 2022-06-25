@@ -1,9 +1,9 @@
 module.exports = {
   "development": {
-    "username": "root",
-    "password":null,
-    "database": "greendevs_db",
-    "host": "localhost",
+    "username": "ucyn6qhfbag3xyel",
+    "password":'NHuLXJRrLSmLfsCUgl8y',
+    "database": "byjrtdbjagmzyp1noim0",
+    "host": "byjrtdbjagmzyp1noim0-mysql.services.clever-cloud.com",
     "dialect": "mysql"
   },
   "test": {

@@ -9374,7 +9374,7 @@ UNLOCK TABLES;
 
 
 LOCK TABLES Images WRITE;
-INSERT	INTO
+INSERT INTO
 	Images (address, product_id, main)
 VALUES
             (
