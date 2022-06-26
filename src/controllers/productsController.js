@@ -5,53 +5,45 @@ const { validationResult } = require("express-validator");
 const deleteFile = require("../modules/deleteFile");
 const Sequelize = require("sequelize");
 
-
 let productsController = {
   detail: (req, res) => {
-    // console.log(req.params.id);
-    // db.Product.findAll()
-    // .then(product => console.log(product))
-    let products = db.Product.findAll(
-      // {
-      //   include: [
-      //     { association: "Image" },
-      //     { association: "Product_Category" }
-      //   ]
-      // }
-      );
-      let productDetail = db.Product.findOne(
-        { where: { id: req.params.id } },
-        {
-          include: [
-              { association: "Sale" },
-              { association: "Image" },
-              { association: "Product_Category" },
-            ],
-          }
-          );
-          
-          let imageDetail = db.Image.findAll(
-            { where: { product_id: req.params.id } },
-            { include: [{ association: "Product" }] }
-            );
-            
-            Promise.all([products, productDetail, imageDetail]).then(function ([products,product, image]) {
-              res.render("productDetail", {
-                products,
-                product,
-                image,
-              });
-              res.locals.product = product.dataValues
-              console.log(res.locals.product);
-            });
-          },
-          
-          cart: (req, res) => {
-            if(req.session.userLogged){
-              res.render('productCart')
-            }else{
-              res.render('login')
-            }
+    let products = db.Product.findAll();
+    let productDetail = db.Product.findOne(
+      { where: { id: req.params.id } },
+      {
+        include: [
+          { association: "Sale" },
+          { association: "Image" },
+          { association: "Product_Category" },
+        ],
+      }
+    );
+
+    let imageDetail = db.Image.findAll(
+      { where: { product_id: req.params.id } },
+      { include: [{ association: "Product" }] }
+    );
+
+    Promise.all([products, productDetail, imageDetail]).then(function ([
+      products,
+      product,
+      image,
+    ]) {
+      res.render("productDetail", {
+        products,
+        product,
+        image,
+      });
+      res.locals.product = product.dataValues;
+    });
+  },
+
+  cart: (req, res) => {
+    if (req.session.userLogged) {
+      res.render("productCart");
+    } else {
+      res.render("login");
+    }
   },
 
   productCreate: (req, res) => {
@@ -75,15 +67,6 @@ let productsController = {
         });
       });
     } else {
-      // let idLastProduct = db.Product.findAll({
-      //   attributes: [[sequelize.fn("MAX", sequelize.col("id")), "maxId"]],
-      // }).then((maxId) => {
-      //   return maxId;
-      // });
-      // console.log("crear producto");
-      // async function idLastProduct() {await db.product.max("id")
-      //}
-      // console.log(idLastProduct);
       db.Product.create({
         name: req.body.name,
         price: req.body.price,
@@ -91,10 +74,9 @@ let productsController = {
         description: req.body.description,
         rating: req.body.rating,
         discount: req.body.discount,
-        image: "/img/uploads/"+ req.file.filename,
+        image: "/img/uploads/" + req.file.filename,
       }).then(function () {
         res.redirect("/admin");
-        //   console.log(req.file);
       });
     }
   },
@@ -108,17 +90,13 @@ let productsController = {
       },
       {
         include: [
-          // { association: "Sale" },
           { association: "Image" },
           { association: "Product_Category" },
         ],
       }
     );
 
-    let images = db.Image.findAll(
-      { where: { product_id: req.params.id } },
-      // { include: [{ association: "Product" }] }
-    );
+    let images = db.Image.findAll({ where: { product_id: req.params.id } });
 
     Promise.all([productAsked, images])
       .then(function ([product, images]) {
@@ -141,8 +119,6 @@ let productsController = {
     let imageUpload = req.files["image"];
     let galleryUpload = req.files["gallery"];
     console.log(req.body.description.length);
-    // console.log(galleryUpload);
-    // console.log(imageUpload);
     let product = db.Product.findOne(
       {
         where: {
@@ -225,32 +201,30 @@ let productsController = {
     let productId = req.params.id;
     let mainImage = db.Product.findByPk(productId);
     let gallery = db.Image.findAll({ where: { product_id: productId } });
-    Promise.all([mainImage, gallery]).then(function ([product, images]) {
-      deleteFile(product.image);
-      for (let i = 0; i < images.length; i++) {
-        deleteFile(images[i].address);
-      }
-    }).then(() => {
-
-      db.Product.destroy(
-        { where: { id: req.params.id } },
-        { include: [{ association: "Image" }] }
-        )
+    Promise.all([mainImage, gallery])
+      .then(function ([product, images]) {
+        deleteFile(product.image);
+        for (let i = 0; i < images.length; i++) {
+          deleteFile(images[i].address);
+        }
       })
       .then(() => {
-        
+        db.Product.destroy(
+          { where: { id: req.params.id } },
+          { include: [{ association: "Image" }] }
+        );
+      })
+      .then(() => {
         res.redirect("/admin");
-      } )
-      
+      })
+
       .catch(function () {
         console.log("algo anda mal");
       });
-    
-    },
+  },
 
   image: (req, res) => {
     db.Image.findOne({ where: { id: req.params.id } }).then((image) => {
-      // console.log(image);
       res.cookie("product_id", image.product_id, { maxAge: 1000 * 60 * 10 });
       res.render("ProductImage", { image });
     });
@@ -266,9 +240,9 @@ let productsController = {
       });
     });
   },
-  showBuy: (req,res) =>{
-    res.render('buyItem')
-  }
+  showBuy: (req, res) => {
+    res.render("buyItem");
+  },
 };
 
 module.exports = productsController;

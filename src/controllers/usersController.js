@@ -26,8 +26,6 @@ let usersController = {
 
   userAdd: (req, res) => {
     let resultValidation = validationResult(req);
-    // console.log(resultValidation);
-
     if (resultValidation.errors.length > 0) {
       res.render("register", {
         errors: resultValidation.mapped(),
@@ -75,23 +73,20 @@ let usersController = {
     } else {
       User.findOne({ where: { email: req.body.email } })
         .then((userToLogin) => {
-          // let checkPassword = userToLogin;
           if (userToLogin) {
             let okPassword = bcryptjs.compareSync(
               req.body.password,
               userToLogin.password
             );
             if (okPassword) {
-              delete userToLogin.password; //🚩ver por qué no está borrando el password
+              delete userToLogin.password;
               req.session.userLogged = userToLogin;
-              // res.redirect("/user/profile/"+userToLogin.id);
               if (req.body.rememberUser)
                 res.cookie("userEmail", req.body.email, {
                   maxAge: 1000 * 60 * 10,
                 });
 
               res.redirect("/user/profile");
-              // res.send("login ok")
             } else {
               return res.render("login", {
                 errors: {
@@ -124,9 +119,8 @@ let usersController = {
     console.log(req.body);
     console.log(resultValidation);
     let userInDb = db.User.findByPk(req.params.id).then(function (userInDb) {
-  
       if (req.file != undefined && req.file.filename != avatarDefault) {
-        deleteFile( userInDb.avatar)
+        deleteFile(userInDb.avatar);
       }
 
       if (resultValidation.errors.length > 0) {
@@ -137,8 +131,7 @@ let usersController = {
           usuario: userInDb,
           errors: resultValidation.mapped(),
           oldData: req.body,
-        }
-        );
+        });
       } else {
         if (req.file != undefined) {
           User.update(
@@ -186,17 +179,16 @@ let usersController = {
   //DELETE OR DISABLED
   userDelete: (req, res) => {
     let userId = req.params.id;
-    let userLogin = req.session.userLogged
+    let userLogin = req.session.userLogged;
     let userInDb = db.User.findByPk(userId)
       .then((user) => {
         if (userId != userLogin.id) {
-          
           if (user.status == 1) {
             User.update(
-            { status: 0 }, //deshabilita el usuario
-            {
-              where: { id: userId },
-            }
+              { status: 0 }, //deshabilita el usuario
+              {
+                where: { id: userId },
+              }
             );
           } else {
             User.update(
@@ -204,10 +196,10 @@ let usersController = {
               {
                 where: { id: userId },
               }
-              );
-            }
-            }
-        // // console.log(user);
+            );
+          }
+        }
+        //DELETE USUARIOS
         // let findFile = fs.existsSync(
         //   path.join(__dirname, "../../public/" + user.avatar)
         // );
@@ -266,28 +258,20 @@ let usersController = {
   },
   profile: (req, res) => {
     let userId = req.session.userLogged;
-    let user = db.User.findByPk(userId.id)
+    let user = db.User.findByPk(userId.id);
     let sales = db.Sale.findAll(
-      {where: {users_id : userId.id}},
-      {include: [
-        // { association: "Product" },
-        { association: "User" },
-      ],
-    },
-    )
-    Promise.all([user, sales ])
-      .then(([user,sales]) => {
-        // console.log(user);
-
-        // console.log(sales);
-        res.render("profile", {
-          user: user,
-          id: userId.id,
-          sales,
-        });
+      { where: { users_id: userId.id } },
+      { include: [{ association: "User" }] }
+    );
+    Promise.all([user, sales]).then(([user, sales]) => {
+      res.render("profile", {
+        user: user,
+        id: userId.id,
+        sales,
       });
-    },
-    
+    });
+  },
+
   //EDIT PASSWORD
 
   changePassword: (req, res) => {
@@ -309,7 +293,6 @@ let usersController = {
 
       let oldPasswordValidation = bcryptjs.compareSync(toCompare, oldPassword);
 
-
       if (oldPasswordValidation && password1 == password2) {
         User.update(
           {
@@ -318,7 +301,6 @@ let usersController = {
           { where: { id: user.id } }
         );
         res.redirect("/user/logout");
-
       }
     });
   },
