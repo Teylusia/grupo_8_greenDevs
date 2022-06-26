@@ -7,8 +7,6 @@ const emailErrors = document.querySelector('#email-errors');
 let avatarField = document.querySelector('#upload-image');
 const avatarErrors = document.querySelector('#avatar-errors');
 
-// let passwordField = document.querySelector('#password');
-// const passwordErrors = document.querySelector('#password-errors');
 
 const submit = document.querySelector('#user-edit-form')
 
@@ -57,19 +55,6 @@ avatarField.addEventListener('change', function(event){
     };
   }
 });
-// passwordField.addEventListener('blur', function(event){
-//     if(passwordField.value.length < 8){
-//       passwordField.classList.remove('success');
-//       passwordField.classList.add('warning');
-//       if(passwordErrors.innerText.length == 0){
-//         passwordErrors.innerText = 'Tu contraseña debe tener un mínimo de 8 caracteres.'
-//       }
-//     }else{
-//       avatarField.classList.add('success');
-//       avatarField.classList.remove('warning');
-//       passwordErrors.innerText = ''
-//     }
-// });
 
 submit.addEventListener('submit', event =>{
   let errorFields = [ avatarErrors, nameErrors, emailErrors]

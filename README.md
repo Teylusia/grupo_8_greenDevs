@@ -1,4 +1,4 @@
-# greenDevs
+# Greengames
 
 Tematica: Productos Digitales (videojuegos, softwares etc.)
 Publico Objetivo: cualquier individuo con una computadora, consola de videojuegos, streaming etc.
@@ -47,3 +47,9 @@ Paleta:
 Usuario admin : admin@greengames.com
 contraseña :  123123123
 
+Usuario basico : user@greengames.com
+contraseña : 123123123
+
+![](public/img/preview1.png)
+
+![](public/img/preview2.png)

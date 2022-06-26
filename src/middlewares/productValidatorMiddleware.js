@@ -25,12 +25,6 @@ let validateProduct = [
           throw new Error(`Las extensiones de archivo permitidas son ${acceptedExtensions.join(', ')}`);
       }
     } 
-    // throw new Error('Tienes que subir una imagen');
-    
-    // if (true) {
-    // } else {
-    // }
-
     return true;
 }),
 body("gallery")
@@ -47,9 +41,7 @@ body("gallery")
             if (!acceptedExtensions.includes(fileExtension)) {
                 throw new Error(`Las extensiones de archivo permitidas son ${acceptedExtensions.join(', ')}`);
             }
-            // if (file[0] == undefined) {
-            //     throw new Error('Tienes que subir una imagen');
-            // } else {
+  
             }
         }
         return true;

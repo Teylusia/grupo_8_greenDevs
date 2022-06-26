@@ -16,9 +16,6 @@
 
                         <div class="admin-form">
                             <h2>Panel de Administrador</h2>
-                            <!-- <a href="/user/register">
-                                <button  class="btn inf"><i class="fa-solid fa-user-plus"></i> Nuevo Usuario </button>
-                            </a> -->
                             <a href="/admin/users">
                                 <button  class="btn inf"><i class="fa-solid fa-user-group"></i> Listar Usuarios </button>
                             </a>
@@ -98,7 +95,6 @@
                                 
 
                                 <form method="POST" action="/user/delete/<%=usuario.id %>?_method=delete">
-                                    <!-- <p class="btn danger">Eliminar</p> -->
                                     <button type="submit" 
                                     <% if (usuario.status == 1) { %>
                                         class="btn danger">
@@ -110,7 +106,6 @@
                                         <% } %>
                                 </form>
                                 
-                                <!-- <a class="btn danger"href="/user/delete/<%=usuario.id %>">Eliminar</a> -->
 
                                 
                             </td>

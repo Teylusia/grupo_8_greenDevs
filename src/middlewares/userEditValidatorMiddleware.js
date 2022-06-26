@@ -11,11 +11,6 @@ let validateUserEdit = [
     .notEmpty().withMessage("Tienes que escribir un email")
     .isEmail().withMessage("Tienes que escribir un email válido"),
 
-    // body("password").notEmpty().withMessage("Tienes que escribir una contraseña")
-    // .isLength({ min: 8 }).withMessage("Tienes que escribir una contraseña de al menos 6 caracteres"),
-
-	// body("confirmpassword").notEmpty().withMessage("Tienes que escribir una contraseña")
-    // .isLength({ min: 8 }).withMessage("Tienes que escribir una contraseña de al menos 6 caracteres"),
 
     body('avatar').custom((value, { req }) => {
 		let file = req.file;
